@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <title>Protótipo 1 - Detalhamento</title>
+    <title>Protótipo 1 - Página Inicial</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #dddddd;
+           
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
 <body>
     <!--Nav Bar-->
@@ -38,221 +60,67 @@
 
     <!--Detalhamento-->
     <div class="detalhamento">
-        <div class="info-geral">
-            <table class="info-geral">
-                <tbody>
-                    <tr>
-                        <th>Informações Gerais</th>
-                    </tr>
-                    <tr>
-                        <td>Papel</td>
-                        <td>VALE3</td>
-                        <td>Cotação</td>
-                        <td>83,29</td>
-                    </tr>
-                    <tr>
-                        <td>Tipo</td>
-                        <td>ON NM</td>
-                        <td>Data útil cot</td>
-                        <td>29/04/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Empresa</td>
-                        <td>VALE ON NM</td>
-                        <td>Min 52 sem</td>
-                        <td>60,02</td>
-                    </tr>
-                    <tr>
-                        <td>Setor</td>
-                        <td>Mineração</td>
-                        <td>Max 52 sem</td>
-                        <td>102,32</td>
-                    </tr>
-                    <tr>
-                        <td>Subsetor</td>
-                        <td>Minerais Metálicos</td>
-                        <td>Vol $ méd(2m)</td>
-                        <td>2.968.530.000</td>
-                    </tr>
-                </tbody>
+        <h2>Recomendações</h2>
+        <div class="tabela">
+            <table> 
+                <tr>
+                    <td>VALE ON</td>
+                    <td>VALE3</td>
+                </tr>
+                <tr>
+                    <td>Inga Agroflorestal PN</td>
+                    <td>INGA4L</td>
+                </tr>
+                <tr>
+                    <td>KLABIN ON</td>
+                    <td>KLBN3</td>
+                </tr>
+                <tr>
+                    <td>ITAUSA ON</td>
+                    <td>ITSA3</td>
+                </tr>
+                <tr>
+                    <td>MAGAZINE LUIZA ON</td>
+                    <td>MGLU3</td>
+                </tr>
+                <tr>
+                    <td>VALE ON</td>
+                    <td>VALE3</td>
+                </tr>
+                <tr>
+                    <td>Inga Agroflorestal PN</td>
+                    <td>INGA4L</td>
+                </tr>
+                <tr>
+                    <td>JSL ON</td>
+                    <td>JSLG3</td>
+                </tr>
+                <tr>
+                    <td>SINQIA ON</td>
+                    <td>SQIA3</td>
+                </tr>
+                <tr>
+                    <td>KLABIN ON</td>
+                    <td>KLBN3</td>
+                </tr>
+                <tr>
+                    <td>ITAUSA ON</td>
+                    <td>ITSA3</td>
+                </tr>
+                <tr>
+                    <td>MAGAZINE LUIZA ON</td>
+                    <td>MGLU3</td>
+                </tr>
+                <tr>
+                    <td>PETROBRAS ON</td>
+                    <td>PETR</td>
+                </tr>
+                <tr>
+                    <td>TOTVS ON</td>
+                    <td>TOTS3</td>
+                </tr>
             </table>
-            <br />
-            <table class="info-geral-plus">
-                <tbody>
-                    <tr>
-                        <td>Valor de mercado</td>
-                        <td>416.370.000.000</td>
-                        <td>Últ balanço processado</td>
-                        <td>31/03/22</td>
-                    </tr>
-                    <tr>
-                        <td>Valor da firma</td>
-                        <td>439.638.000.000</td>
-                        <td>Nro.Ações</td>
-                        <td>4.999.040.000</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br />
-
-            <table class="oscilacoes-indicadores">
-                <tbody>
-                    <tr>
-                        <th>Oscilações</th>
-                        <th>Indicadores fundamentalistas</th>
-                    </tr>
-                    <tr>
-                        <td>Dia</td>
-                        <td>-1,08%</td>
-                        <td>P/L</td>
-                        <td>3,66</td>
-                        <td>LPA</td>
-                        <td>22,75</td>
-                    </tr>
-                    <tr>
-                        <td>Mês</td>
-                        <td>-12,88%</td>
-                        <td>P/VP</td>
-                        <td>2,34</td>
-                        <td>VPA</td>
-                        <td>35,67</td>
-                    </tr>
-                    <tr>
-                        <td>30 dias</td>
-                        <td>-11,88%</td>
-                        <td>P/EBIT</td>
-                        <td>2,57</td>
-                        <td>Marg. Bruta</td>
-                        <td>58,7%</td>
-                    </tr>
-                    <tr>
-                        <td>12 meses</td>
-                        <td>-13,03%</td>
-                        <td>PSR</td>
-                        <td>1,48</td>
-                        <td>Marg. EBIT</td>
-                        <td>57,8%</td>
-                    </tr>
-                    <tr>
-                        <td>2022</td>
-                        <td>10,95%</td>
-                        <td>P/Ativos</td>
-                        <td>0,94</td>
-                        <td>Marg. Líquida</td>
-                        <td>40,7%</td>
-                    </tr>
-                    <tr>
-                        <td>2021</td>
-                        <td>4,73%</td>
-                        <td>P/Cap. Giro</td>
-                        <td>18,32</td>
-                        <td>EBIT/Ativo</td>
-                        <td>36,8%</td>
-                    </tr>
-                    <tr>
-                        <td>2020</td>
-                        <td>70,47%</td>
-                        <td>P/Ativ Circ Liq</td>
-                        <td>-2,50</td>
-                        <td>ROIC</td>
-                        <td>42,5%</td>
-                    </tr>
-                    <tr>
-                        <td>2019</td>
-                        <td>6,85%</td>
-                        <td>Div. Yield</td>
-                        <td>17,7%</td>
-                        <td>ROE</td>
-                        <td>63,8%</td>
-                    </tr>
-                    <tr>
-                        <td>2018</td>
-                        <td>31,11%</td>
-                        <td>EV/EBITDA</td>
-                        <td>2,47</td>
-                        <td>Liquidez Corr</td>
-                        <td>1,33</td>
-                    </tr>
-                    <tr>
-                        <td>2017</td>
-                        <td>66,67%</td>
-                        <td>EV/EBIT</td>
-                        <td>2,71</td>
-                        <td>Div Br/Patrim</td>
-                        <td>0,37</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>Cres. Rec(5a)</td>
-                        <td>27,9%</td>
-                        <td>Giro Ativos</td>
-                        <td>0,64</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br />
-
-            <table class="balanco-patrimonial">
-                <tbody>
-                    <tr>
-                        <th>Dados Balanço Patrimonial</th>
-                    </tr>
-                    <tr>
-                        <td>Ativo</td>
-                        <td>441.316.000.000</td>
-                        <td>Dív. Bruta</td>
-                        <td>66.403.000.000</td>
-                    </tr>
-                    <tr>
-                        <td>Disponibilidades</td>
-                        <td>43.135.000.000</td>
-                        <td>Dív. Líquida</td>
-                        <td>23.268.000.000</td>
-                    </tr>
-                    <tr>
-                        <td>Ativo Circulante</td>
-                        <td>92.219.000.000</td>
-                        <td>Patrim. Líq</td>
-                        <td>178.314.000.000</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br />
-
-            <table class="demonstrativos-resultados">
-                <tbody>
-                    <tr>
-                        <th>Dados demonstrativos de resultados</th>
-                    </tr>
-                    <tr>
-                        <th>Últimos 12 meses</th>
-                        <th>Últimos 3 meses</th>
-                    </tr>
-                    <tr>
-                        <td>Receita Líquida</td>
-                        <td>280.942.000.000</td>
-                        <td>Receita Líquida</td>
-                        <td>56.719.000.000</td>
-                    </tr>
-                    <tr>
-                        <td>EBIT</td>
-                        <td>162.245.000.000</td>
-                        <td>EBIT</td>
-                        <td>31.916.000.000</td>
-                    </tr>
-                    <tr>
-                        <td>Lucro Líquido</td>
-                        <td>113.710.000.000</td>
-                        <td>Lucro Líquido</td>
-                        <td>23.046.000.000</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            
     </div>
     <br />
 
