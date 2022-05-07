@@ -4,137 +4,145 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!--CSS & Bootstrap stylesheet-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     <title>Protótipo 1 - Página Inicial</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            text-align: center;
-            padding: 8px;
-            border: 1px solid #dddddd;
-           
-        }
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
 </head>
 <body>
-    <!--Nav Bar-->
-    <div class="nav-bar">
-        <h2>Atlas Financeiro</h2>
-        <ul>
-            <li><a href="#recomendacoes">Recomendações</a></li>
-            <li><a href="#historico">Histórico</a></li>
-        </ul>
-        <ul>
-            <li><a href="#login">Login</a></li>
-            <li><a href="#signup">Sign Up</a></li>
-        </ul>
-    </div>
+    <!-- 
+        Coisas para serem feitas:
+        - aplicar o as outras funcionalidades bootstrap desse arquivo para o perfil.html & detalhamento.html
+        - tentar fazer um merge entre o index e o detalhamento ou criar uma pagina só para o detalhamento
+        - criar outro HTML paro index com perfil cadastrado
+        - colocar a cotação diaria dentro do detalhamento de cada ação
+        - colocar um histórico de busca na pagina inicial
+        - colocar a opção de watchlist em cada ação buscada
+        - colocar a opção de favoritar em cada ação para entrar na carteira
+        - melhorar a margem
+        - colocar palheta de cores
+    -->
+    
+    <section class="dark-section">
+        <div>
+            <!--Nav Bar-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-    <hr />
+                <a class="navbar-brand">Atlas Financeiro</a>
 
-    <!--Titulo-->
-    <h1>Bem-vindo ao Atlas Financeiro!</h1>
-    <h3>Seu sistema online de informações financeiras</h3>
-    <h1>Invista consciente</h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!--Pesquisa-->
-    <form>
-        <input type="text" placeholder="Procurar por ação/empresa/fii">
-        <input type="submit" value="Buscar">
-    </form>
-    <br />
-    <hr />
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
-    <!--Detalhamento-->
-    <div class="detalhamento">
-        <h2>Recomendações</h2>
-        <div class="tabela">
-            <table> 
-                <tr>
-                    <td>VALE ON</td>
-                    <td>VALE3</td>
-                </tr>
-                <tr>
-                    <td>Inga Agroflorestal PN</td>
-                    <td>INGA4L</td>
-                </tr>
-                <tr>
-                    <td>KLABIN ON</td>
-                    <td>KLBN3</td>
-                </tr>
-                <tr>
-                    <td>ITAUSA ON</td>
-                    <td>ITSA3</td>
-                </tr>
-                <tr>
-                    <td>MAGAZINE LUIZA ON</td>
-                    <td>MGLU3</td>
-                </tr>
-                <tr>
-                    <td>VALE ON</td>
-                    <td>VALE3</td>
-                </tr>
-                <tr>
-                    <td>Inga Agroflorestal PN</td>
-                    <td>INGA4L</td>
-                </tr>
-                <tr>
-                    <td>JSL ON</td>
-                    <td>JSLG3</td>
-                </tr>
-                <tr>
-                    <td>SINQIA ON</td>
-                    <td>SQIA3</td>
-                </tr>
-                <tr>
-                    <td>KLABIN ON</td>
-                    <td>KLBN3</td>
-                </tr>
-                <tr>
-                    <td>ITAUSA ON</td>
-                    <td>ITSA3</td>
-                </tr>
-                <tr>
-                    <td>MAGAZINE LUIZA ON</td>
-                    <td>MGLU3</td>
-                </tr>
-                <tr>
-                    <td>PETROBRAS ON</td>
-                    <td>PETR</td>
-                </tr>
-                <tr>
-                    <td>TOTVS ON</td>
-                    <td>TOTS3</td>
-                </tr>
-            </table>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#recomendacoes">Recomendações</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#historico">Histórico</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#footer">Contatos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#log-in">Log in</a>
+                        </li>
+                    </ul>
+  
+                </div>
+            </nav>
+        
+            <!--Titulo-->
+            <div class="title">
+                <h1>Bem-vindo ao Atlas Financeiro!</h1>
+            <h3>Seu sistema online de informações financeiras</h3>
+            <h1>Invista consciente</h1>
+
+            <!--Pesquisa OBS.: O 'witdh' do <input> no tamanho mobile deve aparecer todo o 'placeholder' -->
             
-    </div>
+                <div class="container-fluid">
+                  <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Procurar por ação/empresa/fii" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Buscar</button>
+                  </form>
+                </div>
+            </div>
+            
+              
+        </div>
+    </section>
+    
     <br />
 
-    <hr />
-    <!--Footer-->
-    <footer id="footer">
-        <ul>
-            <p>Entre em contato conosco:</p>
-            <li><a href="atlasfinanceiro@gmail.com">Email</a></li>
-            <li><a href="#facebook">Facebook</a></li>
-            <li><a href="#twitter">Twitter</a></li>
-            <li><a href="#instagram">Instagram</a></li>
-            <p>© 2022 Atlas Financeiro</p>
-        </ul>
-    </footer>
+    <section class="light-section">
+        <div>
+            <!--Detalhamento-->
+            <div id="recomendacoes">
+                <h3>Recomendações</h3>
+                <div class="tabela">
+                    <table> 
+                        <tr>
+                            <td>VALE ON</td>
+                            <td>VALE3</td>
+                        </tr>
+                        <tr>
+                            <td>Inga Agroflorestal PN</td>
+                            <td>INGA4L</td>
+                        </tr>
+                        <tr>
+                            <td>KLABIN ON</td>
+                            <td>KLBN3</td>
+                        </tr>
+                        <tr>
+                            <td>ITAUSA ON</td>
+                            <td>ITSA3</td>
+                        </tr>
+                        <tr>
+                            <td>MAGAZINE LUIZA ON</td>
+                            <td>MGLU3</td>
+                        </tr>
+                        <tr>
+                            <td>JSL ON</td>
+                            <td>JSLG3</td>
+                        </tr>
+                        <tr>
+                            <td>SINQIA ON</td>
+                            <td>SQIA3</td>
+                        </tr>
+                        <tr>
+                            <td>PETROBRAS ON</td>
+                            <td>PETR</td>
+                        </tr>
+                        <tr>
+                            <td>TOTVS ON</td>
+                            <td>TOTS3</td>
+                        </tr>
+                </table>
+            </div>
+
+            <!--Footer-->
+            <footer id="footer">
+                <i class="social-icon fab fa-facebook-f"></i>
+                <i class="social-icon fab fa-twitter"></i>
+                <i class="social-icon fab fa-instagram"></i>
+                <i class="social-icon fas fa-envelope"></i>
+                <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                <p>© Copyright 2022 Atlas Financeiro</p>
+            </footer>
+        </div>
+    </section>
+    
 </body>
 </html>
