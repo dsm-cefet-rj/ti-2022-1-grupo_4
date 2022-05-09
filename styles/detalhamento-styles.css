@@ -94,14 +94,21 @@ video {
 
 
 /* ---- Area de Pesquisa ---- */
+.search-container {
+    padding-bottom: 50px;
+}
 .container-fluid {
     max-width: 50%;
     position: relative;
     z-index: 10000;
 }
-
-
-
+.button-submit {
+    color: white;
+    text-decoration: none;
+}
+.button-submit:hover {
+    color: black;
+}
 
 .light-section {
     margin-bottom: 0px;
@@ -141,12 +148,16 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
-td, th {
+td {
     border: 1px solid #dddddd;
+    border-radius: 5px;
     text-align: left;
     padding: 8px;
 }
-  
+th {
+    text-align: center;
+    padding: 15px 0 25px 0;
+} 
 .accordion-button:focus,
 .accordion-button:active {
     outline: none;
@@ -167,14 +178,14 @@ td, th {
     text-align: center;
 }
 .ler-mais {
-    padding-top: 15px;
+    padding-top: 45px;
     position: relative;
     text-align: right;
 }
 .dropstart {
     padding: 0 0 0 97%;
     position: relative;
-    bottom: 35px;
+    top: 40px;
     text-align: right;
 }
 .btn-secondary,
@@ -193,6 +204,20 @@ td, th {
     border: none;
     outline: none;
     box-shadow: none;
+}
+
+
+.table-info {
+    text-align: center;
+    background-color: white;
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 70px;
+}
+.demonstrativos-resultados {
+    border-radius: 10px;
 }
 /* ---- Footer ---- */
 #footer p {
@@ -228,6 +253,3 @@ td, th {
       transform: rotate(0);
     }
   }
-
-
-  

@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+
+
+
+/* --- Article ---- */
+.dark-section {
+    background-color: #133B5C;
+    position: relative;
+}
+#title {
+    padding-bottom: 50px;
+}
+
+
+
+/* ---- NavBar ---- */
+#navbar {
+    color: #dddddd;
+    background-color: transparent;
+    margin-bottom: 150px;
+    position: relative;
+    z-index: 10000;
+}
+.navbar {
+    padding: 4px 15%;
+}
+
+.navbar-brand {
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #dddddd;
+    font-size: 2rem;
+}
+.navbar-brand:hover {
+    color: #919191;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(221, 221, 221, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+.nav-link {
+    color: #dddddd;
+}
+.nav-link:hover {
+    color: #919191;
+}
+
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0c263b;
+    mix-blend-mode: overlay;
+}
+
+/* ---- Titulo ---- */
+.title-container {
+    margin-bottom: 75px;
+}
+.title-container {
+    font-size: large;
+    color: #dddddd;
+    position: relative;
+    z-index: 10000;
+}
+
+
+
+/* ---- Area de Pesquisa ---- */
+.container-fluid {
+    max-width: 50%;
+    position: relative;
+    z-index: 10000;
+}
+.button-submit {
+    color: white;
+    text-decoration: none;
+}
+.button-submit:hover {
+    color: black;
+}
+
+.light-section {
+    margin-bottom: 0px;
+    position: relative;
+    background-color: #f9f9f9;
+    opacity: 1;
+    background-image: radial-gradient(#e8e8e8 1.05px, #f9f9f9 1.05px);
+    background-size: 21px 21px;
+    z-index: 10000;
+}
+
+
+
+
+/* ---- Tabela ---- */
+.table-title {
+    padding-top: 45px;
+    margin-bottom: 45px;
+    color: #0e0e0e;
+}
+#accordionExample {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 75px;
+    border-collapse: collapse;
+    width: 70%;
+}
+.table-header {
+    display: inline;
+    padding-right: 0;
+    margin-bottom: 25px;
+}
+.table-header h3{
+    font-size: medium;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+.accordion-button:focus,
+.accordion-button:active {
+    outline: none;
+    box-shadow: none;
+    background-color: white;
+}
+.accordion-button::after {
+    background-image: none;
+}
+.accordion-button:not(.collapsed) {
+    background-color: white;
+    border: none;
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: none;
+}
+.accordion-header {
+    text-align: center;
+}
+.ler-mais {
+    padding-top: 15px;
+    position: relative;
+    text-align: right;
+}
+.dropstart {
+    padding: 0 0 0 97%;
+    position: relative;
+    bottom: 35px;
+    text-align: right;
+}
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:hover,
+.btn-secondary:active {
+    color: #313131;
+    background-color: white;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.btn-check:focus+.btn-secondary, .btn-secondary:focus {
+    color: #313131;
+    background-color: white;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+/* ---- Footer ---- */
+#footer p {
+    margin-bottom: 0px;
+    padding-bottom: 25px;
+    color: #313131;
+}
+.social-icon {
+    margin: 20px 10px;
+    color: #313131;
+}
+.fa-facebook-f:hover {
+    color: rgb(37, 98, 167);
+} 
+.fa-twitter:hover {
+    color: rgb(53, 198, 255);
+}
+.fa-instagram:hover {
+    color: rgb(224, 81, 129);
+}
+.fa-envelope:hover {
+    color: rgb(255, 81, 81);
+}
+
+@media (max-width: 1028px) {
+  
+    #title {
+      text-align: center;
+    }
+  
+    .title-image {
+      position: static;
+      transform: rotate(0);
+    }
+  }
+
+
+  
