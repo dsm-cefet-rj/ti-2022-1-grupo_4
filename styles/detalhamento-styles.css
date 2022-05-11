@@ -136,6 +136,12 @@ video {
     border-collapse: collapse;
     width: 70%;
 }
+@media (max-width: 600px) { 
+    #accordionExample {
+        width: 100%;
+    } 
+}
+
 .table-header {
     display: inline;
     padding-right: 0;
@@ -187,6 +193,7 @@ th {
     position: relative;
     top: 40px;
     text-align: right;
+    right: 20px;
 }
 .btn-secondary,
 .btn-secondary:focus,
@@ -215,6 +222,22 @@ th {
     padding: 10px;
     border-radius: 15px;
     margin-bottom: 70px;
+}
+@media (max-width: 600px) { 
+    .table-info {
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 70px;
+    }
+    .dropstart {
+        padding: 0 0 0 97%;
+        position: relative;
+        top: 40px;
+        text-align: right;
+        right: 40px;
+    }
+    
 }
 .demonstrativos-resultados {
     border-radius: 10px;
