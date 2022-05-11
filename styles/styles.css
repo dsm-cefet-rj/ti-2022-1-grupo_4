@@ -133,6 +133,11 @@ video {
     border-collapse: collapse;
     width: 70%;
 }
+@media (max-width: 600px) { 
+    #accordionExample {
+        width: 100%;
+    } 
+}
 .table-header {
     display: inline;
     padding-right: 0;

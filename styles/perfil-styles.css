@@ -140,27 +140,65 @@ body {
     color: #919191;
 }
 
-.sobre-container {
-    width: 100%;
+
+
+
+.perfil-descricao {
     position: relative;
-    text-align: center;
+    width: 50%;
     left: 380px;
     bottom: 120px;
-}
-.perfil-descricao {
-    width: 50%;
     text-align: justify;
     color: #0e0e0e;
-    margin: 0%;
 }
+@media (max-width: 600px) { 
+    .dark-section {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        padding: 0 0 1px 0;
+        margin-bottom: 0px;
+    }
 
-.title-container {
-    margin-bottom: 75px;
-}
-.title-container {
-    font-size: large;
-    color: #dddddd;
-    position: relative;
+    .perfil {
+        width: 0 80% 120px 80%;
+        height: 490px;
+        padding: 10px 10px 0px 10px;
+        background-color: white;
+        margin-bottom: 45px;
+        border-radius: 15px;
+    }
+    .perfil-image-container {
+        position: relative;
+        top: 25px;
+        left: 40px;
+        box-shadow: none;
+        width: fit-content;
+    }
+    .perfil-image {
+        box-shadow: none;
+    }
+    .perfil-name {
+        position: relative;
+        left: 135px;
+        width: fit-content;
+    }
+    .perfil-info {
+        position: relative;
+        left: 100px;
+        width: fit-content;
+    }
+    .descricao-title {
+        position: relative;
+        left: 145px;
+        width: fit-content;
+    }
+    .perfil-descricao {
+        position: relative;
+        top: 20px;
+        left: 5px;
+        width: 95%;
+    }
     
 }
 
@@ -210,6 +248,12 @@ body {
     border-collapse: collapse;
     width: 70%;
 }
+@media (max-width: 600px) { 
+    #accordionExample {
+        width: 100%;
+    } 
+}
+
 .table-header {
     display: inline;
     padding-right: 0;
@@ -240,6 +284,7 @@ td, th {
 .accordion-button:not(.collapsed) {
     background-color: white;
     border: none;
+    text-align: center;
 }
 .accordion-button:not(.collapsed)::after {
     background-image: none;
