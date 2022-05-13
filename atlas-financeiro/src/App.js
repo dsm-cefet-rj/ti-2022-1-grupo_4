@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import TabelaCotacoes from './cotacoes/Cotacoes';
-
+import TabelaIndicadores from './cotacoes/Indicadores';
 
 const cotacoes = [
   {data: '11/05/2022', valor: 78.6},
@@ -17,10 +17,19 @@ const cotacoes = [
   {data: '01/05/2022', valor: 82.28},
 ]
 
+const indicadores = {
+  ticker: 'PETR4'
+}
+
 function App(props) {
   return (
     <>
       <TabelaCotacoes cotacoes={cotacoes} />
+    <div>
+    </div>
+    <div>
+      <TabelaIndicadores indicadores={indicadores} />
+    </div>
     </>
   );
 }
