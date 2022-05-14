@@ -1,7 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
-import TabelaCotacoes from './componentes/Cotacoes';
-import TabelaIndicadores from './componentes/Indicadores';
+import React from 'react';
+import TabelaCotacoes from './Cotacoes.jsx';
+import TabelaIndicadores from './Indicadores.jsx';
 
 const cotacoes = [
   {data: '11/05/2022', valor: 78.6},
