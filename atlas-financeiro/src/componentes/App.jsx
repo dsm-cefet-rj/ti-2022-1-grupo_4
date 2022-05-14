@@ -17,7 +17,63 @@ const cotacoes = [
 ]
 
 const indicadores = {
-  ticker: 'PETR4'
+  empresa: 'Vale',
+  ticker: 'PETR4',
+  tipo: 'ON',
+  max_52: 102.32,
+  min_52: 47.85,
+  setor: 'Mineração',
+  subsetor: 'Minerais Metálicos',
+  vol_medio_2m: 2968530000,
+  valor_mercado: 416370000000,
+  valor_firma: 439638000000,
+  ult_balanco_proc: '31/03/22',
+  numero_acoes: 4999040000,
+  oscilacao_dia: -1.08,
+  oscilacao_mes: -12.88,
+  oscilacao_30_dias: -11.88,
+  oscilacao_12_meses: -13.03,
+  oscilacao_2022: 10.95,
+  oscilacao_2021: 4.73,
+  oscilacao_2020: 70.47,
+  oscilacao_2019: 6.85,
+  oscilacao_2018: 31.11,
+  oscilacao_2017: 66.67,
+  pl: 3.66,
+  lpa: 22.75,
+  p_vp: 2.34,
+  vpa: 35.67,
+  p_ebit: 2.57,
+  margem_bruta: 58.7,
+  psr: 1.48,
+  margem_ebit: 57.8,
+  p_ativos: 0.94,
+  margem_liquida: 40.7,
+  p_cap_giro: 18.32,
+  ebit_ativo: 36.8,
+  p_ativo_circ_liq: -2.50,
+  roic: 42.5,
+  dividend_yield: 17.7,
+  roe: 63.8,
+  ev_ebitda: 2.47,
+  liquidez_corrente: 1.33,
+  ev_ebit: 2.71,
+  divbr_patrimonio: 0.37,
+  cresc_receita_5_anos: 27.9,
+  giro_ativos: 0.64,
+  ativo: 441316000000,
+  divida_bruta: 66403000000,
+  disponibilidades: 43135000000,
+  divida_liquida: 23268000000,
+  ativo_circulante: 92219000000,
+  patrimonio_liquido: 178314000000,
+  receita_liquida_3_meses: 56719000000,
+  receita_liquida_12_meses: 280942000000,
+  ebit_3_meses: 31916000000,
+  ebit_12_meses: 162245000000,
+  lucro_liquido_3_meses: 23046000000,
+  lucro_liquido_12_meses: 113710000000,
+  
 }
 
 function App(props) {
@@ -27,7 +83,7 @@ function App(props) {
     <div>
     </div>
     <div>
-      <TabelaIndicadores indicadores={indicadores} />
+      <TabelaIndicadores cotacoes={cotacoes} indicadores={indicadores} />
     </div>
     </>
   );
