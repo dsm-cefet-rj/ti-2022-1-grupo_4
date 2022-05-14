@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Indicadores.css';
+import './styles/Indicadores.css';
 
 const TabelaIndicadores = (props) => {
     return(
@@ -24,7 +24,7 @@ const TabelaIndicadores = (props) => {
                                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                   <li><a className="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
                                   <li><a className="dropdown-item" href="perfil.html">Adicionar à Carteira</a></li>
-                                  <li><a className="dropdown-item" href="#">Watchlist</a></li>
+                                  <li><a className="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
                                 </ul>
                                 </th>
                             </tr>
@@ -256,7 +256,7 @@ const TabelaIndicadores = (props) => {
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                       <li><a className="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
                                       <li><a className="dropdown-item" href="perfil.html">Adicionar à Carteira</a></li>
-                                      <li><a className="dropdown-item" href="#">Watchlist</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -314,9 +314,9 @@ const TabelaIndicadores = (props) => {
                                     <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
 
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                      <li><a className="dropdown-item" href="#">Cotação Diária</a></li>
-                                      <li><a className="dropdown-item" href="#">Adicionar à Carteira</a></li>
-                                      <li><a className="dropdown-item" href="#">Watchlist</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
+                                      <li><a className="dropdown-item" href="perfil.html">Adicionar à Carteira</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -374,9 +374,9 @@ const TabelaIndicadores = (props) => {
                                     <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
 
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                      <li><a className="dropdown-item" href="#">Cotação Diária</a></li>
-                                      <li><a className="dropdown-item" href="#">Adicionar à Carteira</a></li>
-                                      <li><a className="dropdown-item" href="#">Watchlist</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
+                                      <li><a className="dropdown-item" href="perfil.html">Adicionar à Carteira</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -434,9 +434,9 @@ const TabelaIndicadores = (props) => {
                                     <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
 
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                      <li><a className="dropdown-item" href="#">Cotação Diária</a></li>
-                                      <li><a className="dropdown-item" href="#">Adicionar à Carteira</a></li>
-                                      <li><a className="dropdown-item" href="#">Watchlist</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
+                                      <li><a className="dropdown-item" href="perfil.html">Adicionar à Carteira</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -494,9 +494,9 @@ const TabelaIndicadores = (props) => {
                                     <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
 
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                      <li><a className="dropdown-item" href="#">Cotação Diária</a></li>
-                                      <li><a className="dropdown-item" href="#">Adicionar à Carteira</a></li>
-                                      <li><a className="dropdown-item" href="#">Watchlist</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
+                                      <li><a className="dropdown-item" href="perfil.html">Adicionar à Carteira</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -554,9 +554,9 @@ const TabelaIndicadores = (props) => {
                                     <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
 
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                      <li><a className="dropdown-item" href="#">Cotação Diária</a></li>
-                                      <li><a className="dropdown-item" href="#">Adicionar à Carteira</a></li>
-                                      <li><a className="dropdown-item" href="#">Watchlist</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
+                                      <li><a className="dropdown-item" href="perfil.html">Adicionar à Carteira</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -614,9 +614,9 @@ const TabelaIndicadores = (props) => {
                                     <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
 
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                      <li><a className="dropdown-item" href="#">Cotação Diária</a></li>
-                                      <li><a className="dropdown-item" href="#">Adicionar à Carteira</a></li>
-                                      <li><a className="dropdown-item" href="#">Watchlist</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
+                                      <li><a className="dropdown-item" href="perfil.html">Adicionar à Carteira</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -674,9 +674,9 @@ const TabelaIndicadores = (props) => {
                                     <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
 
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                      <li><a className="dropdown-item" href="#">Cotação Diária</a></li>
-                                      <li><a className="dropdown-item" href="#">Adicionar à Carteira</a></li>
-                                      <li><a className="dropdown-item" href="#">Watchlist</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
+                                      <li><a className="dropdown-item" href="perfil">Adicionar à Carteira</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -734,9 +734,9 @@ const TabelaIndicadores = (props) => {
                                     <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
 
                                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                      <li><a className="dropdown-item" href="#">Cotação Diária</a></li>
-                                      <li><a className="dropdown-item" href="#">Adicionar à Carteira</a></li>
-                                      <li><a className="dropdown-item" href="#">Watchlist</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
+                                      <li><a className="dropdown-item" href="perfil.html">Adicionar à Carteira</a></li>
+                                      <li><a className="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Cotacoes.css';
+import './styles/Cotacoes.css';
 
 const LinhaTabela = (props) => {
     return(
@@ -29,7 +29,7 @@ const LinhaTabela = (props) => {
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <li><a class="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
                             <li><a class="dropdown-item" href="perfil.html">Adicionar à Carteira</a></li>
-                            <li><a class="dropdown-item" href="#">Watchlist</a></li>
+                            <li><a class="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
                             </ul>
                         </div>
                     </div>
