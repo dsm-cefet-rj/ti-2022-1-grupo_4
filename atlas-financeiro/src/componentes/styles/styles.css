@@ -212,40 +212,146 @@ td, th {
     outline: none;
     box-shadow: none;
 }
+
+
+
+
 /* ---- Footer ---- */
-#footer p {
+#footer {
+    width: 100%;
+    margin: auto;
     margin-bottom: 0px;
-    padding-bottom: 25px;
-    color: #313131;
+    padding-bottom: 5px;
+    padding-top: 60px;
+    color: #dddddd;
+    background-color: #133B5C;
 }
+.footer-container {
+    display: inline-flex;
+    width: 70%;
+    transition: ease all .5s;
+}
+.footer-title {
+    font-size: 18px;
+    color: #dddddd;
+    margin-bottom: 15px;
+    transition: ease all .5s;
+}
+.sobre-container {
+    width: 100%;
+    margin: 0 20px;
+    text-align: justify;
+    color: #dddddd;
+    transition: ease all .5s;
+}
+a {
+    color: #b5b5b5;
+}
+a:hover {
+    color: #606060;
+}
+
+.duvidas-container {
+    width: 33.3%;
+    margin: 0 100px;
+    text-align: left;
+    color: #dddddd;
+    transition: ease all .5s;
+}
+.duvidas-list {
+    padding-left: 0;
+    color: #dddddd;
+    transition: ease all .5s;
+}
+.footer-numero {
+    position: absolute;
+}
+
+.socialmedia-container {
+    width: 53.3%;
+    margin: 0 20px;
+    text-align: justify;
+    color: #dddddd;
+    transition: ease all .5s;
+}
+.socialmedia-list {
+    padding-left: 0;
+    color: #dddddd;
+    transition: ease all .5s;
+}
+
 .social-icon {
-    margin: 20px 10px;
-    color: #313131;
+    color: #dddddd;
 }
-.fa-facebook-f:hover {
+.fa-facebook-f:hover,
+.facebook-icon:hover {
     color: rgb(37, 98, 167);
-} 
-.fa-twitter:hover {
+}
+.svg-inline--fa.fa-w-9 {
+    width: 0.5625em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+.fa-twitter:hover,
+.twitter-icon:hover {
     color: rgb(53, 198, 255);
 }
-.fa-instagram:hover {
+.svg-inline--fa.fa-w-16 {
+    width: 1em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+.fa-instagram:hover,
+.instagram-icon:hover {
     color: rgb(224, 81, 129);
 }
-.fa-envelope:hover {
-    color: rgb(255, 81, 81);
+.svg-inline--fa.fa-w-14 {
+    width: 0.875em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 12px;
+    margin-bottom: 0;
 }
 
-@media (max-width: 1028px) {
-  
-    #title {
-      text-align: center;
-    }
-  
-    .title-image {
-      position: static;
-      transform: rotate(0);
-    }
-  }
+.svg-inline--fa {
+    vertical-align: none;
+}
+li {
+    list-style-type: none;  
+}
 
+.copyright {
+    color: #dddddd;
+    margin-bottom: 0px;
+    padding-top: 15px;
+    padding-bottom: 1px;
+}
+.footer-terms {
+    color: #a2a2a2;
+}
+@media (max-width: 1187px) {
+    .footer-container {
+        width: 100%;
+    }
+}
+@media (max-width: 730px) {
+    .duvidas-container {
+        width: 33.3%;
+        margin: 0 20px;
+        margin-left: 0px;
+    }
+    .sobre-container {
+        width: 97%;
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    .socialmedia-container {
+        margin-right: 5px;
+    }
+}
 
   
