@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/Cotacoes.css';
 
 const cotacoes = [
     {data: '11/05/2022', valor: 78.6},
