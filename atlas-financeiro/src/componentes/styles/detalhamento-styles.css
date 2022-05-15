@@ -101,6 +101,7 @@ video {
     max-width: 50%;
     position: relative;
     z-index: 10000;
+    transition: ease all .5s;
 }
 .button-submit {
     color: white;
@@ -108,6 +109,11 @@ video {
 }
 .button-submit:hover {
     color: black;
+}
+@media (max-width: 830px) { 
+    .container-fluid {
+        max-width: 90%;
+    } 
 }
 
 .light-section {
@@ -135,8 +141,9 @@ video {
     margin-bottom: 75px;
     border-collapse: collapse;
     width: 70%;
+    transition: ease all .5s;
 }
-@media (max-width: 600px) { 
+@media (max-width: 730px) { 
     #accordionExample {
         width: 100%;
     } 
@@ -194,6 +201,7 @@ th {
     top: 40px;
     text-align: right;
     right: 20px;
+    transition: ease all .5s;
 }
 .btn-secondary,
 .btn-secondary:focus,
@@ -222,8 +230,9 @@ th {
     padding: 10px;
     border-radius: 15px;
     margin-bottom: 70px;
+    transition: ease all .5s;
 }
-@media (max-width: 600px) { 
+@media (max-width: 730px) { 
     .table-info {
         width: 100%;
         padding: 0px;
