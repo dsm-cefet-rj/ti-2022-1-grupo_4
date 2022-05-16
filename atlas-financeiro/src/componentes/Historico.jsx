@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Historico() {
+
+function Historico(props) {
     return (
         <div id="historico-container">
             <div class="historico">
@@ -40,36 +41,36 @@ function Historico() {
                         </div>
                         <table class="info-geral"> 
                             
-                            <tr>
-                                <td><strong>Papel:</strong></td>
-                                <td>VALE3</td>
-                                <td><strong>Cotação:</strong></td>
-                                <td>83,29</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tipo:</strong></td>
-                                <td>ON NM</td>
-                                <td><strong>Data útil cot:</strong></td>
-                                <td>29/04/2022</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Empresa:</strong></td>
-                                <td>VALE ON NM</td>
-                                <td><strong>Min 52 sem:</strong></td>
-                                <td>60,02</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Setor:</strong></td>
-                                <td>Mineração</td>
-                                <td><strong>Max 52 sem:</strong></td>
-                                <td>102,32</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Subsetor:</strong></td>
-                                <td>Minerais Metálicos</td>
-                                <td><strong>$ méd(2m):</strong></td>
-                                <td>2.968.530.000</td>
-                            </tr>
+                        <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{props.recomendacoes.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{props.cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{props.recomendacoes.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{props.cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{props.recomendacoes.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{props.recomendacoes.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{props.recomendacoes.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{props.recomendacoes.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{props.recomendacoes.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(props.recomendacoes.vol_medio_2m)}</td>
+                        </tr>
                         </table>
                         <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                         
@@ -100,36 +101,36 @@ function Historico() {
                         </div>
                         <table class="info-geral"> 
                             
-                            <tr>
-                                <td><strong>Papel:</strong></td>
-                                <td>VALE3</td>
-                                <td><strong>Cotação:</strong></td>
-                                <td>83,29</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tipo:</strong></td>
-                                <td>ON NM</td>
-                                <td><strong>Data útil cot:</strong></td>
-                                <td>29/04/2022</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Empresa:</strong></td>
-                                <td>VALE ON NM</td>
-                                <td><strong>Min 52 sem:</strong></td>
-                                <td>60,02</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Setor:</strong></td>
-                                <td>Mineração</td>
-                                <td><strong>Max 52 sem:</strong></td>
-                                <td>102,32</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Subsetor:</strong></td>
-                                <td>Minerais Metálicos</td>
-                                <td><strong>$ méd(2m):</strong></td>
-                                <td>2.968.530.000</td>
-                            </tr>
+                        <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{props.recomendacoes.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{props.cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{props.recomendacoes.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{props.cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{props.recomendacoes.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{props.recomendacoes.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{props.recomendacoes.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{props.recomendacoes.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{props.recomendacoes.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(props.recomendacoes.vol_medio_2m)}</td>
+                        </tr>
                         </table>
                         <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                         
@@ -160,36 +161,36 @@ function Historico() {
                         </div>
                         <table class="info-geral"> 
                             
-                            <tr>
-                                <td><strong>Papel:</strong></td>
-                                <td>VALE3</td>
-                                <td><strong>Cotação:</strong></td>
-                                <td>83,29</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tipo:</strong></td>
-                                <td>ON NM</td>
-                                <td><strong>Data útil cot:</strong></td>
-                                <td>29/04/2022</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Empresa:</strong></td>
-                                <td>VALE ON NM</td>
-                                <td><strong>Min 52 sem:</strong></td>
-                                <td>60,02</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Setor:</strong></td>
-                                <td>Mineração</td>
-                                <td><strong>Max 52 sem:</strong></td>
-                                <td>102,32</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Subsetor:</strong></td>
-                                <td>Minerais Metálicos</td>
-                                <td><strong>$ méd(2m):</strong></td>
-                                <td>2.968.530.000</td>
-                            </tr>
+                        <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{props.recomendacoes.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{props.cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{props.recomendacoes.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{props.cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{props.recomendacoes.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{props.recomendacoes.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{props.recomendacoes.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{props.recomendacoes.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{props.recomendacoes.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(props.recomendacoes.vol_medio_2m)}</td>
+                        </tr>
                         </table>
                         <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                         
@@ -220,36 +221,36 @@ function Historico() {
                         </div>
                         <table class="info-geral"> 
                             
-                            <tr>
-                                <td><strong>Papel:</strong></td>
-                                <td>VALE3</td>
-                                <td><strong>Cotação:</strong></td>
-                                <td>83,29</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tipo:</strong></td>
-                                <td>ON NM</td>
-                                <td><strong>Data útil cot:</strong></td>
-                                <td>29/04/2022</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Empresa:</strong></td>
-                                <td>VALE ON NM</td>
-                                <td><strong>Min 52 sem:</strong></td>
-                                <td>60,02</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Setor:</strong></td>
-                                <td>Mineração</td>
-                                <td><strong>Max 52 sem:</strong></td>
-                                <td>102,32</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Subsetor:</strong></td>
-                                <td>Minerais Metálicos</td>
-                                <td><strong>$ méd(2m):</strong></td>
-                                <td>2.968.530.000</td>
-                            </tr>
+                        <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{props.recomendacoes.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{props.cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{props.recomendacoes.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{props.cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{props.recomendacoes.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{props.recomendacoes.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{props.recomendacoes.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{props.recomendacoes.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{props.recomendacoes.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(props.recomendacoes.vol_medio_2m)}</td>
+                        </tr>
                         </table>
                         <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                         
@@ -280,36 +281,36 @@ function Historico() {
                         </div>
                         <table class="info-geral"> 
                             
-                            <tr>
-                                <td><strong>Papel:</strong></td>
-                                <td>VALE3</td>
-                                <td><strong>Cotação:</strong></td>
-                                <td>83,29</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tipo:</strong></td>
-                                <td>ON NM</td>
-                                <td><strong>Data útil cot:</strong></td>
-                                <td>29/04/2022</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Empresa:</strong></td>
-                                <td>VALE ON NM</td>
-                                <td><strong>Min 52 sem:</strong></td>
-                                <td>60,02</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Setor:</strong></td>
-                                <td>Mineração</td>
-                                <td><strong>Max 52 sem:</strong></td>
-                                <td>102,32</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Subsetor:</strong></td>
-                                <td>Minerais Metálicos</td>
-                                <td><strong>$ méd(2m):</strong></td>
-                                <td>2.968.530.000</td>
-                            </tr>
+                        <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{props.recomendacoes.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{props.cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{props.recomendacoes.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{props.cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{props.recomendacoes.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{props.recomendacoes.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{props.recomendacoes.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{props.recomendacoes.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{props.recomendacoes.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(props.recomendacoes.vol_medio_2m)}</td>
+                        </tr>
                         </table>
                         <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                         
@@ -340,36 +341,36 @@ function Historico() {
                         </div>
                         <table class="info-geral"> 
                             
-                            <tr>
-                                <td><strong>Papel:</strong></td>
-                                <td>VALE3</td>
-                                <td><strong>Cotação:</strong></td>
-                                <td>83,29</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tipo:</strong></td>
-                                <td>ON NM</td>
-                                <td><strong>Data útil cot:</strong></td>
-                                <td>29/04/2022</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Empresa:</strong></td>
-                                <td>VALE ON NM</td>
-                                <td><strong>Min 52 sem:</strong></td>
-                                <td>60,02</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Setor:</strong></td>
-                                <td>Mineração</td>
-                                <td><strong>Max 52 sem:</strong></td>
-                                <td>102,32</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Subsetor:</strong></td>
-                                <td>Minerais Metálicos</td>
-                                <td><strong>$ méd(2m):</strong></td>
-                                <td>2.968.530.000</td>
-                            </tr>
+                        <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{props.recomendacoes.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{props.cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{props.recomendacoes.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{props.cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{props.recomendacoes.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{props.recomendacoes.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{props.recomendacoes.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{props.recomendacoes.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{props.recomendacoes.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(props.recomendacoes.vol_medio_2m)}</td>
+                        </tr>
                         </table>
                         <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                         
@@ -400,36 +401,36 @@ function Historico() {
                         </div>
                         <table class="info-geral"> 
                             
-                            <tr>
-                                <td><strong>Papel:</strong></td>
-                                <td>VALE3</td>
-                                <td><strong>Cotação:</strong></td>
-                                <td>83,29</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tipo:</strong></td>
-                                <td>ON NM</td>
-                                <td><strong>Data útil cot:</strong></td>
-                                <td>29/04/2022</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Empresa:</strong></td>
-                                <td>VALE ON NM</td>
-                                <td><strong>Min 52 sem:</strong></td>
-                                <td>60,02</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Setor:</strong></td>
-                                <td>Mineração</td>
-                                <td><strong>Max 52 sem:</strong></td>
-                                <td>102,32</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Subsetor:</strong></td>
-                                <td>Minerais Metálicos</td>
-                                <td><strong>$ méd(2m):</strong></td>
-                                <td>2.968.530.000</td>
-                            </tr>
+                        <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{props.recomendacoes.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{props.cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{props.recomendacoes.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{props.cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{props.recomendacoes.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{props.recomendacoes.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{props.recomendacoes.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{props.recomendacoes.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{props.recomendacoes.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(props.recomendacoes.vol_medio_2m)}</td>
+                        </tr>
                         </table>
                         <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                         

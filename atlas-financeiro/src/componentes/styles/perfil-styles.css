@@ -246,8 +246,49 @@ body {
     padding-top: 35px;
 }
 
-
-
+/* --- Watchlist --- */
+.watchlist-form {
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 45px;
+    width: 70%;
+    background-color: white;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    transition: ease all .5s;
+}
+.watchlist-form-title-ticker {
+    padding: 20px 20px 5px 20px;
+}
+.watchlist-form-title-value {
+    padding: 0  20px 5px 20px;
+}
+#exampleInputEmail1 {
+    margin: auto;
+    width: 50%;
+}
+.submit-button {
+    position: relative;
+    margin-right: 60px;
+    margin-bottom: 20px;
+    background-color: #133B5C;
+    border: none;
+}
+.cancel-button {
+    position: relative;
+    margin-left: 60px;
+    margin-bottom: 20px;
+    background-color: #5c1313;
+    border: none;
+}
+.cancel-button:hover {
+    background-color: #ab0f0f;
+}
+@media (max-width: 730px) {
+    .watchlist-form {
+        width: 100%;
+    }
+}
 
 /* ---- Tabela ---- */
 .table-title {

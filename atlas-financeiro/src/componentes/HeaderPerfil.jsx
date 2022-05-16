@@ -2,6 +2,16 @@ import React from 'react';
 import ImagemPerfil from './media/businessman.jpg';
 import ImagemThumb from './media/chicago.jpg';
 
+const perfil = {
+    nome: 'John Galt',
+    status: 'Executivo de Marketing',
+    localidade: {
+        estado: 'Rio de Janeiro',
+        pais: 'Brasil'
+    },
+    descricao: 'Consultor de Marketing para grandes empresas dos segmentos de Mídia & Serviços, oferecendo também palestras, treinamentos sobre marketing e estratégia de negócios. Investidor a mais de 8 anos.'
+}
+
 function HeaderPerfil() {
     return (
         <section class="dark-section">
@@ -51,17 +61,17 @@ function HeaderPerfil() {
                 </div>
     
                 <div class="perfil-name">
-                    <h2><strong>John Galt</strong></h2>
+                    <h2><strong>{perfil.nome}</strong></h2>
                 </div>
             
                 <div class="perfil-info">
-                    <p class="perfil-status"><strong>Executivo de Marketing</strong></p>
-                    <p class="perfil-location">Rio de Janeiro,&nbsp;&nbsp;&nbsp;&nbsp; Brazil</p>
+                    <p class="perfil-status"><strong>{perfil.status}</strong></p>
+                    <p class="perfil-location">{perfil.localidade.estado},&nbsp;&nbsp;&nbsp;&nbsp; {perfil.localidade.pais}</p>
                 </div>
             
                 <div class="perfil-descricao">
                     <h3 class="descricao-title"><strong>Sobre</strong></h3>
-                    <p>Consultor de Marketing para grandes empresas dos segmentos de Mídia & Serviços, oferecendo também palestras, treinamentos sobre marketing e estratégia de negócios. Investidor a mais de 8 anos.</p>
+                    <p>{perfil.descricao}</p>
                 </div>
             
           
