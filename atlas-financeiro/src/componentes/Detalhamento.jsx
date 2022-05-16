@@ -14,7 +14,7 @@ function Detalhamento() {
             <section class="light-section">
                 <Cotacoes />
                 <Indicadores cotacoes={cotacoes}/>
-                <Recomendacoes />
+                <Recomendacoes cotacoes={cotacoes}/>
                 <Footer />
             </section>
         </>
