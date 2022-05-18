@@ -33,6 +33,9 @@ function HeaderPerfil() {
                                 <a class="nav-link" href="/perfil">Perfil</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="Ativos">Lista de Ativos</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#recomendacoes">Recomendações</a>
                             </li>
                             <li class="nav-item">
