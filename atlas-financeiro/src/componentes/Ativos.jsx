@@ -16,6 +16,8 @@ function Ativos() {
         </>
         
     );
+
 }
+
 
 export default Ativos;
