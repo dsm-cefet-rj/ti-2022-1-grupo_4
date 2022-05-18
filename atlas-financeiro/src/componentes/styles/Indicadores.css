@@ -28,8 +28,9 @@ body {
     z-index: 10000;
 }
 .navbar {
-    padding: 4px 15%;
+    padding: 10px 15%;
 }
+
 
 .navbar-brand {
     font-family: 'PT Sans Narrow', sans-serif;
@@ -133,7 +134,7 @@ video {
 /* ---- Tabela ---- */
 .table-title {
     padding-top: 45px;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
     color: #0e0e0e;
 }
 #accordionExample {

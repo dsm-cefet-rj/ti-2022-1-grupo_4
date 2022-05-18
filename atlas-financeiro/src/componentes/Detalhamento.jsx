@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import { cotacoes } from './Cotacoes';
+import { indicadores } from './Indicadores';
 import Cotacoes from './Cotacoes';
 import Indicadores from './Indicadores';
 import Recomendacoes from './Recomendacoes';
@@ -12,7 +13,7 @@ function Detalhamento() {
         <>
             <Header />
             <section class="light-section">
-                <Cotacoes />
+                <Cotacoes indicadores={indicadores}/>
                 <Indicadores cotacoes={cotacoes}/>
                 <Recomendacoes cotacoes={cotacoes}/>
                 <Footer />

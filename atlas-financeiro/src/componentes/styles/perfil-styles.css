@@ -59,7 +59,7 @@ body {
     
 }
 .navbar {
-    padding: 4px 4.5%;
+    padding: 4px 1.5%;
 }
 
 .navbar-brand {
@@ -82,7 +82,7 @@ body {
 }
 
 .nav-item {
-    padding: 0 18px;
+    padding: 0 12px;
 }
 .nav-link {
     color: #dddddd;

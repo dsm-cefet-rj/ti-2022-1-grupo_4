@@ -1,5 +1,4 @@
 import React from 'react';
-import Watchlist from './Watchlist';
 import './styles/styles.css';
 
 const recomendacoes = {
@@ -39,7 +38,7 @@ function Recomendacoes(props) {
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                       <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                       <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                      <li><a class="dropdown-item" href="/perfil">Watchlist</a></li>
+                                      <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -99,7 +98,7 @@ function Recomendacoes(props) {
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                       <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                       <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                      <li><a class="dropdown-item" href="/perfil">Watchlist</a></li>
+                                      <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -159,7 +158,7 @@ function Recomendacoes(props) {
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                       <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                       <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                      <li><a class="dropdown-item" href="/perfil">Watchlist</a></li>
+                                      <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -219,7 +218,7 @@ function Recomendacoes(props) {
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                       <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                       <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                      <li><a class="dropdown-item" href="/perfil">Watchlist</a></li>
+                                      <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -279,7 +278,7 @@ function Recomendacoes(props) {
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                       <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                       <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                      <li><a class="dropdown-item" href="/perfil">Watchlist</a></li>
+                                      <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -339,7 +338,7 @@ function Recomendacoes(props) {
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                       <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                       <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                      <li><a class="dropdown-item" href="/perfil">Watchlist</a></li>
+                                      <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -399,7 +398,7 @@ function Recomendacoes(props) {
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                       <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                       <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                      <li><a class="dropdown-item" href="/perfil">Watchlist</a></li>
+                                      <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -459,7 +458,7 @@ function Recomendacoes(props) {
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                       <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                       <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                      <li><a class="dropdown-item" href="/perfil">Watchlist</a></li>
+                                      <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -519,7 +518,7 @@ function Recomendacoes(props) {
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                       <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                       <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                      <li><a class="dropdown-item" href="/perfil">Watchlist</a></li>
+                                      <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                     </ul>
                                 </div>
                             </div>

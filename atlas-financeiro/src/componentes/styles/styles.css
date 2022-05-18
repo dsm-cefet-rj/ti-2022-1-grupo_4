@@ -27,7 +27,10 @@ body {
     z-index: 10000;
 }
 .navbar {
-    padding: 4px 15%;
+    padding: none;
+}
+.navbar {
+    padding: 10px 15%;
 }
 
 .navbar-brand {
@@ -129,7 +132,7 @@ video {
 /* ---- Tabela ---- */
 .table-title {
     padding-top: 45px;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
     color: #0e0e0e;
 }
 #accordionExample {
@@ -161,6 +164,9 @@ td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+}
+.table-info th {
+    text-align: center;
 }
   
 .accordion-button:focus,
@@ -213,6 +219,43 @@ td, th {
     box-shadow: none;
 }
 
+.table-cotacao-container {
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+#cotacoes td {
+    width: 50%;
+}
+
+
+
+
+/* --- Lista de Ativos --- */
+.lista-ativos-container {
+    margin-bottom: 100px;
+}
+.lista-bens-industriais,
+.lista-consumo-ciclico,
+.lista-consumo-nao-ciclico,
+.lista-financeiro,
+.lista-materiais-basicos,
+.lista-outros,
+.lista-petroleo-gas-biocombustiveis,
+.lista-saude,
+.lista-tecnologia-informacao,
+.lista-telecomunicações,
+.lista-utilidade-publica {
+    background-color: white;
+    margin: auto;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 70%;
+    border-radius: 5px;
+}
 
 
 
