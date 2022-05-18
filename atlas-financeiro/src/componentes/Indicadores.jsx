@@ -70,26 +70,23 @@ const TabelaIndicadores = (props) => {
             <div id="detalhamento">
                 <div className="table-title">
                     <h3>Detalhamento do Ativo</h3>
-                    <h2><strong>{indicadores.ticker}</strong></h2>
                 </div>
 
                 <div className="table-info">
+                    <div className="btn-group dropstart">
+                        <button type="button" className="btn btn-secondary dropdown-toggle dropdown-indicadores" data-bs-toggle="dropdown" aria-expanded="false"></button>
+
+                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a className="dropdown-item" href="#cotacao-diaria-container">Cotação Diária</a></li>
+                            <li><a className="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
+                            <li><a className="dropdown-item" href="/perfil">Watchlist</a></li>
+                        </ul>
+                    </div>
+
                     <table className="info-geral"> 
-                        <thead>
-                            <tr>
-                                <th colSpan="4">Informações Gerais</th>
-                                <th className="btn-group dropstart">
-                                    <button type="button" className="btn btn-secondary dropdown-toggle dropdown-indicadores" data-bs-toggle="dropdown" aria-expanded="false"></button>
-
-                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                  <li><a className="dropdown-item" href="cotacao-diaria.html">Cotação Diária</a></li>
-                                  <li><a className="dropdown-item" href="perfil.html">Adicionar à Carteira</a></li>
-                                  <li><a className="dropdown-item" href="cotacao-diaria.html">Watchlist</a></li>
-                                </ul>
-                                </th>
-                            </tr>
-                        </thead>
-
+                        <tr>
+                            <th colSpan="4">Informações Gerais</th>
+                        </tr>
                         <tr>
                             <td><strong>Papel:</strong></td>
                             <td>{indicadores.ticker}</td>
@@ -335,3 +332,4 @@ const TabelaIndicadores = (props) => {
 }
 
 export default TabelaIndicadores;
+export {indicadores};

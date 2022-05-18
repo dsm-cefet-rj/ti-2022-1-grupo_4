@@ -20,7 +20,7 @@ function HeaderPerfil() {
 
                 <nav class="navbar navbar-expand-lg  ">
 
-                    <a class="navbar-brand">Atlas Financeiro</a>
+                    <a class="navbar-brand" href='/'>Atlas Financeiro</a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" id="hamburger">
                         <span class="navbar-toggler-icon"></span>
@@ -33,10 +33,10 @@ function HeaderPerfil() {
                                 <a class="nav-link" href="/perfil">Perfil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Ativos">Lista de Ativos</a>
+                                <a class="nav-link" href="#recomendacoes">Recomendações</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#recomendacoes">Recomendações</a>
+                                <a class="nav-link" href="/ativos">Lista de Ativos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#carteira-container">Carteira</a>

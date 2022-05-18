@@ -3,7 +3,7 @@ import React from 'react';
 const ativo = {
     empresa: 'Aeris',
     ticker: 'AERI3F',
-    tipo: 'Bens Industriais', 
+    tipo: 'Bens Industriais',
     ultCotacao: 4.53
 }
 

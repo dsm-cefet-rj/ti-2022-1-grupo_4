@@ -35,7 +35,7 @@ function Historico(props) {
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                   <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                   <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                  <li><a class="dropdown-item" href="#">Watchlist</a></li>
+                                  <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -95,7 +95,7 @@ function Historico(props) {
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                   <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                   <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                  <li><a class="dropdown-item" href="#">Watchlist</a></li>
+                                  <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -155,7 +155,7 @@ function Historico(props) {
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                   <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                   <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                  <li><a class="dropdown-item" href="#">Watchlist</a></li>
+                                  <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -215,7 +215,7 @@ function Historico(props) {
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                   <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                   <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                  <li><a class="dropdown-item" href="#">Watchlist</a></li>
+                                  <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -275,7 +275,7 @@ function Historico(props) {
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                   <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                   <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                  <li><a class="dropdown-item" href="#">Watchlist</a></li>
+                                  <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -335,7 +335,7 @@ function Historico(props) {
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                   <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                   <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                  <li><a class="dropdown-item" href="#">Watchlist</a></li>
+                                  <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -395,7 +395,7 @@ function Historico(props) {
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                   <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
                                   <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                  <li><a class="dropdown-item" href="#">Watchlist</a></li>
+                                  <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                                 </ul>
                             </div>
                         </div>

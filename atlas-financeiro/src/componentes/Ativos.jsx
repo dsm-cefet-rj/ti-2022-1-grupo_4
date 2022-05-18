@@ -3,8 +3,6 @@ import Footer from './Footer';
 import Header from "./Header";
 import ListaAtivos from "./ListaAtivos";
 
-
-
 function Ativos() {
     return (
         <>
@@ -14,10 +12,9 @@ function Ativos() {
                 <ListaAtivos />
                 <Footer />
             </section>
-
         </div>
         </>
-
+        
     );
 
 }
