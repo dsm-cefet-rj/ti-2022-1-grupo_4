@@ -1,18 +1,10 @@
 import React from 'react';
+import { Ativo } from './Ativo';
 import '../styles/styles.css';
 
-const recomendacoes = {
-    empresa: 'Vale',
-    ticker: 'VALE3',
-    tipo: 'ON NM',
-    max_52: 102.32,
-    min_52: 60.02,
-    setor: 'Mineração',
-    subsetor: 'Minerais Metálicos',
-    vol_medio_2m: 2968530000,
-}
 
-function Recomendacoes(props) {
+
+function Recomendacoes() {
     return (
       <div id="recomendacoes">
         <div class="table-title">
@@ -46,33 +38,33 @@ function Recomendacoes(props) {
                                 
                                 <tr>
                                     <td><strong>Papel:</strong></td>
-                                    <td>{recomendacoes.ticker}</td>
+                                    <td>{Ativo.InfoGeral.ticker}</td>
                                     <td><strong>Cotação:</strong></td>
-                                    <td>{props.cotacoes[0].valor}</td>
+                                    <td>{Ativo.Cotacoes[0].valor}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Tipo:</strong></td>
-                                    <td>{recomendacoes.tipo}</td>
+                                    <td>{Ativo.InfoGeral.tipo}</td>
                                     <td><strong>Data útil cot:</strong></td>
-                                    <td>{props.cotacoes[0].data}</td>
+                                    <td>{Ativo.Cotacoes[0].data}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Empresa:</strong></td>
-                                    <td>{recomendacoes.empresa.toUpperCase()}</td>
+                                    <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
                                     <td><strong>Min 52 sem:</strong></td>
-                                    <td>{recomendacoes.min_52}</td>
+                                    <td>{Ativo.InfoGeral.min_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Setor:</strong></td>
-                                    <td>{recomendacoes.setor}</td>
+                                    <td>{Ativo.InfoGeral.setor}</td>
                                     <td><strong>Max 52 sem:</strong></td>
-                                    <td>{recomendacoes.max_52}</td>
+                                    <td>{Ativo.InfoGeral.max_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Subsetor:</strong></td>
-                                    <td>{recomendacoes.subsetor}</td>
+                                    <td>{Ativo.InfoGeral.subsetor}</td>
                                     <td><strong>$ méd(2m):</strong></td>
-                                    <td>{Intl.NumberFormat('pt-BR').format(recomendacoes.vol_medio_2m)}</td>
+                                    <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
                                 </tr>
                             </table>
                             <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
@@ -104,35 +96,35 @@ function Recomendacoes(props) {
                             </div>
                             <table class="info-geral"> 
                         
-                                <tr>
+                            <tr>
                                     <td><strong>Papel:</strong></td>
-                                    <td>{recomendacoes.ticker}</td>
+                                    <td>{Ativo.InfoGeral.ticker}</td>
                                     <td><strong>Cotação:</strong></td>
-                                    <td>{props.cotacoes[0].valor}</td>
+                                    <td>{Ativo.Cotacoes[0].valor}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Tipo:</strong></td>
-                                    <td>{recomendacoes.tipo}</td>
+                                    <td>{Ativo.InfoGeral.tipo}</td>
                                     <td><strong>Data útil cot:</strong></td>
-                                    <td>{props.cotacoes[0].data}</td>
+                                    <td>{Ativo.Cotacoes[0].data}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Empresa:</strong></td>
-                                    <td>{recomendacoes.empresa.toUpperCase()}</td>
+                                    <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
                                     <td><strong>Min 52 sem:</strong></td>
-                                    <td>{recomendacoes.min_52}</td>
+                                    <td>{Ativo.InfoGeral.min_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Setor:</strong></td>
-                                    <td>{recomendacoes.setor}</td>
+                                    <td>{Ativo.InfoGeral.setor}</td>
                                     <td><strong>Max 52 sem:</strong></td>
-                                    <td>{recomendacoes.max_52}</td>
+                                    <td>{Ativo.InfoGeral.max_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Subsetor:</strong></td>
-                                    <td>{recomendacoes.subsetor}</td>
+                                    <td>{Ativo.InfoGeral.subsetor}</td>
                                     <td><strong>$ méd(2m):</strong></td>
-                                    <td>{Intl.NumberFormat('pt-BR').format(recomendacoes.vol_medio_2m)}</td>
+                                    <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
                                 </tr>
                             </table>
                             <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
@@ -166,33 +158,33 @@ function Recomendacoes(props) {
                                 
                             <tr>
                                     <td><strong>Papel:</strong></td>
-                                    <td>{recomendacoes.ticker}</td>
+                                    <td>{Ativo.InfoGeral.ticker}</td>
                                     <td><strong>Cotação:</strong></td>
-                                    <td>{props.cotacoes[0].valor}</td>
+                                    <td>{Ativo.Cotacoes[0].valor}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Tipo:</strong></td>
-                                    <td>{recomendacoes.tipo}</td>
+                                    <td>{Ativo.InfoGeral.tipo}</td>
                                     <td><strong>Data útil cot:</strong></td>
-                                    <td>{props.cotacoes[0].data}</td>
+                                    <td>{Ativo.Cotacoes[0].data}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Empresa:</strong></td>
-                                    <td>{recomendacoes.empresa.toUpperCase()}</td>
+                                    <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
                                     <td><strong>Min 52 sem:</strong></td>
-                                    <td>{recomendacoes.min_52}</td>
+                                    <td>{Ativo.InfoGeral.min_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Setor:</strong></td>
-                                    <td>{recomendacoes.setor}</td>
+                                    <td>{Ativo.InfoGeral.setor}</td>
                                     <td><strong>Max 52 sem:</strong></td>
-                                    <td>{recomendacoes.max_52}</td>
+                                    <td>{Ativo.InfoGeral.max_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Subsetor:</strong></td>
-                                    <td>{recomendacoes.subsetor}</td>
+                                    <td>{Ativo.InfoGeral.subsetor}</td>
                                     <td><strong>$ méd(2m):</strong></td>
-                                    <td>{Intl.NumberFormat('pt-BR').format(recomendacoes.vol_medio_2m)}</td>
+                                    <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
                                 </tr>
                             </table>
                             <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
@@ -226,33 +218,33 @@ function Recomendacoes(props) {
                                 
                             <tr>
                                     <td><strong>Papel:</strong></td>
-                                    <td>{recomendacoes.ticker}</td>
+                                    <td>{Ativo.InfoGeral.ticker}</td>
                                     <td><strong>Cotação:</strong></td>
-                                    <td>{props.cotacoes[0].valor}</td>
+                                    <td>{Ativo.Cotacoes[0].valor}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Tipo:</strong></td>
-                                    <td>{recomendacoes.tipo}</td>
+                                    <td>{Ativo.InfoGeral.tipo}</td>
                                     <td><strong>Data útil cot:</strong></td>
-                                    <td>{props.cotacoes[0].data}</td>
+                                    <td>{Ativo.Cotacoes[0].data}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Empresa:</strong></td>
-                                    <td>{recomendacoes.empresa.toUpperCase()}</td>
+                                    <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
                                     <td><strong>Min 52 sem:</strong></td>
-                                    <td>{recomendacoes.min_52}</td>
+                                    <td>{Ativo.InfoGeral.min_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Setor:</strong></td>
-                                    <td>{recomendacoes.setor}</td>
+                                    <td>{Ativo.InfoGeral.setor}</td>
                                     <td><strong>Max 52 sem:</strong></td>
-                                    <td>{recomendacoes.max_52}</td>
+                                    <td>{Ativo.InfoGeral.max_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Subsetor:</strong></td>
-                                    <td>{recomendacoes.subsetor}</td>
+                                    <td>{Ativo.InfoGeral.subsetor}</td>
                                     <td><strong>$ méd(2m):</strong></td>
-                                    <td>{Intl.NumberFormat('pt-BR').format(recomendacoes.vol_medio_2m)}</td>
+                                    <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
                                 </tr>
                             </table>
                             <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
@@ -284,35 +276,35 @@ function Recomendacoes(props) {
                             </div>
                             <table class="info-geral"> 
                                 
-                                <tr>
+                            <tr>
                                     <td><strong>Papel:</strong></td>
-                                    <td>{recomendacoes.ticker}</td>
+                                    <td>{Ativo.InfoGeral.ticker}</td>
                                     <td><strong>Cotação:</strong></td>
-                                    <td>{props.cotacoes[0].valor}</td>
+                                    <td>{Ativo.Cotacoes[0].valor}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Tipo:</strong></td>
-                                    <td>{recomendacoes.tipo}</td>
+                                    <td>{Ativo.InfoGeral.tipo}</td>
                                     <td><strong>Data útil cot:</strong></td>
-                                    <td>{props.cotacoes[0].data}</td>
+                                    <td>{Ativo.Cotacoes[0].data}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Empresa:</strong></td>
-                                    <td>{recomendacoes.empresa.toUpperCase()}</td>
+                                    <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
                                     <td><strong>Min 52 sem:</strong></td>
-                                    <td>{recomendacoes.min_52}</td>
+                                    <td>{Ativo.InfoGeral.min_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Setor:</strong></td>
-                                    <td>{recomendacoes.setor}</td>
+                                    <td>{Ativo.InfoGeral.setor}</td>
                                     <td><strong>Max 52 sem:</strong></td>
-                                    <td>{recomendacoes.max_52}</td>
+                                    <td>{Ativo.InfoGeral.max_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Subsetor:</strong></td>
-                                    <td>{recomendacoes.subsetor}</td>
+                                    <td>{Ativo.InfoGeral.subsetor}</td>
                                     <td><strong>$ méd(2m):</strong></td>
-                                    <td>{Intl.NumberFormat('pt-BR').format(recomendacoes.vol_medio_2m)}</td>
+                                    <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
                                 </tr>
                             </table>
                             <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
@@ -344,35 +336,35 @@ function Recomendacoes(props) {
                             </div>
                             <table class="info-geral"> 
                                 
-                                <tr>
+                            <tr>
                                     <td><strong>Papel:</strong></td>
-                                    <td>{recomendacoes.ticker}</td>
+                                    <td>{Ativo.InfoGeral.ticker}</td>
                                     <td><strong>Cotação:</strong></td>
-                                    <td>{props.cotacoes[0].valor}</td>
+                                    <td>{Ativo.Cotacoes[0].valor}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Tipo:</strong></td>
-                                    <td>{recomendacoes.tipo}</td>
+                                    <td>{Ativo.InfoGeral.tipo}</td>
                                     <td><strong>Data útil cot:</strong></td>
-                                    <td>{props.cotacoes[0].data}</td>
+                                    <td>{Ativo.Cotacoes[0].data}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Empresa:</strong></td>
-                                    <td>{recomendacoes.empresa.toUpperCase()}</td>
+                                    <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
                                     <td><strong>Min 52 sem:</strong></td>
-                                    <td>{recomendacoes.min_52}</td>
+                                    <td>{Ativo.InfoGeral.min_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Setor:</strong></td>
-                                    <td>{recomendacoes.setor}</td>
+                                    <td>{Ativo.InfoGeral.setor}</td>
                                     <td><strong>Max 52 sem:</strong></td>
-                                    <td>{recomendacoes.max_52}</td>
+                                    <td>{Ativo.InfoGeral.max_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Subsetor:</strong></td>
-                                    <td>{recomendacoes.subsetor}</td>
+                                    <td>{Ativo.InfoGeral.subsetor}</td>
                                     <td><strong>$ méd(2m):</strong></td>
-                                    <td>{Intl.NumberFormat('pt-BR').format(recomendacoes.vol_medio_2m)}</td>
+                                    <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
                                 </tr>
                             </table>
                             <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
@@ -404,35 +396,35 @@ function Recomendacoes(props) {
                             </div>
                             <table class="info-geral"> 
                                 
-                                <tr>
+                            <tr>
                                     <td><strong>Papel:</strong></td>
-                                    <td>{recomendacoes.ticker}</td>
+                                    <td>{Ativo.InfoGeral.ticker}</td>
                                     <td><strong>Cotação:</strong></td>
-                                    <td>{props.cotacoes[0].valor}</td>
+                                    <td>{Ativo.Cotacoes[0].valor}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Tipo:</strong></td>
-                                    <td>{recomendacoes.tipo}</td>
+                                    <td>{Ativo.InfoGeral.tipo}</td>
                                     <td><strong>Data útil cot:</strong></td>
-                                    <td>{props.cotacoes[0].data}</td>
+                                    <td>{Ativo.Cotacoes[0].data}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Empresa:</strong></td>
-                                    <td>{recomendacoes.empresa.toUpperCase()}</td>
+                                    <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
                                     <td><strong>Min 52 sem:</strong></td>
-                                    <td>{recomendacoes.min_52}</td>
+                                    <td>{Ativo.InfoGeral.min_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Setor:</strong></td>
-                                    <td>{recomendacoes.setor}</td>
+                                    <td>{Ativo.InfoGeral.setor}</td>
                                     <td><strong>Max 52 sem:</strong></td>
-                                    <td>{recomendacoes.max_52}</td>
+                                    <td>{Ativo.InfoGeral.max_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Subsetor:</strong></td>
-                                    <td>{recomendacoes.subsetor}</td>
+                                    <td>{Ativo.InfoGeral.subsetor}</td>
                                     <td><strong>$ méd(2m):</strong></td>
-                                    <td>{Intl.NumberFormat('pt-BR').format(recomendacoes.vol_medio_2m)}</td>
+                                    <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
                                 </tr>
                             </table>
                             <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
@@ -464,35 +456,35 @@ function Recomendacoes(props) {
                             </div>
                             <table class="info-geral"> 
                                 
-                                <tr>
+                            <tr>
                                     <td><strong>Papel:</strong></td>
-                                    <td>{recomendacoes.ticker}</td>
+                                    <td>{Ativo.InfoGeral.ticker}</td>
                                     <td><strong>Cotação:</strong></td>
-                                    <td>{props.cotacoes[0].valor}</td>
+                                    <td>{Ativo.Cotacoes[0].valor}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Tipo:</strong></td>
-                                    <td>{recomendacoes.tipo}</td>
+                                    <td>{Ativo.InfoGeral.tipo}</td>
                                     <td><strong>Data útil cot:</strong></td>
-                                    <td>{props.cotacoes[0].data}</td>
+                                    <td>{Ativo.Cotacoes[0].data}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Empresa:</strong></td>
-                                    <td>{recomendacoes.empresa.toUpperCase()}</td>
+                                    <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
                                     <td><strong>Min 52 sem:</strong></td>
-                                    <td>{recomendacoes.min_52}</td>
+                                    <td>{Ativo.InfoGeral.min_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Setor:</strong></td>
-                                    <td>{recomendacoes.setor}</td>
+                                    <td>{Ativo.InfoGeral.setor}</td>
                                     <td><strong>Max 52 sem:</strong></td>
-                                    <td>{recomendacoes.max_52}</td>
+                                    <td>{Ativo.InfoGeral.max_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Subsetor:</strong></td>
-                                    <td>{recomendacoes.subsetor}</td>
+                                    <td>{Ativo.InfoGeral.subsetor}</td>
                                     <td><strong>$ méd(2m):</strong></td>
-                                    <td>{Intl.NumberFormat('pt-BR').format(recomendacoes.vol_medio_2m)}</td>
+                                    <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
                                 </tr>
                             </table>
                             <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
@@ -524,35 +516,35 @@ function Recomendacoes(props) {
                             </div>
                             <table class="info-geral"> 
                                 
-                                <tr>
+                            <tr>
                                     <td><strong>Papel:</strong></td>
-                                    <td>{recomendacoes.ticker}</td>
+                                    <td>{Ativo.InfoGeral.ticker}</td>
                                     <td><strong>Cotação:</strong></td>
-                                    <td>{props.cotacoes[0].valor}</td>
+                                    <td>{Ativo.Cotacoes[0].valor}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Tipo:</strong></td>
-                                    <td>{recomendacoes.tipo}</td>
+                                    <td>{Ativo.InfoGeral.tipo}</td>
                                     <td><strong>Data útil cot:</strong></td>
-                                    <td>{props.cotacoes[0].data}</td>
+                                    <td>{Ativo.Cotacoes[0].data}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Empresa:</strong></td>
-                                    <td>{recomendacoes.empresa.toUpperCase()}</td>
+                                    <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
                                     <td><strong>Min 52 sem:</strong></td>
-                                    <td>{recomendacoes.min_52}</td>
+                                    <td>{Ativo.InfoGeral.min_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Setor:</strong></td>
-                                    <td>{recomendacoes.setor}</td>
+                                    <td>{Ativo.InfoGeral.setor}</td>
                                     <td><strong>Max 52 sem:</strong></td>
-                                    <td>{recomendacoes.max_52}</td>
+                                    <td>{Ativo.InfoGeral.max_52}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Subsetor:</strong></td>
-                                    <td>{recomendacoes.subsetor}</td>
+                                    <td>{Ativo.InfoGeral.subsetor}</td>
                                     <td><strong>$ méd(2m):</strong></td>
-                                    <td>{Intl.NumberFormat('pt-BR').format(recomendacoes.vol_medio_2m)}</td>
+                                    <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
                                 </tr>
                             </table>
                             <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
@@ -566,4 +558,3 @@ function Recomendacoes(props) {
 }
 
 export default Recomendacoes;
-export {recomendacoes};

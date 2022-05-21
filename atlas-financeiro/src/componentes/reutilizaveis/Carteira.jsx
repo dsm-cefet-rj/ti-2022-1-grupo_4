@@ -1,4 +1,5 @@
 import React from 'react';
+import { Ativo } from './Ativo';
 
 function Carteira() {
     return (
@@ -40,36 +41,36 @@ function Carteira() {
                             </div>
                             <table class="info-geral"> 
                             
-                                <tr>
-                                    <td><strong>Papel:</strong></td>
-                                    <td>VALE3</td>
-                                    <td><strong>Cotação:</strong></td>
-                                    <td>83,29</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Tipo:</strong></td>
-                                    <td>ON NM</td>
-                                    <td><strong>Data útil cot:</strong></td>
-                                    <td>29/04/2022</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Empresa:</strong></td>
-                                    <td>VALE ON NM</td>
-                                    <td><strong>Min 52 sem:</strong></td>
-                                    <td>60,02</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Setor:</strong></td>
-                                    <td>Mineração</td>
-                                    <td><strong>Max 52 sem:</strong></td>
-                                    <td>102,32</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Subsetor:</strong></td>
-                                    <td>Minerais Metálicos</td>
-                                    <td><strong>$ méd(2m):</strong></td>
-                                    <td>2.968.530.000</td>
-                                </tr>
+                            <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{Ativo.InfoGeral.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{Ativo.Cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{Ativo.InfoGeral.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{Ativo.Cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{Ativo.InfoGeral.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{Ativo.InfoGeral.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
+                        </tr>
                             </table>
                             <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                         </div>
@@ -99,36 +100,36 @@ function Carteira() {
                           </div>
                           <table class="info-geral"> 
                       
-                              <tr>
-                                  <td><strong>Papel:</strong></td>
-                                  <td>VALE3</td>
-                                  <td><strong>Cotação:</strong></td>
-                                  <td>83,29</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Tipo:</strong></td>
-                                  <td>ON NM</td>
-                                  <td><strong>Data útil cot:</strong></td>
-                                  <td>29/04/2022</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Empresa:</strong></td>
-                                  <td>VALE ON NM</td>
-                                  <td><strong>Min 52 sem:</strong></td>
-                                  <td>60,02</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Setor:</strong></td>
-                                  <td>Mineração</td>
-                                  <td><strong>Max 52 sem:</strong></td>
-                                  <td>102,32</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Subsetor:</strong></td>
-                                  <td>Minerais Metálicos</td>
-                                  <td><strong>$ méd(2m):</strong></td>
-                                  <td>2.968.530.000</td>
-                              </tr>
+                          <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{Ativo.InfoGeral.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{Ativo.Cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{Ativo.InfoGeral.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{Ativo.Cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{Ativo.InfoGeral.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{Ativo.InfoGeral.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
+                        </tr>
                           </table>
                           <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                           
@@ -159,36 +160,36 @@ function Carteira() {
                           </div>
                           <table class="info-geral"> 
                               
-                              <tr>
-                                  <td><strong>Papel:</strong></td>
-                                  <td>VALE3</td>
-                                  <td><strong>Cotação:</strong></td>
-                                  <td>83,29</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Tipo:</strong></td>
-                                  <td>ON NM</td>
-                                  <td><strong>Data útil cot:</strong></td>
-                                  <td>29/04/2022</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Empresa:</strong></td>
-                                  <td>VALE ON NM</td>
-                                  <td><strong>Min 52 sem:</strong></td>
-                                  <td>60,02</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Setor:</strong></td>
-                                  <td>Mineração</td>
-                                  <td><strong>Max 52 sem:</strong></td>
-                                  <td>102,32</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Subsetor:</strong></td>
-                                  <td>Minerais Metálicos</td>
-                                  <td><strong>$ méd(2m):</strong></td>
-                                  <td>2.968.530.000</td>
-                              </tr>
+                          <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{Ativo.InfoGeral.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{Ativo.Cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{Ativo.InfoGeral.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{Ativo.Cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{Ativo.InfoGeral.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{Ativo.InfoGeral.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
+                        </tr>
                           </table>
                           <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                           
@@ -219,36 +220,36 @@ function Carteira() {
                           </div>
                           <table class="info-geral"> 
                               
-                              <tr>
-                                  <td><strong>Papel:</strong></td>
-                                  <td>VALE3</td>
-                                  <td><strong>Cotação:</strong></td>
-                                  <td>83,29</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Tipo:</strong></td>
-                                  <td>ON NM</td>
-                                  <td><strong>Data útil cot:</strong></td>
-                                  <td>29/04/2022</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Empresa:</strong></td>
-                                  <td>VALE ON NM</td>
-                                  <td><strong>Min 52 sem:</strong></td>
-                                  <td>60,02</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Setor:</strong></td>
-                                  <td>Mineração</td>
-                                  <td><strong>Max 52 sem:</strong></td>
-                                  <td>102,32</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Subsetor:</strong></td>
-                                  <td>Minerais Metálicos</td>
-                                  <td><strong>$ méd(2m):</strong></td>
-                                  <td>2.968.530.000</td>
-                              </tr>
+                          <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{Ativo.InfoGeral.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{Ativo.Cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{Ativo.InfoGeral.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{Ativo.Cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{Ativo.InfoGeral.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{Ativo.InfoGeral.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
+                        </tr>
                           </table>
                           <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                           
@@ -279,36 +280,36 @@ function Carteira() {
                           </div>
                           <table class="info-geral"> 
                               
-                              <tr>
-                                  <td><strong>Papel:</strong></td>
-                                  <td>VALE3</td>
-                                  <td><strong>Cotação:</strong></td>
-                                  <td>83,29</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Tipo:</strong></td>
-                                  <td>ON NM</td>
-                                  <td><strong>Data útil cot:</strong></td>
-                                  <td>29/04/2022</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Empresa:</strong></td>
-                                  <td>VALE ON NM</td>
-                                  <td><strong>Min 52 sem:</strong></td>
-                                  <td>60,02</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Setor:</strong></td>
-                                  <td>Mineração</td>
-                                  <td><strong>Max 52 sem:</strong></td>
-                                  <td>102,32</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Subsetor:</strong></td>
-                                  <td>Minerais Metálicos</td>
-                                  <td><strong>$ méd(2m):</strong></td>
-                                  <td>2.968.530.000</td>
-                              </tr>
+                          <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{Ativo.InfoGeral.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{Ativo.Cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{Ativo.InfoGeral.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{Ativo.Cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{Ativo.InfoGeral.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{Ativo.InfoGeral.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
+                        </tr>
                           </table>
                           <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                           
@@ -339,36 +340,36 @@ function Carteira() {
                           </div>
                           <table class="info-geral"> 
                               
-                              <tr>
-                                  <td><strong>Papel:</strong></td>
-                                  <td>VALE3</td>
-                                  <td><strong>Cotação:</strong></td>
-                                  <td>83,29</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Tipo:</strong></td>
-                                  <td>ON NM</td>
-                                  <td><strong>Data útil cot:</strong></td>
-                                  <td>29/04/2022</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Empresa:</strong></td>
-                                  <td>VALE ON NM</td>
-                                  <td><strong>Min 52 sem:</strong></td>
-                                  <td>60,02</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Setor:</strong></td>
-                                  <td>Mineração</td>
-                                  <td><strong>Max 52 sem:</strong></td>
-                                  <td>102,32</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Subsetor:</strong></td>
-                                  <td>Minerais Metálicos</td>
-                                  <td><strong>$ méd(2m):</strong></td>
-                                  <td>2.968.530.000</td>
-                              </tr>
+                          <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{Ativo.InfoGeral.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{Ativo.Cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{Ativo.InfoGeral.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{Ativo.Cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{Ativo.InfoGeral.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{Ativo.InfoGeral.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
+                        </tr>
                           </table>
                           <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                           
@@ -399,36 +400,36 @@ function Carteira() {
                           </div>
                           <table class="info-geral"> 
                               
-                              <tr>
-                                  <td><strong>Papel:</strong></td>
-                                  <td>VALE3</td>
-                                  <td><strong>Cotação:</strong></td>
-                                  <td>83,29</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Tipo:</strong></td>
-                                  <td>ON NM</td>
-                                  <td><strong>Data útil cot:</strong></td>
-                                  <td>29/04/2022</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Empresa:</strong></td>
-                                  <td>VALE ON NM</td>
-                                  <td><strong>Min 52 sem:</strong></td>
-                                  <td>60,02</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Setor:</strong></td>
-                                  <td>Mineração</td>
-                                  <td><strong>Max 52 sem:</strong></td>
-                                  <td>102,32</td>
-                              </tr>
-                              <tr>
-                                  <td><strong>Subsetor:</strong></td>
-                                  <td>Minerais Metálicos</td>
-                                  <td><strong>$ méd(2m):</strong></td>
-                                  <td>2.968.530.000</td>
-                              </tr>
+                          <tr>
+                            <td><strong>Papel:</strong></td>
+                            <td>{Ativo.InfoGeral.ticker}</td>
+                            <td><strong>Cotação:</strong></td>
+                            <td>{Ativo.Cotacoes[0].valor}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipo:</strong></td>
+                            <td>{Ativo.InfoGeral.tipo}</td>
+                            <td><strong>Data útil cot:</strong></td>
+                            <td>{Ativo.Cotacoes[0].data}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Empresa:</strong></td>
+                            <td>{Ativo.InfoGeral.empresa.toUpperCase()}</td>
+                            <td><strong>Min 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.min_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setor:</strong></td>
+                            <td>{Ativo.InfoGeral.setor}</td>
+                            <td><strong>Max 52 sem:</strong></td>
+                            <td>{Ativo.InfoGeral.max_52}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subsetor:</strong></td>
+                            <td>{Ativo.InfoGeral.subsetor}</td>
+                            <td><strong>$ méd(2m):</strong></td>
+                            <td>{Intl.NumberFormat('pt-BR').format(Ativo.InfoGeral.vol_medio_2m)}</td>
+                        </tr>
                           </table>
                           <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                           
