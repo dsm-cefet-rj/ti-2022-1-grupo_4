@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './Header';
-import { cotacoes } from './Cotacoes';
-import { indicadores } from './Indicadores';
-import Cotacoes from './Cotacoes';
-import Indicadores from './Indicadores';
-import Recomendacoes from './Recomendacoes';
-import Footer from './Footer';
-import './styles/detalhamento-styles.css'
+import Header from './reutilizaveis/Header';
+import { cotacoes } from './reutilizaveis/Cotacoes';
+import { indicadores } from './reutilizaveis/Indicadores';
+import Cotacoes from './reutilizaveis/Cotacoes';
+import Indicadores from './reutilizaveis/Indicadores';
+import Recomendacoes from './reutilizaveis/Recomendacoes';
+import Footer from './reutilizaveis/Footer';
+import './styles/detalhamento-styles.css';
 
 function Detalhamento() {
     return (

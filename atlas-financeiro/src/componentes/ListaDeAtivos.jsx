@@ -1,7 +1,7 @@
 import React from "react";
-import Footer from './Footer';
-import Header from "./Header";
-import ListaAtivos from "./ListaAtivos";
+import Footer from './reutilizaveis/Footer';
+import Header from "./reutilizaveis/Header";
+import ListarAtivos from "./reutilizaveis/ListarAtivos";
 
 function Ativos() {
     return (
@@ -9,7 +9,7 @@ function Ativos() {
             <Header />
             <div className="ativos-list">
             <section className="light-section">
-                <ListaAtivos />
+                <ListarAtivos />
                 <Footer />
             </section>
         </div>

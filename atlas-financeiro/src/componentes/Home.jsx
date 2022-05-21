@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './Header';
-import Recomendacoes from './Recomendacoes';
-import { cotacoes } from './Cotacoes'
+import Header from './reutilizaveis/Header';
+import Recomendacoes from './reutilizaveis/Recomendacoes';
+import { cotacoes } from './reutilizaveis/Cotacoes'
 import './styles/styles.css';
-import Footer from './Footer';
+import Footer from './reutilizaveis/Footer';
 
 function Home() {
     return (

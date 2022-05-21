@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/Indicadores.css';
+import '../styles/Indicadores.css';
 
 const indicadores = {
     empresa: 'Vale',

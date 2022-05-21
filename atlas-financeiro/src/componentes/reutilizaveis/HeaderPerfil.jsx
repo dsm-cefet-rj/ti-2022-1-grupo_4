@@ -1,6 +1,6 @@
 import React from 'react';
-import ImagemPerfil from './media/businessman.jpg';
-import ImagemThumb from './media/chicago.jpg';
+import ImagemPerfil from '../media/businessman.jpg';
+import ImagemThumb from '../media/chicago.jpg';
 
 const perfil = {
     nome: 'John Galt',

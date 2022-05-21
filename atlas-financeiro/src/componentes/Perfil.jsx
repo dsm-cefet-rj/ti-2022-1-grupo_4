@@ -1,6 +1,6 @@
 import React from 'react';
-import HeaderPerfil from './HeaderPerfil';
-import PerfilContent from './PerfilContent';
+import HeaderPerfil from './reutilizaveis/HeaderPerfil';
+import PerfilContent from './reutilizaveis/PerfilContent';
 import './styles/perfil-styles.css';
 
 

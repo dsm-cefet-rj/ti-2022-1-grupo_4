@@ -7,7 +7,7 @@ const ativo = {
     ultCotacao: 4.53
 }
 
-function ListaAtivos() {
+function ListarAtivos() {
     return (
         <div className='lista-ativos-container'>
             <h3><strong>{'Lista de Ativos (B3)'}</strong></h3>
@@ -466,4 +466,4 @@ function ListaAtivos() {
     );
 }
 
-export default ListaAtivos;
+export default ListarAtivos;

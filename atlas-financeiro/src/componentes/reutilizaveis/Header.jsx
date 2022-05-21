@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/styles.css';
-import video from './media/earth.mp4';
+import '../styles/styles.css';
+import video from '../media/earth.mp4';
 
 function Header() {
     return (
