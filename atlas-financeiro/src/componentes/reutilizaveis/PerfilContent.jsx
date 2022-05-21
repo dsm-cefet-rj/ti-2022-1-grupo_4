@@ -3,8 +3,6 @@ import Carteira from './Carteira';
 import Watchlist from './Watchlist';
 import Historico from './Historico';
 import Recomendacoes from './Recomendacoes';
-import { recomendacoes } from './Recomendacoes';
-import { cotacoes } from './Cotacoes'
 import Footer from './Footer';
 
 function PerfilContent() {
@@ -12,8 +10,8 @@ function PerfilContent() {
         <section class="light-section">
                 <Watchlist />
                 <Carteira />
-                <Historico recomendacoes={recomendacoes} cotacoes={cotacoes}/>
-                <Recomendacoes cotacoes={cotacoes}/>
+                <Historico />
+                <Recomendacoes />
                 <Footer />
         </section>
     );

@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './reutilizaveis/Header';
 import Recomendacoes from './reutilizaveis/Recomendacoes';
-import { cotacoes } from './reutilizaveis/Cotacoes'
 import './styles/styles.css';
 import Footer from './reutilizaveis/Footer';
 
@@ -10,7 +9,7 @@ function Home() {
         <>
             <Header />
             <section class="light-section">
-                <Recomendacoes cotacoes={cotacoes}/>
+                <Recomendacoes />
                 <Footer />
             </section>
         </>

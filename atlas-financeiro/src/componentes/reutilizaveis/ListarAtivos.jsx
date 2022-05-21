@@ -1,11 +1,5 @@
 import React from 'react';
-
-const ativo = {
-    empresa: 'Aeris',
-    ticker: 'AERI3F',
-    tipo: 'Bens Industriais',
-    ultCotacao: 4.53
-}
+import { Ativo } from './Ativo';
 
 function ListarAtivos() {
     return (
@@ -20,34 +14,34 @@ function ListarAtivos() {
                         <th>Última Cotação</th>
                     </tr>
                     <tr>
-                        <td>{ativo.empresa}</td>
-                        <td>{ativo.ticker}</td>
-                        <td>R$ {ativo.ultCotacao}</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Intercement</td>
-                        <td>ICBR3</td>
-                        <td>R$ 34,71</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Dotz</td>
-                        <td>DOTZ3F</td>
-                        <td>R$ 25,25</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Gol</td>
-                        <td>GOLL3</td>
-                        <td>R$ 108,44</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>VIA S.A</td>
-                        <td>VIIA3F</td>
-                        <td>R$ 80,11</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Armac</td>
-                        <td>ARML3</td>
-                        <td>R$ 14,78</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -61,34 +55,34 @@ function ListarAtivos() {
                         <th>Última Cotação</th>
                     </tr>
                     <tr>
-                        <td>Aeris</td>
-                        <td>AERI3F</td>
-                        <td>R$ 4,53</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Intercement</td>
-                        <td>ICBR3</td>
-                        <td>R$ 34,71</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Dotz</td>
-                        <td>DOTZ3F</td>
-                        <td>R$ 25,25</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Gol</td>
-                        <td>GOLL3</td>
-                        <td>R$ 108,44</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>VIA S.A</td>
-                        <td>VIIA3F</td>
-                        <td>R$ 80,11</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Armac</td>
-                        <td>ARML3</td>
-                        <td>R$ 14,78</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -102,34 +96,34 @@ function ListarAtivos() {
                         <th>Última Cotação</th>
                     </tr>
                     <tr>
-                        <td>Aeris</td>
-                        <td>AERI3F</td>
-                        <td>R$ 4,53</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Intercement</td>
-                        <td>ICBR3</td>
-                        <td>R$ 34,71</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Dotz</td>
-                        <td>DOTZ3F</td>
-                        <td>R$ 25,25</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Gol</td>
-                        <td>GOLL3</td>
-                        <td>R$ 108,44</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>VIA S.A</td>
-                        <td>VIIA3F</td>
-                        <td>R$ 80,11</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Armac</td>
-                        <td>ARML3</td>
-                        <td>R$ 14,78</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -143,34 +137,34 @@ function ListarAtivos() {
                         <th>Última Cotação</th>
                     </tr>
                     <tr>
-                        <td>Aeris</td>
-                        <td>AERI3F</td>
-                        <td>R$ 4,53</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Intercement</td>
-                        <td>ICBR3</td>
-                        <td>R$ 34,71</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Dotz</td>
-                        <td>DOTZ3F</td>
-                        <td>R$ 25,25</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Gol</td>
-                        <td>GOLL3</td>
-                        <td>R$ 108,44</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>VIA S.A</td>
-                        <td>VIIA3F</td>
-                        <td>R$ 80,11</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Armac</td>
-                        <td>ARML3</td>
-                        <td>R$ 14,78</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -184,34 +178,34 @@ function ListarAtivos() {
                         <th>Última Cotação</th>
                     </tr>
                     <tr>
-                        <td>Aeris</td>
-                        <td>AERI3F</td>
-                        <td>R$ 4,53</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Intercement</td>
-                        <td>ICBR3</td>
-                        <td>R$ 34,71</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Dotz</td>
-                        <td>DOTZ3F</td>
-                        <td>R$ 25,25</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Gol</td>
-                        <td>GOLL3</td>
-                        <td>R$ 108,44</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>VIA S.A</td>
-                        <td>VIIA3F</td>
-                        <td>R$ 80,11</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Armac</td>
-                        <td>ARML3</td>
-                        <td>R$ 14,78</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -225,34 +219,34 @@ function ListarAtivos() {
                         <th>Última Cotação</th>
                     </tr>
                     <tr>
-                        <td>Aeris</td>
-                        <td>AERI3F</td>
-                        <td>R$ 4,53</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Intercement</td>
-                        <td>ICBR3</td>
-                        <td>R$ 34,71</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Dotz</td>
-                        <td>DOTZ3F</td>
-                        <td>R$ 25,25</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Gol</td>
-                        <td>GOLL3</td>
-                        <td>R$ 108,44</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>VIA S.A</td>
-                        <td>VIIA3F</td>
-                        <td>R$ 80,11</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Armac</td>
-                        <td>ARML3</td>
-                        <td>R$ 14,78</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -266,34 +260,34 @@ function ListarAtivos() {
                         <th>Última Cotação</th>
                     </tr>
                     <tr>
-                        <td>Aeris</td>
-                        <td>AERI3F</td>
-                        <td>R$ 4,53</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Intercement</td>
-                        <td>ICBR3</td>
-                        <td>R$ 34,71</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Dotz</td>
-                        <td>DOTZ3F</td>
-                        <td>R$ 25,25</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Gol</td>
-                        <td>GOLL3</td>
-                        <td>R$ 108,44</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>VIA S.A</td>
-                        <td>VIIA3F</td>
-                        <td>R$ 80,11</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Armac</td>
-                        <td>ARML3</td>
-                        <td>R$ 14,78</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -307,34 +301,34 @@ function ListarAtivos() {
                         <th>Última Cotação</th>
                     </tr>
                     <tr>
-                        <td>Aeris</td>
-                        <td>AERI3F</td>
-                        <td>R$ 4,53</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Intercement</td>
-                        <td>ICBR3</td>
-                        <td>R$ 34,71</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Dotz</td>
-                        <td>DOTZ3F</td>
-                        <td>R$ 25,25</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Gol</td>
-                        <td>GOLL3</td>
-                        <td>R$ 108,44</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>VIA S.A</td>
-                        <td>VIIA3F</td>
-                        <td>R$ 80,11</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Armac</td>
-                        <td>ARML3</td>
-                        <td>R$ 14,78</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -348,34 +342,34 @@ function ListarAtivos() {
                         <th>Última Cotação</th>
                     </tr>
                     <tr>
-                        <td>Aeris</td>
-                        <td>AERI3F</td>
-                        <td>R$ 4,53</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Intercement</td>
-                        <td>ICBR3</td>
-                        <td>R$ 34,71</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Dotz</td>
-                        <td>DOTZ3F</td>
-                        <td>R$ 25,25</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Gol</td>
-                        <td>GOLL3</td>
-                        <td>R$ 108,44</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>VIA S.A</td>
-                        <td>VIIA3F</td>
-                        <td>R$ 80,11</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Armac</td>
-                        <td>ARML3</td>
-                        <td>R$ 14,78</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -389,34 +383,34 @@ function ListarAtivos() {
                         <th>Última Cotação</th>
                     </tr>
                     <tr>
-                        <td>Aeris</td>
-                        <td>AERI3F</td>
-                        <td>R$ 4,53</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Intercement</td>
-                        <td>ICBR3</td>
-                        <td>R$ 34,71</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Dotz</td>
-                        <td>DOTZ3F</td>
-                        <td>R$ 25,25</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Gol</td>
-                        <td>GOLL3</td>
-                        <td>R$ 108,44</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>VIA S.A</td>
-                        <td>VIIA3F</td>
-                        <td>R$ 80,11</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Armac</td>
-                        <td>ARML3</td>
-                        <td>R$ 14,78</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -430,34 +424,34 @@ function ListarAtivos() {
                         <th>Última Cotação</th>
                     </tr>
                     <tr>
-                        <td>Aeris</td>
-                        <td>AERI3F</td>
-                        <td>R$ 4,53</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Intercement</td>
-                        <td>ICBR3</td>
-                        <td>R$ 34,71</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Dotz</td>
-                        <td>DOTZ3F</td>
-                        <td>R$ 25,25</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Gol</td>
-                        <td>GOLL3</td>
-                        <td>R$ 108,44</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>VIA S.A</td>
-                        <td>VIIA3F</td>
-                        <td>R$ 80,11</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                     <tr>
-                        <td>Armac</td>
-                        <td>ARML3</td>
-                        <td>R$ 14,78</td>
+                        <td>{Ativo.InfoGeral.empresa}</td>
+                        <td>{Ativo.InfoGeral.ticker}</td>
+                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
