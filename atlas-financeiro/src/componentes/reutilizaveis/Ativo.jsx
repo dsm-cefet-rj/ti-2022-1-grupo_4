@@ -1,4 +1,3 @@
-import React from 'react';
 
 const InfoGeral = {
     empresa: 'Vale',
@@ -12,27 +11,36 @@ const InfoGeral = {
 }
 
 const InfoGeralPlus = {
+    empresa: 'Vale',
+    ticker: 'VALE3',
     valor_mercado: 416370000000,
     valor_firma: 439638000000,
     ult_balanco_proc: '31/03/22',
     numero_acoes: 4999040000
 }
 
-const Cotacoes = [
-    {data: '11/05/2022', valor: 78.6},
-    {data: '10/05/2022', valor: 75.7},
-    {data: '09/05/2022', valor: 76.51},
-    {data: '08/05/2022', valor: 79.94},
-    {data: '07/05/2022', valor: 80.41},
-    {data: '06/05/2022', valor: 81.9},
-    {data: '05/05/2022', valor: 82.7},
-    {data: '04/05/2022', valor: 83.09},
-    {data: '03/05/2022', valor: 82.95},
-    {data: '02/05/2022', valor: 84.14},
-    {data: '01/05/2022', valor: 82.28},
-]
+const Cotacoes = {
+    empresa: 'Vale',
+    ticker: 'VALE3',
+    cotacoes:
+    [
+        {data: '11/05/2022', valor: 78.6},
+        {data: '10/05/2022', valor: 75.7},
+        {data: '09/05/2022', valor: 76.51},
+        {data: '08/05/2022', valor: 79.94},
+        {data: '07/05/2022', valor: 80.41},
+        {data: '06/05/2022', valor: 81.9},
+        {data: '05/05/2022', valor: 82.7},
+        {data: '04/05/2022', valor: 83.09},
+        {data: '03/05/2022', valor: 82.95},
+        {data: '02/05/2022', valor: 84.14},
+        {data: '01/05/2022', valor: 82.28},
+    ]
+}
 
 const Indicadores = {
+    empresa: 'Vale',
+    ticker: 'VALE3',
     oscilacao_dia: -1.08,
     oscilacao_mes: -12.88,
     oscilacao_30_dias: -11.88,
@@ -80,10 +88,12 @@ const Indicadores = {
 }
 
 const Ativo = {
-    InfoGeral,
-    InfoGeralPlus,
-    Cotacoes, 
-    Indicadores
+        InfoGeral,
+        InfoGeralPlus,
+        Cotacoes,
+        Indicadores
 }
 
-export { Ativo };
+const GrupoAtivos = [Ativo, Ativo, Ativo]
+
+export { Ativo, GrupoAtivos };

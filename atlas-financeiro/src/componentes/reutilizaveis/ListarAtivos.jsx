@@ -1,11 +1,47 @@
 import React from 'react';
-import { Ativo } from './Ativo';
+import { Ativo, GrupoAtivos } from './Ativo';
+import css from '../styles/styles.css';
 
 function ListarAtivos() {
     return (
         <div className='lista-ativos-container'>
             <h3><strong>{'Lista de Ativos (B3)'}</strong></h3>
             <div className='lista-bens-industriais'>
+
+                <div>
+                    {GrupoAtivos.map(ativo => {
+                        return(
+                        <div className='box flexRow'>
+                            <div key={ativo.InfoGeral.ticker}>
+                                <div id="COLOCAR_IMAGEM">
+
+                                </div>
+                                <div>
+                                    Ticker: {ativo.InfoGeral.ticker}
+                                </div>
+                                <div>
+                                    Tipo: {ativo.InfoGeral.tipo}
+                                </div>
+                                <div>
+                                    Última Cotação: R$ {ativo.Cotacoes.cotacoes[0].valor}
+                                </div>
+                                <div className='row'>
+                                    <div className='col'>
+                                        <button type="button" class="btn btn-success teste">Cotações Diárias</button>
+                                    </div>
+                                    <div className='col'>
+                                        <button type="button" class="btn btn-success teste">Indicadores</button>
+                                    </div>
+                                </div>
+                                <div className='col'>
+                                    <span><button type="button" class="btn btn-success teste">Adicionar à Carteira</button></span>
+                                </div>
+                            </div>
+                        </div>
+                        );
+                    })}
+                </div>
+
                 <h3><strong>Bens Industriais</strong></h3>
                 <table>
                     <tr>
@@ -16,32 +52,32 @@ function ListarAtivos() {
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -57,32 +93,32 @@ function ListarAtivos() {
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -98,32 +134,32 @@ function ListarAtivos() {
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -139,32 +175,32 @@ function ListarAtivos() {
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -180,32 +216,32 @@ function ListarAtivos() {
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -221,32 +257,32 @@ function ListarAtivos() {
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -262,32 +298,32 @@ function ListarAtivos() {
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -303,32 +339,32 @@ function ListarAtivos() {
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -344,32 +380,32 @@ function ListarAtivos() {
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -385,32 +421,32 @@ function ListarAtivos() {
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
@@ -426,32 +462,32 @@ function ListarAtivos() {
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                     <tr>
                         <td>{Ativo.InfoGeral.empresa}</td>
                         <td>{Ativo.InfoGeral.ticker}</td>
-                        <td>R$ {Ativo.Cotacoes[0].valor}</td>
+                        <td>R$ {Ativo.Cotacoes.cotacoes[0].valor}</td>
                     </tr>
                 </table>
             </div>
