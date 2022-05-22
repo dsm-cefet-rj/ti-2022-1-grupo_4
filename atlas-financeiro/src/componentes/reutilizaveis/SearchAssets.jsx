@@ -19,7 +19,7 @@ export default function SearchAssets() {
                 <div className="container-fluid">
                     <form className="d-flex" onSubmit={handleSubmit}>
                         <input name='busca' value={search.pesquisa} className="form-control me-2" type="search" placeholder="Procurar por ação/empresa/fii" aria-label="Search" onChange={handleChange} />
-                        <input type='submit' value="Buscar" />
+                        <input className="btn btn-primary" type='submit' value="Buscar" />
                     </form>
                 </div>
             </div>
