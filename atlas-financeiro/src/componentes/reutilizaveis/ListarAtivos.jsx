@@ -31,7 +31,7 @@ function ListarAtivos() {
                         <div className='box flexRow'>
                             <div key={ativo.InfoGeral.ticker} className='row'>
                                 <div id="COLOCAR_IMAGEM" className='col'>
-                                    <img src={vale} alt='Vale'/>
+                                    <img className='imagem-ativo' src={vale} alt='Vale'/>
                                 </div>
                                 <div className='col'>
                                     <div>
@@ -51,9 +51,9 @@ function ListarAtivos() {
                                     <div className='col'>
                                         <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
-                                </div>
-                                <div className='col'>
+                                    <div className='col'>
                                     <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@ function ListarAtivos() {
                         <div className='box flexRow'>
                             <div key={ativo.InfoGeral.ticker} className='row'>
                                 <div id="COLOCAR_IMAGEM" className='col'>
-                                    <img src={vale} alt='Vale'/>
+                                    <img className='imagem-ativo' src={vale} alt='Vale'/>
                                 </div>
                                 <div className='col'>
                                     <div>
@@ -90,9 +90,9 @@ function ListarAtivos() {
                                     <div className='col'>
                                         <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
-                                </div>
-                                <div className='col'>
-                                    <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    <div className='col'>
+                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +109,7 @@ function ListarAtivos() {
                         <div className='box flexRow'>
                             <div key={ativo.InfoGeral.ticker} className='row'>
                                 <div id="COLOCAR_IMAGEM" className='col'>
-                                    <img src={vale} alt='Vale'/>
+                                    <img className='imagem-ativo' src={vale} alt='Vale'/>
                                 </div>
                                 <div className='col'>
                                     <div>
@@ -129,9 +129,9 @@ function ListarAtivos() {
                                     <div className='col'>
                                         <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
-                                </div>
-                                <div className='col'>
-                                    <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    <div className='col'>
+                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +148,7 @@ function ListarAtivos() {
                         <div className='box flexRow'>
                             <div key={ativo.InfoGeral.ticker} className='row'>
                                 <div id="COLOCAR_IMAGEM" className='col'>
-                                    <img src={vale} alt='Vale'/>
+                                    <img className='imagem-ativo' src={vale} alt='Vale'/>
                                 </div>
                                 <div className='col'>
                                     <div>
@@ -168,9 +168,9 @@ function ListarAtivos() {
                                     <div className='col'>
                                         <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
-                                </div>
-                                <div className='col'>
-                                    <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    <div className='col'>
+                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +187,7 @@ function ListarAtivos() {
                         <div className='box flexRow'>
                             <div key={ativo.InfoGeral.ticker} className='row'>
                                 <div id="COLOCAR_IMAGEM" className='col'>
-                                    <img src={vale} alt='Vale'/>
+                                    <img className='imagem-ativo' src={vale} alt='Vale'/>
                                 </div>
                                 <div className='col'>
                                     <div>
@@ -207,9 +207,9 @@ function ListarAtivos() {
                                     <div className='col'>
                                         <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
-                                </div>
-                                <div className='col'>
-                                    <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    <div className='col'>
+                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -226,7 +226,7 @@ function ListarAtivos() {
                         <div className='box flexRow'>
                             <div key={ativo.InfoGeral.ticker} className='row'>
                                 <div id="COLOCAR_IMAGEM" className='col'>
-                                    <img src={vale} alt='Vale'/>
+                                    <img className='imagem-ativo' src={vale} alt='Vale'/>
                                 </div>
                                 <div className='col'>
                                     <div>
@@ -246,9 +246,9 @@ function ListarAtivos() {
                                     <div className='col'>
                                         <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
-                                </div>
-                                <div className='col'>
-                                    <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    <div className='col'>
+                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -265,7 +265,7 @@ function ListarAtivos() {
                         <div className='box flexRow'>
                             <div key={ativo.InfoGeral.ticker} className='row'>
                                 <div id="COLOCAR_IMAGEM" className='col'>
-                                    <img src={vale} alt='Vale'/>
+                                    <img className='imagem-ativo' src={vale} alt='Vale'/>
                                 </div>
                                 <div className='col'>
                                     <div>
@@ -285,9 +285,9 @@ function ListarAtivos() {
                                     <div className='col'>
                                         <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
-                                </div>
-                                <div className='col'>
-                                    <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    <div className='col'>
+                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -304,7 +304,7 @@ function ListarAtivos() {
                         <div className='box flexRow'>
                             <div key={ativo.InfoGeral.ticker} className='row'>
                                 <div id="COLOCAR_IMAGEM" className='col'>
-                                    <img src={vale} alt='Vale'/>
+                                    <img className='imagem-ativo' src={vale} alt='Vale'/>
                                 </div>
                                 <div className='col'>
                                     <div>
@@ -324,9 +324,9 @@ function ListarAtivos() {
                                     <div className='col'>
                                         <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
-                                </div>
-                                <div className='col'>
-                                    <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    <div className='col'>
+                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -343,7 +343,7 @@ function ListarAtivos() {
                         <div className='box flexRow'>
                             <div key={ativo.InfoGeral.ticker} className='row'>
                                 <div id="COLOCAR_IMAGEM" className='col'>
-                                    <img src={vale} alt='Vale'/>
+                                    <img className='imagem-ativo' src={vale} alt='Vale'/>
                                 </div>
                                 <div className='col'>
                                     <div>
@@ -363,9 +363,9 @@ function ListarAtivos() {
                                     <div className='col'>
                                         <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
-                                </div>
-                                <div className='col'>
-                                    <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    <div className='col'>
+                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -382,7 +382,7 @@ function ListarAtivos() {
                         <div className='box flexRow'>
                             <div key={ativo.InfoGeral.ticker} className='row'>
                                 <div id="COLOCAR_IMAGEM" className='col'>
-                                    <img src={vale} alt='Vale'/>
+                                    <img className='imagem-ativo' src={vale} alt='Vale'/>
                                 </div>
                                 <div className='col'>
                                     <div>
@@ -402,9 +402,9 @@ function ListarAtivos() {
                                     <div className='col'>
                                         <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
-                                </div>
-                                <div className='col'>
-                                    <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    <div className='col'>
+                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -421,7 +421,7 @@ function ListarAtivos() {
                         <div className='box flexRow'>
                             <div key={ativo.InfoGeral.ticker} className='row'>
                                 <div id="COLOCAR_IMAGEM" className='col'>
-                                    <img src={vale} alt='Vale'/>
+                                    <img className='imagem-ativo' src={vale} alt='Vale'/>
                                 </div>
                                 <div className='col'>
                                     <div>
@@ -441,9 +441,9 @@ function ListarAtivos() {
                                     <div className='col'>
                                         <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
-                                </div>
-                                <div className='col'>
-                                    <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    <div className='col'>
+                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
