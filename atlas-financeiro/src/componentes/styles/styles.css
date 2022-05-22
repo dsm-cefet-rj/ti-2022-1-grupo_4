@@ -16,10 +16,6 @@ body {
 .imagem-ativo {
     padding-right: 170px;
 }
-.info-ativo-listaativos {
-   
-    
-}
 
 .teste {
     align-items: center;
@@ -185,6 +181,17 @@ video {
     margin-bottom: 25px;
     color: #0e0e0e;
 }
+.accordion {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 75px;
+    transition: ease all .5s;
+}
+@media (max-width: 730px) { 
+    .accordion {
+        width: 100%;
+    } 
+}
 #accordionExample {
     margin-left: auto;
     margin-right: auto;
@@ -193,11 +200,7 @@ video {
     width: 70%;
     transition: ease all .5s;
 }
-@media (width: 730px) { 
-    #accordionExample {
-        width: 100%;
-    } 
-}
+
 .table-header {
     display: inline;
     padding-right: 0;

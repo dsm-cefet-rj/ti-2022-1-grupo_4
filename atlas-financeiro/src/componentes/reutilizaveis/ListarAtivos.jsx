@@ -1,6 +1,5 @@
 import React from 'react';
-import { Ativo, GrupoAtivos } from './Ativo';
-import css from '../styles/styles.css';
+import { GrupoAtivos } from './Ativo';
 import vale from '../media/vale.png'
 
 
