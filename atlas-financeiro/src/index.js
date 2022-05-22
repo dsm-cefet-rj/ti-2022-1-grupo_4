@@ -11,3 +11,7 @@ root.render(
 );
 
 reportWebVitals();
+
+function handleClickCotacoesDiarias() {
+  alert('Cotações Diárias!');
+}

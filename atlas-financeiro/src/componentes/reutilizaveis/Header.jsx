@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/styles.css';
 import video from '../media/earth.mp4';
+import SearchAssets from './SearchAssets';
 
 function Header() {
     return (
@@ -45,15 +46,8 @@ function Header() {
                     <h2><strong>Invista consciente</strong></h2>
                 </div>
 
-                <div class="search-container">
-                    <div class="container-fluid">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Procurar por ação/empresa/fii" aria-label="Search"  />
-                            <button class="btn btn-outline-light" type="submit" > <a class="button-submit" href="/detalhamento">Buscar</a></button>
-                        </form>
-                    </div>
-                </div>
-            
+                <SearchAssets />
+
             </div>       
         </section>
     );

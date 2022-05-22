@@ -9,7 +9,7 @@ const perfil = {
         estado: 'Rio de Janeiro',
         pais: 'Brasil'
     },
-    descricao: 'Consultor de Marketing para grandes empresas dos segmentos de Mídia & Serviços, oferecendo também palestras, treinamentos sobre marketing e estratégia de negócios. Investidor a mais de 8 anos.'
+    descricao: 'Consultor de Marketing para grandes empresas dos segmentos de Mídia & Serviços, oferecendo também palestras, treinamentos sobre marketing e estratégia de negócios. Investidor há mais de 8 anos.'
 }
 
 function HeaderPerfil() {
