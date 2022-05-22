@@ -34,13 +34,13 @@ const TabelaIndicadores = () => {
                             <td><strong>Papel:</strong></td>
                             <td>{Ativo.InfoGeral.ticker}</td>
                             <td><strong>Cotação:</strong></td>
-                            <td>{Ativo.Cotacoes[0].valor}</td>
+                            <td>{Ativo.Cotacoes.cotacoes[0].valor}</td>
                         </tr>
                         <tr>
                             <td><strong>Tipo:</strong></td>
                             <td>{Ativo.InfoGeral.tipo}</td>
                             <td><strong>Data útil cot:</strong></td>
-                            <td>{Ativo.Cotacoes[0].data}</td>
+                            <td>{Ativo.Cotacoes.cotacoes[0].data}</td>
                         </tr>
                         <tr>
                             <td><strong>Empresa:</strong></td>

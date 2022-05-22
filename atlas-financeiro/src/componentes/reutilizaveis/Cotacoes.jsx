@@ -1,7 +1,7 @@
 import React from 'react';
 import { Ativo } from './Ativo'; 
 
-const cotacoes = Ativo.Cotacoes;
+const cotacoes = Ativo.Cotacoes.cotacoes;
 
 const LinhaTabela = (props) => {
     return(

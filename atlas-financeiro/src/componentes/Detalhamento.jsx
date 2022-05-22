@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './reutilizaveis/Header';
-
 import Cotacoes from './reutilizaveis/Cotacoes';
 import Indicadores from './reutilizaveis/Indicadores';
 import Recomendacoes from './reutilizaveis/Recomendacoes';

@@ -3,7 +3,8 @@ import '../styles/styles.css';
 import video from '../media/earth.mp4';
 import SearchAssets from './SearchAssets';
 
-function Header() {
+function Header(props) {
+    
     return (
         <section class="dark-section">
 
@@ -46,7 +47,7 @@ function Header() {
                     <h2><strong>Invista consciente</strong></h2>
                 </div>
 
-                <SearchAssets />
+                <SearchAssets state={props.state} setState={props.setState} />
 
             </div>       
         </section>
