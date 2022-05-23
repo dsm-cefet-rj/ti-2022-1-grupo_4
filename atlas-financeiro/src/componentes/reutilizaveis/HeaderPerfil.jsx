@@ -69,7 +69,7 @@ function HeaderPerfil() {
             
                 <div class="perfil-info">
                     <p class="perfil-status"><strong>{perfil.status}</strong></p>
-                    <p class="perfil-location">{perfil.localidade.estado},&nbsp;&nbsp;&nbsp;&nbsp; {perfil.localidade.pais}</p>
+                    <p class="perfil-location">{perfil.localidade.estado}, {perfil.localidade.pais}</p>
                 </div>
             
                 <div class="perfil-descricao">
