@@ -8,21 +8,21 @@ function AccordionSchema (props) {
             <Accordion.Item eventKey={props.ticker}>
                 <Accordion.Header>[{props.ticker}]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{props.empresa.toUpperCase()}</Accordion.Header>
                 <Accordion.Body>
-                    <div class="table-header">
+                    <div className="table-header">
                                 
                         <h3><strong>Informações Gerais</strong></h3>
 
-                        <div class="btn-group dropstart">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                        <div className="btn-group dropstart">
+                            <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
 
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
-                                <li><a class="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
-                                <li><a class="dropdown-item" href="#watchlist-container">Watchlist</a></li>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a className="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
+                                <li><a className="dropdown-item" href="/perfil">Adicionar à Carteira</a></li>
+                                <li><a className="dropdown-item" href="#watchlist-container">Watchlist</a></li>
                             </ul>
                         </div>
                     </div>
-                    <table class="info-geral"> 
+                    <table className="info-geral"> 
                                 
                         <tr>
                             <td><strong>Papel:</strong></td>
@@ -55,7 +55,7 @@ function AccordionSchema (props) {
                             <td>{Intl.NumberFormat('pt-BR').format(props.vol_medio_2m)}</td>
                         </tr>
                     </table>
-                    <div class="ler-mais"><a href="/detalhamento">Ler mais</a></div>
+                    <div className="ler-mais"><a href="/detalhamento">Ler mais</a></div>
                 </Accordion.Body>
             </Accordion.Item>
 

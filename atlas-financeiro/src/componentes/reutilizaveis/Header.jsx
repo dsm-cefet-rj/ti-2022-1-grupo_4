@@ -6,28 +6,28 @@ import SearchAssets from './SearchAssets';
 function Header(props) {
     
     return (
-        <section class="dark-section">
+        <section className="dark-section">
 
             <div id="navbar">
-                <nav class="navbar navbar-expand-lg  ">
-                    <a class="navbar-brand" href='/'>Atlas Financeiro</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" id="hamburger">
-                        <span class="navbar-toggler-icon"></span>
+                <nav className="navbar navbar-expand-lg  ">
+                    <a className="navbar-brand" href='/'>Atlas Financeiro</a>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" id="hamburger">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                        <ul class="navbar-nav ms-auto">
+                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul className="navbar-nav ms-auto">
                         
-                            <li class="nav-item">
-                                <a class="nav-link" href="#recomendacoes">Recomendações</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#recomendacoes">Recomendações</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/ativos">Lista de Ativos</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/ativos">Lista de Ativos</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#footer">Contatos</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#footer">Contatos</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/perfil">Log in</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/perfil">Log in</a>
                             </li>
                         </ul>
                     </div>
@@ -39,9 +39,9 @@ function Header(props) {
 
                 <video muted loop autoPlay src={video}  />
                 
-                <div class="overlay"></div>
+                <div className="overlay"></div>
 
-                <div class="title-container">
+                <div className="title-container">
                     <h1><strong>Bem-vindo ao Atlas Financeiro!</strong></h1>
                     <h3>Seu sistema online de informações financeiras</h3>
                     <h2><strong>Invista consciente</strong></h2>

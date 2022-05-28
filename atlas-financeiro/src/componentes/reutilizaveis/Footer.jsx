@@ -26,9 +26,9 @@ function Footer() {
                 <div className='socialmedia-container'>
                     <h3 className='footer-title'><strong>Redes Sociais</strong></h3>
                     <ul className='socialmedia-list'>
-                        <li className='facebook-icon'><i class="social-icon fab fa-facebook-f"></i> Facebook</li>
-                        <li className='twitter-icon'><i class="social-icon fab fa-twitter"></i> Twitter</li>
-                        <li className='instagram-icon'><i class="social-icon fab fa-instagram"></i> Instagram</li>
+                        <li className='facebook-icon'><i className="social-icon fab fa-facebook-f"></i> Facebook</li>
+                        <li className='twitter-icon'><i className="social-icon fab fa-twitter"></i> Twitter</li>
+                        <li className='instagram-icon'><i className="social-icon fab fa-instagram"></i> Instagram</li>
                     </ul>
                 </div>
                 

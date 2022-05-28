@@ -12,7 +12,7 @@ function Home(props) {
     return (
         <>
             <Header state={props.state} setState={props.setState}/>
-            <section class="light-section">
+            <section className="light-section">
                 <TransitionGroup>
                     <CSSTransition key={props.setState} timeout={1000} classNames="messageout">
                         <div>
