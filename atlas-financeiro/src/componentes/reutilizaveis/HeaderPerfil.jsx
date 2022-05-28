@@ -39,7 +39,7 @@ function HeaderPerfil() {
                                 <a class="nav-link" href="/ativos">Lista de Ativos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#carteira-container">Carteira</a>
+                                <a class="nav-link" href="/carteira-perfil">Carteira</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#historico-container">Histórico</a>

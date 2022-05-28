@@ -19,7 +19,7 @@ function Carteira() {
             </div>
             
             <Accordion>
-              {ativos.map(ativo => <CreateAtivoAccordion ativo={ativo}/>)}
+              {ativos.slice(0, 7).map(ativo => <CreateAtivoAccordion ativo={ativo}/>)}
             </Accordion>
         </div>
     );
