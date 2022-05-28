@@ -7,7 +7,7 @@ import ativos from './InfoGeralData';
 function Recomendacoes() {
     return (
       <div id="recomendacoes">
-        <div class="table-title">
+        <div className="table-title">
           <h2><strong>Recomendações</strong></h2>
         </div>    
         <Accordion>

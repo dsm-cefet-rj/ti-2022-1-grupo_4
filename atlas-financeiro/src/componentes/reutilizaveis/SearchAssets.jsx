@@ -1,17 +1,32 @@
-import React, { useState } from "react";
+import React, { Provider } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 function SearchAssets(props) {
 
-    const [search, setSearch] = useState({});
-   
+    // const initialSearch = ''
 
-    function handleChange(e) {
-        setSearch( {...search, [e.target.name]: e.target.value} )
+    // function handleChange(busca = initialSearch, action) {
+    //     action.type
+    //     setSearch( {...search, [e.target.name]: e.target.value} )
+    // }
+    
+
+    // const [search, setSearch] = useState({});
+
+    const busca = useSelector(state => state.busca)
+    const dispatch = useDispatch()
+
+    function alterarBusca(event) {
+        event.preventDefault();
+        debugger
+        dispatch({type: 'alterarBusca', payload: busca + event.nativeEvent.data})
     }
+
 
     function mostrarDetalhamento(event) {
         event.preventDefault();
-        alert('Valor enviado: ' + search.busca);
+        dispatch({type: 'buscar', payload: busca})
+        alert('Valor enviado: ' + busca);
         props.setState({ visible: true });
     }
 
@@ -20,7 +35,7 @@ function SearchAssets(props) {
             <div className="search-container">
                 <div className="container-fluid">
                     <form className="d-flex">
-                        <input name='busca' value={search.pesquisa} className="form-control me-2" type="search" placeholder="Procurar por ação/empresa/fii" aria-label="Search" onChange={handleChange} />
+                        <input name='busca' onChange={alterarBusca} value={busca} className="form-control me-2" type="search" placeholder="Procurar por ação/empresa/fii" aria-label="Search" />
                         <input onClick={mostrarDetalhamento}  className="btn btn-primary" type='submit' value="Buscar" />
                     </form>
                 </div>
