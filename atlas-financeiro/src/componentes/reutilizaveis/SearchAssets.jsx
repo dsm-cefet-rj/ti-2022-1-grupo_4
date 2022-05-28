@@ -3,16 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function SearchAssets(props) {
 
-    // const initialSearch = ''
-
-    // function handleChange(busca = initialSearch, action) {
-    //     action.type
-    //     setSearch( {...search, [e.target.name]: e.target.value} )
-    // }
-    
-
-    // const [search, setSearch] = useState({});
-
     const busca = useSelector(state => state.busca)
     const dispatch = useDispatch()
 
