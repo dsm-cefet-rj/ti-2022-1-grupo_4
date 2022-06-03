@@ -45,13 +45,13 @@ function ListarAtivos() {
                                 </div>
                                 <div className='row'>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                     </div>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
                                     <div className='col'>
-                                    <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                    <span><button type="button" className="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                     </div>
                                 </div>
                             </div>
@@ -84,13 +84,13 @@ function ListarAtivos() {
                                 </div>
                                 <div className='row'>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                     </div>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
                                     <div className='col'>
-                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                        <span><button type="button" className="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                     </div>
                                 </div>
                             </div>
@@ -123,13 +123,13 @@ function ListarAtivos() {
                                 </div>
                                 <div className='row'>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                     </div>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
                                     <div className='col'>
-                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                        <span><button type="button" className="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                     </div>
                                 </div>
                             </div>
@@ -162,13 +162,13 @@ function ListarAtivos() {
                                 </div>
                                 <div className='row'>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                     </div>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
                                     <div className='col'>
-                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                        <span><button type="button" className="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                     </div>
                                 </div>
                             </div>
@@ -201,13 +201,13 @@ function ListarAtivos() {
                                 </div>
                                 <div className='row'>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                     </div>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
                                     <div className='col'>
-                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                        <span><button type="button" className="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                     </div>
                                 </div>
                             </div>
@@ -240,13 +240,13 @@ function ListarAtivos() {
                                 </div>
                                 <div className='row'>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                     </div>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
                                     <div className='col'>
-                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                        <span><button type="button" className="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                     </div>
                                 </div>
                             </div>
@@ -279,13 +279,13 @@ function ListarAtivos() {
                                 </div>
                                 <div className='row'>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                     </div>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
                                     <div className='col'>
-                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                        <span><button type="button" className="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                     </div>
                                 </div>
                             </div>
@@ -318,13 +318,13 @@ function ListarAtivos() {
                                 </div>
                                 <div className='row'>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                     </div>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
                                     <div className='col'>
-                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                        <span><button type="button" className="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                     </div>
                                 </div>
                             </div>
@@ -357,13 +357,13 @@ function ListarAtivos() {
                                 </div>
                                 <div className='row'>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                     </div>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
                                     <div className='col'>
-                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                        <span><button type="button" className="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                     </div>
                                 </div>
                             </div>
@@ -396,13 +396,13 @@ function ListarAtivos() {
                                 </div>
                                 <div className='row'>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                     </div>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
                                     <div className='col'>
-                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                        <span><button type="button" className="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                     </div>
                                 </div>
                             </div>
@@ -435,13 +435,13 @@ function ListarAtivos() {
                                 </div>
                                 <div className='row'>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                     </div>
                                     <div className='col'>
-                                        <button type="button" class="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
+                                        <button type="button" className="btn btn-success teste" onClick={handleClickIndicadores}>Indicadores</button>
                                     </div>
                                     <div className='col'>
-                                        <span><button type="button" class="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                        <span><button type="button" className="btn btn-success teste" onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                     </div>
                                 </div>
                             </div>

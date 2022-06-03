@@ -33,19 +33,18 @@ function Watchlist(props) {
 
     return (
         <div id="watchlist-container">
-            <div class="watchlist">
+            <div className="watchlist">
                 <h2><strong>Watchlist</strong></h2>
             </div>
             
-            <form className='watchlist-form'>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label" className='watchlist-form-title-ticker'><strong>Nome do Ticker</strong></label>
-                    <input name="ticker_busca" type="text" class="form-control" id="busca_ticker" aria-describedby="emailHelp" placeholder='Insira o nome do ticker' onChange={handleTickerChange}/>
+            <form className="centralize watchlist-form">
+                <div className="centralize mb-3 input_box">
+                    <label for="exampleInputEmail1" className="form-label watchlist-form-title-ticker"><strong>Nome do Ticker</strong></label>
+                    <input name="ticker_busca" type="text" className="form-control text-center" id="busca_ticker" aria-describedby="emailHelp" placeholder='Insira o nome do ticker' onChange={handleTickerChange}/>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label" className='watchlist-form-title-value'><strong>{'Valor da Cotação (R$)'}</strong></label>
-                    <input name="cotacao_busca" type="number" class="form-control" id="busca_cotacao" aria-describedby="emailHelp" placeholder='Insira o valor determinado da cotação' onChange={handleCotacaoChange}/>
-                    <div id="emailHelp" class="form-text">Assim que o valor for atingido, um email será enviado ao usuário.</div>
+                <div className="centralize mb-3 input_box">
+                    <label for="exampleInputEmail1" className="form-label watchlist-form-title-value"><strong>{'Valor da Cotação (R$)'}</strong></label>
+                    <input name="cotacao_busca" type="number" className="form-control text-center" id="busca_cotacao" aria-describedby="emailHelp" placeholder='Insira o valor determinado da cotação' onChange={handleCotacaoChange}/>
                 </div>
 
                 <div className="centralize mb-3">
@@ -58,16 +57,18 @@ function Watchlist(props) {
                     </div>
                 </div>
 
+                <div id="emailHelp" className="form-text">Assim que o valor for atingido, um email será enviado ao usuário.</div>
+
                 <br>
                 </br>
                 
                 
                 <div className='row'>
                     <div className='col'>
-                        <button type="submit" class="btn btn-primary cancel-button" >Cancelar</button>
+                        <button type="submit" className="btn btn-primary cancel-button" >Cancelar</button>
                     </div>
                     <div className='col'>
-                        <button type="submit" class="btn btn-primary submit-button" onClick={mostrarBusca}>Confirmar</button>
+                        <button type="submit" className="btn btn-primary submit-button" onClick={mostrarBusca}>Confirmar</button>
                     </div>
                 </div>
             </form>

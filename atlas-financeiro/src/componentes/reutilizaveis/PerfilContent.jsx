@@ -7,7 +7,7 @@ import Footer from './Footer';
 
 function PerfilContent() {
     return (
-        <section class="light-section">
+        <section className="light-section">
                 <Watchlist />
                 <Carteira />
                 <Historico />

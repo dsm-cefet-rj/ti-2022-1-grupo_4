@@ -10,7 +10,7 @@ function Detalhamento() {
     return (
         <>
             <Header />
-            <section class="light-section">
+            <section className="light-section">
                 <Cotacoes />
                 <Indicadores />
                 <Recomendacoes />

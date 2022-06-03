@@ -14,41 +14,41 @@ const perfil = {
 
 function HeaderPerfil() {
     return (
-        <section class="dark-section">
+        <section className="dark-section">
 
             <div id="navbar">
 
-                <nav class="navbar navbar-expand-lg  ">
+                <nav className="navbar navbar-expand-lg  ">
 
-                    <a class="navbar-brand" href='/'>Atlas Financeiro</a>
+                    <a className="navbar-brand" href='/'>Atlas Financeiro</a>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" id="hamburger">
-                        <span class="navbar-toggler-icon"></span>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" id="hamburger">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
 
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/perfil">Perfil</a>
+                        <ul className="navbar-nav ms-auto">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/perfil">Perfil</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#recomendacoes">Recomendações</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#recomendacoes">Recomendações</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/ativos">Lista de Ativos</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/ativos">Lista de Ativos</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/carteira-perfil">Carteira</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/carteira-perfil">Carteira</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#historico-container">Histórico</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#historico-container">Histórico</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#footer">Contatos</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#footer">Contatos</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">Log out</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">Log out</a>
                             </li>
                         </ul>
 
@@ -56,24 +56,24 @@ function HeaderPerfil() {
                 </nav>
             </div>
 
-            <div class="perfil">
-                <div class="thumb-container" style={{backgroundImage:`url(${ImagemThumb})` }}>
-                    <div class="perfil-image-container">
-                        <img class="perfil-image" src={ImagemPerfil} alt="profile" />
+            <div className="perfil">
+                <div className="thumb-container" style={{backgroundImage:`url(${ImagemThumb})` }}>
+                    <div className="perfil-image-container">
+                        <img className="perfil-image" src={ImagemPerfil} alt="profile" />
                     </div>
                 </div>
     
-                <div class="perfil-name">
+                <div className="perfil-name">
                     <h2><strong>{perfil.nome}</strong></h2>
                 </div>
             
-                <div class="perfil-info">
-                    <p class="perfil-status"><strong>{perfil.status}</strong></p>
-                    <p class="perfil-location">{perfil.localidade.estado}, {perfil.localidade.pais}</p>
+                <div className="perfil-info">
+                    <p className="perfil-status"><strong>{perfil.status}</strong></p>
+                    <p className="perfil-location">{perfil.localidade.estado}, {perfil.localidade.pais}</p>
                 </div>
             
-                <div class="perfil-descricao">
-                    <h3 class="descricao-title"><strong>Sobre</strong></h3>
+                <div className="perfil-descricao">
+                    <h3 className="descricao-title"><strong>Sobre</strong></h3>
                     <p>{perfil.descricao}</p>
                 </div>
             
