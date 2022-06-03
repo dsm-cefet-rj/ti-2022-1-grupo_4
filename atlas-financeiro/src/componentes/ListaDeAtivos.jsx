@@ -14,7 +14,6 @@ function Ativos() {
             </section>
         </div>
         </>
-        
     );
 
 }
