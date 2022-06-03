@@ -5,10 +5,12 @@ import vale from '../media/vale.png'
 
 function handleClickCotacoesDiarias() {
     alert('Cotações Diárias!');
+    window.location.href="/detalhamento_cotacoes";
 }
 
 function handleClickIndicadores() {
     alert('Indicadores!');
+    window.location.href="/detalhamento_indicadores";
 }
 
 function handleClickAddCarteira() {

@@ -3,10 +3,11 @@ import { Provider } from 'react-redux';
 import { store } from '../store'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
-import Detalhamento from './Detalhamento';
 import Perfil from './Perfil';
 import ListaDeAtivos from './ListaDeAtivos';
 import Carteira from './reutilizaveis/Carteira';
+import DetalhamentoIndicadores from './Detalhamento Indicadores';
+import DetalhamentoCotacoes from './Detalhamento Cotacoes';
 
 function App() {
   const [state, setState] = useState({visible: false});
@@ -18,7 +19,8 @@ function App() {
                   <Route path="/" element={<Home state={state} setState={setState} />} />
                   <Route path="/perfil" element={<Perfil />} />
                   <Route path='/carteira-perfil' element={<Carteira />} />
-                  <Route path="/detalhamento" element={<Detalhamento />} />
+                  <Route path="/detalhamento_cotacoes" element={<DetalhamentoCotacoes />} />
+                  <Route path="/detalhamento_indicadores" element={<DetalhamentoIndicadores />} />
                   <Route path='/ativos' element={<ListaDeAtivos />} />
                 </Routes>
               </Router>

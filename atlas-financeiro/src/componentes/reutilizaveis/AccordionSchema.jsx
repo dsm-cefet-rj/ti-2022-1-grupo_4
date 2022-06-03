@@ -48,7 +48,7 @@ function AccordionSchema (props) {
                             <td>{Intl.NumberFormat('pt-BR').format(props.vol_medio_2m)}</td>
                         </tr>
                     </table>
-                    <div className="ler-mais"><a href="/detalhamento">Ler mais</a></div>
+                    <div className="ler-mais"><a href="/detalhamento_indicadores">Ler mais</a></div>
                 </Accordion.Body>
             </Accordion.Item>
 
