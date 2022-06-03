@@ -1,6 +1,7 @@
 import React from 'react';
 import { Ativo } from './Ativo';
 import Accordion from 'react-bootstrap/Accordion';
+import Dropdown from './Dropdown';
 
 function AccordionSchema (props) {
     
@@ -12,15 +13,7 @@ function AccordionSchema (props) {
                                 
                         <h3><strong>Informações Gerais</strong></h3>
 
-                        <div className="btn-group dropstart">
-                            <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
-
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a className="dropdown-item" href="/detalhamento">Cotação Diária</a></li>
-                                <li><a className="dropdown-item" href="/carteira-perfil">Adicionar à Carteira</a></li>
-                                <li><a className="dropdown-item" href="#watchlist-container">Watchlist</a></li>
-                            </ul>
-                        </div>
+                        <Dropdown />
                     </div>
                     <table className="info-geral"> 
                                 

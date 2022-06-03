@@ -1,5 +1,4 @@
 import React from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Header from './reutilizaveis/Header';
 import Cotacoes from './reutilizaveis/Cotacoes';
 import Indicadores from './reutilizaveis/Indicadores';
@@ -12,14 +11,10 @@ function Home(props) {
     return (
         <>
             <Header state={props.state} setState={props.setState}/>
-            <section className="light-section">
-                <TransitionGroup>
-                    <CSSTransition key={props.setState} timeout={1000} classNames="messageout">
-                        <div>
-                            {props.state.visible ? <><Cotacoes /><Indicadores /></> : null}
-                        </div>
-                    </CSSTransition>
-                </TransitionGroup>
+            <section className="light-section">    
+                <div>
+                    {props.state.visible ? <><Cotacoes /><Indicadores /></> : null}
+                </div>
                 <Recomendacoes />
                 <Footer />
             </section>
