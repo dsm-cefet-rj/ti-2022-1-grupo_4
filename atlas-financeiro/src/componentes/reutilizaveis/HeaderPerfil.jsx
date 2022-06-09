@@ -48,7 +48,7 @@ function HeaderPerfil() {
                                 <a className="nav-link" href="#footer">Contatos</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">Log out</a>
+                                <a className="nav-link" href="/login">Log out</a>
                             </li>
                         </ul>
 

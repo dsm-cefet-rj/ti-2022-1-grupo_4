@@ -27,7 +27,7 @@ function Header(props) {
                                 <a className="nav-link" href="#footer">Contatos</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/perfil">Log in</a>
+                                <a className="nav-link" href="/login">Log in</a>
                             </li>
                         </ul>
                     </div>

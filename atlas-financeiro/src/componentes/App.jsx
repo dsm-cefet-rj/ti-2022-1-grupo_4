@@ -3,6 +3,8 @@ import { Provider } from 'react-redux';
 import { store } from '../store'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
+import Login from './Login';
+import SignUp from './SignUp';
 import Perfil from './Perfil';
 import ListaDeAtivos from './ListaDeAtivos';
 import Carteira from './reutilizaveis/Carteira';
@@ -17,6 +19,8 @@ function App() {
               <Router>
                 <Routes>
                   <Route path="/" element={<Home state={state} setState={setState} />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/sign-up" element={<SignUp />} />
                   <Route path="/perfil" element={<Perfil />} />
                   <Route path='/carteira-perfil' element={<Carteira />} />
                   <Route path="/detalhamento_cotacoes" element={<DetalhamentoCotacoes />} />
