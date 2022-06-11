@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import { store } from '../store'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
-import Login from './Login';
-import SignUp from './SignUp';
-import Perfil from './Perfil';
-import ListaDeAtivos from './ListaDeAtivos';
-import Carteira from './reutilizaveis/Carteira';
-import DetalhamentoIndicadores from './Detalhamento Indicadores';
-import DetalhamentoCotacoes from './Detalhamento Cotacoes';
+import Home from '../pages/Home/Home';
+import Login from '../pages/Cadastro/Login';
+import SignUp from '../pages/Cadastro/SignUp';
+import Perfil from '../pages/Perfil/Perfil';
+import ListaDeAtivos from '../pages/ListaDeAtivos/ListaDeAtivos';
+import Carteira from '../pages/Carteira/Carteira';
+import DetalhamentoIndicadores from '../pages/Detalhamento/Detalhamento Indicadores';
+import DetalhamentoCotacoes from '../pages/Detalhamento/Detalhamento Cotacoes';
 
 function App() {
   const [state, setState] = useState({visible: false});

@@ -1,0 +1,32 @@
+
+.tableTitle {
+    padding-top: 45px;
+    margin-bottom: 45px;
+    color: #0e0e0e;
+}
+
+.accordion {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 75px;
+    transition: ease all .5s;
+}
+@media (max-width: 730px) { 
+    .accordion {
+        width: 100%;
+    } 
+}
+
+#accordionExample {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 75px;
+    border-collapse: collapse;
+    width: 70%;
+    transition: ease all .5s;
+}
+@media (max-width: 730px) { 
+    #accordionExample {
+        width: 100%;
+    } 
+}

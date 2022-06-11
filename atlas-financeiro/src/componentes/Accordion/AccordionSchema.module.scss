@@ -1,0 +1,33 @@
+
+.tableHeader {
+    display: inline;
+    padding-right: 0;
+    margin-bottom: 25px;
+}
+
+.tableHeaderH3{
+    font-size: medium;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    text-align: center;
+    padding: 15px 0 25px 0;
+} 
+
+.lerMais {
+    padding-top: 45px;
+    position: relative;
+    text-align: right;
+}

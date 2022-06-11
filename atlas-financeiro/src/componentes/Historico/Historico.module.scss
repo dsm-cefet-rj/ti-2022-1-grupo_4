@@ -1,0 +1,42 @@
+.searchContainer {
+    margin-bottom: 20px;
+}
+
+.containerFluid {
+    width: 72%;
+    position: relative;
+}
+
+.btnOutlineDark {
+    color: #133B5C;
+    border-color: #133B5C;
+}
+.btnOutlineDark:hover {
+    background-color: #133B5C;
+}
+
+.accordion {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 25px;
+    transition: ease all .5s;
+}
+@media (max-width: 730px) { 
+    .accordion {
+        width: 100%;
+    } 
+}
+
+.accordionExample {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 75px;
+    border-collapse: collapse;
+    width: 70%;
+    transition: ease all .5s;
+}
+@media (max-width: 730px) { 
+    .accordionExample {
+        width: 100%;
+    } 
+}
