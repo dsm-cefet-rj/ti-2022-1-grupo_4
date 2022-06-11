@@ -542,7 +542,7 @@ const ativos = [
         id: 7,
         informacoes_gerais:{
             empresa: 'Petrobras PN',
-            ticker: 'PETRA4',
+            ticker: 'PETR4',
             tipo: 'ON NM',
             max_52: 102.32,
             min_52: 60.02,

@@ -42,7 +42,7 @@ function ListarAtivos() {
                                         Tipo: {ativo.informacoes_gerais.tipo}
                                     </div>
                                     <div>
-                                        Última Cotação: R$ {ativo.cotacoes.cotacoes[0].valor}
+                                        Última Cotação: R$ {ativo.cotacoes[0].valor}
                                     </div>
                                 </div>
                                 <div className='row'>
