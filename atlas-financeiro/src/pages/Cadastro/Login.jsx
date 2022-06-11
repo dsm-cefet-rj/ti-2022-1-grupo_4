@@ -1,19 +1,16 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import styles from './Cadastro.module.scss';
 
-
-class Login extends React.Component {
-
-    render() {
-        
-        
+function Login() {
+    
         return ( 
             <div className='login_component'>
             
-                <div className='login_container'>
+                <div className={styles.loginContainer}>
                     <h2>Log in</h2>
                     <form>
-                        <div className='login_email_container'>
+                        <div className={styles.loginEmailContainer}>
                             <div className='login_email_info_container'>
                                 <label for='email'>Email</label>
                                 <span>
@@ -49,7 +46,6 @@ class Login extends React.Component {
                 </div> 
             </div>    
         );
-    }
 }
 
 export default Login;
