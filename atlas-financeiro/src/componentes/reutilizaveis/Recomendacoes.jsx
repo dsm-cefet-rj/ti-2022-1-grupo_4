@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/styles.css';
 import Accordion from 'react-bootstrap/Accordion';
 import CreateAtivoAccordion from './CreateAtivoAccordion';
-import ativos from './InfoGeralData';
+import ativos from './Ativos';
 
 function Recomendacoes() {
     return (

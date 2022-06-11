@@ -1,7 +1,8 @@
 import React from 'react';
-import { Ativo } from './Ativo'; 
+import ativos from './Ativos';
 
-const cotacoes = Ativo.Cotacoes.cotacoes;
+// Aqui só puxa de um ativos, que será buscado via fetch
+const cotacoes = ativos[0].cotacoes;
 
 const LinhaTabela = (props) => {
     return(
@@ -16,7 +17,7 @@ const LinhaTabela = (props) => {
     return(
         <div id='cotacao-diaria-container'>
             <div className="table-title">
-                <h2><strong>{Ativo.Indicadores.ticker}</strong></h2>
+                <h2><strong>{ativos[0].informacoes_gerais.ticker}</strong></h2>
                 <h3>Histórico de Cotação Diária</h3>
             </div>
         <div className='table-cotacao-container'>
@@ -24,7 +25,7 @@ const LinhaTabela = (props) => {
                 <tbody>
                 <tr>
                     <td><strong>Papel:</strong></td>
-                    <td><strong>{'Petrobras (PETR4)'}</strong></td>
+                    <td><strong>{ativos[0].informacoes_gerais.empresa} ({ativos[0].informacoes_gerais.empresa.ticker})</strong></td>
                 </tr>
                 <tr>
                     <td><strong>Data:</strong></td>

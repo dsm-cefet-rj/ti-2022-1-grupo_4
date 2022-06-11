@@ -1,7 +1,8 @@
 import React from 'react';
-import { Ativo } from './Ativo';
+// import ativos from './Ativos';
 import Accordion from 'react-bootstrap/Accordion';
 import Dropdown from './Dropdown';
+
 
 function AccordionSchema (props) {
     
@@ -21,13 +22,13 @@ function AccordionSchema (props) {
                             <td><strong>Papel:</strong></td>
                             <td>{props.ticker}</td>
                             <td><strong>Cotação:</strong></td>
-                            <td>{Ativo.Cotacoes.cotacoes[0].valor}</td>
+                            <td>{props.cotacoes[0].valor}</td>
                         </tr>
                         <tr>
                             <td><strong>Tipo:</strong></td>
                             <td>{props.tipo}</td>
                             <td><strong>Data útil cot:</strong></td>
-                            <td>{Ativo.Cotacoes.cotacoes[0].data}</td>
+                            <td>{props.cotacoes[0].data}</td>
                         </tr>
                         <tr>
                             <td><strong>Empresa:</strong></td>
