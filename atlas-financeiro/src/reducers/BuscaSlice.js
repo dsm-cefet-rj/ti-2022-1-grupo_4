@@ -1,9 +1,6 @@
+const initialState = "";
 
-
-
-const initialSearch = ''
-
-export default function mudaBusca(busca = initialSearch, action) {
+function mudaBusca(busca = initialState, action) {
     if (action.type === 'alterarBusca') {
         return action.payload
     } else if (action.type === 'buscar') {
@@ -11,3 +8,5 @@ export default function mudaBusca(busca = initialSearch, action) {
     }
     return busca
 }
+
+export default mudaBusca;

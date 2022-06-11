@@ -11,22 +11,34 @@ function Watchlist(props) {
 
     function handleTickerChange(e) {
         e.preventDefault();
-        dispatch1({type: 'altera_ticker', payload: document.getElementById('busca_ticker').value})
+        dispatch1({
+            type: 'altera_ticker', 
+            payload: document.getElementById('busca_ticker').value
+        })
     }
     
     function handleCotacaoChange(e) {
         e.preventDefault();
-        dispatch1({type: 'altera_cotacao', payload: document.getElementById('busca_cotacao').value})
+        dispatch1({
+            type: 'altera_cotacao', 
+            payload: document.getElementById('busca_cotacao').value
+        })
     }
     
     function handleDropdownChange(e) {
         e.preventDefault();
-        dispatch1({type: 'acima_abaixo', payload: document.getElementById('acima_abaixo').value})
+        dispatch1({
+            type: 'acima_abaixo', 
+            payload: document.getElementById('acima_abaixo').value
+        })
     }
 
-    function mostrarBusca(event) {
-        event.preventDefault();
-        dispatch1({type: 'add_watchlist', payload: [ticker, cotacao, dropdown]})
+    function mostrarBusca(e) {
+        e.preventDefault();
+        dispatch1({
+            type: 'add_watchlist', 
+            payload: [ticker, cotacao, dropdown]
+        })
         alert(`Ticker: ${ticker}\nCotação: ${cotacao}\nDropdown: ${dropdown}`);
         props.setState({ visible: true });
     }
