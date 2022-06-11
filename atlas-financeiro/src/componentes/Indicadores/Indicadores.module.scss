@@ -1,0 +1,49 @@
+
+.lightSection {
+    margin-bottom: 0px;
+    padding-top: 20px;
+    position: relative;
+    background-color: #f9f9f9;
+    opacity: 1;
+    background-image: radial-gradient(#e8e8e8 1.05px, #f9f9f9 1.05px);
+    background-size: 21px 21px;
+    z-index: 10000;
+}
+
+.tableTitle {
+    padding-top: 45px;
+    margin-bottom: 25px;
+    color: #0e0e0e;
+}
+
+.tableInfo {
+    text-align: center;
+    background-color: white;
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 70px;
+    transition: ease all .5s;
+}
+
+@media (max-width: 730px) { 
+    .tableInfo {
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 70px;
+    }
+    .dropstart {
+        padding: 0 0 0 97%;
+        position: relative;
+        top: 40px;
+        text-align: right;
+        right: 40px;
+    }
+    
+}
+
+.tableInfoTh {
+    text-align: center;
+}

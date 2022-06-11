@@ -1,0 +1,14 @@
+body {
+    background-color: aqua;
+}
+
+.loginContainer {
+    background-color: aliceblue;
+    margin: auto;
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}

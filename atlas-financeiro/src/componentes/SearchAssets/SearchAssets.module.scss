@@ -1,0 +1,27 @@
+
+.searchContainer {
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+.containerFluid {
+    max-width: 50%;
+    position: relative;
+    z-index: 10000;
+    transition: ease all .5s;
+}
+
+.buttonSubmit {
+    color: white;
+    text-decoration: none;
+}
+
+.buttonSubmit:hover {
+    color: black;
+}
+
+@media (max-width: 830px) { 
+    .containerFluid {
+        max-width: 90%;
+    } 
+}

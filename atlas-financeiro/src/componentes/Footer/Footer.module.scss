@@ -1,0 +1,146 @@
+
+.footer {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+    padding-top: 70px;
+    color: #dddddd;
+    background-color: #133B5C;
+}
+
+.footerContainer {
+    display: inline-flex;
+    width: 70%;
+    transition: ease all .5s;
+}
+
+.footerTitle {
+    font-size: 18px;
+    color: #dddddd;
+    transition: ease all .5s;
+}
+
+.sobreContainer {
+    width: 100%;
+    margin: 0 20px;
+    text-align: justify;
+    color: #dddddd;
+    transition: ease all .5s;
+}
+
+a {
+    color: #b5b5b5;
+}
+a:hover {
+    color: #606060;
+}
+
+.duvidasContainer {
+    width: 33.3%;
+    margin: 0 100px;
+    text-align: justify;
+    color: #dddddd;
+    transition: ease all .5s;
+}
+
+.duvidasList {
+    padding-left: 0;
+    color: #dddddd;
+    transition: ease all .5s;
+}
+
+.footerNumero {
+    position: absolute;
+    transition: ease all .5s;
+}
+
+.socialmediaContainer {
+    width: 53.3%;
+    margin: 0 20px;
+    text-align: justify;
+    color: #dddddd;
+    transition: ease all .5s;
+}
+
+.socialmediaList {
+    padding-left: 0;
+    color: #dddddd;
+    transition: ease all .5s;
+}
+
+.socialIcon {
+    color: #dddddd;
+}
+
+.fa-facebook-f:hover,
+.facebookIcon:hover {
+    color: rgb(37, 98, 167);
+}
+.svginlinefa.faw9 {
+    width: 0.5625em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+.fa-twitter:hover,
+.twitterIcon:hover {
+    color: rgb(53, 198, 255);
+}
+.svginlinefa.faw16 {
+    width: 1em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+.fa-instagram:hover,
+.instagramIcon:hover {
+    color: rgb(224, 81, 129);
+}
+.svginlinefa.faw14 {
+    width: 0.875em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+.svg-inline--fa {
+    vertical-align: none;
+}
+
+li {
+    list-style-type: none;  
+}
+
+.copyright {
+    color: #dddddd;
+    margin-bottom: 0px;
+    padding-top: 15px;
+    padding-bottom: 1px;
+}
+
+.footerTerms {
+    color: #a2a2a2;
+}
+
+@media (max-width: 1187px) {
+    .footerContainer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 730px) {
+    .duvidasContainer {
+        width: 33.3%;
+        margin: 0 20px;
+        margin-left: 0px;
+    }
+    .sobreContainer {
+        width: 97%;
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    .socialmediaContainer {
+        margin-right: 5px;
+    }
+}
