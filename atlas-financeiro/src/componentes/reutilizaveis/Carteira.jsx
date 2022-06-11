@@ -1,7 +1,7 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import CreateAtivoAccordion from './CreateAtivoAccordion';
-import ativos from './InfoGeralData';
+import ativos from './Ativos';
 
 function Carteira() {
     return (
