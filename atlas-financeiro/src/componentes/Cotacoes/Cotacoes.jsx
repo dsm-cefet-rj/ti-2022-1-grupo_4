@@ -26,7 +26,7 @@ const LinhaTabela = (props) => {
                 <tbody>
                 <tr>
                     <td className={styles.cotacoesTd}><strong>Papel:</strong></td>
-                    <td className={styles.cotacoesTd}><strong>{ativos[0].informacoes_gerais.empresa} ({ativos[0].informacoes_gerais.empresa.ticker})</strong></td>
+                    <td className={styles.cotacoesTd}><strong>{ativos[0].informacoes_gerais.empresa} ({ativos[0].informacoes_gerais.ticker})</strong></td>
                 </tr>
                 <tr>
                     <td className={styles.cotacoesTd}><strong>Data:</strong></td>
