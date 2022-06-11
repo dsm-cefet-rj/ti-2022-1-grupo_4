@@ -17,7 +17,6 @@ function SearchAssets(props) {
         event.preventDefault();
         dispatch({type: 'buscar', payload: busca})
         alert('Valor enviado: ' + busca);
-        props.setState({ visible: true });
     }
 
     return (
