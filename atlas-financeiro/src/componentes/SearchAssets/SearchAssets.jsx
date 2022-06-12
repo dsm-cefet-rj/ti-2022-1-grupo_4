@@ -7,15 +7,22 @@ function SearchAssets(props) {
     const busca = useSelector(state => state.busca)
     const dispatch = useDispatch()
 
+    //Action alterarBusca
     function alterarBusca(event) {
         event.preventDefault();
-        dispatch({type: 'alterarBusca', payload: document.getElementById('busca_ativo').value})
+        dispatch({
+            type: 'alterarBusca', 
+            payload: document.getElementById('busca_ativo').value
+        })
     }
 
-
+    //Action mostrarDetalhamento
     function mostrarDetalhamento(event) {
         event.preventDefault();
-        dispatch({type: 'buscar', payload: busca})
+        dispatch({
+            type: 'buscar', 
+            payload: busca
+        })
         alert('Valor enviado: ' + busca);
     }
 
