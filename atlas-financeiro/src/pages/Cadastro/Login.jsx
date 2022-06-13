@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react'; //trocar para dispatch
 import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserEmail, getUserSenha } from '../../store/slices/LoginSlice';
 import styles from './Cadastro.module.scss';
 
 function Login() {
+
+    
     const [emailState, setEmailState] = useState('')
     const [senhaState, setSenhaState] = useState('')
 
@@ -31,14 +33,17 @@ function Login() {
             
                 <div className={styles.loginContainer}>
                     <h2>Log in</h2>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className={styles.loginEmailContainer}>
-                            <div className='login_email_info_container'>
-                                <label for='email'>Email</label>
-                                <span>
-                                    Precisa de uma conta? 
-                                    <span><a href='/sign-up'>Cadastre-se já</a></span>
-                                </span>
+                            <div className={styles.loginEmailInfo}>
+                                <div className='login_email_info_container'>
+                                    <label for='email'> </label>
+                                    <span>
+                                        Não tem conta? 
+                                        <span><a href='/sign-up'> Cadastre-se </a></span>
+                                    </span>
+
+                                </div>
                             </div>
                             <div className='login_email_input_container'>
                                 <input 
@@ -55,8 +60,8 @@ function Login() {
                     
                         <div className='login_password_container'>
                             <div className='login_password_info_container'>
-                                <label for='current-password'>Senha</label>
-                                <span>Amostrar</span>
+                                <label for='current-password'></label>
+                                <span></span>
                             </div>
                             <div className='login_password_input_container'>
                                 <input 

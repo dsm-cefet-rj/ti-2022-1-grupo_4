@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import { store } from '../store/store';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navegate } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Cadastro/Login';
 import SignUp from '../pages/Cadastro/SignUp';
@@ -16,6 +16,8 @@ import Watchlist from './Watchlist/Watchlist';
 
 store.dispatch(fetchAtivos());
 store.dispatch(fetchAtivosCarteira());
+
+
 
 function App() {
   const [state, setState] = useState({visible: false});
