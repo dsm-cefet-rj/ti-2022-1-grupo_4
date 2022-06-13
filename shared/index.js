@@ -7,5 +7,4 @@ module.exports = () => ({
   ativos: ativos,
   carteira: carteira,
   watchlist: watchlist
-  // Something more
 });
