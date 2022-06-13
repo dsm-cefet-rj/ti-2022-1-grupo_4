@@ -10,7 +10,7 @@ import ListaDeAtivos from '../pages/ListaDeAtivos/ListaDeAtivos';
 import Carteira from '../pages/Carteira/Carteira';
 import DetalhamentoIndicadores from '../pages/Detalhamento/Detalhamento Indicadores';
 import DetalhamentoCotacoes from '../pages/Detalhamento/Detalhamento Cotacoes';
-import { fetchAtivos } from '../reducers/AtivosSlice';
+import { fetchAtivos } from '../store/slices/AtivosSlice';
 import Watchlist from './Watchlist/Watchlist';
 
 store.dispatch(fetchAtivos());

@@ -2,7 +2,7 @@ import React from 'react';
 import vale from '../../media/vale.png'
 import styles from './ListarAtivos.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchAtivos } from '../../reducers/AtivosSlice';
+import { fetchAtivos } from '../../store/slices/AtivosSlice';
 
 
 function handleClickCotacoesDiarias() {
@@ -24,7 +24,8 @@ function ListarAtivos() {
     const listaAtivos = useSelector(state => state.ativos)
     const dispatch = useDispatch()
 
-    // dispatch(fetchAtivos());
+    // dispatch(fetchAtivos);
+    console.log(listaAtivos)
 
     return (
         <div className={styles.listaAtivosContainer}>

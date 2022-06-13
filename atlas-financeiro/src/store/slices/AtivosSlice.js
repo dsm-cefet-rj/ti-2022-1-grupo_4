@@ -6,7 +6,7 @@ export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos',
         return await (await fetch('http://localhost:3004/ativos')).json();
     });
 
-const ativosInicial = fetchAtivos;
+const ativosInicial = [];
 
 function fulfillAtivosReducer(ativosState, ativosFetched) {
     return ativosFetched;

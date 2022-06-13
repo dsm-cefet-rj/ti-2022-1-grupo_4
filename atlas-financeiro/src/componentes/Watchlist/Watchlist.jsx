@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Watchlist.module.scss';
-import { alterarElemento, adicionarWatchlist } from '../../reducers/WatchlistSlice';
+import { alterarElemento, adicionarWatchlist } from '../../store/slices/WatchlistSlice';
 
 function Watchlist(props) {
     const elementos = useSelector(state => state.elementos);

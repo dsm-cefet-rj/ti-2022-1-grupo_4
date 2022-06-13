@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './SearchAssets.module.scss';
-import { alterarBusca, buscar } from '../../reducers/BuscaSlice';
+import { alterarBusca, buscar } from '../../store/slices/BuscaSlice';
 
 function SearchAssets(props) {
 

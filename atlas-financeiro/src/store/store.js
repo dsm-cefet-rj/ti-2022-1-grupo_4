@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import gerenciaAtivos, { fetchAtivos } from './reducers/AtivosSlice'
-import buscasReducer from './reducers/BuscaSlice';
-import ativosReducer from './reducers/AtivosSlice';
-import buscaWatchlistReducer from './reducers/WatchlistSlice';
+import gerenciaAtivos, { fetchAtivos } from './slices/AtivosSlice';
+import buscasReducer from './slices/BuscaSlice';
+import ativosReducer from './slices/AtivosSlice';
+import buscaWatchlistReducer from './slices/WatchlistSlice';
 import loginSlice from './slices/LoginSlice';
 
 export const store = configureStore({
