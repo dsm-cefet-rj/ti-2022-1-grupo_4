@@ -24,7 +24,7 @@ function ListarAtivos() {
     const listaAtivos = useSelector(state => state.ativos)
     const dispatch = useDispatch()
 
-    // dispatch(fetchAtivos);
+    dispatch(fetchAtivos);
     console.log(listaAtivos)
 
     return (
