@@ -9,7 +9,7 @@ export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos',
 const ativosInicial = [];
 
 function fulfillAtivosReducer(ativosState, ativosFetched) {
-    return ativosFetched;
+    return ativosFetched.ativos;
 }
 
 export const ativosSlice = createSlice({
