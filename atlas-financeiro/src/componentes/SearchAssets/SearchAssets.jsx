@@ -23,7 +23,7 @@ function SearchAssets(props) {
                 <div className={`container-fluid ${styles.containerFluid}`}>
                     <form className="d-flex">
                         <input id="busca_ativo" name='busca' onChange={alteraString} value={busca} className="form-control me-2" type="search" placeholder="Procurar por ação/empresa/fii" aria-label="Search" />
-                        <input onClick={mostrarDetalhamento}  className="btn btn-primary" type='submit' value="Buscar" />
+                        <input onClick={mostrarDetalhamento}  className={`btn btn-primary ${styles.buttonSearch}`} type='submit' value="Buscar" />
                     </form>
                 </div>
                 

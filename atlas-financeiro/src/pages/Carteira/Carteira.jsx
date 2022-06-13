@@ -1,13 +1,10 @@
 import React from 'react';
-import Accordion from 'react-bootstrap/Accordion';
-import ativos from '../../componentes/reutilizaveis/Ativos';
-import CreateAtivoAccordion from '../../componentes/Accordion/CreateAtivoAccordion';
 import styles from './Carteira.module.scss';
-import Header from '../../componentes/Header/Header';
 import Footer from '../../componentes/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import vale from '../../media/vale.png'
 import { fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
+import HeaderPerfil from '../../componentes/HeaderPerfil/HeaderPerfil';
 
 
 function Carteira() {
@@ -19,27 +16,29 @@ function Carteira() {
     // console.log(`Carteira: ${carteira}`);
 
     return (
-            <>
-            <Header />
-
-            <div className="ativos-list">
-                <section className={styles.lightSection}>
+        <>
+            <HeaderPerfil />
+            <section className={styles.lightSection}>
                     <div id="carteira-container">
-                        <h3><strong>{`Carteira`}</strong></h3>
+                        <div className={styles.carteiraTitle}>
+                            <h3><strong>{`Carteira`}</strong></h3>
+                        </div>
                 
-                        <div className={styles.listarContainer}>
+                        <div className={styles.carteiraContainer}>
                             {carteira.map(ativo => {
                                 return(
-                                <div className={styles.listaBensIndustriais}>
-
-                                    <h3><strong>{ativo.empresa} ({ativo.ticker})</strong></h3>
+                                <div className={styles.ativosCarteira}>
+                                    <div className={styles.ativoCarteira}>
+                                        <h3><strong>{ativo.empresa} ({ativo.ticker})</strong></h3>
+                                    </div>
+                                    
                                     <div style={{margin: '10px', padding: '10px', border: '10px'}}>
                                         <div className='box flexRow'>
                                             <div key={ativo.ticker} className='row'>
-                                                <div id="COLOCAR_IMAGEM" className='col'>
+                                                <div id="COLOCAR_IMAGEM" className={`col ${styles.ativoImagemCarteira}`}>
                                                     <img className={styles.imagemAtivo} src={vale} alt='Vale'/>
                                                 </div>
-                                                <div className='col'>
+                                                <div className={`col ${styles.ativoValueCarteira}`}>
                                                     <div>
                                                         Quantidade: {ativo.quantidade}
                                                     </div>
@@ -52,13 +51,13 @@ function Carteira() {
                                                 </div>
                                                 <div className='row'>
                                                     <div className='col'>
-                                                        <button type="button" className={`btn btn-success ${styles.teste}`} >Cotações Diárias</button>
+                                                        <button type="button" className={`btn btn-success ${styles.buttonOutro}`} ><a className={styles.hRef} href='/detalhamento_cotacoes'>Cotações Diárias</a></button>
                                                     </div>
                                                     <div className='col'>
-                                                        <button type="button" className={`btn btn-success ${styles.teste}`} >Indicadores</button>
+                                                        <button type="button" className={`btn btn-success ${styles.buttonOutro}`} ><a className={styles.hRef} href='/detalhamento_indicadores'>Indicadores</a></button>
                                                     </div>
                                                     <div className='col'>
-                                                    <span><button type="button" className={`btn btn-danger ${styles.teste}`} >Remover da Carteira</button></span>
+                                                    <span><button type="button" className={`btn btn-danger ${styles.buttonCancel}`} >Remover da Carteira</button></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -69,9 +68,8 @@ function Carteira() {
                             })}
                         </div>
                     </div>
-                </section>
-            </div>
-            <Footer />
+                    <Footer />
+            </section>
         </>
     );
 }

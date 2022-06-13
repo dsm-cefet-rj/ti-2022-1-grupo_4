@@ -1,5 +1,38 @@
+.lightSection {
+    margin-bottom: 0px;
+    padding-top: 20px;
+    position: relative;
+    background-color: #f9f9f9;
+    opacity: 1;
+    background-image: radial-gradient(#e8e8e8 1.05px, #f9f9f9 1.05px);
+    background-size: 21px 21px;
+    z-index: 10000;
+}
 .searchContainer {
     margin-bottom: 20px;
+}
+
+.carteiraTitle {
+    margin: 25px 0 45px 0;
+}
+
+.carteiraContainer {
+    background-color: white;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 75px;
+    border-radius: 10px;
+    padding: 15px;
+    transition: ease all .5s;
+}
+@media (max-width: 730px) {
+    .carteiraContainer {
+        width: 100%;
+    }
+    .ativoImagemCarteira {
+        position: relative;
+        left: 5px;
+    }
 }
 
 .containerFluid {
@@ -7,12 +40,38 @@
     position: relative;
 }
 
-.btnOutlineDark {
-    color: #133B5C;
-    border-color: #133B5C;
+.ativosCarteira {
+    margin: 5px 0 0 0;
 }
-.btnOutlineDark:hover {
+
+.ativoCarteira {
+    margin: 50px 0 0 0;
+}
+.ativoImagemCarteira {
+    position: relative;
+    right: 85px;
+}
+.ativoValueCarteira {
+    margin: 10px 0 10px 0;
+}
+
+.buttonCancel {
+    position: relative;
+    margin-left: 60px;
+    margin-bottom: 20px;
+    background-color: #5c1313;
+    border: none;
+}
+.buttonCancel:hover {
+    background-color: #9c2424;
+}
+
+.buttonOutro {
     background-color: #133B5C;
+    border: none
+}
+.buttonOutro:hover {
+    background-color: #0c5ea1;
 }
 
 .accordion {
@@ -39,4 +98,10 @@
     .accordionExample {
         width: 100%;
     } 
+}
+
+.hRef,
+.hRef:hover {
+    text-decoration: none;
+    color: white;
 }
