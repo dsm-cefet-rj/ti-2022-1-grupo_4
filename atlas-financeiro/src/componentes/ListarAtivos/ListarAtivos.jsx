@@ -29,7 +29,9 @@ function ListarAtivos() {
 
     return (
         <div className={styles.listaAtivosContainer}>
-            <h3><strong>{'Lista de Ativos (B3)'}</strong></h3>
+            <div className={styles.listaAtivoTitle}>
+                <h3><strong>{'Lista de Ativos (B3)'}</strong></h3>
+            </div>
         
                 <div className={styles.listarContainer}>
                     {listaAtivos.map(ativo => {
@@ -54,15 +56,15 @@ function ListarAtivos() {
                                                 Última Cotação: R$ {ativo.cotacoes[0].valor}
                                             </div>
                                         </div>
-                                        <div className='row'>
+                                        <div className={`row ${styles.opcoesContainer}`}>
                                             <div className='col'>
-                                                <button type="button" className={`btn btn-success ${styles.teste}`} onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                                <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
                                             </div>
                                             <div className='col'>
-                                                <button type="button" className={`btn btn-success ${styles.teste}`} onClick={handleClickIndicadores}>Indicadores</button>
+                                                <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={handleClickIndicadores}>Indicadores</button>
                                             </div>
                                             <div className='col'>
-                                            <span><button type="button" className={`btn btn-success ${styles.teste}`} onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                            <span><button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
                                             </div>
                                         </div>
                                     </div>

@@ -2,6 +2,10 @@
     margin-bottom: 100px;
 }
 
+.listaAtivoTitle {
+    margin: 25px 0 45px 0;
+}
+
 .listarContainer {
     width: 97%;
 }
@@ -43,6 +47,17 @@
     border-radius: 5px;
     width: 100%;
     display: inline-table;
+}
+
+.opcoesContainer {
+    margin-top: 20px;
+}
+.buttonOutro {
+    background-color: #133B5C;
+    border: none
+}
+.buttonOutro:hover {
+    background-color: #0c5ea1;
 }
 
 .imagemAtivo {

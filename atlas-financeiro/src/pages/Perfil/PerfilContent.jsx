@@ -10,7 +10,6 @@ function PerfilContent() {
     return (
         <section className={styles.lightSection}>
                 <Watchlist />
-                <Carteira />
                 <Historico />
                 <Recomendacoes />
                 <Footer />

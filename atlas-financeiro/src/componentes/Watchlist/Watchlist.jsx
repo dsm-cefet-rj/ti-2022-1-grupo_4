@@ -2,8 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './Watchlist.module.scss';
 import { alterarElemento, adicionarWatchlist } from '../../store/slices/WatchlistSlice';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+
 
 function Watchlist(props) {
     const elementos = useSelector(state => state.elementos);
@@ -24,10 +23,9 @@ function Watchlist(props) {
 
     return (
         <>
-            <Header />
             <div className={styles.watchlistContainer} id="watchlist-container">
-                <div className="watchlist">
-                    <h2><strong>Watchlist</strong></h2>
+                <div className={styles.watchlistTitle}>
+                    <h3><strong>Watchlist</strong></h3>
                 </div>
                 
                 <form className={`centralize ${styles.watchlistForm}`}>
@@ -66,7 +64,6 @@ function Watchlist(props) {
                     </div>
                 </form>
             </div>
-            <Footer />
         </>
     );
 
