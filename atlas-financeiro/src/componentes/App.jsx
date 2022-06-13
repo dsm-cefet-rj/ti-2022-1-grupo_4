@@ -10,6 +10,10 @@ import ListaDeAtivos from '../pages/ListaDeAtivos/ListaDeAtivos';
 import Carteira from '../pages/Carteira/Carteira';
 import DetalhamentoIndicadores from '../pages/Detalhamento/Detalhamento Indicadores';
 import DetalhamentoCotacoes from '../pages/Detalhamento/Detalhamento Cotacoes';
+import { fetchAtivos } from '../reducers/AtivosSlice';
+import Watchlist from './Watchlist/Watchlist';
+
+store.dispatch(fetchAtivos());
 
 function App() {
   const [state, setState] = useState({visible: false});
@@ -26,6 +30,7 @@ function App() {
                   <Route path="/detalhamento_cotacoes" element={<DetalhamentoCotacoes />} />
                   <Route path="/detalhamento_indicadores" element={<DetalhamentoIndicadores />} />
                   <Route path='/ativos' element={<ListaDeAtivos />} />
+                  <Route path='/watchlist' element={<Watchlist />} />
                 </Routes>
               </Router>
             </Provider>

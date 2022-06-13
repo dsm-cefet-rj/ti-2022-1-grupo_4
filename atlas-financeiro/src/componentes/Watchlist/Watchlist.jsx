@@ -1,45 +1,38 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Watchlist.module.scss';
+import { alterarElemento, adicionarWatchlist } from '../../reducers/WatchlistSlice';
 
 function Watchlist(props) {
-    const ticker = useSelector(state => state.ticker);
-    const cotacao = useSelector(state => state.cotacao);
-    const dropdown = useSelector(state => state.dropdown);
-
-    const dispatch1 = useDispatch();
+    const elementos = useSelector(state => state.elementos);
+    const dispatch = useDispatch();
 
     function handleTickerChange(e) {
-        e.preventDefault();
-        dispatch1({
-            type: 'altera_ticker', 
-            payload: document.getElementById('busca_ticker').value
-        })
+        dispatch(alterarElemento({
+            "ticker": document.getElementById('busca_ticker').value,
+            "cotacao": document.getElementById('busca_cotacao').value,
+            "dropdown":  document.getElementById('acima_abaixo').value
+        }));
     }
     
     function handleCotacaoChange(e) {
-        e.preventDefault();
-        dispatch1({
-            type: 'altera_cotacao', 
-            payload: document.getElementById('busca_cotacao').value
-        })
+        dispatch(alterarElemento({
+            "ticker": document.getElementById('busca_ticker').value,
+            "cotacao": document.getElementById('busca_cotacao').value,
+            "dropdown":  document.getElementById('acima_abaixo').value
+        }));
     }
     
     function handleDropdownChange(e) {
-        e.preventDefault();
-        dispatch1({
-            type: 'acima_abaixo', 
-            payload: document.getElementById('acima_abaixo').value
-        })
+        dispatch(alterarElemento({
+            "ticker": document.getElementById('busca_ticker').value,
+            "cotacao": document.getElementById('busca_cotacao').value,
+            "dropdown":  document.getElementById('acima_abaixo').value
+        }));
     }
 
-    function mostrarBusca(e) {
-        e.preventDefault();
-        dispatch1({
-            type: 'add_watchlist', 
-            payload: [ticker, cotacao, dropdown]
-        })
-        alert(`Ticker: ${ticker}\nCotação: ${cotacao}\nDropdown: ${dropdown}`);
+    function mostrarBusca(event) {
+        alert(`Ticker: ${elementos['ticker']}\nCotação: ${elementos['cotacao']}\nDropdown: ${elementos['dropdown']}`);
         props.setState({ visible: true });
     }
 
