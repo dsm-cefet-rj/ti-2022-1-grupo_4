@@ -1,37 +1,35 @@
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+
 const tickerInicial = ''
 const cotacaoInicial = ''
 const dropdownInicial = ''
 
-export function alteraTicker(ticker = tickerInicial, action) {
-    if (action.type === 'altera_ticker') {
-        return action.payload;
+const preenchimentoInicial = { "ticker": tickerInicial, "cotacao": cotacaoInicial, "dropdown":dropdownInicial}
+
+function alterarElementoReducer(estado, elementos) {
+    if (elementos["dropdown"] == 0) {
+        elementos["dropdown"] = 'Acima da Cotação'
+    } else if (elementos["dropdown"] == 1) {
+        elementos["dropdown"] = 'Abaixo da Cotação'
     }
-    return ticker;
+
+    return elementos;
 }
 
-export function alteraCotacao(cotacao = cotacaoInicial, action) {
-    if (action.type === 'altera_cotacao') {
-        return action.payload;
-    }
-    return cotacao;
+function adicionarWatchlistReducer(watchlist, elemento) {
+    return elemento;
 }
 
-export function alteraDropdown(dropdown = dropdownInicial, action) {
-    if (action.type === 'acima_abaixo') {
-        if (action.payload == 0) {
-            return 'Acima da Cotação'
-        } else if (action.payload == 1) {
-            return 'Abaixo da Cotação'
-        }
+export const buscaWatchlistSlice = createSlice({
+    name: 'watchlist',
+    initialState: preenchimentoInicial,
+    reducers: {
+        alterarElemento: (state, action) => alterarElementoReducer(state, action.payload),
+        adicionarWatchlist: (state, action) => adicionarWatchlistReducer(state, action.payload)
     }
-    return dropdown;
-}
+})
 
-export function adicionaWatchlist(busca = [tickerInicial, cotacaoInicial, dropdownInicial], action) {
-    if(action.type === 'add_watchlist') {
-        return action.payload
-    }
-    return busca;
-}
+export const { alterarElemento, adicionarWatchlist } = buscaWatchlistSlice.actions;
 
-export default { alteraTicker, alteraCotacao, alteraDropdown, adicionaWatchlist }
+export default buscaWatchlistSlice.reducer;

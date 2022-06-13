@@ -1,12 +1,20 @@
-const initialState = "";
+import { createSlice } from "@reduxjs/toolkit"
 
-function mudaBusca(busca = initialState, action) {
-    if (action.type === 'alterarBusca') {
-        return action.payload
-    } else if (action.type === 'buscar') {
-        return ''
-    }
-    return busca
+
+const initialSearch = "";
+
+function alteraBuscaReducer(buscaAtivo, ativo) {
+    return ativo;
 }
 
-export default mudaBusca;
+export const buscasSlice = createSlice({
+    name: 'busca',
+    initialState: initialSearch,
+    reducers: {
+        alterarBusca: (state, action) => alteraBuscaReducer(state, action.payload)
+    }
+})
+
+export const { alterarBusca, buscar } = buscasSlice.actions;
+
+export default buscasSlice.reducer;
