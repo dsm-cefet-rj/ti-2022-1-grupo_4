@@ -78,7 +78,7 @@ function Login() {
                             </div>
                         </div>
                     
-                        <div className='login_button_container'> 
+                        <div className={styles.buttonContainer}> 
                             <div className='login_button'>
                                 <Button 
                                     variant="outline-dark" 
