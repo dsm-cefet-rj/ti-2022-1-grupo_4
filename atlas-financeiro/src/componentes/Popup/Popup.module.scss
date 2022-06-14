@@ -1,0 +1,54 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupInner {
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 640px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.empresaTickerContainer {
+    display: inline;
+    margin-bottom: 40px;
+}
+
+.confirmarButton {
+    background-color: #133B5C;
+    border: none;
+    margin-top: 25px;
+    margin-right: 45px;
+}
+.confirmarButton:hover {
+    background-color: #0c5ea1;
+}
+
+.cancelarButton {
+    background-color: #5c1313;
+    border: none;
+    margin-top: 25px;
+    margin-left: 45px;
+}
+.cancelarButton:hover {
+    background-color: #9c2424;
+}
+
+
+
+.popupInner .cancelarButton .confirmarButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
