@@ -37,7 +37,7 @@ function Login() {
                         <div className={styles.loginEmailContainer}>
                             <div className={styles.loginEmailInfo}>
                                 <div className='login_email_info_container'>
-                                    <label for='email'> </label>
+                                    <label for='email'>Email</label>
                                     <span>
                                         Não tem conta? 
                                         <span><a href='/sign-up'> Cadastre-se </a></span>
@@ -60,7 +60,7 @@ function Login() {
                     
                         <div className='login_password_container'>
                             <div className='login_password_info_container'>
-                                <label for='current-password'></label>
+                                <label for='current-password'>Senha</label>
                                 <span></span>
                             </div>
                             <div className='login_password_input_container'>
