@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { httpGet, httpDelete, httpPost } from "../../utils";
 
 export const SignUpSlice = createSlice ({
     name: 'cadastro',

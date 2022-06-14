@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import { httpGet, httpPut, httpDelete, httpPost } from "../../utils";
 
 const tickerInicial = ''
 const cotacaoInicial = ''
