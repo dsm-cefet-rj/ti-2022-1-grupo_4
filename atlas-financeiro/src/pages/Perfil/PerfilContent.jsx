@@ -1,8 +1,6 @@
 import React from 'react';
-import Carteira from '../Carteira/Carteira';
 import Watchlist from '../../componentes/Watchlist/Watchlist';
 import Historico from '../../componentes/Historico/Historico';
-import Recomendacoes from '../../componentes/Recomendacoes/Recomendacoes';
 import Footer from '../../componentes/Footer/Footer';
 import styles from './Perfil.module.scss';
 
@@ -11,7 +9,6 @@ function PerfilContent() {
         <section className={styles.lightSection}>
                 <Watchlist />
                 <Historico />
-                <Recomendacoes />
                 <Footer />
         </section>
     );

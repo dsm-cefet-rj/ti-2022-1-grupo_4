@@ -4,7 +4,7 @@ import styles from './Cadastro.module.scss';
 
 function SignUp() {
     return (
-        <div className='signup-component'>
+        <div className={styles.loginComponentes}>
             <div className={styles.loginContainer}>
             <h2>Cadastre-se</h2>
                 <form>
@@ -39,7 +39,7 @@ function SignUp() {
                     </div>
                     <div className='login_button_container'> 
                         <div className='login_button'>
-                            <Button variant="outline-dark" className='login_button'>Cadastrar</Button>
+                            <Button variant="outline-dark" className='login_button'><a href='/perfil'>Cadastrar</a></Button>
                         </div>
                     </div>
                     

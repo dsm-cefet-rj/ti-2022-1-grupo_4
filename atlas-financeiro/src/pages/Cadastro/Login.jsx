@@ -29,11 +29,11 @@ function Login() {
     }
 
     return ( 
-            <div className='login_component'>
+            <div className={styles.loginComponentes}>
             
                 <div className={styles.loginContainer}>
                     <h2>Log in</h2>
-                    <form onSubmit={handleSubmit}>
+                    <form>
                         <div className={styles.loginEmailContainer}>
                             <div className={styles.loginEmailInfo}>
                                 <div className='login_email_info_container'>

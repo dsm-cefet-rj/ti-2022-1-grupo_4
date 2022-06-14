@@ -1,4 +1,4 @@
-body {
+.loginComponentes {
     margin-bottom: 0px;
     padding-top: 20px;
     background-color: #f9f9f9;
@@ -6,15 +6,14 @@ body {
     background-image: radial-gradient(#e8e8e8 1.05px, #f9f9f9 1.05px);
     background-size: 21px 21px;
     z-index: 10000;
-
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 0 2rem;
-
-    
+    padding: 0 2rem;   
 }
 
 
@@ -31,7 +30,7 @@ body {
     position: relative;
     text-align: left;
     top: 0;
-    width: 100%;
+    width: fit-content;
 }
 
 
@@ -41,7 +40,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     
-
 }
 
 
