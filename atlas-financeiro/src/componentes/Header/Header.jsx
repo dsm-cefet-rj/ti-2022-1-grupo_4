@@ -18,7 +18,7 @@ function Header(props) {
                         <ul className="navbar-nav ms-auto">
                         
                             <li className={`nav-item ${styles.navItem}`}>
-                                <a className={`nav-link ${styles.navLink}`} href="#recomendacoes">Recomendações</a>
+                                <a className={`nav-link ${styles.navLink}`} href="#recomendacoes">Populares</a>
                             </li>
                             <li className={`nav-item ${styles.navItem}`}>
                                 <a className={`nav-link ${styles.navLink}`} href="/ativos">Lista de Ativos</a>
