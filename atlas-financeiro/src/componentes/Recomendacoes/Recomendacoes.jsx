@@ -8,7 +8,7 @@ function Recomendacoes() {
     return (
       <div id="recomendacoes">
         <div className={styles.tableTitle}>
-          <h2><strong>Recomendações</strong></h2>
+          <h2><strong>Ativos Populares</strong></h2>
         </div>    
         <Accordion className={styles.accordion}>
           {ativos.slice(0, 7).map(ativo => <CreateAtivoAccordion ativo={ativo}/>)}
