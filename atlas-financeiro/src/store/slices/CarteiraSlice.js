@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { useParams, useHistory } from "react-router-dom";
+import {httpGet, httpDelete, httpPut, httpPost} from '../../utils';
 
 export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchCarteira',
     async () => {

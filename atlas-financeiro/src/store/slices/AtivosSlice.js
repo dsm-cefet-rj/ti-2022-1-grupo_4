@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { useParams, useHistory } from "react-router-dom";
+import { httpGet, httpPut, httpDelete, httpPost } from "../../utils";
 
 export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos',
     async () => {
