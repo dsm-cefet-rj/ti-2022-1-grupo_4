@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import vale from '../../media/vale.png'
 import styles from './ListarAtivos.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchAtivos } from '../../store/slices/AtivosSlice';
-
+import Popup from '../Popup/Popup';
 
 function handleClickCotacoesDiarias() {
     alert('Cotações Diárias!');
@@ -20,6 +20,7 @@ function handleClickAddCarteira() {
 }
 
 function ListarAtivos() {
+    const [buttonPopup, setButtonPopup] = useState(false)
 
     const listaAtivos = useSelector(state => state.ativos)
     const dispatch = useDispatch()
@@ -64,7 +65,14 @@ function ListarAtivos() {
                                                 <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={handleClickIndicadores}>Indicadores</button>
                                             </div>
                                             <div className='col'>
-                                            <span><button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={handleClickAddCarteira}>Adicionar à Carteira</button></span>
+                                            <span><button 
+                                                    type="button" 
+                                                    className={`btn btn-success ${styles.buttonOutro}`} 
+                                                    onClick={() => setButtonPopup(true)}
+                                                    >Adicionar à Carteira</button></span>
+                                                    <Popup trigger={buttonPopup} setTrigger={setButtonPopup} empresa={ativo.informacoes_gerais.empresa} ticker={ativo.informacoes_gerais.ticker}/>
+                                                        
+                                                    
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +116,7 @@ function ListarAtivos() {
             <div className={styles.listaUtilidadePublica}>
                 <h3><strong>Utilidade Pública</strong></h3>
             </div>
-
+            
         </div>
     );
 }

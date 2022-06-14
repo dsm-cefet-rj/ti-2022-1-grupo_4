@@ -15,7 +15,7 @@ function AccordionSchema (props) {
                                 
                         <h3 className={styles.tableHeaderH3}><strong>Informações Gerais</strong></h3>
                         
-                        <Dropdown id={props.ticker} />
+                        <Dropdown empresa={props.empresa} ticker={props.ticker} />
                     </div>
                     <table className="info-geral"> 
                                 

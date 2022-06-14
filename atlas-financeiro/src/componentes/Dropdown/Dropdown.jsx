@@ -1,15 +1,9 @@
 import styles from './Dropdown.module.scss';
-import React from 'react';
+import React, {useState} from 'react';
+import Popup from '../Popup/Popup';
 
 function Dropdown(props) {
-    const key = props.ticker;
-    
-    function addCarteira(e) {
-        e.preventDefault();
-        // pegar os dados do ativos
-        // mandar um alert de sucesso
-        alert(`Ticker: ${key}`);
-    }
+    const [buttonPopup, setButtonPopup] = useState(false)
 
     return (
         <div className={styles.dropstart}>
@@ -17,9 +11,11 @@ function Dropdown(props) {
 
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li><a className="dropdown-item" href="/detalhamento_cotacoes">Cotação Diária</a></li>
-                <li><a className="dropdown-item" href="/carteira-perfil" onClick={addCarteira}>Adicionar à Carteira</a></li>
+                <li><a className="dropdown-item" onClick={() => setButtonPopup(true)}>Adicionar à Carteira</a></li>
                 <li><a className="dropdown-item" href="#watchlist-container">Watchlist</a></li>
             </ul>
+
+            <Popup trigger={buttonPopup} setTrigger={setButtonPopup} empresa={props.empresa} ticker={props.ticker}/>
         </div>
     );
 }
