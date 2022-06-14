@@ -13,7 +13,8 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 0 2rem;   
+    padding: 0 2rem;  
+
 }
 
 
@@ -31,10 +32,23 @@
     text-align: left;
     top: 0;
     width: fit-content;
+} 
+
+.SignUpConteiner {
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 16px;
+    box-sizing: border-box;
+    font-family: Source Sans Pro;
+    height: 100%;
+    left: 0;
+    padding: 48px;
+    position: relative;
+    top: 0;
+    width: fit-content;
 }
 
-
-.loginEmailInfo {
+loginEmailInfo {
     align-items: flex-end;
     display: flex;
     flex-direction: row;

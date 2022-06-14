@@ -37,7 +37,7 @@ function Login() {
                         <div className={styles.loginEmailContainer}>
                             <div className={styles.loginEmailInfo}>
                                 <div className='login_email_info_container'>
-                                    <label for='email'>Email</label>
+                                    <label for='email'></label>
                                     <span>
                                         Não tem conta? 
                                         <span><a href='/sign-up'> Cadastre-se </a></span>
@@ -50,6 +50,7 @@ function Login() {
                                     id='email_usuario' 
                                     className='email_input' 
                                     type='email' 
+                                    placeholder='Email'
                                     onChange={(event) => {
                                         const value = event.target.value
                                         setEmailState(value)
@@ -60,7 +61,7 @@ function Login() {
                     
                         <div className='login_password_container'>
                             <div className='login_password_info_container'>
-                                <label for='current-password'>Senha</label>
+                                <label for='current-password'></label>
                                 <span></span>
                             </div>
                             <div className='login_password_input_container'>
@@ -68,6 +69,7 @@ function Login() {
                                     id='senha_usuario' 
                                     className='senha_input' 
                                     type='password' 
+                                    placeholder='Senha'
                                     onChange={(event) => {
                                         const value = event.target.value
                                         setSenhaState(value)
