@@ -22,14 +22,14 @@ function ListarAtivos() {
 
     // const busca = useSelector(state => state.busca)
     
-    const listaAtivos = useSelector(state => state.ativos)
+    const listaAtivos = useSelector(state => state.ativos.ativos)
     // const busca = useSelector(state => state.ativos)
     // const status = useSelector(state => state.ativos)
     const dispatch = useDispatch()
     
     
     // const ativos = listaAtivos.ativos;
-    // const status = listaAtivos.status;
+    const status = listaAtivos.status;
     // const error = listaAtivos.error;
     const string_busca = useSelector(state => state.ativos.busca);
     
@@ -47,12 +47,12 @@ function ListarAtivos() {
     }
     // console.log(listaAtivos);
 
-    debugger
     useEffect(() => {
         if(listaAtivos.status === "not_loaded") {
+            debugger
             dispatch(fetchAtivos());
         }
-    })
+    }, [listaAtivos])
 
     // console.log(ativos);
     // console.log(busca);
