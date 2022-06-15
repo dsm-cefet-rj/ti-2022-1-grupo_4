@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import vale from '../../media/vale.png'
 import styles from './ListarAtivos.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchAtivos } from '../../store/slices/AtivosSlice';
 import Popup from '../Popup/Popup';
+import { alterarBusca } from '../../store/slices/AtivosSlice';
+
 
 function handleClickCotacoesDiarias() {
     alert('Cotações Diárias!');
@@ -15,109 +17,114 @@ function handleClickIndicadores() {
     window.location.href="/detalhamento_indicadores";
 }
 
-function handleClickAddCarteira() {
-    alert('Adicionar à Carteira!');
-}
-
 function ListarAtivos() {
     const [buttonPopup, setButtonPopup] = useState(false)
 
+    // const busca = useSelector(state => state.busca)
+    
     const listaAtivos = useSelector(state => state.ativos)
+    // const busca = useSelector(state => state.ativos)
+    // const status = useSelector(state => state.ativos)
     const dispatch = useDispatch()
+    
+    
+    // const ativos = listaAtivos.ativos;
+    // const status = listaAtivos.status;
+    // const error = listaAtivos.error;
+    const string_busca = useSelector(state => state.ativos.busca);
+    
+    function alteraString() {
+        // dispatch(alterarBusca(document.getElementById('busca_ativo').value));
+        // alert(document.getElementById('busca_ativo').value);
+    }
+    
+    function mostrarDetalhamento() {
+        dispatch(alterarBusca(document.getElementById('busca_ativo').value));
+        
+        // debugger
+        // console.log(document.getElementById('busca_ativo').value);
+        // alert('Valor enviado: ' + busca);
+    }
+    // console.log(listaAtivos);
 
-    dispatch(fetchAtivos);
-    console.log(listaAtivos)
+    debugger
+    useEffect(() => {
+        if(listaAtivos.status === "not_loaded") {
+            dispatch(fetchAtivos());
+        }
+    })
+
+    // console.log(ativos);
+    // console.log(busca);
+    // console.log(status);
+    debugger
 
     return (
-        <div className={styles.listaAtivosContainer}>
-            <div className={styles.listaAtivoTitle}>
-                <h3><strong>{'Lista de Ativos (B3)'}</strong></h3>
+        <>
+            <div className={styles.searchContainer}>
+                <div className={`container-fluid ${styles.containerFluid}`}>
+                    <input id="busca_ativo" name='busca' onChange={alteraString} className="form-control me-2" type="search" placeholder="Procurar por ação/empresa/fii" aria-label="Search" />
+                    <button type="button" onClick={mostrarDetalhamento} className={`btn btn-primary ${styles.buttonSearch}`} >Buscar</button>
+                </div>
             </div>
-        
-                <div className={styles.listarContainer}>
-                    {listaAtivos.map(ativo => {
-                        return(
-                        <div className={styles.listaBensIndustriais}>
 
-                            <h3><strong>{ativo.informacoes_gerais.setor} - {ativo.informacoes_gerais.subsetor}</strong></h3>
-                            <div style={{margin: '10px', padding: '10px', border: '10px'}}>
-                                <div className='box flexRow'>
-                                    <div key={ativo.informacoes_gerais.ticker} className='row'>
-                                        <div id="COLOCAR_IMAGEM" className='col'>
-                                            <img className={styles.imagemAtivo} src={vale} alt='Vale'/>
-                                        </div>
-                                        <div className='col'>
-                                            <div>
-                                                Ticker: {ativo.informacoes_gerais.ticker}
-                                            </div>
-                                            <div>
-                                                Tipo: {ativo.informacoes_gerais.tipo}
-                                            </div>
-                                            <div>
-                                                Última Cotação: R$ {ativo.cotacoes[0].valor}
-                                            </div>
-                                        </div>
-                                        <div className={`row ${styles.opcoesContainer}`}>
-                                            <div className='col'>
-                                                <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+            <div className={styles.listaAtivosContainer}>
+                <div className={styles.listaAtivoTitle}>
+                    <h3><strong>{'Lista de Ativos (B3)'}</strong></h3>
+                </div>
+            
+                    <div className={styles.listarContainer}>
+                        {listaAtivos.ativos.map(ativo => {
+                            return(
+                            <div className={styles.listaBensIndustriais}>
+
+                                <h3><strong>{ativo.informacoes_gerais.setor} - {ativo.informacoes_gerais.subsetor}</strong></h3>
+                                <div style={{margin: '10px', padding: '10px', border: '10px'}}>
+                                    <div className='box flexRow'>
+                                        <div key={ativo.informacoes_gerais.ticker} className='row'>
+                                            <div id="COLOCAR_IMAGEM" className='col'>
+                                                <img className={styles.imagemAtivo} src={vale} alt='Vale'/>
                                             </div>
                                             <div className='col'>
-                                                <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={handleClickIndicadores}>Indicadores</button>
+                                                <div>
+                                                    Ticker: {ativo.informacoes_gerais.ticker}
+                                                </div>
+                                                <div>
+                                                    Tipo: {ativo.informacoes_gerais.tipo}
+                                                </div>
+                                                <div>
+                                                    Última Cotação: R$ {ativo.cotacoes[0].valor}
+                                                </div>
                                             </div>
-                                            <div className='col'>
-                                            <span><button 
-                                                    type="button" 
-                                                    className={`btn btn-success ${styles.buttonOutro}`} 
-                                                    onClick={() => setButtonPopup(true)}
-                                                    >Adicionar à Carteira</button></span>
-                                                    <Popup trigger={buttonPopup} setTrigger={setButtonPopup} empresa={ativo.informacoes_gerais.empresa} ticker={ativo.informacoes_gerais.ticker}/>
+                                            <div className={`row ${styles.opcoesContainer}`}>
+                                                <div className='col'>
+                                                    <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                                </div>
+                                                <div className='col'>
+                                                    <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={handleClickIndicadores}>Indicadores</button>
+                                                </div>
+                                                <div className='col'>
+                                                <span><button 
+                                                        type="button" 
+                                                        className={`btn btn-success ${styles.buttonOutro}`} 
+                                                        onClick={() => setButtonPopup(true)}
+                                                        >Adicionar à Carteira</button></span>
+                                                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup} empresa={ativo.informacoes_gerais.empresa} ticker={ativo.informacoes_gerais.ticker}/>
+                                                            
                                                         
-                                                    
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        );
-                    })}
-            </div>
-
-            <div>
-                <div className={styles.listaConsumoCiclico}>
-                    <h3><strong>Consumo Cíclico</strong></h3>
+                            );
+                        })}
                 </div>
-            </div>
 
-            <div className={styles.listaConsumoNaoCiclico}>
-                <h3><strong>Consumo não Cíclico</strong></h3>
             </div>
-            <div className={styles.listaFinanceiro}>
-                <h3><strong>Financeiro</strong></h3>
-            </div>
-            <div className={styles.listaMateriaisBasicos}>
-                <h3><strong>Materiais Básicos</strong></h3>
-            </div>
-            <div className={styles.listaOutros}>
-                <h3><strong>Outros</strong></h3>
-            </div>
-            <div className={styles.listaPetroleoGasBiocombustiveis}>
-                <h3><strong>Petróleo, Gás e Biocombustíveis</strong></h3>
-            </div>
-            <div className={styles.listaSaude}>
-                <h3><strong>Saúde</strong></h3>
-            </div>
-            <div className={styles.listaTecnologiaInformacao}>
-                <h3><strong>Tecnologia da Informação</strong></h3>
-            </div>
-            <div className={styles.listaTelecomunicações}>
-                <h3><strong>Telecomunicações</strong></h3>
-            </div>
-            <div className={styles.listaUtilidadePublica}>
-                <h3><strong>Utilidade Pública</strong></h3>
-            </div>
-            
-        </div>
+        </>
+
     );
 }
 
