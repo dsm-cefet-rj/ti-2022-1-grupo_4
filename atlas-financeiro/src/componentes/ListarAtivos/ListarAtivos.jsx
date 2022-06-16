@@ -4,7 +4,7 @@ import styles from './ListarAtivos.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchAtivos } from '../../store/slices/AtivosSlice';
 import Popup from '../Popup/Popup';
-import { alterarBusca } from '../../store/slices/AtivosSlice';
+import { alterarBusca, buscar } from '../../store/slices/AtivosSlice';
 
 
 function handleClickCotacoesDiarias() {
@@ -22,9 +22,10 @@ function ListarAtivos() {
 
     // const busca = useSelector(state => state.busca)
     
-    const listaAtivos = useSelector(state => state.ativos.ativos)
-    const busca = useSelector(state => state.ativos.busca)
-    const status = useSelector(state => state.ativos.status)
+    const ativoSlice = useSelector(state => state.ativos)
+    // const listaAtivos = useSelector(state => state.ativos.ativos)
+    // const busca = useSelector(state => state.ativos.busca)
+    // const status = useSelector(state => state.ativos.status)
     const dispatch = useDispatch()
     
     
@@ -33,24 +34,33 @@ function ListarAtivos() {
     function alteraString() {
         // dispatch(alterarBusca(document.getElementById('busca_ativo').value));
         // alert(document.getElementById('busca_ativo').value);
+        dispatch(alterarBusca(document.getElementById('busca_ativo').value));
     }
     
     function mostrarDetalhamento() {
-        dispatch(alterarBusca(document.getElementById('busca_ativo').value));
+        dispatch(buscar());
     }
-    // console.log(listaAtivos);
+
+    function resetar() {
+        dispatch(fetchAtivos());
+    }
 
     useEffect(() => {
-        if(status === "not_loaded") {
+        if(ativoSlice.status === "not_loaded") {
             debugger
             dispatch(fetchAtivos());
         }
-    },)
+    }, [ativoSlice.status, dispatch])
 
-    console.log(listaAtivos);
-    console.log(busca);
-    console.log(status);
+    // console.log(ativoSlice);
+    // console.log(busca);
+    // console.log(status);
+    // debugger
+
+    console.log('--------------------------------------')
+    console.log(ativoSlice)
     debugger
+    console.log('--------------------------------------')
 
     return (
         <>
@@ -58,6 +68,7 @@ function ListarAtivos() {
                 <div className={`container-fluid ${styles.containerFluid}`}>
                     <input id="busca_ativo" name='busca' onChange={alteraString} className="form-control me-2" type="search" placeholder="Procurar por ação/empresa/fii" aria-label="Search" />
                     <button type="button" onClick={mostrarDetalhamento} className={`btn btn-primary ${styles.buttonSearch}`} >Buscar</button>
+                    <button type="button" onClick={resetar} className="btn btn-danger" >Limpar Busca</button>
                 </div>
             </div>
 
@@ -67,7 +78,7 @@ function ListarAtivos() {
                 </div>
             
                     <div className={styles.listarContainer}>
-                        {listaAtivos.map(ativo => {
+                        {ativoSlice.ativos.length == 0? [] : ativoSlice.ativos.map(ativo => {
                             return(
                             <div className={styles.listaBensIndustriais}>
 
