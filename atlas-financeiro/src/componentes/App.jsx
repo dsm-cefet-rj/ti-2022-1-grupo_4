@@ -10,13 +10,11 @@ import ListaDeAtivos from '../pages/ListaDeAtivos/ListaDeAtivos';
 import Carteira from '../pages/Carteira/Carteira';
 import DetalhamentoIndicadores from '../pages/Detalhamento/Detalhamento Indicadores';
 import DetalhamentoCotacoes from '../pages/Detalhamento/Detalhamento Cotacoes';
-import { fetchAtivos } from '../store/slices/AtivosSlice';
 import { fetchAtivosCarteira } from '../store/slices/CarteiraSlice';
 import Watchlist from './Watchlist/Watchlist';
 
-store.dispatch(fetchAtivos());
-store.dispatch(fetchAtivosCarteira());
 
+store.dispatch(fetchAtivosCarteira());
 
 
 function App() {
