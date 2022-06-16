@@ -5,6 +5,7 @@ import ativosSlice from './slices/AtivosSlice';
 import ativosReducer from './slices/AtivosSlice';
 import buscaWatchlistReducer from './slices/WatchlistSlice';
 import loginSlice from './slices/LoginSlice';
+import carteirasSlice from './slices/CarteiraSlice';
 import carteiraReducer from './slices/CarteiraSlice';
 import signUpSlice from './slices/SignUpSlice';
 
@@ -16,6 +17,7 @@ export const store = configureStore({
         ativos: ativosReducer,
         ativos: ativosSlice,
         carteira: carteiraReducer,
+        carteira: carteirasSlice,
         watchlist: buscaWatchlistReducer,
         elementos: buscaWatchlistReducer
     }
