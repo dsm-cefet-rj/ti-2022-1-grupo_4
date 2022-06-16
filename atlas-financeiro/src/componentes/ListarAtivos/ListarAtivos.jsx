@@ -21,19 +21,16 @@ function ListarAtivos() {
     const [buttonPopup, setButtonPopup] = useState(false)
     const ativoSlice = useSelector(state => state.ativos)
     const dispatch = useDispatch()
-        
-    function alteraString() {
-        // dispatch(alterarBusca(document.getElementById('busca_ativo').value));
-        // alert(document.getElementById('busca_ativo').value);
-        dispatch(alterarBusca(document.getElementById('busca_ativo').value));
-    }
     
-    function mostrarDetalhamento() {
+    async function alteraString() {
+        await Promise.resolve(dispatch(fetchAtivos()));
+        dispatch(alterarBusca(document.getElementById('busca_ativo').value));
         dispatch(buscar());
     }
 
     function resetar() {
         dispatch(fetchAtivos());
+        document.getElementById('busca_ativo').value = '';
     }
 
     useEffect(() => {
@@ -48,8 +45,7 @@ function ListarAtivos() {
             <div className={styles.searchContainer}>
                 <div className={`container-fluid ${styles.containerFluid}`}>
                     <input id="busca_ativo" name='busca' onChange={alteraString} className="form-control me-2" type="search" placeholder="Procurar por ação/empresa/fii" aria-label="Search" />
-                    <button type="button" onClick={mostrarDetalhamento} className={`btn btn-primary ${styles.buttonSearch}`} >Buscar</button>
-                    <button type="button" onClick={resetar} className="btn btn-danger" >Limpar Busca</button>
+                    <button type="button" onClick={resetar} className="btn btn-danger" style={{margin: '10px'}} >Limpar Busca</button>
                 </div>
             </div>
 

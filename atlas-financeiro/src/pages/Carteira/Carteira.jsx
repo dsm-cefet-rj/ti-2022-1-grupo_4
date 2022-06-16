@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import styles from './Carteira.module.scss';
 import Footer from '../../componentes/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,9 +6,12 @@ import vale from '../../media/vale.png';
 import HeaderPerfil from '../../componentes/HeaderPerfil/HeaderPerfil';
 import { fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
 import { adicionarAtivoCarteira, deletarAtivoCarteira, updateAtivoCarteira, deletarCarteira } from '../../store/slices/CarteiraSlice';
+import Popup from '../../componentes/Popup/Popup';
 
 
 function Carteira() {
+
+    const [buttonPopup, setButtonPopup] = useState(false)
 
     const carteira = useSelector(state => state.carteira);
     const dispatch = useDispatch();
@@ -22,11 +25,13 @@ function Carteira() {
         }
     }, [carteira.status, dispatch])
 
-    debugger
+    function atualizarCarteira() {
+        // dispatch(updateAtivoCarteira());
+    }
 
-    console.log('---------------------------------------------')
-    console.log(carteira);
-    console.log('---------------------------------------------')
+    function removerAtivoCarteira() {
+        alert('Are you sure?');
+    }
 
     return (
         <>
@@ -63,14 +68,18 @@ function Carteira() {
                                                     </div>
                                                 </div>
                                                 <div className='row'>
-                                                    <div className='col'>
+                                                    <div className='col' style={{'align-self': 'center'}}>
                                                         <button type="button" className={`btn btn-success ${styles.buttonOutro}`} ><a className={styles.hRef} href='/detalhamento_cotacoes'>Cotações Diárias</a></button>
                                                     </div>
-                                                    <div className='col'>
+                                                    <div className='col' style={{'align-self': 'center'}}>
                                                         <button type="button" className={`btn btn-success ${styles.buttonOutro}`} ><a className={styles.hRef} href='/detalhamento_indicadores'>Indicadores</a></button>
                                                     </div>
-                                                    <div className='col'>
-                                                    <span><button type="button" className={`btn btn-danger ${styles.buttonCancel}`} >Remover da Carteira</button></span>
+                                                    <div className='col' style={{'align-self': 'center'}}>
+                                                        <button type="button" className={`btn btn-danger ${styles.buttonCancel}`} onClick={removerAtivoCarteira} >Remover da Carteira</button>
+                                                    </div>
+                                                    <div className='col' style={{'align-self': 'center'}}>
+                                                        <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={() => setButtonPopup(true)} ><a className={styles.hRef}>Atualizar Ativo</a></button>
+                                                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup} empresa={ativo.empresa} ticker={ativo.ticker}/>
                                                     </div>
                                                 </div>
                                             </div>
