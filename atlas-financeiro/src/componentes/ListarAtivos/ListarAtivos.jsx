@@ -19,18 +19,9 @@ function handleClickIndicadores() {
 
 function ListarAtivos() {
     const [buttonPopup, setButtonPopup] = useState(false)
-
-    // const busca = useSelector(state => state.busca)
-    
     const ativoSlice = useSelector(state => state.ativos)
-    // const listaAtivos = useSelector(state => state.ativos.ativos)
-    // const busca = useSelector(state => state.ativos.busca)
-    // const status = useSelector(state => state.ativos.status)
     const dispatch = useDispatch()
-    
-    
-    // const string_busca = useSelector(state => state.ativos.busca);
-    
+        
     function alteraString() {
         // dispatch(alterarBusca(document.getElementById('busca_ativo').value));
         // alert(document.getElementById('busca_ativo').value);
@@ -51,16 +42,6 @@ function ListarAtivos() {
             dispatch(fetchAtivos());
         }
     }, [ativoSlice.status, dispatch])
-
-    // console.log(ativoSlice);
-    // console.log(busca);
-    // console.log(status);
-    // debugger
-
-    console.log('--------------------------------------')
-    console.log(ativoSlice)
-    debugger
-    console.log('--------------------------------------')
 
     return (
         <>

@@ -2,26 +2,51 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { useParams, useHistory } from "react-router-dom";
 import {httpGet, httpDelete, httpPut, httpPost} from '../../utils';
 
-export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchCarteira',
-    async () => {
-        return await (await fetch('http://localhost:3004/carteira')).json();
-    });
+// const carteiraInicial = [];
 
-const carteiraInicial = [];
-
-function fulfillCarteiraReducer(ativosState, ativosFetched) {
-    // console.log(ativosFetched.carteiras[0]);
-    return ativosFetched.carteiras[0].ativos;
+var carteiraInitialState = {
+    status: 'not_loaded',
+    id_usuario: null,
+    nome_usuario: '',
+    carteira: [],
+    error: null
 }
 
-export const carteiraSlice = createSlice({
+export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchAtivosCarteira',
+    async () => {
+        try{
+            const res = await (await fetch('http://localhost:3004/carteira')).json();
+            return res;
+        } catch(error) {
+            return {};
+        }
+    });
+
+
+function fulfillCarteiraReducer(state, carteiraFetched) {
+    console.log(carteiraFetched.carteiras[0].ativos);
+    return {...state,
+        status: 'loaded',
+        carteira: carteiraFetched.carteiras[0].ativos,
+        id_usuario: null,
+        nome_usuario: null
+    }
+}
+
+export const carteirasSlice = createSlice({
     name: 'carteira',
-    initialState: carteiraInicial,
+    initialState: carteiraInitialState,
+    reducers: {
+        adicionarAtivoCarteira: (state, action) => {  },
+        deletarAtivoCarteira: (state, action) => {  },
+        updateAtivoCarteira: (state, action) => {  },
+        deletarCarteira: (state, carteira) => {  }
+    },
     extraReducers: {
         [fetchAtivosCarteira.fulfilled]: (state, action) => fulfillCarteiraReducer(state, action.payload)
     },
 })
 
+export const { adicionarAtivoCarteira, deletarAtivoCarteira, updateAtivoCarteira, deletarCarteira } = carteirasSlice.actions;
 
-
-export default carteiraSlice.reducer
+export default carteirasSlice.reducer;

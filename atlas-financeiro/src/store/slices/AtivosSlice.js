@@ -10,28 +10,6 @@ var ativosInitialState = {
     error: null
 };
 
-// function filterItems(state, arr) {
-//     console.log('State');
-//     console.log(state);
-//     return state.ativos.filter(function(element) {
-//         // debugger;
-//         element.informacoes_gerais.ticker.includes(arr[1]);
-//     });
-// }
-
-const alteraBuscaReducer = (state, action) => {
-    // var new_array = ...state
-    state.busca = action.payload;
-    console.log(state.busca);
-    console.log(action);
-    debugger
-    // return action;
-}
-
-function buscaReducer(state, listaAtivos) {
-    debugger;
-}
-
 export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos',
     async () => {
         try{
@@ -45,8 +23,6 @@ export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos',
 
 
 function fulfillAtivosReducer(state, ativosFetched) {
-    // state.status = 'loaded';
-    // state.ativos = ativosFetched.ativos;
     return {...state,
         status: 'loaded',
         ativos: ativosFetched.ativos
@@ -72,4 +48,4 @@ export const ativosSlice = createSlice({
 
 export const { alterarBusca, buscar } = ativosSlice.actions;
 
-export default ativosSlice.reducer
+export default ativosSlice.reducer;

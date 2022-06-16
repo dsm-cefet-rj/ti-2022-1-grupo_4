@@ -1,10 +1,11 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import styles from './Carteira.module.scss';
 import Footer from '../../componentes/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
-import vale from '../../media/vale.png'
-import { fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
+import vale from '../../media/vale.png';
 import HeaderPerfil from '../../componentes/HeaderPerfil/HeaderPerfil';
+import { fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
+import { adicionarAtivoCarteira, deletarAtivoCarteira, updateAtivoCarteira, deletarCarteira } from '../../store/slices/CarteiraSlice';
 
 
 function Carteira() {
@@ -12,8 +13,20 @@ function Carteira() {
     const carteira = useSelector(state => state.carteira);
     const dispatch = useDispatch();
 
-    dispatch(fetchAtivosCarteira);
-    // console.log(`Carteira: ${carteira}`);
+
+
+    useEffect(() => {
+        if(carteira.status === "not_loaded") {
+            debugger
+            dispatch(fetchAtivosCarteira());
+        }
+    }, [carteira.status, dispatch])
+
+    debugger
+
+    console.log('---------------------------------------------')
+    console.log(carteira);
+    console.log('---------------------------------------------')
 
     return (
         <>
@@ -25,7 +38,7 @@ function Carteira() {
                         </div>
                 
                         <div className={styles.carteiraContainer}>
-                            {carteira.map(ativo => {
+                            {carteira.carteira.map(ativo => {
                                 return(
                                 <div className={styles.ativosCarteira}>
                                     <div className={styles.ativoCarteira}>
