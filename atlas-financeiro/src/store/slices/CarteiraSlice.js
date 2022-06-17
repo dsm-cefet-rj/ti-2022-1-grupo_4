@@ -24,7 +24,6 @@ export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchAtivosCarteir
 
 
 function fulfillCarteiraReducer(state, carteiraFetched) {
-    console.log(carteiraFetched.carteiras[0].ativos);
     return {...state,
         status: 'loaded',
         carteira: carteiraFetched.carteiras[0].ativos,
@@ -39,7 +38,7 @@ export const carteirasSlice = createSlice({
     reducers: {
         adicionarAtivoCarteira: (state, action) => {  },
         deletarAtivoCarteira: (state, action) => {  },
-        updateAtivoCarteira: (state, action) => {  },
+        updateAtivoCarteira: (state, action) => { console.log(action.payload) },
         deletarCarteira: (state, carteira) => {  }
     },
     extraReducers: {
