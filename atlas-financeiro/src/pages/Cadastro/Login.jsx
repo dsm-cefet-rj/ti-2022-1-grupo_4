@@ -2,35 +2,43 @@ import React, {useState} from 'react'; //trocar para dispatch
 import Button from 'react-bootstrap/Button';
 import Footer from '../../componentes/Footer/Footer';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserEmail, getUserSenha } from '../../store/slices/LoginSlice';
 import { validacoesSchema } from '../../validacoesSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { appendErrors, useForm } from 'react-hook-form';
+import { selectUsuariosById, selectAllUsuarios } from '../../store/slices/LoginSlice';
+import { fetchLogin } from '../../store/slices/LoginSlice';
+import {store} from '../../store/store';
 import styles from './Cadastro.module.scss';
 
+store.dispatch(fetchLogin())
+
 function Login() {
-
-    
-    const [emailState, setEmailState] = useState('')
-    const [senhaState, setSenhaState] = useState('')
-
-    const email = useSelector(state => state.login.email)
-    const senha = useSelector(state => state.login.senha)
-
     const dispatch = useDispatch()
+    
+    const usuarios = useSelector(selectAllUsuarios)
+    //const status = useSelector(state => state.usuarios.status)  
+    
+    const [loginUsuario, setLoginUsuario] = useState({
+        email: '',
+        senha: '',
+    })
+
+    function handleInputChange(e){
+        setLoginUsuario({...loginUsuario, [e.target.name]: e.target.value})
+    }
+
+    function logUsuarioIn(e){
+        e.preventDefault()
+        if (dispatch(fetchLogin(loginUsuario)) === usuarios.email && dispatch(fetchLogin(loginUsuario)) === usuarios.senha) {
+            //var href= $(this).prop("href");????????????
+        }
+    }
 
     function showLoginAlert(e) {
         e.preventDefault()
         alert(`Email: ${document.getElementById('email_usuario').value}\nSenha: ${document.getElementById('senha_usuario').value}`)
     }
-
-    function handleKeyPress(e) {
-        e.preventDefault()
-        if (e.keyCode === 13) {
-            alert(`Email: ${document.getElementById('email_usuario').value}\nSenha: ${document.getElementById('senha_usuario').value}`)
-        }
-    }
-
+    /*
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(validacoesSchema)
     })
@@ -64,14 +72,12 @@ function Login() {
                                     className='email_input' 
                                     type='email' 
                                     placeholder='Email'
+                                    value={loginUsuario.email}
                                     //defaultValue={projetoOnLoad.nome}
                                     //ref={register}
-                                    onChange={(event) => {
-                                        const value = event.target.value
-                                        setEmailState(value)
-                                    }} 
+                                    onChange={handleInputChange}  
                                 />
-                                &nbsp;<span>{errors.nome?.message}</span>
+                                
                             </div>
                         </div>
                     
@@ -86,14 +92,12 @@ function Login() {
                                     className='senha_input' 
                                     type='password' 
                                     placeholder='Senha'
+                                    value={loginUsuario.senha}
                                     //defaultValue={projetoOnLoad.senha}
                                     //ref={register}
-                                    onChange={(event) => {
-                                        const value = event.target.value
-                                        setSenhaState(value)
-                                    }}    
+                                    onChange={handleInputChange}      
                                 />
-                                &nbsp;<span>{errors.senha?.message}</span> 
+                                
                             </div>
                         </div>
                     
@@ -103,11 +107,9 @@ function Login() {
                                     variant="outline-dark" 
                                     className='login_button' 
                                     onClick={(event) => {
-                                        dispatch(getUserEmail(emailState))
-                                        dispatch(getUserSenha(senhaState))
+                                        logUsuarioIn(event)
                                         showLoginAlert(event)
                                     }} 
-                                    onKeyPress={(event) => {handleKeyPress(event)}}
                                 >Log in</Button>
                             </div>
                             <div className='login_button_forgot_password_container'>

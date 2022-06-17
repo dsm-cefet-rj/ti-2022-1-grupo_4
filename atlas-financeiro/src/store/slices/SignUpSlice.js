@@ -2,22 +2,18 @@ import { createAsyncThunk, createEntityAdapter, createSlice } from "@reduxjs/too
 import { httpGet, httpPost } from "../../utils";
 import {baseUrl} from '../../baseUrl'
 
-// creating entityAdapter
 const signUpAdapter = createEntityAdapter({
     selectId: (usuarios) => usuarios.id
 })  
 
-// GET usuarios.json 
 export const fetchSignUp = createAsyncThunk('usuarios/fetchSignUp', async () => {
     return await httpGet(`${baseUrl}/usuarios`) 
 }) 
 
-// ADD usuarios.json
 export const addSignUpServer = createAsyncThunk('usuarios/addSignUpServer', async (usuario) => {
     return await httpPost(`${baseUrl}/usuarios`, usuario)
 })
 
-// creating slice
 export const SignUpSlice = createSlice ({
     name: 'usuarios',
     initialState: signUpAdapter.getInitialState(),
@@ -30,7 +26,6 @@ export const SignUpSlice = createSlice ({
         [addSignUpServer.rejected]: (state, action) => {state.status = 'failed'; state.error = 'Falha ao adicionar usuario: ' + action.error.message}, 
     }
 })
-
 
 export default SignUpSlice.reducer
 
