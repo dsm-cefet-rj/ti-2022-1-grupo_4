@@ -2,6 +2,7 @@
     "carteiras":[
         {
         "usuario": "Jean Aboumrad",
+        "usuario_id": 3,
         "ativos": [{
             "empresa": "Wiz Soluções",
             "ticker": "WIZS3",
@@ -42,6 +43,7 @@
     },
     {
     "usuario": "Juan Carvalho",
+    "usuario_id": 2,
     "ativos": [{
         "empresa": "Wiz Soluções",
         "ticker": "WIZS3",
