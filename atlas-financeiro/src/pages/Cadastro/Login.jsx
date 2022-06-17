@@ -1,7 +1,11 @@
 import React, {useState} from 'react'; //trocar para dispatch
 import Button from 'react-bootstrap/Button';
+import Footer from '../../componentes/Footer/Footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserEmail, getUserSenha } from '../../store/slices/LoginSlice';
+import { validacoesSchema } from '../../validacoesSchema';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { appendErrors, useForm } from 'react-hook-form';
 import styles from './Cadastro.module.scss';
 
 function Login() {
@@ -15,7 +19,6 @@ function Login() {
 
     const dispatch = useDispatch()
 
-
     function showLoginAlert(e) {
         e.preventDefault()
         alert(`Email: ${document.getElementById('email_usuario').value}\nSenha: ${document.getElementById('senha_usuario').value}`)
@@ -28,7 +31,17 @@ function Login() {
         }
     }
 
+    const { register, handleSubmit, errors } = useForm({
+        resolver: yupResolver(validacoesSchema)
+    })
+    /*
+    const [projetoOnLoad] = useState(
+        id ? projetoFound ?? validacoesSchema.cast({}): validacoesSchema.cast({})
+    )
+    */
+    
     return ( 
+        <>
             <div className={styles.loginComponentes}>
             
                 <div className={styles.loginContainer}>
@@ -51,11 +64,14 @@ function Login() {
                                     className='email_input' 
                                     type='email' 
                                     placeholder='Email'
+                                    //defaultValue={projetoOnLoad.nome}
+                                    //ref={register}
                                     onChange={(event) => {
                                         const value = event.target.value
                                         setEmailState(value)
                                     }} 
                                 />
+                                &nbsp;<span>{errors.nome?.message}</span>
                             </div>
                         </div>
                     
@@ -70,11 +86,14 @@ function Login() {
                                     className='senha_input' 
                                     type='password' 
                                     placeholder='Senha'
+                                    //defaultValue={projetoOnLoad.senha}
+                                    //ref={register}
                                     onChange={(event) => {
                                         const value = event.target.value
                                         setSenhaState(value)
-                                    }}     
+                                    }}    
                                 />
+                                &nbsp;<span>{errors.senha?.message}</span> 
                             </div>
                         </div>
                     
@@ -98,7 +117,9 @@ function Login() {
                     
                     </form>
                 </div> 
-            </div>    
+           </div>  
+           <Footer/>
+        </>   
     );
 }
 

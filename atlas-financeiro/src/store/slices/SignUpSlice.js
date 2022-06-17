@@ -1,51 +1,41 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { httpGet, httpDelete, httpPost } from "../../utils";
+import { createAsyncThunk, createEntityAdapter, createSlice } from "@reduxjs/toolkit";
+import { httpGet, httpPost } from "../../utils";
+import {baseUrl} from '../../baseUrl'
 
-export const SignUpSlice = createSlice ({
-    name: 'cadastro',
-    initialState: {
-        nome: '',
-        localidade: {
-            estado: '',
-            pais: '',
-        },
-        status: '',
-        sobre: '',
-        email: '',
-        senha: '',
-    },
-    reducers: {
-        getUserNome: (state, action) => {
-            state.nome = action.payload
-        },
-        getUserEstado: (state, action) => {
-            state.localidade.estado = action.payload
-        },
-        getUserPais: (state, action) => {
-            state.localidade.pais = action.payload
-        },
-        getUserStatus: (state, action) => {
-            state.status = action.payload
-        },
-        getUserSobre: (state, action) => {
-            state.sobre = action.payload
-        },
-        getUserEmail: (state, action) => {
-            state.email = action.payload
-        },
-        getUserSenha: (state, action) => {
-            state.senha = action.payload
-        },
-    },
+// creating entityAdapter
+const signUpAdapter = createEntityAdapter({
+    selectId: (usuarios) => usuarios.id
+})  
+
+// GET usuarios.json 
+export const fetchSignUp = createAsyncThunk('usuarios/fetchSignUp', async () => {
+    return await httpGet(`${baseUrl}/usuarios`) 
+}) 
+
+// ADD usuarios.json
+export const addSignUpServer = createAsyncThunk('usuarios/addSignUpServer', async (usuario) => {
+    return await httpPost(`${baseUrl}/usuarios`, usuario)
 })
 
-export const { 
-    getUserNome, 
-    getUserEstado, 
-    getUserPais, 
-    getUserStatus,
-    getUserSobre,
-    getUserEmail, 
-    getUserSenha 
-} = SignUpSlice.actions
+// creating slice
+export const SignUpSlice = createSlice ({
+    name: 'usuarios',
+    initialState: signUpAdapter.getInitialState(),
+    extraReducers: {
+        [fetchSignUp.pending]: (state, action) => {state.status = 'loading'},
+        [addSignUpServer.pending]: (state, action) => {state.status = 'saving'},
+        [fetchSignUp.fulfilled]: (state, action) => {state.status = 'loaded'; signUpAdapter.setAll(state, action.payload);},
+        [addSignUpServer.fulfilled]: (state, action) => {state.status = 'saved'; signUpAdapter.addOne(state, action.payload);},
+        [fetchSignUp.rejected]: (state, action) => {state.status = 'failed'; state.error = 'Falha ao buscar usuarios: ' + action.error.message},
+        [addSignUpServer.rejected]: (state, action) => {state.status = 'failed'; state.error = 'Falha ao adicionar usuario: ' + action.error.message}, 
+    }
+})
+
+
 export default SignUpSlice.reducer
+
+export const {
+    selectAll: selectAllUsuarios,
+    selectById: selectUsuariosById,
+    selectIds: selectUsuariosIds
+} = signUpAdapter.getSelectors(state => state.usuarios)
