@@ -6,12 +6,12 @@ import vale from '../../media/vale.png';
 import HeaderPerfil from '../../componentes/HeaderPerfil/HeaderPerfil';
 import { fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
 import { adicionarAtivoCarteira, deletarAtivoCarteira, updateAtivoCarteira, deletarCarteira } from '../../store/slices/CarteiraSlice';
-import Popup from '../../componentes/Popup/Popup';
+import PopupCarteira from '../../componentes/Popup/PopupCarteira';
 
 
 function Carteira() {
 
-    const [buttonPopup, setButtonPopup] = useState(false)
+    const [buttonPopup, setButtonPopup] = useState(false);
 
     const carteira = useSelector(state => state.carteira);
     const dispatch = useDispatch();
@@ -24,10 +24,6 @@ function Carteira() {
             dispatch(fetchAtivosCarteira());
         }
     }, [carteira.status, dispatch])
-
-    function atualizarCarteira() {
-        // dispatch(updateAtivoCarteira());
-    }
 
     function removerAtivoCarteira() {
         alert('Are you sure?');
@@ -79,7 +75,7 @@ function Carteira() {
                                                     </div>
                                                     <div className='col' style={{'align-self': 'center'}}>
                                                         <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={() => setButtonPopup(true)} ><a className={styles.hRef}>Atualizar Ativo</a></button>
-                                                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup} empresa={ativo.empresa} ticker={ativo.ticker}/>
+                                                        <PopupCarteira trigger={buttonPopup} setTrigger={setButtonPopup} empresa={ativo.empresa} ticker={ativo.ticker}/>
                                                     </div>
                                                 </div>
                                             </div>
