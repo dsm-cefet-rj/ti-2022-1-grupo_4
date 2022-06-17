@@ -3,19 +3,17 @@ import { ptForm } from 'yup-locale-pt';
 
 setLocale(ptForm)
 
-const numericMsg = "O campo deve ser um número."
-const menorQueUnTotais = "O campo deve ser menor ou igual a unidades totais"
-
-export let projetoSchema = object().shape(
+export let validacoesSchema = object().shape(
     {
         id: number(),
-        nome: string().required().default(''),
-        unidade: string().required().default(''),
-        unidadeAtual: number().typeError(numericMsg).integer().min(0)
-                .max(ref('unidadesTotais'), menorQueUnTotais).required().default(0),
-        unidadesTotais: number().typeError(numericMsg).integer().min(0).required().default(0),
-        idc: number().typeError(numericMsg).min(0).default(1),
-        idp: number().typeError(numericMsg).min(0).default(1)
+        nome: string().required().default('').max(30),
+        senha: string().required().lowercase().uppercase().min(6),
+        //unidade: string().required().default(''),
+        //unidadeAtual: number().typeError(numericMsg).integer().min(0)
+          //      .max(ref('unidadesTotais'), menorQueUnTotais).required().default(0),
+        //unidadesTotais: number().typeError(numericMsg).integer().min(0).required().default(0),
+        //idc: number().typeError(numericMsg).min(0).default(1),
+        //idp: number().typeError(numericMsg).min(0).default(1)
     }
 )
 

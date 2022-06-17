@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import ativos from '../reutilizaveis/Ativos';
 import CreateAtivoAccordion from '../Accordion/CreateAtivoAccordion';
 import styles from './Recomendacoes.module.scss';
+import { useSelector } from 'react-redux';
+import Popup from '../Popup/Popup';
 
 function Recomendacoes() {
     return (

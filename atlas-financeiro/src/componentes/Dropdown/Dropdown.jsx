@@ -1,9 +1,12 @@
 import styles from './Dropdown.module.scss';
 import React, {useState} from 'react';
-import Popup from '../Popup/Popup';
+import { useDispatch, useSelector } from 'react-redux';
+import { getEvent } from '../../store/slices/PopupSlice';
 
 function Dropdown(props) {
     const [buttonPopup, setButtonPopup] = useState(false)
+
+    const dispatch = useDispatch()
 
     return (
         <div className={styles.dropstart}>
@@ -11,11 +14,10 @@ function Dropdown(props) {
 
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li><a className="dropdown-item" href="/detalhamento_cotacoes">Cotação Diária</a></li>
-                <li><a className="dropdown-item" onClick={() => setButtonPopup(true)}>Adicionar à Carteira</a></li>
+                <li><a className="dropdown-item" onClick={() => dispatch(getEvent(buttonPopup))}>Adicionar à Carteira</a></li>
                 <li><a className="dropdown-item" href="#watchlist-container">Watchlist</a></li>
             </ul>
 
-            <Popup trigger={buttonPopup} setTrigger={setButtonPopup} empresa={props.empresa} ticker={props.ticker}/>
         </div>
     );
 }

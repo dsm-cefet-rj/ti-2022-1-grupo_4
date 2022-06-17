@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import ativos from './Ativos';
 import Accordion from 'react-bootstrap/Accordion';
 import Dropdown from '../Dropdown/Dropdown';
 import styles from './AccordionSchema.module.scss';
-
-
+import Popup from '../Popup/Popup';
+import { useSelector } from 'react-redux';
 function AccordionSchema (props) {
-    
+    const [buttonPopup, setButtonPopup] = useState(false)
+    const popup = useSelector(state => state.popup.ativado)
     return (
+        <>
             <Accordion.Item eventKey={props.ticker}>
                 <Accordion.Header>[{props.ticker}]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{props.empresa.toUpperCase()}</Accordion.Header>
                 <Accordion.Body>
@@ -53,7 +55,8 @@ function AccordionSchema (props) {
                     <div className={styles.lerMais}><a href="/detalhamento_indicadores">Ler mais</a></div>
                 </Accordion.Body>
             </Accordion.Item>
-
+            <Popup trigger={buttonPopup} setTrigger={setButtonPopup} empresa={props.empresa} ticker={props.ticker} />
+        </>
     );
 }
 
