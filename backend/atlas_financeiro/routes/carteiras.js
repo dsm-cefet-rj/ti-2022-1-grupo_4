@@ -3,7 +3,9 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.statusCode = 200;
+  // res.setHeader('Content-Type', 'application/json');
+  res.sendFile('carteira.json', { root: '../../shared/' });
 });
 
 module.exports = router;

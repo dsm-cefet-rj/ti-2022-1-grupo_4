@@ -2,20 +2,10 @@ import React, { useState, useEffect } from 'react';
 import vale from '../../media/vale.png'
 import styles from './ListarAtivos.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchAtivos } from '../../store/slices/AtivosSlice';
 import Popup from '../Popup/Popup';
-import { alterarBusca, buscar } from '../../store/slices/AtivosSlice';
+import { alterarBusca, buscar, fetchAtivos } from '../../store/slices/AtivosSlice';
+import { Link } from 'react-router-dom';
 
-
-function handleClickCotacoesDiarias() {
-    alert('Cotações Diárias!');
-    window.location.href="/detalhamento_cotacoes";
-}
-
-function handleClickIndicadores() {
-    alert('Indicadores!');
-    window.location.href="/detalhamento_indicadores";
-}
 
 function ListarAtivos() {
     const [buttonPopup, setButtonPopup] = useState(false)
@@ -79,10 +69,10 @@ function ListarAtivos() {
                                             </div>
                                             <div className={`row ${styles.opcoesContainer}`}>
                                                 <div className='col'>
-                                                    <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={handleClickCotacoesDiarias}>Cotações Diárias</button>
+                                                    <Link to={`/detalhamento_cotacoes/${ativo.id}`} ><button type="button" className={`btn btn-success ${styles.buttonOutro}`} >Cotações Diárias</button></Link>
                                                 </div>
                                                 <div className='col'>
-                                                    <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={handleClickIndicadores}>Indicadores</button>
+                                                <Link to={`/detalhamento_indicadores/${ativo.id}`} ><button type="button" className={`btn btn-success ${styles.buttonOutro}`} >Indicadores</button></Link>
                                                 </div>
                                                 <div className='col'>
                                                 <span><button 

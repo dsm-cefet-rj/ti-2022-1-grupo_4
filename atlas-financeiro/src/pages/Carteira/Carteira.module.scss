@@ -106,3 +106,222 @@
     text-decoration: none;
     color: white;
 }
+
+
+
+/* --- Article ---- */
+.darkSection {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    padding: 0 0 1px 0;
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg, #0445c6 0%, #11295b 25%, #143d60 51%, #069eda 100%);
+    -webkit-animation: AnimateBG 20s ease infinite;
+    animation: AnimateBG 20s ease infinite;
+    transition: ease all .5s;
+}
+@-webkit-keyframes AnimateBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes AnimateBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+.title {
+    padding-bottom: 50px;
+}
+
+
+
+/* ---- NavBar ---- */
+.navbar {
+    color: #133B5C;
+    background-color: transparent;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 4px 1.5%;
+}
+
+.navbarBrand {
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #ffffff;
+    font-size: 2rem;
+}
+.navbarBrand:hover {
+    color: #919191;
+}
+
+.navbarToggler:focus,
+.navbarToggler:active,
+.navbarToggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbarTogglerIcon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(221, 221, 221, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navItem {
+    padding: 0 12px;
+}
+
+.navLink {
+    color: #ffffff;
+}
+.navLink:hover {
+    color: #919191;
+}
+
+
+/* ---- Titulo ---- */
+
+.perfil {
+    width: 80%;
+    height: 335px;
+    padding: 10px 10px 0 10px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    transition: ease all .5s;
+}
+
+.perfilImageContainer {
+    text-align: left;
+    transition: ease all .5s;
+}
+
+.thumbContainer {   
+    padding: 15px 0 10px 0;
+    border-radius: 10px;
+}
+
+.perfilImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    position: relative;
+    margin-left: 70px;
+    border: 4px solid white;
+    box-shadow: 30px 5px 20px #00000088;
+    transition: ease all .5s;
+}
+
+.perfilName {
+    position: relative;
+    top: 15px;
+    color: #0e0e0e;
+    text-align: left;
+    left: 80px;
+    transition: ease all .5s;
+}
+
+.perfilInfo {
+    color: #0e0e0e;
+    position: relative;
+    text-align: left;
+    top: 18px;
+    left: 60px;
+    transition: ease all .5s;
+}
+
+.perfilLocation {
+    position: relative;
+    bottom: 10px;
+    color: #919191;
+    transition: ease all .5s;
+}
+
+.perfilDescricao {
+    position: relative;
+    width: 50%;
+    left: 380px;
+    bottom: 120px;
+    text-align: justify;
+    color: #0e0e0e;
+    transition: ease all .5s;
+}
+
+@media (max-width: 994px) { 
+    .darkSection {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        padding: 0 0 1px 0;
+        margin-bottom: 0px;
+    }
+
+    .perfil {
+        width: 0 80% 120px 80%;
+        height: 490px;
+        padding: 10px 10px 0px 10px;
+        background-color: white;
+        margin-bottom: 45px;
+        border-radius: 15px;
+    }
+
+    .perfilImageContainer {
+        margin: auto;
+        position: relative;
+        text-align: center;
+        right: 30px;
+        top: 20px;
+        box-shadow: none;
+        width: fit-content;
+    }
+
+    .perfilImage {
+        box-shadow: none;
+    }
+
+    .perfilName {
+        margin: auto;
+        position: relative;
+        text-align: center;
+        padding-right: 150px;
+        width: fit-content;
+    }
+
+    .perfilInfo {
+        margin: auto;
+        position: relative;
+        padding-right: 110px;
+        width: fit-content;
+    }
+
+    .descricaoTitle {
+        margin: auto;
+        position: relative;
+        width: fit-content;
+    }
+
+    .perfilDescricao {
+        margin: auto;
+        position: relative;
+        top: 20px;
+        left: 5px;
+        width: 95%;
+    }
+    
+}

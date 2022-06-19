@@ -2,20 +2,18 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { useParams, useHistory } from "react-router-dom";
 import {httpGet, httpDelete, httpPut, httpPost} from '../../utils';
 
-// const carteiraInicial = [];
 
 var carteiraInitialState = {
     status: 'not_loaded',
     id_usuario: null,
-    nome_usuario: '',
-    carteira: [],
+    carteira: {},
     error: null
 }
 
 export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchAtivosCarteira',
     async () => {
         try{
-            const res = await (await fetch('http://localhost:3004/carteira')).json();
+            const res = await (await fetch('http://localhost:3004/carteiras')).json();
             return res;
         } catch(error) {
             return {};
@@ -24,11 +22,23 @@ export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchAtivosCarteir
 
 
 function fulfillCarteiraReducer(state, carteiraFetched) {
+    const filteredCarteirasFetched = carteiraFetched.carteiras.filter(function(el) {
+        return (parseInt(el.usuario_id) === parseInt(state.id_usuario));
+    })
+
+    // debugger;
+    var result = [];
+    if(filteredCarteirasFetched.length === 0) {
+        result = [];
+    } else {
+        result = filteredCarteirasFetched;
+    }
+
     return {...state,
         status: 'loaded',
-        carteira: carteiraFetched.carteiras[0].ativos,
-        id_usuario: null,
-        nome_usuario: null
+        id_usuario: state.id_usuario,
+        carteira: result,
+        error: null
     }
 }
 
@@ -36,6 +46,7 @@ export const carteirasSlice = createSlice({
     name: 'carteira',
     initialState: carteiraInitialState,
     reducers: {
+        alterarId: (state, action) => { state.id_usuario = parseInt(action.payload) },
         adicionarAtivoCarteira: (state, action) => {  },
         deletarAtivoCarteira: (state, action) => {  },
         updateAtivoCarteira: (state, action) => { console.log(action.payload) },
@@ -46,6 +57,6 @@ export const carteirasSlice = createSlice({
     },
 })
 
-export const { adicionarAtivoCarteira, deletarAtivoCarteira, updateAtivoCarteira, deletarCarteira } = carteirasSlice.actions;
+export const { alterarId, adicionarAtivoCarteira, deletarAtivoCarteira, updateAtivoCarteira, deletarCarteira } = carteirasSlice.actions;
 
 export default carteirasSlice.reducer;
