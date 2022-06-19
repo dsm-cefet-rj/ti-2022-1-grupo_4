@@ -29,8 +29,8 @@ function App() {
                   <Route path="/sign-up" element={<SignUp />} />
                   <Route path="/perfil" element={<Perfil />} />
                   <Route path='/carteira' element={<Carteira />} />
-                  <Route path="/detalhamento_cotacoes" element={<DetalhamentoCotacoes />} />
-                  <Route path="/detalhamento_indicadores" element={<DetalhamentoIndicadores />} />
+                  <Route path="/detalhamento_cotacoes/:id" element={<DetalhamentoCotacoes />} />
+                  <Route path="/detalhamento_indicadores/:id" element={<DetalhamentoIndicadores />} />
                   <Route path='/ativos' element={<ListaDeAtivos />} />
                   <Route path='/watchlist' element={<Watchlist />} />
                 </Routes>

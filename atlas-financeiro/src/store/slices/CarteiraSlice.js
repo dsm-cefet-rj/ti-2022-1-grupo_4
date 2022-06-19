@@ -15,7 +15,7 @@ var carteiraInitialState = {
 export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchAtivosCarteira',
     async () => {
         try{
-            const res = await (await fetch('http://localhost:3004/carteira')).json();
+            const res = await (await fetch('http://localhost:3004/carteiras')).json();
             return res;
         } catch(error) {
             return {};

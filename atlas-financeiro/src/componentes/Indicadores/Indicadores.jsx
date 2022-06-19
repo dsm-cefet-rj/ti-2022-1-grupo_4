@@ -2,11 +2,15 @@ import React from 'react';
 import ativos from '../reutilizaveis/Ativos';
 import Dropdown from '../Dropdown/Dropdown';
 import styles from './Indicadores.module.scss';
+import { useParams } from 'react-router-dom';
 
 // Aqui só puxa de um ativos, que será buscado via fetch
 
 
 const TabelaIndicadores = () => {
+    let { id } = useParams();
+    console.log(id);
+    
     return(
         <>
         <section className={styles.lightSection}>

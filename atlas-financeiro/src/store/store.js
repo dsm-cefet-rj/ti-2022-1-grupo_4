@@ -8,6 +8,8 @@ import carteirasSlice from './slices/CarteiraSlice';
 import carteiraReducer from './slices/CarteiraSlice';
 import signUpSlice from './slices/SignUpSlice';
 import popupSlice from './slices/PopupSlice';
+import cotacoesSlice from './slices/CotacoesSlice';
+import cotacoesReducer from './slices/CotacoesSlice';
 
 export const store = configureStore({
     reducer: {
@@ -15,6 +17,7 @@ export const store = configureStore({
         usuarios: signUpSlice,
         ativos: ativosReducer,
         ativos: ativosSlice,
+        cotacoes: cotacoesReducer,
         popup: popupSlice,
         carteira: carteiraReducer,
         carteira: carteirasSlice,

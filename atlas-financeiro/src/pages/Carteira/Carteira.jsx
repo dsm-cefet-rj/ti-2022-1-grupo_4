@@ -7,9 +7,12 @@ import HeaderPerfil from '../../componentes/HeaderPerfil/HeaderPerfil';
 import { fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
 import { adicionarAtivoCarteira, deletarAtivoCarteira, updateAtivoCarteira, deletarCarteira } from '../../store/slices/CarteiraSlice';
 import PopupCarteira from '../../componentes/Popup/PopupCarteira';
+import { useParams, useHistory } from 'react-router-dom';
 
 
 function Carteira() {
+
+    let { id } = useParams();
 
     const [buttonPopup, setButtonPopup] = useState(false);
 
@@ -20,14 +23,15 @@ function Carteira() {
 
     useEffect(() => {
         if(carteira.status === "not_loaded") {
-            debugger
-            dispatch(fetchAtivosCarteira());
+            Promise.resolve(dispatch(fetchAtivosCarteira()));
         }
     }, [carteira.status, dispatch])
 
     function removerAtivoCarteira() {
         alert('Are you sure?');
     }
+
+    // debugger;
 
     return (
         <>
