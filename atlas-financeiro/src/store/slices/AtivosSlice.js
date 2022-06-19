@@ -1,47 +1,31 @@
-import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
-import { useParams, useHistory } from "react-router-dom";
-import { httpGet, httpPut, httpDelete, httpPost } from "../../utils";
+import { createAsyncThunk, createSlice, createEntityAdapter } from "@reduxjs/toolkit";
+import { httpGet } from "../../utils";
+import {baseUrl} from '../../baseUrl'
 
+export const ativosAdapter = createEntityAdapter({
+    selectId: (ativos) => ativos.id
+})
 
-var ativosInitialState = {
-    status: 'not_loaded',
-    ativos: [],
-    busca: '',
-    error: null
-};
-
-export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos',
-    async () => {
-        try{
-            const res = await (await fetch('http://localhost:3004/ativos')).json();
-            return res;
-
-        } catch(error) {
-            return [];
-        }
-    });
-
-
-function fulfillAtivosReducer(state, ativosFetched) {
-    return {...state,
-        status: 'loaded',
-        ativos: ativosFetched.ativos
-    }
-}
+export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos', async () => {
+    return await httpGet(`${baseUrl}/ativos`) 
+}) 
 
 export const ativosSlice = createSlice({
     name: 'ativos',
-    initialState: ativosInitialState,
+    initialState: ativosAdapter.getInitialState({
+        status: 'not_loaded',
+        busca: '',
+    }),
     reducers: {
         alterarBusca: (state, action) => { state.busca = action.payload },
-        buscar: (state, action) => { state.ativos = state.ativos.filter(function(el) {
+        buscar: (state) => { state.ativos = state.ativos.filter(function(el) {
             return (el.informacoes_gerais.ticker.toLowerCase().indexOf(state.busca.toLowerCase()) !== -1);
-        }) }
+        })}
     },
     extraReducers: {
-        [fetchAtivos.fulfilled]: (state, action) => (fulfillAtivosReducer(state, action.payload)),
+        [fetchAtivos.fulfilled]: (state, action) => {state.status = 'loaded'; ativosAdapter.setAll(state, action.payload); },
         [fetchAtivos.pending]: (state, action) => {state.status = 'loading'},
-        [fetchAtivos.rejected]: (state, action) => {state.status = 'failed'; state.error = action.error.message}
+        [fetchAtivos.rejected]: (state, action) => {state.status = 'failed'; state.error = 'Falha ao buscar usuarios: ' + action.error.message},
     },
 })
 
@@ -49,3 +33,9 @@ export const ativosSlice = createSlice({
 export const { alterarBusca, buscar } = ativosSlice.actions;
 
 export default ativosSlice.reducer;
+
+export const {
+    selectAll: selectAllAtivos,
+    selectById: selectAtivosById,
+    selectIds: selectAtivosIds
+} = ativosAdapter.getSelectors(state => state.ativos)

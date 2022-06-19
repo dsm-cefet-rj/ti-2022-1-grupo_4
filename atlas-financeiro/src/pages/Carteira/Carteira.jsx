@@ -10,6 +10,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import ImagemPerfil from '../../media/businessman.jpg';
 import ImagemThumb from '../../media/chicago.jpg';
 
+store.dispatch(fetchAtivosCarteira())
 
 function Carteira() {
 

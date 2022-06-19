@@ -1,9 +1,8 @@
 import React from 'react';
 import video from '../../media/earth.mp4';
-import SearchAssets from '../SearchAssets/SearchAssets';
-import styles from './Header.module.scss';
+import styles from './HeaderListaAtivo.module.scss';
 
-function Header(props) {
+function HeaderListaAtivo(props) {
     
     return (
         <section className={styles.darkSection}>
@@ -47,11 +46,9 @@ function Header(props) {
                     <h2><strong>Invista consciente</strong></h2>
                 </div>
 
-                <SearchAssets state={props.state} setState={props.setState} />
-
             </div>       
         </section>
     );
 }
 
-export default Header;
+export default HeaderListaAtivo;

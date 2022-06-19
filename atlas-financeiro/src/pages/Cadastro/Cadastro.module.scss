@@ -1,10 +1,42 @@
 .loginComponentes {
     margin-bottom: 0px;
     padding-top: 20px;
-    background-color: #f9f9f9;
-    opacity: 1;
-    background-image: radial-gradient(#e8e8e8 1.05px, #f9f9f9 1.05px);
-    background-size: 21px 21px;
+    
+        position: relative;
+        margin: 0;
+        width: 100%;
+        padding: 0 0 1px 0;
+        align-items: center;
+        justify-content: center;
+        background-size: 300% 300%;
+        background-image: linear-gradient(-45deg, #0445c6 0%, #11295b 25%, #0a4062 51%, #069eda 100%);
+        -webkit-animation: AnimateBG 20s ease infinite;
+        animation: AnimateBG 20s ease infinite;
+        transition: ease all .5s;
+    
+    @-webkit-keyframes AnimateBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      
+      @keyframes AnimateBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+    }
     z-index: 10000;
     width: 100%;
     height: 100%;
@@ -51,9 +83,15 @@
     width: 70%;
     margin: 45px;
 }
+.title {
+    font-family: 'Roboto Flex', sans-serif;
+}
 
+.geralInput {
+    width: 100%;
+}
 
-loginEmailInfo {
+.loginEmailInfo {
     align-items: flex-end;
     display: flex;
     flex-direction: row;

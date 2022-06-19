@@ -6,29 +6,29 @@ import Popup from '../Popup/Popup';
 import { alterarBusca, buscar, fetchAtivos } from '../../store/slices/AtivosSlice';
 import { Link } from 'react-router-dom';
 
+store.dispatch(fetchAtivos())
 
 function ListarAtivos() {
     const [buttonPopup, setButtonPopup] = useState(false)
-    const ativoSlice = useSelector(state => state.ativos)
+    const ativoSlice = useSelector(selectAllAtivos)
     const dispatch = useDispatch()
     
     async function alteraString() {
-        await Promise.resolve(dispatch(fetchAtivos()));
-        dispatch(alterarBusca(document.getElementById('busca_ativo').value));
-        dispatch(buscar());
+        await Promise.resolve(dispatch(fetchAtivos()))
+        dispatch(alterarBusca(document.getElementById('busca_ativo').value))
+        dispatch(buscar())
     }
 
     function resetar() {
-        dispatch(fetchAtivos());
-        document.getElementById('busca_ativo').value = '';
+        dispatch(fetchAtivos())
+        document.getElementById('busca_ativo').value = ''
     }
 
     useEffect(() => {
-        if(ativoSlice.status === "not_loaded") {
-            debugger
-            dispatch(fetchAtivos());
+        if(ativoSlice === "not_loaded") {
+            dispatch(fetchAtivos())
         }
-    }, [ativoSlice.status, dispatch])
+    }, [ativoSlice, dispatch])
 
     return (
         <>
@@ -45,7 +45,7 @@ function ListarAtivos() {
                 </div>
             
                     <div className={styles.listarContainer}>
-                        {ativoSlice.ativos.length == 0? [] : ativoSlice.ativos.map(ativo => {
+                        {ativoSlice.length == 0? [] : ativoSlice.map(ativo => {
                             return(
                             <div className={styles.listaBensIndustriais}>
 

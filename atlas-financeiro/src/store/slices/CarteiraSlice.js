@@ -75,3 +75,9 @@ export const carteirasSlice = createSlice({
 export const { alterarId } = carteirasSlice.actions;
 
 export default carteirasSlice.reducer;
+
+export const {
+    selectAll: selectAllAtivosCarteira,
+    selectById: selectAtivosCarteriaById,
+    selectIds: selectAtivosCarteiraIds
+} = ativosCarteiraAdapter.getSelectors(state => state.ativosCarteira)
