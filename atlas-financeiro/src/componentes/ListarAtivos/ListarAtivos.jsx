@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import vale from '../../media/vale.png'
 import styles from './ListarAtivos.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
-// import { fetchAtivos } from '../../store/slices/AtivosSlice';
 import Popup from '../Popup/Popup';
 import { alterarBusca, buscar, fetchAtivos } from '../../store/slices/AtivosSlice';
 import { Link } from 'react-router-dom';

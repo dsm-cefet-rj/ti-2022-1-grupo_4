@@ -25,8 +25,7 @@ function fulfillCotacoesReducer(state, cotacoesFetched) {
     const filteredCotacoesFetched = cotacoesFetched.ativos.filter(function(el) {
         return (parseInt(el.id) === state.ativo_id);
     })
-
-
+    
     return {...state,
         status: 'loaded',
         cotacoes: filteredCotacoesFetched

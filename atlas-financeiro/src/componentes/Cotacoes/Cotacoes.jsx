@@ -6,7 +6,6 @@ import { alterarId, fetchCotacoes } from '../../store/slices/CotacoesSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 
-// Aqui só puxa de um ativos, que será buscado via fetch
 const cotacoes = ativos[0].cotacoes;
 
 const LinhaTabela = (props) => {
@@ -20,9 +19,6 @@ const LinhaTabela = (props) => {
   
   function TabelaCotacoes() {
     let { id } = useParams();
-    // console.log(id);
-    // debugger;
-
 
     const cotacoes = useSelector(state => state.cotacoes);
     const dispatch = useDispatch();
