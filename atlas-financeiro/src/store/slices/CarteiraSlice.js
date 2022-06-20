@@ -48,7 +48,7 @@ export const carteirasSlice = createSlice({
     extraReducers: {
         [fetchAtivosCarteira.fulfilled]: (state, action) => {
             state.status = 'loaded';
-            carteiraAdapter.setAll(state, action.payload);
+            carteiraAdapter.setAll(state, action.payload.carteiras);
             state.carteira = state.entities[state.id_usuario];
         },
         [fetchAtivosCarteira.pending]: (state, action) => {
@@ -59,7 +59,6 @@ export const carteirasSlice = createSlice({
         },
         [deleteAtivoCarteira.fulfilled]: (state, { payload: {user_id, ativo_id} }) => {
             state.status = 'removed'
-            debugger;
             carteiraAdapter.removeOne(state, ativo_id);
         },
         [updateAtivoCarteira]: (state, action) => {

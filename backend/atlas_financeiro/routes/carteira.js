@@ -18,16 +18,11 @@ router.route('/:user_id/:ativo_id')
 
   let file = "../../shared/carteira.json";
   let carteiras = fs.readFileSync(file, 'utf-8');
-  json_carteiras = JSON.parse(carteiras);
-  // console.log(json_carteiras);
-  // console.log(json_carteiras.carteiras[0].ativos);
-
-  // console.log('Antes');
-  // console.log(json_carteiras);
+  var json_carteiras = JSON.parse(carteiras);
 
   json_carteiras.carteiras[0].ativos = json_carteiras.carteiras[0].ativos.filter(function (el) {
-    // return (el.informacoes_gerais.ticker.toLowerCase().indexOf(state.busca.toLowerCase()) !== -1);  
-    return(el.ativo_id !== ativo_id);
+    ativo_id_req = parseInt(ativo_id)
+    return(el.ativo_id !== ativo_id_req);
    })
 
    console.log('Após Tratamento');
@@ -40,16 +35,8 @@ router.route('/:user_id/:ativo_id')
       console.log('JSON saved');
     }
    });
-  // console.log(json_carteiras);
-  
-  // console.log(carteira);
-  // carteira = carteira.filter(function(values, index, arr){
-  //   return values.usuario_id != req.params.user_id;
-  // });
 
-  console.log('----------------------------------------------------------------------');
-  
-  res.statusCode = 200;
+   res.statusCode = 200;
   res.sendFile('carteira.json', { root: '../../shared/' });
 })
 

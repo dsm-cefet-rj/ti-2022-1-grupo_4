@@ -31,11 +31,11 @@ function Carteira() {
             pegaCarteira();
         }
     }, [carteira.status, dispatch])
-
-    function removerAtivoCarteira(ativo_id) {
-        // alert('Are you sure?');
-        // debugger;
+    
+    async function removerAtivoCarteira(ativo_id) {
         dispatch(deleteAtivoCarteira({ user_id, ativo_id }));
+        alert('Ativo deletado com sucesso.');
+        await Promise.resolve(dispatch(fetchAtivosCarteira({ user_id })));
     }
 
     console.log(carteira);
