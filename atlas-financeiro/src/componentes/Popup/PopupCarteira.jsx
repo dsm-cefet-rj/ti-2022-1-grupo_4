@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import styles from './Popup.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { adicionarAtivoCarteira, deletarAtivoCarteira, updateAtivoCarteira, deletarCarteira } from '../../store/slices/CarteiraSlice';
+import { useParams } from 'react-router-dom';
 
 
 function PopupCarteira(props) {
@@ -15,8 +16,8 @@ function PopupCarteira(props) {
 
     function atualizarCarteira() {
         props.setTrigger(false);
-        // dispatch(updateAtivoCarteira({'quantidade': parseInt(quantidadeAtivo.current.value), 'precoMedio': parseInt(precoMedioAtivo.current.value)}));
-        alert('Dados atualizados com sucesso.');
+        dispatch(updateAtivoCarteira({ 'user_id': props.user_id, 'ativo_id': props.ativo_id, 'dadosAtualizados': {quantidade: parseInt(quantidadeAtivo.current.value), precoMedio: parseFloat(precoMedioAtivo.current.value)}}));
+        // alert('Dados atualizados com sucesso.');
     }
 
 

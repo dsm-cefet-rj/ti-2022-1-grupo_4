@@ -38,9 +38,6 @@ function Carteira() {
         await Promise.resolve(dispatch(fetchAtivosCarteira({ user_id })));
     }
 
-    console.log(carteira);
-    // debugger;
-
     if(typeof carteira.carteira.ativos !== 'undefined' && carteira.carteira.ativos.length !== 0) {
         return (
             <>
@@ -138,7 +135,7 @@ function Carteira() {
                                                         </div>
                                                         <div className='col' style={{'align-self': 'center'}}>
                                                             <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={() => setButtonPopup(true)} ><a className={styles.hRef}>Atualizar Ativo</a></button>
-                                                            <PopupCarteira trigger={buttonPopup} setTrigger={setButtonPopup} empresa={ativo.empresa} ticker={ativo.ticker}/>
+                                                            <PopupCarteira trigger={buttonPopup} setTrigger={setButtonPopup} empresa={ativo.empresa} ticker={ativo.ticker} user_id={parseInt(user_id)} ativo_id={parseInt(ativo.ativo_id)} />
                                                         </div>
                                                     </div>
                                                 </div>
