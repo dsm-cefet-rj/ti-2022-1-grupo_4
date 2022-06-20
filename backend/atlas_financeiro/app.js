@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usuariosRouter = require('./routes/usuarios');
 var ativosRouter = require('./routes/ativos');
 var carteirasRouter = require('./routes/carteira');
 
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/usuarios', usuariosRouter);
 app.use('/ativos', ativosRouter);
 app.use('/carteira', carteirasRouter);
 
