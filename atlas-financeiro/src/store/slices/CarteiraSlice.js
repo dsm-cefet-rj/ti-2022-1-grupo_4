@@ -31,11 +31,16 @@ export const deleteAtivoCarteira = createAsyncThunk('carteira/deleteAtivoCarteir
     });
 
 export const updateAtivoCarteira = createAsyncThunk('carteira/updateAtivoCarteira',
-    async({ user_id, ativo_id, newObj }) => {
+    async({ user_id, ativo_id, dadosAtualizados }) => {
+        debugger;
         const data = await fetch(`http://localhost:3004/carteira/${user_id}/${ativo_id}`, {
             method: 'PATCH',
-            body: JSON.stringify(newObj)
+            body: JSON.stringify(dadosAtualizados),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
         }).then((res) => res.json())
+        debugger;
         return data;
     });
 
@@ -62,7 +67,7 @@ export const carteirasSlice = createSlice({
             carteiraAdapter.removeOne(state, ativo_id);
         },
         [updateAtivoCarteira]: (state, action) => {
-
+            state.status = 'updated'
         }
     },
 })
