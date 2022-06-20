@@ -16,11 +16,13 @@ router.route('/:user_id/:ativo_id')
   user_id = req.params.user_id;
   ativo_id = req.params.ativo_id;
 
+  console.log(user_id);
+
   let file = "../../shared/carteira.json";
   let carteiras = fs.readFileSync(file, 'utf-8');
   var json_carteiras = JSON.parse(carteiras);
 
-  json_carteiras.carteiras[0].ativos = json_carteiras.carteiras[0].ativos.filter(function (el) {
+  json_carteiras.carteiras[user_id - 1].ativos = json_carteiras.carteiras[user_id - 1].ativos.filter(function (el) {
     ativo_id_req = parseInt(ativo_id)
     return(el.ativo_id !== ativo_id_req);
    })
