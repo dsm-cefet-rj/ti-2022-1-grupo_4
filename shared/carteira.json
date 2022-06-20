@@ -1,5 +1,5 @@
 {
-    "carteiras":[
+    "carteiras": [
         {
             "usuario_id": 1,
             "usuario": {
@@ -11,43 +11,56 @@
                 },
                 "descricao": "Executivo de Tecnologia focado em projetos para diversas companhias."
             },
-            "ativos": [{
-                "empresa": "Wiz Soluções",
-                "ticker": "WIZS3",
-                "quantidade": 1000,
-                "preco_medio": 7.56,
-                "rendimento": 0.26
-            },{
-                "empresa": "Cogna Educação",
-                "ticker": "COGN3",
-                "quantidade": 2500,
-                "preco_medio": 2.11,
-                "rendimento": 0.11
-            },{
-                "empresa": "Oi",
-                "ticker": "OIBR3",
-                "quantidade": 500,
-                "preco_medio": 1.19,
-                "rendimento": -0.59
-            },{
-                "empresa": "Riza Arctium Real Estate FII",
-                "ticker": "ARCT11",
-                "quantidade": 10000,
-                "preco_medio": 100.29,
-                "rendimento": 0.0156
-            },{
-                "empresa": "Sinqia",
-                "ticker": "SQIA3",
-                "quantidade": 300,
-                "preco_medio": 15,
-                "rendimento": 0.09
-            },{
-                "empresa": "Itausa",
-                "ticker": "ITSA4",
-                "quantidade": 1000,
-                "preco_medio": 8.32,
-                "rendimento": 0.12
-            }]
+            "ativos": [
+                {
+                    "ativo_id": 1,
+                    "empresa": "Wiz Soluções",
+                    "ticker": "WIZS3",
+                    "quantidade": 1000,
+                    "preco_medio": 7.56,
+                    "rendimento": 0.26
+                },
+                {
+                    "ativo_id": 2,
+                    "empresa": "Cogna Educação",
+                    "ticker": "COGN3",
+                    "quantidade": 2500,
+                    "preco_medio": 2.11,
+                    "rendimento": 0.11
+                },
+                {
+                    "ativo_id": 3,
+                    "empresa": "Oi",
+                    "ticker": "OIBR3",
+                    "quantidade": 500,
+                    "preco_medio": 1.19,
+                    "rendimento": -0.59
+                },
+                {
+                    "ativo_id": 4,
+                    "empresa": "Riza Arctium Real Estate FII",
+                    "ticker": "ARCT11",
+                    "quantidade": 10000,
+                    "preco_medio": 100.29,
+                    "rendimento": 0.0156
+                },
+                {
+                    "ativo_id": 5,
+                    "empresa": "Sinqia",
+                    "ticker": "SQIA3",
+                    "quantidade": 300,
+                    "preco_medio": 15,
+                    "rendimento": 0.09
+                },
+                {
+                    "ativo_id": 6,
+                    "empresa": "Itausa",
+                    "ticker": "ITSA4",
+                    "quantidade": 1000,
+                    "preco_medio": 8.32,
+                    "rendimento": 0.12
+                }
+            ]
         },
         {
             "usuario_id": 2,
@@ -60,43 +73,59 @@
                 },
                 "descricao": "Programador Sênior focado em projetos para diversas companhias."
             },
-            "ativos": [{
-                "empresa": "Wiz Soluções",
-                "ticker": "WIZS3",
-                "quantidade": 2500,
-                "preco_medio": 7.56,
-                "rendimento": 0.26
-            },{
-                "empresa": "Cogna Educação",
-                "ticker": "COGN3",
-                "quantidade": 2500,
-                "preco_medio": 2.11,
-                "rendimento": 0.11
-            },{
-                "empresa": "Oi",
-                "ticker": "OIBR3",
-                "quantidade": 500,
-                "preco_medio": 1.19,
-                "rendimento": -0.59
-            },{
-                "empresa": "Riza Arctium Real Estate FII",
-                "ticker": "ARCT11",
-                "quantidade": 10000,
-                "preco_medio": 100.29,
-                "rendimento": 0.0156
-            },{
-                "empresa": "Sinqia",
-                "ticker": "SQIA3",
-                "quantidade": 300,
-                "preco_medio": 15,
-                "rendimento": 0.09
-            },{
-                "empresa": "Itausa",
-                "ticker": "ITSA4",
-                "quantidade": 1000,
-                "preco_medio": 8.32,
-                "rendimento": 0.12
-            }]
+            "ativos": [
+                {
+                    "ativo_id": 1,
+                    "empresa": "Wiz Soluções",
+                    "ticker": "WIZS3",
+                    "quantidade": 2500,
+                    "preco_medio": 7.56,
+                    "rendimento": 0.26
+                },
+                {
+                    "ativo_id": 2,
+                    "empresa": "Cogna Educação",
+                    "ticker": "COGN3",
+                    "quantidade": 2500,
+                    "preco_medio": 2.11,
+                    "rendimento": 0.11
+                },
+                {
+                    "ativo_id": 3,
+                    "empresa": "Oi",
+                    "ticker": "OIBR3",
+                    "quantidade": 500,
+                    "preco_medio": 1.19,
+                    "rendimento": -0.59
+                },
+                {
+                    "ativo_id": 4,
+                    "empresa": "Riza Arctium Real Estate FII",
+                    "ticker": "ARCT11",
+                    "quantidade": 10000,
+                    "preco_medio": 100.29,
+                    "rendimento": 0.0156
+                },
+                {
+                    "ativo_id": 5,
+                    "empresa": "Sinqia",
+                    "ticker": "SQIA3",
+                    "quantidade": 300,
+                    "preco_medio": 15,
+                    "rendimento": 0.09
+                },
+                {
+                    "ativo_id": 6,
+                    "empresa": "Itausa",
+                    "ticker": "ITSA4",
+                    "quantidade": 1000,
+                    "preco_medio": 8.32,
+                    "rendimento": 0.12
+                }
+            ]
+        },
+        {
+            "usuario_id": 3
         }
-]
+    ]
 }

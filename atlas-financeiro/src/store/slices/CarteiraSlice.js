@@ -1,19 +1,18 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 import { useParams, useHistory } from "react-router-dom";
 import {httpGet, httpDelete, httpPut, httpPost} from '../../utils';
+import { baseUrl } from "../../baseUrl";
 
 
-var carteiraInitialState = {
-    status: 'not_loaded',
-    id_usuario: null,
-    carteira: {},
-    error: null
-}
+// creating entityAdapter
+const carteiraAdapter = createEntityAdapter({
+    selectId: (carteira) => carteira.usuario_id
+})
 
 export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchAtivosCarteira',
-    async () => {
+    async ({ user_id }) => {
         try{
-            const res = await (await fetch('http://localhost:3004/carteiras')).json();
+            const res = await (await fetch(`http://localhost:3004/carteira/${user_id}`)).json();
             return res;
         } catch(error) {
             return {};
@@ -21,42 +20,54 @@ export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchAtivosCarteir
     });
 
 
-function fulfillCarteiraReducer(state, carteiraFetched) {
-    const filteredCarteirasFetched = carteiraFetched.carteiras.filter(function(el) {
-        return (parseInt(el.usuario_id) === parseInt(state.id_usuario));
-    })
+export const deleteAtivoCarteira = createAsyncThunk('carteira/deleteAtivoCarteira', 
+    async ({ user_id, ativo_id }) => {
+        user_id = parseInt(user_id);
+        ativo_id = parseInt(ativo_id);
+        await fetch(`http://localhost:3004/carteira/${user_id}/${ativo_id}`, {
+            method: 'DELETE',
+        })
+        return { user_id, ativo_id }
+    });
 
-    // debugger;
-    var result = [];
-    if(filteredCarteirasFetched.length === 0) {
-        result = [];
-    } else {
-        result = filteredCarteirasFetched;
-    }
-
-    return {...state,
-        status: 'loaded',
-        id_usuario: state.id_usuario,
-        carteira: result,
-        error: null
-    }
-}
+export const updateAtivoCarteira = createAsyncThunk('carteira/updateAtivoCarteira',
+    async({ user_id, ativo_id, newObj }) => {
+        const data = await fetch(`http://localhost:3004/carteira/${user_id}/${ativo_id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(newObj)
+        }).then((res) => res.json())
+        return data;
+    });
 
 export const carteirasSlice = createSlice({
     name: 'carteira',
-    initialState: carteiraInitialState,
+    initialState: carteiraAdapter.getInitialState({ id_usuario: null, carteira: {}, status: 'not_loaded', error: null }),
     reducers: {
         alterarId: (state, action) => { state.id_usuario = parseInt(action.payload) },
-        adicionarAtivoCarteira: (state, action) => {  },
-        deletarAtivoCarteira: (state, action) => {  },
-        updateAtivoCarteira: (state, action) => { console.log(action.payload) },
-        deletarCarteira: (state, carteira) => {  }
     },
     extraReducers: {
-        [fetchAtivosCarteira.fulfilled]: (state, action) => fulfillCarteiraReducer(state, action.payload)
+        [fetchAtivosCarteira.fulfilled]: (state, action) => {
+            state.status = 'loaded';
+            carteiraAdapter.setAll(state, action.payload);
+            state.carteira = state.entities[state.id_usuario];
+        },
+        [fetchAtivosCarteira.pending]: (state, action) => {
+            state.status = 'loading'
+        },
+        [fetchAtivosCarteira.rejected]: (state, action) => {
+            state.status = 'rejected'
+        },
+        [deleteAtivoCarteira.fulfilled]: (state, { payload: {user_id, ativo_id} }) => {
+            state.status = 'removed'
+            debugger;
+            carteiraAdapter.removeOne(state, ativo_id);
+        },
+        [updateAtivoCarteira]: (state, action) => {
+
+        }
     },
 })
 
-export const { alterarId, adicionarAtivoCarteira, deletarAtivoCarteira, updateAtivoCarteira, deletarCarteira } = carteirasSlice.actions;
+export const { alterarId } = carteirasSlice.actions;
 
 export default carteirasSlice.reducer;

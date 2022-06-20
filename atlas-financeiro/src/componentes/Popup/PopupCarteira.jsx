@@ -15,7 +15,7 @@ function PopupCarteira(props) {
 
     function atualizarCarteira() {
         props.setTrigger(false);
-        dispatch(updateAtivoCarteira({'quantidade': parseInt(quantidadeAtivo.current.value), 'precoMedio': parseInt(precoMedioAtivo.current.value)}));
+        // dispatch(updateAtivoCarteira({'quantidade': parseInt(quantidadeAtivo.current.value), 'precoMedio': parseInt(precoMedioAtivo.current.value)}));
         alert('Dados atualizados com sucesso.');
     }
 
