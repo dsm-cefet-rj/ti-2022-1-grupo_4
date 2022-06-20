@@ -4,12 +4,11 @@ import Footer from '../../componentes/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import vale from '../../media/vale.png';
 import HeaderPerfil from '../../componentes/HeaderPerfil/HeaderPerfil';
-import { alterarId, adicionarAtivoCarteira, deletarAtivoCarteira, updateAtivoCarteira, deletarCarteira, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
+import { alterarId, deleteAtivoCarteira, updateAtivoCarteira, fetchAtivosCarteira, fetchSingleAtivosCarteira } from '../../store/slices/CarteiraSlice';
 import PopupCarteira from '../../componentes/Popup/PopupCarteira';
 import { useParams, useHistory } from 'react-router-dom';
 import ImagemPerfil from '../../media/businessman.jpg';
 import ImagemThumb from '../../media/chicago.jpg';
-// import styles from './HeaderPerfil.module.scss';
 
 
 function Carteira() {
@@ -24,24 +23,25 @@ function Carteira() {
 
     async function pegaCarteira() {
         await Promise.resolve(dispatch(alterarId(user_id)));
-        await Promise.resolve(dispatch(fetchAtivosCarteira()));
+        await Promise.resolve(dispatch(fetchAtivosCarteira({ user_id })));
     }
     
-    // debugger;
     useEffect(() => {
         if(carteira.status === "not_loaded") {
             pegaCarteira();
         }
     }, [carteira.status, dispatch])
-
-    function removerAtivoCarteira() {
-        alert('Are you sure?');
+    
+    async function removerAtivoCarteira(ativo_id) {
+        dispatch(deleteAtivoCarteira({ user_id, ativo_id }));
+        alert('Ativo deletado com sucesso.');
+        await Promise.resolve(dispatch(fetchAtivosCarteira({ user_id })));
     }
 
-    console.log(carteira.carteira);
-    debugger;
+    console.log(carteira);
+    // debugger;
 
-    if(typeof carteira.carteira[0] !== 'undefined' && carteira.carteira[0].ativos.length !== 0) {
+    if(typeof carteira.carteira.ativos !== 'undefined' && carteira.carteira.ativos.length !== 0) {
         return (
             <>
                 <section className={styles.darkSection}>
@@ -82,15 +82,15 @@ function Carteira() {
                             </div>
                         </div>
                         <div className={styles.perfilName}>
-                            <h2><strong>{carteira.carteira[0].usuario.nome}</strong></h2>
+                            <h2><strong>{carteira.carteira.usuario.nome}</strong></h2>
                         </div>
                         <div className={styles.perfilInfo}>
-                            <p className="perfil-status"><strong>{carteira.carteira[0].usuario.status}</strong></p>
-                            <p className={styles.perfilLocation}>{carteira.carteira[0].usuario.localidade.estado}, {carteira.carteira[0].usuario.localidade.pais}</p>
+                            <p className="perfil-status"><strong>{carteira.carteira.usuario.status}</strong></p>
+                            <p className={styles.perfilLocation}>{carteira.carteira.usuario.localidade.estado}, {carteira.carteira.usuario.localidade.país}</p>
                         </div>
                         <div className={styles.perfilDescricao}>
                             <h3 className="descricao-title"><strong>Sobre</strong></h3>
-                            <p>{carteira.carteira[0].usuario.descricao}</p>
+                            <p>{carteira.carteira.usuario.descricao}</p>
                         </div>
                     </div>
                 </section>
@@ -102,7 +102,7 @@ function Carteira() {
                             </div>
                     
                             <div className={styles.carteiraContainer}>
-                                {carteira.carteira[0].ativos.map(ativo => {
+                                {carteira.carteira.ativos.map(ativo => {
                                     return(
                                     <div className={styles.ativosCarteira}>
                                         <div className={styles.ativoCarteira}>
@@ -134,7 +134,7 @@ function Carteira() {
                                                             <button type="button" className={`btn btn-success ${styles.buttonOutro}`} ><a className={styles.hRef} href='/detalhamento_indicadores'>Indicadores</a></button>
                                                         </div>
                                                         <div className='col' style={{'align-self': 'center'}}>
-                                                            <button type="button" className={`btn btn-danger ${styles.buttonCancel}`} onClick={removerAtivoCarteira} >Remover da Carteira</button>
+                                                            <button type="button" className={`btn btn-danger ${styles.buttonCancel}`} onClick={() => removerAtivoCarteira(ativo.ativo_id)} >Remover da Carteira</button>
                                                         </div>
                                                         <div className='col' style={{'align-self': 'center'}}>
                                                             <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={() => setButtonPopup(true)} ><a className={styles.hRef}>Atualizar Ativo</a></button>

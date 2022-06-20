@@ -4,7 +4,8 @@ import {baseUrl} from '../../baseUrl'
 
 const signUpAdapter = createEntityAdapter({
     selectId: (usuarios) => usuarios.id
-})  
+})
+
 
 export const fetchSignUp = createAsyncThunk('usuarios/fetchSignUp', async () => {
     return await httpGet(`${baseUrl}/usuarios`) 
