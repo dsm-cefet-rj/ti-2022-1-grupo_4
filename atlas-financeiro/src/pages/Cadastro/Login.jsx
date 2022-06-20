@@ -1,11 +1,7 @@
-import React, {useState} from 'react'; //trocar para dispatch
+import React, { useState, useEffect } from 'react'; 
 import Button from 'react-bootstrap/Button';
 import Footer from '../../componentes/Footer/Footer';
-import { useDispatch, useSelector } from 'react-redux';
-import { validacoesSchema } from '../../validacoesSchema';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { appendErrors, useForm } from 'react-hook-form';
-import { selectUsuariosById, selectAllUsuarios } from '../../store/slices/LoginSlice';
+import { useDispatch } from 'react-redux';
 import { fetchLogin } from '../../store/slices/LoginSlice';
 import {store} from '../../store/store';
 import styles from './Cadastro.module.scss';
@@ -13,104 +9,98 @@ import styles from './Cadastro.module.scss';
 store.dispatch(fetchLogin())
 
 function Login() {
+
     const dispatch = useDispatch()
-    
-    const usuarios = useSelector(selectAllUsuarios)
-    //const status = useSelector(state => state.usuarios.status)  
-    
-    const [loginUsuario, setLoginUsuario] = useState({
+
+    const [loginState, setLoginState] = useState({
         email: '',
-        senha: '',
+        senha: ''
     })
+    const [formErrors, setFormErrors] = useState({})
+    const [isSubmit, setIsSubmit] = useState(false)
 
-    function handleInputChange(e){
-        setLoginUsuario({...loginUsuario, [e.target.name]: e.target.value})
+    const handelChange = (e) => {
+        const {name, value} = e.target
+        setLoginState({...loginState, [name]: value})
     }
 
-    function logUsuarioIn(e){
+    const handleSubmit = (e) => {
         e.preventDefault()
-        if (dispatch(fetchLogin(loginUsuario)) === usuarios.email && dispatch(fetchLogin(loginUsuario)) === usuarios.senha) {
-            //var href= $(this).prop("href");????????????
-        }
+        setFormErrors(validate(loginState))
+        setIsSubmit(true)
     }
-
-    function showLoginAlert(e) {
-        e.preventDefault()
-        alert(`Email: ${document.getElementById('email_usuario').value}\nSenha: ${document.getElementById('senha_usuario').value}`)
-    }
-    /*
-    const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(validacoesSchema)
-    })
-    /*
-    const [projetoOnLoad] = useState(
-        id ? projetoFound ?? validacoesSchema.cast({}): validacoesSchema.cast({})
-    )
-    */
     
+    useEffect(() => {
+        if(Object.keys(formErrors).length === 0 && isSubmit) {
+            console.log(loginState)
+        }
+    }, [formErrors])
+
+    const validate = (values) => {
+        const errors = {}
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
+
+        if (!values.email) {
+            errors.email = "Email é requerido!"
+        } else if (!regex.test(values.email)) {
+            errors.email = "Este não é um formato valido para email!"
+        }
+
+        if (!values.senha) {
+            errors.senha = "Senha é requerida!"
+        } else if (values.senha.length < 4) {
+            errors.senha = "Senha precisa ser maior que 4 caracteres!"
+        } else if (values.senha.length > 15) {
+            errors.senha = "Senha precisa ser menor que 15 caracteres!"
+        }
+        return errors
+    }
+
     return ( 
         <>
             <div className={styles.loginComponentes}>
-            
+
                 <div className={styles.loginContainer}>
-                    <h2>Log in</h2>
-                    <form>
+                    <h2 className={styles.title}><strong>Log in</strong></h2>
+                    <form onSubmit={handleSubmit}>
                         <div className={styles.loginEmailContainer}>
                             <div className={styles.loginEmailInfo}>
                                 <div className='login_email_info_container'>
-                                    <label for='email'></label>
+                                    <label>Email:</label>
                                     <span>
                                         Não tem conta? 
                                         <span><a href='/sign-up'> Cadastre-se </a></span>
                                     </span>
-
                                 </div>
                             </div>
                             <div className='login_email_input_container'>
                                 <input 
-                                    id='email_usuario' 
-                                    className='email_input' 
-                                    type='email' 
-                                    placeholder='Email'
-                                    value={loginUsuario.email}
-                                    //defaultValue={projetoOnLoad.nome}
-                                    //ref={register}
-                                    onChange={handleInputChange}  
+                                    type='text'
+                                    className={styles.geralInput} 
+                                    name='email'
+                                    value={loginState.email}
+                                    onChange={handelChange}
                                 />
-                                
+                                <p>{formErrors.email}</p>
                             </div>
                         </div>
-                    
+
                         <div className='login_password_container'>
-                            <div className='login_password_info_container'>
-                                <label for='current-password'></label>
-                                <span></span>
-                            </div>
+                            <label>Senha:</label>
                             <div className='login_password_input_container'>
-                                <input 
-                                    id='senha_usuario' 
-                                    className='senha_input' 
+                                <input  
                                     type='password' 
-                                    placeholder='Senha'
-                                    value={loginUsuario.senha}
-                                    //defaultValue={projetoOnLoad.senha}
-                                    //ref={register}
-                                    onChange={handleInputChange}      
+                                    name='senha'
+                                    value={loginState.senha}
+                                    onChange={handelChange}
                                 />
-                                
+                                <p>{formErrors.senha}</p>
                             </div>
                         </div>
-                    
+                        
                         <div className={styles.buttonContainer}> 
                             <div className='login_button'>
-                                <Button 
-                                    variant="outline-dark" 
-                                    className='login_button' 
-                                    onClick={(event) => {
-                                        logUsuarioIn(event)
-                                        showLoginAlert(event)
-                                    }} 
-                                >Log in</Button>
+                                <Button variant="outline-dark" className='login_button' id='submit' type='submit'>Log in</Button>
                             </div>
                             <div className='login_button_forgot_password_container'>
                                 <a href='#'>Esqueceu sua senha?</a>
