@@ -4,11 +4,14 @@ import styles from './ListarAtivos.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import Popup from '../Popup/Popup';
 import { alterarBusca, buscar, fetchAtivos } from '../../store/slices/AtivosSlice';
+import { createAtivoCarteira } from '../../store/slices/CarteiraSlice';
 import { Link } from 'react-router-dom';
 
 
 function ListarAtivos() {
     const [buttonPopup, setButtonPopup] = useState(false)
+    const [selectedData, setSelectedData] = useState();
+
     const ativoSlice = useSelector(state => state.ativos)
     const dispatch = useDispatch()
     
@@ -17,6 +20,11 @@ function ListarAtivos() {
         dispatch(alterarBusca(document.getElementById('busca_ativo').value));
         dispatch(buscar());
     }
+
+    function handleUpdateClick(selectedRec) {
+        setSelectedData(selectedRec);
+        setButtonPopup(true);
+    };
 
     function resetar() {
         dispatch(fetchAtivos());
@@ -78,9 +86,9 @@ function ListarAtivos() {
                                                 <span><button 
                                                         type="button" 
                                                         className={`btn btn-success ${styles.buttonOutro}`} 
-                                                        onClick={() => setButtonPopup(true)}
+                                                        onClick={() => handleUpdateClick(ativo)}
                                                         >Adicionar à Carteira</button></span>
-                                                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup} empresa={ativo.informacoes_gerais.empresa} ticker={ativo.informacoes_gerais.ticker}/>
+                                                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup} dados={selectedData} />
                                                             
                                                         
                                                 </div>

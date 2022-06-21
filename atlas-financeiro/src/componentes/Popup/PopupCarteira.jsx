@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import styles from './Popup.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { adicionarAtivoCarteira, deletarAtivoCarteira, updateAtivoCarteira, deletarCarteira } from '../../store/slices/CarteiraSlice';
+import { updateAtivoCarteira, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
 import { useParams } from 'react-router-dom';
 
 
@@ -14,10 +14,11 @@ function PopupCarteira(props) {
     const carteira = useSelector(state => state.carteira);
     const dispatch = useDispatch();
 
-    function atualizarCarteira() {
+    async function atualizarCarteira() {
         props.setTrigger(false);
-        dispatch(updateAtivoCarteira({ 'user_id': props.user_id, 'ativo_id': props.ativo_id, 'dadosAtualizados': {quantidade: parseInt(quantidadeAtivo.current.value), precoMedio: parseFloat(precoMedioAtivo.current.value)}}));
-        // alert('Dados atualizados com sucesso.');
+        Promise.resolve(dispatch(updateAtivoCarteira({ 'user_id': props.user_id, 'ativo_id': props.dados.ativo_id, 'dadosAtualizados': {quantidade: parseInt(quantidadeAtivo.current.value), precoMedio: parseFloat(precoMedioAtivo.current.value)}})));
+        Promise.resolve(dispatch(fetchAtivosCarteira(props.user_id)));
+        alert('Dados atualizados com sucesso.');
     }
 
 
@@ -28,8 +29,8 @@ function PopupCarteira(props) {
                 <form>
                     <div>
                         <div className={styles.empresaTickerContainer}>
-                            <span><strong>Empresa: {props.empresa}</strong>&ensp;&ensp;&ensp;&ensp;</span>
-                            <span><strong>Ticker: {props.ticker}</strong></span>
+                            <span><strong>Empresa: {props.dados.empresa}</strong>&ensp;&ensp;&ensp;&ensp;</span>
+                            <span><strong>Ticker: {props.dados.ticker}</strong></span>
                         </div>
                         <br /><br />
                         <div className={styles.quantidadePrecoMedioContainer}>

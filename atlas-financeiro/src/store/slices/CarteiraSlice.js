@@ -1,13 +1,9 @@
 import { createAsyncThunk, createSlice, createEntityAdapter } from "@reduxjs/toolkit";
-import { useParams, useHistory } from "react-router-dom";
-import {httpGet, httpDelete, httpPut, httpPost} from '../../utils';
-import { baseUrl } from "../../baseUrl";
 
 
-// creating entityAdapter
 const carteiraAdapter = createEntityAdapter({
     selectId: (carteira) => carteira.usuario_id
-})
+});
 
 export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchAtivosCarteira',
     async ({ user_id }) => {
@@ -40,6 +36,19 @@ export const updateAtivoCarteira = createAsyncThunk('carteira/updateAtivoCarteir
                 'Content-type': 'application/json; charset=UTF-8',
             },
         }).then((res) => res.json())
+        return data;
+    });
+
+export const createAtivoCarteira = createAsyncThunk('carteira/createAtivoCarteira',
+    async({ user_id, dadosInput }) => {
+        debugger;
+        const data = await fetch(`http://localhost:3004/carteira/${user_id}`, {
+            method: 'POST',
+            body: JSON.stringify(dadosInput),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        }).then((res) => res.json())
         debugger;
         return data;
     });
@@ -68,6 +77,9 @@ export const carteirasSlice = createSlice({
         },
         [updateAtivoCarteira]: (state, action) => {
             state.status = 'updated'
+        },
+        [createAtivoCarteira]: (state, action) => {
+            state.status = 'created'
         }
     },
 })

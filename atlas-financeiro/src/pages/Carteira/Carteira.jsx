@@ -4,7 +4,7 @@ import Footer from '../../componentes/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import vale from '../../media/vale.png';
 import HeaderPerfil from '../../componentes/HeaderPerfil/HeaderPerfil';
-import { alterarId, deleteAtivoCarteira, updateAtivoCarteira, fetchAtivosCarteira, fetchSingleAtivosCarteira } from '../../store/slices/CarteiraSlice';
+import { alterarId, deleteAtivoCarteira, updateAtivoCarteira, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
 import PopupCarteira from '../../componentes/Popup/PopupCarteira';
 import { useParams, useHistory } from 'react-router-dom';
 import ImagemPerfil from '../../media/businessman.jpg';
@@ -17,6 +17,12 @@ function Carteira() {
     let { user_id } = useParams();
     
     const [buttonPopup, setButtonPopup] = useState(false);
+    const [selectedData, setSelectedData] = useState();
+
+    function handleUpdateClick(selectedRec) {
+        setSelectedData(selectedRec);
+        setButtonPopup(true);
+    };
 
     const carteira = useSelector(state => state.carteira);
     const dispatch = useDispatch();
@@ -134,8 +140,7 @@ function Carteira() {
                                                             <button type="button" className={`btn btn-danger ${styles.buttonCancel}`} onClick={() => removerAtivoCarteira(ativo.ativo_id)} >Remover da Carteira</button>
                                                         </div>
                                                         <div className='col' style={{'align-self': 'center'}}>
-                                                            <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={() => setButtonPopup(true)} ><a className={styles.hRef}>Atualizar Ativo</a></button>
-                                                            <PopupCarteira trigger={buttonPopup} setTrigger={setButtonPopup} empresa={ativo.empresa} ticker={ativo.ticker} user_id={parseInt(user_id)} ativo_id={parseInt(ativo.ativo_id)} />
+                                                            <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={() => handleUpdateClick(ativo)} ><a className={styles.hRef}>Atualizar Ativo</a></button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -144,6 +149,7 @@ function Carteira() {
                                     </div>
                                     );
                                 })}
+                                <PopupCarteira trigger={buttonPopup} setTrigger={setButtonPopup} dados={selectedData} user_id={parseInt(user_id)} />
                             </div>
                         </div>
                         <Footer />
