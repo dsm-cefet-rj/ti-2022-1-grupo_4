@@ -19,6 +19,30 @@
                     "quantidade": 1000,
                     "preco_medio": 7.56,
                     "rendimento": 0.26
+                },
+                {
+                    "ativo_id": 1,
+                    "empresa": "Inga Agroflorestal",
+                    "ticker": "INGA4L",
+                    "quantidade": 1000,
+                    "preco_medio": 21,
+                    "rendimento": 0
+                },
+                {
+                    "ativo_id": 2,
+                    "empresa": "KLABIN",
+                    "ticker": "KLBN3",
+                    "quantidade": 3000,
+                    "preco_medio": 3.25,
+                    "rendimento": 0
+                },
+                {
+                    "ativo_id": 7,
+                    "empresa": "Petrobras PN",
+                    "ticker": "PETR4",
+                    "quantidade": 1000,
+                    "preco_medio": 3,
+                    "rendimento": 0
                 }
             ]
         },
@@ -62,17 +86,9 @@
                     "ativo_id": 6,
                     "empresa": "Sinqia",
                     "ticker": "SQIA3",
-                    "quantidade": 300,
-                    "preco_medio": 15,
-                    "rendimento": 0.09
-                },
-                {
-                    "ativo_id": 3,
-                    "empresa": "Itausa",
-                    "ticker": "ITSA4",
                     "quantidade": 1000,
-                    "preco_medio": 8.32,
-                    "rendimento": 0.12
+                    "preco_medio": 12,
+                    "rendimento": 0.09
                 }
             ]
         },

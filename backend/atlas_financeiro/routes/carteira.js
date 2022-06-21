@@ -12,12 +12,8 @@ router.route('/:user_id')
 })
 .post((req, res) =>{
   user_id = req.params.user_id;
-  ativo_id = req.params.ativo_id;
-  quantidade = req.body.quantidade;
-  precoMedio = req.body.precoMedio;
+  ativo_id = req.body.ativo_id;
 
-  console.log(req.body)
-  
   let file = "../../shared/carteira.json";
   let carteiras = fs.readFileSync(file, 'utf-8');
   var json_carteiras = JSON.parse(carteiras);
@@ -30,6 +26,28 @@ router.route('/:user_id')
     }
     return(null);
   })
+
+  // Checando se o ativo já está em carteira
+  var emCarteira = false;
+  json_carteiras.carteiras[indice].ativos.forEach(function (el) {
+    ativo_id_req = parseInt(ativo_id)
+    if (el.ativo_id === ativo_id_req) {
+      emCarteira = true;
+    }
+  })
+
+  if(!emCarteira) {
+    json_carteiras.carteiras[indice].ativos.push(req.body);
+  
+    fs.writeFileSync(file, JSON.stringify(json_carteiras), function(err) {
+      if(err) {
+        console.log(err);
+      } else {
+        console.log('JSON saved');
+      }
+     });
+  }
+
 })
 
 
@@ -42,13 +60,19 @@ router.route('/:user_id/:ativo_id')
   let carteiras = fs.readFileSync(file, 'utf-8');
   var json_carteiras = JSON.parse(carteiras);
 
-  json_carteiras.carteiras[user_id - 1].ativos = json_carteiras.carteiras[user_id - 1].ativos.filter(function (el) {
+  var indice = null;
+  json_carteiras.carteiras.filter(function(carteira) {
+    if(carteira.usuario_id === parseInt(user_id)) {
+      indice = json_carteiras.carteiras.indexOf(carteira);
+      return json_carteiras.carteiras.indexOf(carteira);
+    }
+    return(null);
+  })
+
+  json_carteiras.carteiras[indice].ativos = json_carteiras.carteiras[indice].ativos.filter(function (el) {
     ativo_id_req = parseInt(ativo_id)
     return(el.ativo_id !== ativo_id_req);
    })
-
-  //  console.log('Após Tratamento');
-  //  console.log(json_carteiras.carteiras[0]);
 
    fs.writeFileSync(file, JSON.stringify(json_carteiras), function(err) {
     if(err) {

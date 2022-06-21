@@ -19,7 +19,7 @@ function Popup(props) {
     async function inserirNaCarteira() {
         props.setTrigger(false);
         Promise.resolve(dispatch(alterarId(user_id_mockado)));
-        Promise.resolve(dispatch(createAtivoCarteira({ 'user_id': user_id_mockado, 'dadosInput': {ativo_id: props.dados.id, empresa: props.dados.informacoes_gerais.empresa, ticker: props.dados.informacoes_gerais.ticker, quantidade: parseInt(quantidadeAtivo.current.value), precoMedio: parseFloat(precoMedioAtivo.current.value)}})));
+        Promise.resolve(dispatch(createAtivoCarteira({ 'user_id': user_id_mockado, 'dadosInput': {ativo_id: props.dados.id, empresa: props.dados.informacoes_gerais.empresa, ticker: props.dados.informacoes_gerais.ticker, quantidade: parseInt(quantidadeAtivo.current.value), preco_medio: parseFloat(precoMedioAtivo.current.value), rendimento: 0}})));
         Promise.resolve(dispatch(fetchAtivosCarteira(user_id_mockado)));
         alert('Ativo adicionado à carteira.');
     }
