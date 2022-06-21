@@ -126,15 +126,15 @@ function Carteira() {
                                                             Preço Médio: {ativo.preco_medio}
                                                         </div>
                                                         <div>
-                                                            Rendimento: R$ {ativo.rendimento}
+                                                            Rendimento: {ativo.rendimento * 100.00} %
                                                         </div>
                                                     </div>
                                                     <div className='row'>
                                                         <div className='col' style={{'align-self': 'center'}}>
-                                                            <button type="button" className={`btn btn-success ${styles.buttonOutro}`} ><a className={styles.hRef} href='/detalhamento_cotacoes'>Cotações Diárias</a></button>
+                                                            <button type="button" className={`btn btn-success ${styles.buttonOutro}`} ><a className={styles.hRef} href={`/detalhamento_cotacoes/${ativo.ativo_id}`} >Cotações Diárias</a></button>
                                                         </div>
                                                         <div className='col' style={{'align-self': 'center'}}>
-                                                            <button type="button" className={`btn btn-success ${styles.buttonOutro}`} ><a className={styles.hRef} href='/detalhamento_indicadores'>Indicadores</a></button>
+                                                            <button type="button" className={`btn btn-success ${styles.buttonOutro}`} ><a className={styles.hRef} href={`/detalhamento_indicadores/${ativo.ativo_id}`} >Indicadores</a></button>
                                                         </div>
                                                         <div className='col' style={{'align-self': 'center'}}>
                                                             <button type="button" className={`btn btn-danger ${styles.buttonCancel}`} onClick={() => removerAtivoCarteira(ativo.ativo_id)} >Remover da Carteira</button>
