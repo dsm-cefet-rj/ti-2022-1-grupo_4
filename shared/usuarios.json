@@ -2,10 +2,9 @@
    {
        "id": 0,
        "nome":"John Galt",
-       "localidade": {
-           "estado": "Rio de Janeiro",
-           "pais": "Brasil"
-       },
+       "email": "whoisme@gmail.com",
+       "estado": "Rio de Janeiro",
+       "pais": "Brasil",
        "status": "Executivo de Marketing",
        "sobre": "Consultor de Marketing para grandes empresas dos segmentos de Mídia & Serviços, oferecendo também palestras, treinamentos sobre marketing e estratégia de negócios. Investidor há mais de 8 anos.",
        "senha":"backInDeD4ze.19_99"
@@ -13,10 +12,9 @@
    {
        "id": 1,
        "nome":"Juan Carvalho",
-       "localidade": {
-           "estado": "Rotterdam",
-           "pais": "Holanda"
-       },
+       "email": "abutr3hmano@gmail.com",
+       "estado": "Rotterdam",
+       "pais": "Holanda",
        "status": "Estudante de ML",
        "sobre": "Mestrando em Machine Learning. Investidor há mais de 2 meses.",
        "senha":"puMtrIGDShiTtg30nst_w3in"
@@ -24,10 +22,9 @@
    {
        "id": 2,
        "nome":"Jean Aboumrad",
-       "localidade": {
-           "estado": "Shenzhen",
-           "pais": "China"
-       },
+       "email": "sound.streamd33pelov3@gmail.com",
+       "estado": "Shenzhen",
+       "pais": "China",
        "status": "Especialista em Blockchain",
        "sobre": "Especialista na implementação de DNA na Blockchain para grandes empresas internacionais do segmento de bioTecnologia, oferecendo também palestras sobre o modelo de unificação reprodutiva e treinamentos sobre blockchain. Investidor há mais de 26 anos.",
        "senha":"CH1sd3f.Utur3SoS66core"
@@ -35,10 +32,9 @@
    {
        "id": 3,
        "nome":"Mateus Sotero",
-       "localidade": {
-           "estado": "Philadelphia",
-           "pais": "Estados Unidos"
-       },
+       "email": "penobscot1928@gmail.com",
+       "estado": "Philadelphia",
+       "pais": "Estados Unidos",
        "status": "Relojoeiro Especialista",
        "sobre": "Apaixonado por relógios, relojeiro da Patek Philippe. Investidor há mais de 40 anos.",
        "senha":"biosLoPh3_rESub.b.sTr4taAa"

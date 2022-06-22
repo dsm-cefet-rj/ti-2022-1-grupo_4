@@ -1,0 +1,130 @@
+.signUpComponentes {
+    margin-bottom: 0px;
+    padding-top: 20px;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    padding: 100px 0 1px 0;
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg, #0445c6 0%, #11295b 25%, #143d60 51%, #069eda 100%);
+    -webkit-animation: AnimateBG 20s ease infinite;
+    animation: AnimateBG 20s ease infinite;
+    transition: ease all .5s;
+}
+
+@-webkit-keyframes AnimateBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+  
+@keyframes AnimateBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+.signUpConteiner {
+    background-color: white;
+    margin: auto;
+    margin-bottom: 100px;
+    padding: 60px;
+    width: 40%;
+    border-radius: 15px;
+}
+
+.title {
+    position: relative;
+    right: 115px;
+    bottom: 25px;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.input {
+    width: 100%;
+}
+
+.nomeLabel {
+    position: relative;
+    right: 170px;
+    text-align: right;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.statusLabel {
+    position: relative;
+    right: 168px;
+    text-align: right;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.estadoLabel {
+    position: relative;
+    right: 150px;
+    text-align: right;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.paisLabel {
+    position: relative;
+    right: 176px;
+    text-align: right;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.sobreLabel {
+    position: relative;
+    right: 156px;
+    text-align: right;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.emailLabel {
+    position: relative;
+    right: 170px;
+    text-align: right;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.senhaLabel {
+    position: relative;
+    right: 170px;
+    text-align: right;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.signupButton {
+    width: 100%;
+    position: relative;
+    top: 30px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.signupButton:hover {
+    background-color: #143d60;
+    border-color: #143d60;
+}
