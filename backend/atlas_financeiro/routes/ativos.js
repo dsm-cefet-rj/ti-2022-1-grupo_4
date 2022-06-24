@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const Ativos = require('../models/ativos');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

@@ -5,11 +5,21 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
+const {db, Person} = require('./persistence');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var ativosRouter = require('./routes/ativos');
 var carteirasRouter = require('./routes/carteira');
+
+const mongoose = require('mongoose');
+const url = 'mongodb://localhost:27017/atlas_financeiro';
+const connect = mongoose.connect(url);
+
+connect.then((db) => {
+    console.log('Conectado ao servidor do Mongo DB');
+}, (err) => { console.log(err)})
 
 var app = express();
 
