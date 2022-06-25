@@ -141,7 +141,70 @@
             ]
         },
         {
-            "usuario_id": 3
+            "usuario_id": 3,
+            "usuario": {
+                "nome": "Mateus Sotero",
+                "status": "Executivo de Tecnologia",
+                "localidade": {
+                    "estado": "Rio de Janeiro",
+                    "país": "Brasil"
+                },
+                "descricao": "Programador Sênior focado em projetos para diversas companhias."
+            },
+            "ativos": [
+                {
+                    "ativo_id": 14,
+                    "empresa": "Wiz Soluções",
+                    "ticker": "WIZS3",
+                    "quantidade": 10000,
+                    "preco_medio": 6,
+                    "rendimento": 0.26
+                },
+                {
+                    "ativo_id": 15,
+                    "empresa": "Cogna Educação",
+                    "ticker": "COGN3",
+                    "quantidade": 25000,
+                    "preco_medio": 3.02,
+                    "rendimento": 0.11
+                },
+                {
+                    "ativo_id": 16,
+                    "empresa": "Riza Arctium Real Estate FII",
+                    "ticker": "ARCT11",
+                    "quantidade": 10000,
+                    "preco_medio": 100.29,
+                    "rendimento": 0.0156
+                },
+                {
+                    "ativo_id": 6,
+                    "empresa": "Sinqia",
+                    "ticker": "SQIA3",
+                    "quantidade": 1000,
+                    "preco_medio": 12,
+                    "rendimento": 0.09
+                }
+            ],
+            "watchlist":[
+                {
+                    "watchlist_id":0,
+                    "ticker":"INGA4L",
+                    "cotacao":1.3,
+                    "dropdown":0
+                },
+                {
+                    "watchlist_id":1,
+                    "ticker":"SQIA3",
+                    "cotacao":9,
+                    "dropdown":1
+                },
+                {
+                    "watchlist_id":2,
+                    "ticker":"KLBN3",
+                    "cotacao":3.25,
+                    "dropdown":0
+                }
+            ]
         }
     ]
 }
