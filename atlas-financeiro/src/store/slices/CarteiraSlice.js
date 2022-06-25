@@ -55,7 +55,7 @@ export const createAtivoCarteira = createAsyncThunk('carteira/createAtivoCarteir
 
 export const carteirasSlice = createSlice({
     name: 'carteira',
-    initialState: carteiraAdapter.getInitialState({ id_usuario: null, usuario: {}, carteira: {}, status: 'not_loaded', error: null }),
+    initialState: carteiraAdapter.getInitialState({ id_usuario: null, usuario: {}, carteira: {}, watchlist: [], status: 'not_loaded', error: null }),
     reducers: {
         alterarId: (state, action) => { state.id_usuario = parseInt(action.payload) },
     },
