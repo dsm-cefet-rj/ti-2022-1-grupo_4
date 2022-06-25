@@ -1,1 +1,107 @@
-{"carteiras":[{"usuario_id":1,"usuario":{"nome":"Jean Aboumrad","status":"Executivo de Tecnologia","localidade":{"estado":"Rio de Janeiro","país":"Brasil"},"descricao":"Executivo de Tecnologia focado em projetos para diversas companhias."},"ativos":[{"ativo_id":14,"empresa":"Wiz Soluções","ticker":"WIZS3","quantidade":1000,"preco_medio":7.56,"rendimento":0.26},{"ativo_id":1,"empresa":"Inga Agroflorestal","ticker":"INGA4L","quantidade":1000,"preco_medio":21,"rendimento":0},{"ativo_id":2,"empresa":"KLABIN","ticker":"KLBN3","quantidade":3000,"preco_medio":3.25,"rendimento":0},{"ativo_id":7,"empresa":"Petrobras PN","ticker":"PETR4","quantidade":1000,"preco_medio":3,"rendimento":0},{"ativo_id":0,"empresa":"Vale","ticker":"VALE3","quantidade":2,"preco_medio":4.5,"rendimento":0}]},{"usuario_id":2,"usuario":{"nome":"Juan Carvalho","status":"Executivo de Tecnologia","localidade":{"estado":"Rio de Janeiro","país":"Brasil"},"descricao":"Programador Sênior focado em projetos para diversas companhias."},"ativos":[{"ativo_id":14,"empresa":"Wiz Soluções","ticker":"WIZS3","quantidade":10000,"preco_medio":6,"rendimento":0.26},{"ativo_id":15,"empresa":"Cogna Educação","ticker":"COGN3","quantidade":25000,"preco_medio":3.02,"rendimento":0.11},{"ativo_id":16,"empresa":"Riza Arctium Real Estate FII","ticker":"ARCT11","quantidade":10000,"preco_medio":100.29,"rendimento":0.0156},{"ativo_id":6,"empresa":"Sinqia","ticker":"SQIA3","quantidade":1000,"preco_medio":12,"rendimento":0.09}]},{"usuario_id":3}]}
+{
+    "carteiras": [
+        {
+            "usuario_id": 1,
+            "usuario": {
+                "nome": "Jean Aboumrad",
+                "status": "Executivo de Tecnologia",
+                "localidade": {
+                    "estado": "Rio de Janeiro",
+                    "país": "Brasil"
+                },
+                "descricao": "Executivo de Tecnologia focado em projetos para diversas companhias."
+            },
+            "ativos": [
+                {
+                    "ativo_id": 14,
+                    "empresa": "Wiz Soluções",
+                    "ticker": "WIZS3",
+                    "quantidade": 1000,
+                    "preco_medio": 7.56,
+                    "rendimento": 0.26
+                },
+                {
+                    "ativo_id": 1,
+                    "empresa": "Inga Agroflorestal",
+                    "ticker": "INGA4L",
+                    "quantidade": 1000,
+                    "preco_medio": 21,
+                    "rendimento": 0
+                },
+                {
+                    "ativo_id": 2,
+                    "empresa": "KLABIN",
+                    "ticker": "KLBN3",
+                    "quantidade": 3000,
+                    "preco_medio": 3.25,
+                    "rendimento": 0
+                },
+                {
+                    "ativo_id": 7,
+                    "empresa": "Petrobras PN",
+                    "ticker": "PETR4",
+                    "quantidade": 1000,
+                    "preco_medio": 3,
+                    "rendimento": 0
+                },
+                {
+                    "ativo_id": 0,
+                    "empresa": "Vale",
+                    "ticker": "VALE3",
+                    "quantidade": 2,
+                    "preco_medio": 4.5,
+                    "rendimento": 0
+                }
+            ]
+        },
+        {
+            "usuario_id": 2,
+            "usuario": {
+                "nome": "Juan Carvalho",
+                "status": "Executivo de Tecnologia",
+                "localidade": {
+                    "estado": "Rio de Janeiro",
+                    "país": "Brasil"
+                },
+                "descricao": "Programador Sênior focado em projetos para diversas companhias."
+            },
+            "ativos": [
+                {
+                    "ativo_id": 14,
+                    "empresa": "Wiz Soluções",
+                    "ticker": "WIZS3",
+                    "quantidade": 10000,
+                    "preco_medio": 6,
+                    "rendimento": 0.26
+                },
+                {
+                    "ativo_id": 15,
+                    "empresa": "Cogna Educação",
+                    "ticker": "COGN3",
+                    "quantidade": 25000,
+                    "preco_medio": 3.02,
+                    "rendimento": 0.11
+                },
+                {
+                    "ativo_id": 16,
+                    "empresa": "Riza Arctium Real Estate FII",
+                    "ticker": "ARCT11",
+                    "quantidade": 10000,
+                    "preco_medio": 100.29,
+                    "rendimento": 0.0156
+                },
+                {
+                    "ativo_id": 6,
+                    "empresa": "Sinqia",
+                    "ticker": "SQIA3",
+                    "quantidade": 1000,
+                    "preco_medio": 12,
+                    "rendimento": 0.09
+                }
+            ]
+        },
+        {
+            "usuario_id": 3
+        }
+    ]
+}

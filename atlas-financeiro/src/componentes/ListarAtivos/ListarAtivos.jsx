@@ -33,7 +33,6 @@ function ListarAtivos() {
 
     useEffect(() => {
         if(ativoSlice.status === "not_loaded") {
-            debugger
             dispatch(fetchAtivos());
         }
     }, [ativoSlice.status, dispatch])

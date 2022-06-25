@@ -15,7 +15,6 @@ export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos',
         try{
             const res = await (await fetch('http://localhost:3004/ativos')).json();
             return res;
-
         } catch(error) {
             return [];
         }
@@ -23,9 +22,10 @@ export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos',
 
 
 function fulfillAtivosReducer(state, ativosFetched) {
+    debugger;
     return {...state,
         status: 'loaded',
-        ativos: ativosFetched.ativos
+        ativos: ativosFetched
     }
 }
 

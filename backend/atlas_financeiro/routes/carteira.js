@@ -1,54 +1,68 @@
 var express = require('express');
 var router = express.Router();
+const bodyParser = require('body-parser');
 var fs = require('fs');
+const Carteiras = require('../models/carteiras');
+
+router.use(bodyParser.json());
 
 
-/* GET users listing. */
-router.route('/:user_id')
-.get((req, res, next) => {
-  res.statusCode = 200;
-  // res.setHeader('Content-Type', 'application/json');
-  res.sendFile('carteira.json', { root: '../../shared/' });
-})
-.post((req, res) =>{
-  user_id = req.params.user_id;
-  ativo_id = req.body.ativo_id;
 
-  let file = "../../shared/carteira.json";
-  let carteiras = fs.readFileSync(file, 'utf-8');
-  var json_carteiras = JSON.parse(carteiras);
+/* GET carteiras */
+router.get('/:user_id', function(req, res, next) {
+  Carteiras.find({usuario_id: req.params.user_id}).then((carteira) => {
+      console.log(carteira);
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'application/json');
+      res.json(carteira);
+    }, (error) => next(error)).catch((error) => next(error));
+});
 
-  var indice = null;
-  json_carteiras.carteiras.filter(function(carteira) {
-    if(carteira.usuario_id === parseInt(user_id)) {
-      indice = json_carteiras.carteiras.indexOf(carteira);
-      return json_carteiras.carteiras.indexOf(carteira);
-    }
-    return(null);
-  })
+// router.route('/:user_id')
+// .get((req, res, next) => {
+//   res.statusCode = 200;
+//   // res.setHeader('Content-Type', 'application/json');
+//   res.sendFile('carteira.json', { root: '../../shared/' });
+// })
+// .post((req, res) =>{
+//   user_id = req.params.user_id;
+//   ativo_id = req.body.ativo_id;
 
-  // Checando se o ativo já está em carteira
-  var emCarteira = false;
-  json_carteiras.carteiras[indice].ativos.forEach(function (el) {
-    ativo_id_req = parseInt(ativo_id)
-    if (el.ativo_id === ativo_id_req) {
-      emCarteira = true;
-    }
-  })
+//   let file = "../../shared/carteira.json";
+//   let carteiras = fs.readFileSync(file, 'utf-8');
+//   var json_carteiras = JSON.parse(carteiras);
 
-  if(!emCarteira) {
-    json_carteiras.carteiras[indice].ativos.push(req.body);
+//   var indice = null;
+//   json_carteiras.carteiras.filter(function(carteira) {
+//     if(carteira.usuario_id === parseInt(user_id)) {
+//       indice = json_carteiras.carteiras.indexOf(carteira);
+//       return json_carteiras.carteiras.indexOf(carteira);
+//     }
+//     return(null);
+//   })
+
+//   // Checando se o ativo já está em carteira
+//   var emCarteira = false;
+//   json_carteiras.carteiras[indice].ativos.forEach(function (el) {
+//     ativo_id_req = parseInt(ativo_id)
+//     if (el.ativo_id === ativo_id_req) {
+//       emCarteira = true;
+//     }
+//   })
+
+//   if(!emCarteira) {
+//     json_carteiras.carteiras[indice].ativos.push(req.body);
   
-    fs.writeFileSync(file, JSON.stringify(json_carteiras), function(err) {
-      if(err) {
-        console.log(err);
-      } else {
-        console.log('JSON saved');
-      }
-     });
-  }
+//     fs.writeFileSync(file, JSON.stringify(json_carteiras), function(err) {
+//       if(err) {
+//         console.log(err);
+//       } else {
+//         console.log('JSON saved');
+//       }
+//      });
+//   }
 
-})
+// })
 
 
 router.route('/:user_id/:ativo_id')
