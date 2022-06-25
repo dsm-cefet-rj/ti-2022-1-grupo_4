@@ -51,7 +51,8 @@ const LinhaTabela = (props) => {
     
     if(cotacoes.cotacoes.length !== 0){
         data.datasets[0].label = `Cotações Diárias - ${cotacoes.cotacoes[0].informacoes_gerais.empresa} (${cotacoes.cotacoes[0].informacoes_gerais.ticker})`
-        cotacoes.cotacoes[0].cotacoes.map((cotacao) => {
+        var reversed = [...cotacoes.cotacoes[0].cotacoes].reverse()
+        reversed.map((cotacao) => {
                             data.labels.push(cotacao.data)
                             data.datasets[0].data.push(cotacao.valor)
         })
