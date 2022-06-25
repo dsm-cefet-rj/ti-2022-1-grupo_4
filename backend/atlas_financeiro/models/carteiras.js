@@ -21,6 +21,14 @@ const CarteirasSchema = new Schema({
                 preco_medio: Number,
                 rendimento: Number
             }
+        ],
+        watchlist: [
+            {
+                watchlist_id: Number,
+                ticker: String,
+                cotacao: Number,
+                dropdown: Number
+            }
         ]
     }
 )
