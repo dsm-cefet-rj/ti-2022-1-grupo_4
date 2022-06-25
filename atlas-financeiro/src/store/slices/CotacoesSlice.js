@@ -22,7 +22,6 @@ export const fetchCotacoes = createAsyncThunk('cotacoes/fetchCotacoes',
 
 
 function fulfillCotacoesReducer(state, cotacoesFetched) {
-    debugger;
     const filteredCotacoesFetched = cotacoesFetched.filter(function(el) {
         return (parseInt(el.id) === state.ativo_id);
     })
