@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import vale from '../../media/vale.png'
+import video from '../../media/earth.mp4';
 import styles from './ListarAtivos.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import Popup from '../Popup/Popup';
+import Footer from '../Footer/Footer';
 import { alterarBusca, buscar, fetchAtivos } from '../../store/slices/AtivosSlice';
 import { createAtivoCarteira } from '../../store/slices/CarteiraSlice';
 import { Link } from 'react-router-dom';
@@ -39,13 +41,53 @@ function ListarAtivos() {
 
     return (
         <>
-            <div className={styles.searchContainer}>
-                <div className={`container-fluid ${styles.containerFluid}`}>
-                    <input id="busca_ativo" name='busca' onChange={alteraString} className="form-control me-2" type="search" placeholder="Procurar por ação/empresa/fii" aria-label="Search" />
-                    <button type="button" onClick={resetar} className="btn btn-danger" style={{margin: '10px'}} >Limpar Busca</button>
+            <section className={styles.darkSection}>
+                <div className={styles.navbar} id="navbar">
+                    <nav className={`navbar navbar-expand-lg ${styles.navbar}`}>
+                        <a className={`navbar-brand ${styles.navbarBrand}`} href='/'>Atlas Financeiro</a>
+                        <button className={`navbar-toggler ${styles.navbarToggler}`} type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" id="hamburger">
+                            <span className={`navbar-toggler-icon ${styles.navbarTogglerIcon}`}></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                            <ul className="navbar-nav ms-auto">
+                                <li className={`nav-item ${styles.navItem}`}>
+                                    <a className={`nav-link ${styles.navLink}`} href="/ativos">Lista de Ativos</a>
+                                </li>
+                                <li className={`nav-item ${styles.navItem}`}>
+                                    <a className={`nav-link ${styles.navLink}`} href="#footer">Contatos</a>
+                                </li>
+                                <li className={`nav-item ${styles.navItem}`}>
+                                    <a className={`nav-link ${styles.navLink}`} href="/login">Log in</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
-            </div>
 
+
+                <div className={styles.title}>
+
+                    <video muted loop autoPlay src={video}  />
+    
+                    <div className={styles.overlay}></div>
+
+                    <div className={styles.titleContainer}>
+                        <h1><strong>Bem-vindo ao Atlas Financeiro!</strong></h1>
+                        <h3>Seu sistema online de informações financeiras</h3>
+                        <h2><strong>Invista consciente</strong></h2>
+                    </div>
+
+                    <div className={styles.searchContainer}>
+                        <div className={`container-fluid ${styles.containerFluid}`}>
+                            <input id="busca_ativo" name='busca' onChange={alteraString} className={`form-control me-2 ${styles.searchInput}`} type="search" placeholder="Procurar por ação/empresa/fii" aria-label="Search" />
+                            <button type="button" onClick={resetar} className={`btn btn-danger ${styles.searchButton}`} style={{margin: '10px'}} >Limpar</button>
+                        </div>
+                    </div>
+
+                </div>       
+            </section>
+
+            <section className={styles.lightSection}>
             <div className={styles.listaAtivosContainer}>
                 <div className={styles.listaAtivoTitle}>
                     <h3><strong>{'Lista de Ativos (B3)'}</strong></h3>
@@ -99,8 +141,9 @@ function ListarAtivos() {
                             );
                         })}
                 </div>
-
             </div>
+            <Footer />
+            </section>
         </>
 
     );

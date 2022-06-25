@@ -47,7 +47,7 @@ function Header(props) {
                     <h2><strong>Invista consciente</strong></h2>
                 </div>
 
-                {/* <SearchAssets state={props.state} setState={props.setState} /> */}
+                <SearchAssets state={props.state} setState={props.setState} />
 
             </div>       
         </section>

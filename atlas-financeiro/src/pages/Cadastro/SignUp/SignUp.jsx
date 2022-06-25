@@ -44,7 +44,7 @@ function SignUp() {
         if(Object.keys(formErrors).length === 0 && isSubmit) {    
             dispatch(addSignUpServer(newUsuario))
             alert("O usuario foi cadastrado com sucesso!")
-            navigate("/perfil")
+            navigate("/carteira/1")
         }
     }, [formErrors])
 
