@@ -65,6 +65,7 @@ export const carteirasSlice = createSlice({
             carteiraAdapter.setAll(state, action.payload[0].ativos);
             state.carteira = action.payload[0].ativos;
             state.usuario = action.payload[0].usuario;
+            state.watchlist = action.payload[0].watchlist;
         },
         [fetchAtivosCarteira.pending]: (state, action) => {
             state.status = 'loading'

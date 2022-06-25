@@ -115,7 +115,7 @@ function Carteira() {
                         <div id='watchlist-component'>
                             <Watchlist />
                             <div className={styles.watchlistContainer}>
-                                {watchlist.carteira.watchlists.map(watchlist => {
+                                {carteira.watchlist.map(watchlist => {
                                     return(
                                         <div className={styles.userWatchlist}>
                                             <h3>Watching</h3>
