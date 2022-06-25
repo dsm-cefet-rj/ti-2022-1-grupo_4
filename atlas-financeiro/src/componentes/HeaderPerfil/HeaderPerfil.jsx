@@ -40,9 +40,6 @@ function HeaderPerfil() {
                                 <a className={`nav-link ${styles.navLink}`} href="/carteira">Carteira</a>
                             </li>
                             <li className={`nav-item ${styles.navItem}`}>
-                                <a className={`nav-link ${styles.navLink}`} href="#historico-container">Histórico</a>
-                            </li>
-                            <li className={`nav-item ${styles.navItem}`}>
                                 <a className={`nav-link ${styles.navLink}`} href="#footer">Contatos</a>
                             </li>
                             <li className={`nav-item ${styles.navItem}`}>

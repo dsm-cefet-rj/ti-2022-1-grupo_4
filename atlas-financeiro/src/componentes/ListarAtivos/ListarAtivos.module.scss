@@ -1,3 +1,112 @@
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.darkSection {
+    background-color: #133B5C;
+    position: relative;
+}
+
+/* ---- NavBar ---- */
+.navbar {
+    color: #dddddd;
+    background-color: transparent;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 10000;
+    padding-bottom: 30px;
+}
+
+.navbarBrand {
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #ffffff;
+    font-size: 2rem;
+    padding-left: 10px;
+}
+.navbarBrand:hover {
+    color: #919191;
+}
+
+.navbarToggler:focus,
+.navbarToggler:active,
+.navbarToggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbarTogglerIcon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(221, 221, 221, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navItem {
+    padding: 0 18px;
+}
+.navLink {
+    color: #ffffff;
+}
+.navLink:hover {
+    color: #919191;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #254864e3;
+    mix-blend-mode: overlay;
+}
+
+/* ---- Titulo ---- */
+.titleContainer {
+    margin-bottom: 75px;
+    font-size: large;
+    color: #ffffff;
+    position: relative;
+    z-index: 10000;
+}
+.title {
+    padding-bottom: 50px;
+}
+
+.containerFluid {
+    position: relative;
+    z-index: 10000;
+    display: inline-flex;
+    width: 70%;
+}
+.searchInput {
+    margin: auto;
+}
+.searchButton {
+    margin: auto;
+}
+
+.lightSection {
+    margin-bottom: 0px;
+    padding-top: 20px;
+    position: relative;
+    background-color: #f9f9f9;
+    opacity: 1;
+    background-image: radial-gradient(#e8e8e8 1.05px, #f9f9f9 1.05px);
+    background-size: 21px 21px;
+    z-index: 10000;
+}
+
+
 .listaAtivosContainer {
     margin-bottom: 100px;
 }
