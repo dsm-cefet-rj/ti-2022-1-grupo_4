@@ -43,8 +43,9 @@ function Carteira() {
         alert('Ativo deletado com sucesso.');
         await Promise.resolve(dispatch(fetchAtivosCarteira({ user_id })));
     }
-
-    if(typeof carteira.carteira.ativos !== 'undefined' && carteira.carteira.ativos.length !== 0) {
+    
+    if(typeof carteira.carteira[0] !== 'undefined' && carteira.carteira.length !== 0) {
+        debugger;
         return (
             <>
                 <section className={styles.darkSection}>
@@ -85,15 +86,15 @@ function Carteira() {
                             </div>
                         </div>
                         <div className={styles.perfilName}>
-                            <h2><strong>{carteira.carteira.usuario.nome}</strong></h2>
+                            <h2><strong>{carteira.usuario.nome}</strong></h2>
                         </div>
                         <div className={styles.perfilInfo}>
-                            <p className="perfil-status"><strong>{carteira.carteira.usuario.status}</strong></p>
-                            <p className={styles.perfilLocation}>{carteira.carteira.usuario.localidade.estado}, {carteira.carteira.usuario.localidade.país}</p>
+                            <p className="perfil-status"><strong>{carteira.usuario.status}</strong></p>
+                            <p className={styles.perfilLocation}>{carteira.usuario.localidade.estado}, {carteira.usuario.localidade.país}</p>
                         </div>
                         <div className={styles.perfilDescricao}>
                             <h3 className="descricao-title"><strong>Sobre</strong></h3>
-                            <p>{carteira.carteira.usuario.descricao}</p>
+                            <p>{carteira.usuario.descricao}</p>
                         </div>
                     </div>
                 </section>
@@ -105,7 +106,7 @@ function Carteira() {
                             </div>
                     
                             <div className={styles.carteiraContainer}>
-                                {carteira.carteira.ativos.map(ativo => {
+                                {carteira.carteira.map(ativo => {
                                     return(
                                     <div className={styles.ativosCarteira}>
                                         <div className={styles.ativoCarteira}>

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const AtivosSchema = new Schema({
     id: {
-        type: number,
+        type: Number,
         required: false
     },
     informacoes_gerais: {
@@ -18,10 +18,10 @@ const AtivosSchema = new Schema({
             type: String
         },
         max_52: {
-            type: number
+            type: Number
         },
         min_52: {
-            type: number
+            type: Number
         },
         setor: {
             type: String
@@ -30,72 +30,72 @@ const AtivosSchema = new Schema({
             type: String
         },
         vol_medio_2m: {
-            type: number
+            type: Number
         },
         valor_mercado: {
-            type: number
+            type: Number
         },
         valor_firma: {
-            type: number
+            type: Number
         },
         ult_balanco_proc: {
             type: String
         },
         numero_acoes: {
-            type: number
+            type: Number
         }
     },
     cotacoes: [{
         data: String,
-        valor: number
+        valor: Number
     }],
     indicadores_fundamentalistas: {
-        oscilacao_dia: number,
-        oscilacao_mes: number,
-        oscilacao_30_dias: number,
-        oscilacao_12_meses: number,
-        oscilacao_2022: number,
-        oscilacao_2021: number,
-        oscilacao_2020: number,
-        oscilacao_2019: number,
-        oscilacao_2018: number,
-        oscilacao_2017: number,
-        pl: number,
-        lpa: number,
-        p_vp: number,
-        vpa: number,
-        p_ebit: number,
-        margem_bruta: number,
-        psr: number,
-        margem_ebit: number,
-        p_ativos: number,
-        margem_liquida: number,
-        p_cap_giro: number,
-        ebit_ativo: number,
-        p_ativo_circ_liq: number,
-        roic: number,
-        dividend_yield: number,
-        roe: number,
-        ev_ebitda: number,
-        liquidez_corrente: number,
-        ev_ebit: number,
-        divbr_patrimonio: number,
-        cresc_receita_5_anos: number,
-        giro_ativos: number,
-        ativo: number,
-        divida_bruta: number,
-        disponibilidades: number,
-        divida_liquida: number,
-        ativo_circulante: number,
-        patrimonio_liquido: number,
-        receita_liquida_3_meses: number,
-        receita_liquida_12_meses: number,
-        ebit_3_meses: number,
-        ebit_12_meses: number,
-        lucro_liquido_3_meses: number,
-        lucro_liquido_12_meses: number
+        oscilacao_dia: Number,
+        oscilacao_mes: Number,
+        oscilacao_30_dias: Number,
+        oscilacao_12_meses: Number,
+        oscilacao_2022: Number,
+        oscilacao_2021: Number,
+        oscilacao_2020: Number,
+        oscilacao_2019: Number,
+        oscilacao_2018: Number,
+        oscilacao_2017: Number,
+        pl: Number,
+        lpa: Number,
+        p_vp: Number,
+        vpa: Number,
+        p_ebit: Number,
+        margem_bruta: Number,
+        psr: Number,
+        margem_ebit: Number,
+        p_ativos: Number,
+        margem_liquida: Number,
+        p_cap_giro: Number,
+        ebit_ativo: Number,
+        p_ativo_circ_liq: Number,
+        roic: Number,
+        dividend_yield: Number,
+        roe: Number,
+        ev_ebitda: Number,
+        liquidez_corrente: Number,
+        ev_ebit: Number,
+        divbr_patrimonio: Number,
+        cresc_receita_5_anos: Number,
+        giro_ativos: Number,
+        ativo: Number,
+        divida_bruta: Number,
+        disponibilidades: Number,
+        divida_liquida: Number,
+        ativo_circulante: Number,
+        patrimonio_liquido: Number,
+        receita_liquida_3_meses: Number,
+        receita_liquida_12_meses: Number,
+        ebit_3_meses: Number,
+        ebit_12_meses: Number,
+        lucro_liquido_3_meses: Number,
+        lucro_liquido_12_meses: Number
     }
 })
 
-// module.exports = AtivosSchema;
-module.exports.Ativos = mongoose.model('Ativos', AtivosSchema);
+var Ativos = mongoose.model('Ativos', AtivosSchema);
+module.exports = Ativos;

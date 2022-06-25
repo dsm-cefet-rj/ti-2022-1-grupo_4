@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, createEntityAdapter } from "@reduxjs/too
 
 
 const carteiraAdapter = createEntityAdapter({
-    selectId: (carteira) => carteira.usuario_id
+    selectId: (ativo) => ativo.ativo_id
 });
 
 export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchAtivosCarteira',
@@ -55,15 +55,16 @@ export const createAtivoCarteira = createAsyncThunk('carteira/createAtivoCarteir
 
 export const carteirasSlice = createSlice({
     name: 'carteira',
-    initialState: carteiraAdapter.getInitialState({ id_usuario: null, carteira: {}, status: 'not_loaded', error: null }),
+    initialState: carteiraAdapter.getInitialState({ id_usuario: null, usuario: {}, carteira: {}, status: 'not_loaded', error: null }),
     reducers: {
         alterarId: (state, action) => { state.id_usuario = parseInt(action.payload) },
     },
     extraReducers: {
         [fetchAtivosCarteira.fulfilled]: (state, action) => {
             state.status = 'loaded';
-            carteiraAdapter.setAll(state, action.payload.carteiras);
-            state.carteira = state.entities[state.id_usuario];
+            carteiraAdapter.setAll(state, action.payload[0].ativos);
+            state.carteira = action.payload[0].ativos;
+            state.usuario = action.payload[0].usuario;
         },
         [fetchAtivosCarteira.pending]: (state, action) => {
             state.status = 'loading'
