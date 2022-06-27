@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const bodyParser = require('body-parser');
-const Ativos = require('../models/ativos');
+const Ativos = require('../models/ativoModel');
 
 router.use(bodyParser.json());
 

@@ -1,25 +1,23 @@
-var express = require('express');
+const express = require('express');
 const cors = require('cors');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
-
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const app = express();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var ativosRouter = require('./routes/ativos');
 var carteirasRouter = require('./routes/carteira');
 
-const mongoose = require('mongoose');
-const url = 'mongodb://localhost:27017/atlas_financeiro';
-const connect = mongoose.connect(url);
+const connect = mongoose.connect('mongodb://localhost:27017/atlas_financeiro');
 
 connect.then((db) => {
     console.log('Conectado ao servidor do Mongo DB');
 }, (err) => { console.log(err)})
 
-var app = express();
 
 app.use(cors());
 app.use(logger('dev'));

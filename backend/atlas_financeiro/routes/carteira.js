@@ -1,11 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const bodyParser = require('body-parser');
-var fs = require('fs');
-const Carteiras = require('../models/carteiras');
+const fs = require('fs');
+const Carteiras = require('../models/carteiraModel');
+const { constants } = require('buffer');
+const { default: Carteira } = require('../../../atlas-financeiro/src/pages/Carteira/Carteira');
 
 router.use(bodyParser.json());
-
+const app = express();
 
 
 /* GET carteiras */
@@ -16,6 +18,19 @@ router.get('/:user_id', function(req, res, next) {
       res.setHeader('Content-Type', 'application/json');
       res.json(carteira);
     }, (error) => next(error)).catch((error) => next(error));
+});
+
+app.route('/carteira/:user_id/watchlist')
+
+.post(function(req, res) {
+  Carteiras.updateOne(
+    {usuario_id: req.params.user_id},
+    {"$push":{"watchlist": {
+    "ticker":req.body.ticker,
+    "cotacao":req.body.cotacoa,
+    "dropdown":req.body.alert
+  }}
+  })
 });
 
 // router.route('/:user_id')
