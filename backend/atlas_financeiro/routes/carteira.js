@@ -11,19 +11,52 @@ router.use(bodyParser.json());
 /* GET carteiras */
 router.get('/:user_id', function(req, res, next) {
   Carteiras.find({usuario_id: req.params.user_id}).then((carteira) => {
-      console.log(carteira);
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');
       res.json(carteira);
     }, (error) => next(error)).catch((error) => next(error));
 });
 
+// Insere ativo na carteira
+router.post('/:user_id', function(req, res, next) {
+  user_id = req.params.user_id
+
+  // CONSERTAR ESSA PARTE
+  var myQuery = { usuario_id: user_id, "ativos.ativo_id": 14 };
+  var newValues = { $set: {"ativos.$.ativo_id": req.body.ativo_id }};
+  const Options = { upsert: true };
+
+  Carteiras.updateOne(myQuery, newValues, Options);
+});
+
+// Altera quantidade e preço médio de um ativo na carteira
+router.patch('/:user_id/:ativo_id', function(req, res, next) {
+  user_id = req.params.user_id;
+  ativo_id = req.params.ativo_id;
+  quantidade = req.body.quantidade;
+  precoMedio = req.body.precoMedio;
+  
+  var myQuery = {usuario_id: user_id, "ativos.ativo_id": ativo_id};
+  var newValues = {$set: {"ativos.$.quantidade": quantidade, "ativos.$.preco_medio": precoMedio}};
+  const Options = { upsert: true };
+  
+  Carteiras.updateOne(myQuery, newValues).then(() => {
+    console.log('Information successfully updated');
+  })
+
+  
+  res.statusCode = 200;
+  
+}, (err) => {
+  console.log(err);
+});
+
+
+
+
+
+// ADICIONANDO NA CARTEIRA
 // router.route('/:user_id')
-// .get((req, res, next) => {
-//   res.statusCode = 200;
-//   // res.setHeader('Content-Type', 'application/json');
-//   res.sendFile('carteira.json', { root: '../../shared/' });
-// })
 // .post((req, res) =>{
 //   user_id = req.params.user_id;
 //   ativo_id = req.body.ativo_id;
@@ -99,55 +132,55 @@ router.route('/:user_id/:ativo_id')
    res.statusCode = 200;
   res.sendFile('carteira.json', { root: '../../shared/' });
 })
-.patch((req, res, next) =>{
+// .patch((req, res, next) =>{
 
-  user_id = req.params.user_id;
-  ativo_id = req.params.ativo_id;
-  quantidade = req.body.quantidade;
-  precoMedio = req.body.precoMedio;
+//   user_id = req.params.user_id;
+//   ativo_id = req.params.ativo_id;
+//   quantidade = req.body.quantidade;
+//   precoMedio = req.body.precoMedio;
   
-  let file = "../../shared/carteira.json";
-  let carteiras = fs.readFileSync(file, 'utf-8');
-  var json_carteiras = JSON.parse(carteiras);
+//   let file = "../../shared/carteira.json";
+//   let carteiras = fs.readFileSync(file, 'utf-8');
+//   var json_carteiras = JSON.parse(carteiras);
 
-  var indice = null;
-  json_carteiras.carteiras.filter(function(carteira) {
-    if(carteira.usuario_id === parseInt(user_id)) {
-      indice = json_carteiras.carteiras.indexOf(carteira);
-      return json_carteiras.carteiras.indexOf(carteira);
-    }
-    return(null);
-  })
+//   var indice = null;
+//   json_carteiras.carteiras.filter(function(carteira) {
+//     if(carteira.usuario_id === parseInt(user_id)) {
+//       indice = json_carteiras.carteiras.indexOf(carteira);
+//       return json_carteiras.carteiras.indexOf(carteira);
+//     }
+//     return(null);
+//   })
 
-  // console.log('indice');
-  // console.log(indice);
+//   // console.log('indice');
+//   // console.log(indice);
 
-  console.log(json_carteiras.carteiras[indice].ativos);
+//   console.log(json_carteiras.carteiras[indice].ativos);
   
-  elements = [];
-  json_carteiras.carteiras[indice].ativos.map(function (el) {
-    if(el.ativo_id === parseInt(ativo_id)) {
-      el.quantidade = quantidade;
-      el.preco_medio = precoMedio;
-    }
-    elements.push(el);
-   })
+//   elements = [];
+//   json_carteiras.carteiras[indice].ativos.map(function (el) {
+//     if(el.ativo_id === parseInt(ativo_id)) {
+//       el.quantidade = quantidade;
+//       el.preco_medio = precoMedio;
+//     }
+//     elements.push(el);
+//    })
 
    
-   json_carteiras.carteiras[indice].ativos = elements;
+//    json_carteiras.carteiras[indice].ativos = elements;
    
-   fs.writeFileSync(file, JSON.stringify(json_carteiras), function(err) {
-    if(err) {
-      console.log(err);
-    } else {
-      console.log('JSON saved');
-    }
-   });
+//    fs.writeFileSync(file, JSON.stringify(json_carteiras), function(err) {
+//     if(err) {
+//       console.log(err);
+//     } else {
+//       console.log('JSON saved');
+//     }
+//    });
 
-   res.statusCode = 200;
-  res.sendFile('carteira.json', { root: '../../shared/' });
+//    res.statusCode = 200;
+//   res.sendFile('carteira.json', { root: '../../shared/' });
 
-})
+// })
 
 
 

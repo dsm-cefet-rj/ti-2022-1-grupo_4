@@ -8,6 +8,7 @@ const carteiraAdapter = createEntityAdapter({
 export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchAtivosCarteira',
     async ({ user_id }) => {
         try{
+            debugger;
             const res = await (await fetch(`http://localhost:3004/carteira/${user_id}`)).json();
             return res;
         } catch(error) {
