@@ -20,14 +20,42 @@ router.get('/:user_id', function(req, res, next) {
 
 // Insere ativo na carteira
 router.post('/:user_id', function(req, res, next) {
-  user_id = req.params.user_id
+  user_id = parseInt(req.params.user_id);
 
-  // CONSERTAR ESSA PARTE
-  var myQuery = { usuario_id: user_id, "ativos.ativo_id": 14 };
-  var newValues = { $set: {"ativos.$.ativo_id": req.body.ativo_id }};
-  const Options = { upsert: true };
+  let myQuery = { usuario_id: user_id };
 
-  Carteiras.updateOne(myQuery, newValues, Options);
+  qtde_encontrada = 0;
+  ativos_carteira = [];
+
+  Carteiras.find(myQuery).then((carteira) => {
+    qtde_encontrada = carteira.length;
+    // console.log('carteira');
+    // console.log(carteira[0].ativos);
+    ativos_carteira = ativos_carteira.concat(carteira[0].ativos);
+    
+    ativos_carteira.push({ 
+      "ativo_id": req.body.ativo_id,
+      "empresa": req.body.empresa,
+      "ticker": req.body.ticker,
+      "quantidade": req.body.quantidade,
+      "preco_medio": req.body.preco_medio,
+      "rendimento": req.body.rendimento
+    })
+  }).then(() => {
+    
+    console.log(ativos_carteira);
+    let newValues = { $set: { ativos: ativos_carteira } };
+    const Options = { upsert: true };
+  
+    Carteiras.updateOne(myQuery, newValues, Options, function(err, res) {
+      console.log(err, res);
+      console.log('tudo ok.')
+    });
+  
+
+  });
+
+
 });
 
 // Altera quantidade e preço médio de um ativo na carteira
