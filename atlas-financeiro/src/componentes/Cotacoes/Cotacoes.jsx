@@ -65,7 +65,7 @@ const LinhaTabela = (props) => {
                     <h3>Histórico de Cotação Diária</h3>
                 </div>
                 
-                <div style={{width: '700px', margin: "0 auto", padding: "20px"}}>
+                <div className={styles.grafico}>
                     <Line data={data} />
                 </div>
 

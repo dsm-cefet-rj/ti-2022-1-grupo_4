@@ -13,12 +13,34 @@
 }
 
 /*-----Watchlist-----*/
+.watchlistContainer {
+    margin: auto;
+    width: 70%;
+    display: inline-flex;
+}
 .userWatchlist {
     background-color: white;
+    width: fit-content;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 35px;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    transition: ease all .5s;
+}
+@media (max-width: 730px) {
+    .userWatchlist {
+        width: 100%;
+    }
+    .watchlistContainer {
+        width: 100%;
+    }
+    
 }
 
-
-
+.dropdownInfo {
+    margin-bottom: 10px;
+}
 
 
 
@@ -28,12 +50,10 @@
 }
 
 .carteiraContainer {
-    background-color: white;
     width: 70%;
     margin: auto;
-    margin-bottom: 75px;
+    margin-bottom: 55px;
     border-radius: 10px;
-    padding: 15px;
     transition: ease all .5s;
 }
 @media (max-width: 730px) {
@@ -51,13 +71,15 @@
     position: relative;
 }
 
-.ativosCarteira {
-    margin: 5px 0 0 0;
+.ativosCarteira{
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    transition: ease all .5s;
 }
 
-.ativoCarteira {
-    margin: 50px 0 0 0;
-}
 .ativoImagemCarteira {
     position: relative;
     right: 85px;
