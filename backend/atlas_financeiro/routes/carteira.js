@@ -3,6 +3,7 @@ var router = express.Router();
 const bodyParser = require('body-parser');
 var fs = require('fs');
 const Carteiras = require('../models/carteiras');
+const { isObjectIdOrHexString } = require('mongoose');
 
 router.use(bodyParser.json());
 
@@ -49,9 +50,45 @@ router.patch('/:user_id/:ativo_id', function(req, res, next) {
   
 }, (err) => {
   console.log(err);
-});
+})
 
+// Insere ativo na watchlist do usuário
+router.post('/:user_id', function(res, req) {
+  Carteiras.findOneAndUpdate({usuario_id: req.params.user_id}, {
+    $push: {
+      "watchlist": [{
+        "watchlist_id": req.body.proxId,
+        "ticker": req.body.ticker,
+        "cotacao": req.body.cotacao,
+        "dropdown": req.body.dropdown
+      }]
+    }
+  },
+  {
+    arrayFilters: [
+      {
+        "watchlist": {
+          $exists: true
+        }
+      }
+    ]
+  }).then(() => {
+    console.log('Information successfully updated')
+  })
+  res.statusCode = 200
+}, (err) => {
+  console.log(err)
+})
 
+// Atualizar ativo da watchlist
+router.patch('/:user', function(res, req) {
+
+})
+
+// Deletar ativo da watchlist
+router.delete('/:user', function(res, req) {
+
+})
 
 
 
