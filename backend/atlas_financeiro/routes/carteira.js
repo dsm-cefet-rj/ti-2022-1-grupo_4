@@ -99,29 +99,30 @@ router.delete('/:user_id/:ativo_id', function(req, res) {
 });
 
 // Insere ativo na watchlist do usuário
-router.post('/:user_id', function(res, req) {
-  Carteiras.findOneAndUpdate({usuario_id: req.params.user_id}, {
-    $push: {
-      "watchlist": [{
-        "watchlist_id": req.body.proxId,
-        "ticker": req.body.ticker,
-        "cotacao": req.body.cotacao,
-        "dropdown": req.body.dropdown
-      }]
-    }
-  },
-  {
-    arrayFilters: [
-      {
-        "watchlist": {
-          $exists: true
-        }
-      }
-    ]
-  }).then(() => {
+router.post('watchlist/:user_id', function(req, res) {
+  console.log(req.body)
+
+  user_id = req.params.user_id
+  watchlist_id = req.body.proxId
+  ticker = req.body.ticker
+  cotacao = req.body.cotacao
+  dropdown = req.body.dropdown
+
+  var myQuery = { usuario_id: user_id}
+  var newValues = { $push: {
+    "watchlist.$.watchlist_id": watchlist_id,
+    "watchlist.$.ticker": ticker,
+    "watchlist.$.cotacao": cotacao,
+    "watchlist.$.dropdown": dropdown
+  }}
+  const Options = { upsert: true }
+
+  Carteiras.updateOne({myQuery},{newValues}, Options).then(() => {
     console.log('Information successfully updated')
   })
+
   res.statusCode = 200
+
 }, (err) => {
   console.log(err)
 })

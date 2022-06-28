@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './Watchlist.module.scss';
-import {fetchAtivosCarteira, createAtivoCarteira, alterarId} from  '../../store/slices/CarteiraSlice';
+import {fetchAtivosCarteira, createWatchlist, alterarId } from  '../../store/slices/CarteiraSlice';
 
 function Watchlist(props) {
     const elementos = useSelector(state => state.elementos);
@@ -17,7 +17,7 @@ function Watchlist(props) {
     async function adicionarWatchlist(e) {
         e.preventDefault();
         Promise.resolve(dispatch(alterarId({user_id})));
-        Promise.resolve(dispatch(createAtivoCarteira({ 
+        Promise.resolve(dispatch(createWatchlist({ 
             'user_id': user_id, 
             'dadosInput': {
                 watchlist_id: parseInt(watchlistId), 

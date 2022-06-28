@@ -41,7 +41,7 @@ export const updateAtivoCarteira = createAsyncThunk('carteira/updateAtivoCarteir
 
 export const createAtivoCarteira = createAsyncThunk('carteira/createAtivoCarteira',
     async({ user_id, dadosInput }) => {
-        debugger;
+        debugger
         const data = await fetch(`http://localhost:3004/carteira/${user_id}`, {
             method: 'POST',
             body: JSON.stringify(dadosInput),
@@ -50,6 +50,18 @@ export const createAtivoCarteira = createAsyncThunk('carteira/createAtivoCarteir
             },
         }).then((res) => res.json())
         debugger;
+        return data;
+    });
+
+export const createWatchlist = createAsyncThunk('carteira/createWatchlist',
+    async({ user_id, dadosInput }) => {
+        const data = await fetch(`http://localhost:3004/carteira/watchlist/${user_id}`, {
+            method: 'POST',
+            body: JSON.stringify(dadosInput),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        }).then((res) => res.json())
         return data;
     });
 
@@ -81,6 +93,9 @@ export const carteirasSlice = createSlice({
             state.status = 'updated'
         },
         [createAtivoCarteira.fulfilled]: (state, action) => {
+            state.status = 'created'
+        },
+        [createWatchlist]: (state, action) => {
             state.status = 'created'
         }
     },
