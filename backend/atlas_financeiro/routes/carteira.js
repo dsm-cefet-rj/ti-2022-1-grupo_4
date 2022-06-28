@@ -138,43 +138,4 @@ router.delete('/:user', function(res, req) {
 
 
 
-
-
-router.route('/:user_id/:ativo_id')
-// .delete((req, res, next) => {
-//   user_id = req.params.user_id;
-//   ativo_id = req.params.ativo_id;
-
-//   let file = "../../shared/carteira.json";
-//   let carteiras = fs.readFileSync(file, 'utf-8');
-//   var json_carteiras = JSON.parse(carteiras);
-
-//   var indice = null;
-//   json_carteiras.carteiras.filter(function(carteira) {
-//     if(carteira.usuario_id === parseInt(user_id)) {
-//       indice = json_carteiras.carteiras.indexOf(carteira);
-//       return json_carteiras.carteiras.indexOf(carteira);
-//     }
-//     return(null);
-//   })
-
-//   json_carteiras.carteiras[indice].ativos = json_carteiras.carteiras[indice].ativos.filter(function (el) {
-//     ativo_id_req = parseInt(ativo_id)
-//     return(el.ativo_id !== ativo_id_req);
-//    })
-
-//    fs.writeFileSync(file, JSON.stringify(json_carteiras), function(err) {
-//     if(err) {
-//       console.log(err);
-//     } else {
-//       console.log('JSON saved');
-//     }
-//    });
-
-//    res.statusCode = 200;
-//   res.sendFile('carteira.json', { root: '../../shared/' });
-// })
-
-
-
 module.exports = router;
