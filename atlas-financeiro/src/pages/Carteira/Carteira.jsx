@@ -29,6 +29,7 @@ function Carteira() {
     const watchlist = useSelector(state => state.carteira);
     const dispatch = useDispatch();
 
+    
     async function pegaCarteira() {
         await Promise.resolve(dispatch(alterarId(user_id)));
         await Promise.resolve(dispatch(fetchAtivosCarteira({ user_id })));
@@ -62,7 +63,7 @@ function Carteira() {
         alert('Watchlist deletada com sucesso.');
         await Promise.resolve(dispatch(fetchWatchlist({ user_id })));
     }
-
+    
     if(typeof carteira.carteira[0] !== 'undefined' && carteira.carteira.length !== 0) {
         return (
             <>
@@ -113,7 +114,8 @@ function Carteira() {
 
                 <section className={styles.lightSection}>
                         <div id='watchlist-component'>
-                            <Watchlist />
+                    
+                            <Watchlist user_id={parseInt(user_id)} proxId={1 + carteira.watchlist.map(watchlist => watchlist.watchlist_id).reduce((x,y) => Math.max(x,y))}/>
                             <div className={styles.watchlistContainer}>
                                 {carteira.watchlist.map(watchlist => {
                                     return(

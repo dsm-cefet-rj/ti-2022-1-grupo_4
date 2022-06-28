@@ -18,7 +18,13 @@ function PopupCarteira(props) {
 
     async function atualizarCarteira() {
         props.setTrigger(false);
-        Promise.resolve(dispatch(updateAtivoCarteira({ 'user_id': user_id, 'ativo_id': props.dados.ativo_id, 'dadosAtualizados': {quantidade: parseInt(quantidadeAtivo.current.value), precoMedio: parseFloat(precoMedioAtivo.current.value)}})));
+        Promise.resolve(dispatch(updateAtivoCarteira({ 
+            'user_id': user_id, 
+            'ativo_id': props.dados.ativo_id, 
+            'dadosAtualizados': {
+                quantidade: parseInt(quantidadeAtivo.current.value), 
+                precoMedio: parseFloat(precoMedioAtivo.current.value)
+            }})));
         window.location.reload(false);
         alert('Dados atualizados com sucesso.');
     }
