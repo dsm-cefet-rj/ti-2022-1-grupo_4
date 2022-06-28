@@ -29,7 +29,7 @@ function Popup(props) {
                 preco_medio: parseFloat(precoMedioAtivo.current.value), 
                 rendimento: 0
             }})));
-        Promise.resolve(dispatch(fetchAtivosCarteira(user_id_mockado)));
+        window.location.reload(false);
         alert('Ativo adicionado à carteira.');
     }
 
