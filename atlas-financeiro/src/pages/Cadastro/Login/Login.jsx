@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Footer from '../../../componentes/Footer/Footer';
 import { useDispatch } from 'react-redux';
@@ -6,7 +6,6 @@ import { fetchLogin } from '../../../store/slices/LoginSlice';
 import {store} from '../../../store/store';
 import styles from './Login.module.scss';
 
-store.dispatch(fetchLogin())
 
 function Login() {
 
@@ -28,11 +27,12 @@ function Login() {
         e.preventDefault()
         setFormErrors(validate(loginState))
         setIsSubmit(true)
+        dispatch(fetchLogin());
     }
     
     useEffect(() => {
         if(Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(loginState)
+            // console.log(loginState)
         }
     }, [formErrors])
 

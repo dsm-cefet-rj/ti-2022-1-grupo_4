@@ -67,8 +67,8 @@ function Watchlist(props) {
                         <div>
                             <select name="dropdown" id="acima_abaixo" className={`form-select drop_select ${styles.dropSelect}`} aria-label="Default select example" ref={dropdownValue} >
                                 <option selected>Quando Alertar (Selecionar)</option>
-                                <option value="0">Acima da Cotação  (0)</option>
-                                <option value="1">Abaixo da Cotação (1)</option>
+                                <option value="0">Acima da Cotação</option>
+                                <option value="1">Abaixo da Cotação</option>
                             </select>
                         </div>
                     </div>

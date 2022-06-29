@@ -6,9 +6,22 @@ export const loginAdapter = createEntityAdapter({
     selectId: (usuarios) => usuarios.id
 })
 
+// export const fetchLogin = createAsyncThunk('usuarios/fetchLogin', async () => {
+//     return await httpGet(`${baseUrl}/usuarios/login`) 
+// }) 
+
 export const fetchLogin = createAsyncThunk('usuarios/fetchLogin', async () => {
-    return await httpGet(`${baseUrl}/usuarios`) 
-}) 
+    try{
+        debugger;
+        var res = await fetch('http://localhost:3004/usuarios', {
+            method: 'POST'
+        }).json();
+        return res;
+    } catch(error) {
+        console.log(error);
+        return {};
+    };
+});
 
 export const loginSlice = createSlice ({
     name: 'usuarios',
