@@ -11,7 +11,9 @@ router.get('/', function(req, res, next) {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');
       res.json(ativos);
+      console.log('ativos');
       console.log(ativos);
+      console.log('Pegou os ativos no banco do MongoDB');
     }, (error) => next(error)).catch((error) => next(error));
 });
 

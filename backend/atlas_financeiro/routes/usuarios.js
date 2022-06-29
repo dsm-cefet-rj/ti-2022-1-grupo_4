@@ -1,13 +1,15 @@
 var express = require('express');
 var router = express.Router();
+const cors = require('cors');
 
 const bodyParser = require('body-parser');
-var User = require('../models/usuario');
+var Usuario = require('../models/usuario');
 
 
 router.use(bodyParser.json());
 
-router.post('/signup', cors.corsWithOptions, (req, res, next) => {
+// router.post('/signup', cors.corsWithOptions, (req, res, next) => {
+router.post('/signup', (req, res, next) => {
     User.register(new User({username: req.body.username}), req.body.password, 
     (err, user) => {
         if(err) {
@@ -23,16 +25,21 @@ router.post('/signup', cors.corsWithOptions, (req, res, next) => {
         }
     });
 });
-  router.route('/login').options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
-  router.post('/login', cors.corsWithOptions, passport.authenticate('local'), (req, res) => {
-    
-    var token = authenticate.getToken({_id: req.user._id});
+
+// router.route('/login').options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
+// router.post('/login', cors.corsWithOptions, passport.authenticate('local'), (req, res) => {
+router.post('/', (req, res) => {
+  // var token = authenticate.getToken({_id: req.user._id});
+  Usuario.find({}).then((usuarios) => {
+    console.log(usuarios);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.json({id: req.user._id, token: token});
-  });
+    // res.json({id: req.user._id, token: token});
+  }, (error) => next(error)).catch((error) => next(error));
+});
   
-  router.get('/logout', cors.corsWithOptions, (req, res) => {
+  // router.get('/logout', cors.corsWithOptions, (req, res) => {
+  router.get('/logout', (req, res) => {
     if (req.session) {
       req.session.destroy();
       res.clearCookie('session-id');

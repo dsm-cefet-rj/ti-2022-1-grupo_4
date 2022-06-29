@@ -6,6 +6,15 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var FileStore = require('session-file-store')(session);
+const { MongoClient, ServerApiVersion } = require('mongodb');
+
+const url = "mongodb+srv://AtlasFinanceiro:1234AtlasFinanceiro1234@atlasfinanceiro.bhopkvx.mongodb.net/atlas_financeiro?retryWrites=true&w=majority";
+
+const connectionParams = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true 
+}
+
 
 var indexRouter = require('./routes/index');
 var usuariosRouter = require('./routes/usuarios');
@@ -14,10 +23,10 @@ var carteirasRouter = require('./routes/carteira');
 
 const mongoose = require('mongoose');
 // const url = 'mongodb://localhost:27017/atlas_financeiro';
-const url = 'mongodb+srv://AtlasFinanceiro:1234AtlasFinanceiro1234@atlasfinanceiro.bhopkvx.mongodb.net/?retryWrites=true&w=majority';
-const connect = mongoose.connect(url);
+// const url = 'mongodb+srv://AtlasFinanceiro:1234AtlasFinanceiro1234@atlasfinanceiro.bhopkvx.mongodb.net/?retryWrites=true&w=majority';
+const connect = mongoose.connect(url, connectionParams);
 
-connect.then((db) => {
+connect.then( () => {
     console.log('Conectado ao servidor do Mongo DB');
 }, (err) => { console.log(err)})
 
