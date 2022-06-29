@@ -11,16 +11,13 @@ export const loginAdapter = createEntityAdapter({
 // }) 
 
 export const fetchLogin = createAsyncThunk('usuarios/fetchLogin', async () => {
-    try{
         debugger;
         var res = await fetch('http://localhost:3004/usuarios', {
-            method: 'POST'
-        }).json();
-        return res;
-    } catch(error) {
-        console.log(error);
-        return {};
-    };
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        }).then((res) => res.json());
 });
 
 export const loginSlice = createSlice ({
