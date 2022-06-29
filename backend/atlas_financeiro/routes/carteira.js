@@ -80,7 +80,6 @@ router.patch('/:user_id/:ativo_id', function(req, res, next) {
   console.log(err);
 })
 
-
 // Deleta o ativo da carteira
 router.delete('/:user_id/:ativo_id', function(req, res) {
   console.log('req.params:');
@@ -98,42 +97,72 @@ router.delete('/:user_id/:ativo_id', function(req, res) {
 
 });
 
-// Insere ativo na watchlist do usuário
-router.post('/:user_id', function(res, req) {
-  Carteiras.findOneAndUpdate({usuario_id: req.params.user_id}, {
-    $push: {
-      "watchlist": [{
-        "watchlist_id": req.body.proxId,
-        "ticker": req.body.ticker,
-        "cotacao": req.body.cotacao,
-        "dropdown": req.body.dropdown
-      }]
-    }
-  },
-  {
-    arrayFilters: [
-      {
-        "watchlist": {
-          $exists: true
-        }
-      }
-    ]
+/*--------------------- WATCHLIST ---------------------*/
+
+// ADICIONAR ATIVO NA WATCHLIST
+router.post('/:user_id/watchlist', function(req, res) {
+  console.log(parseInt(req.body.watchlist_id))
+
+  user_id = parseInt(req.params.user_id)
+  let myQuery = { usuario_id: user_id}
+
+  info_ativo_watchlist = []
+
+  Carteiras.find(myQuery).then((carteira) => {
+    console.log('encontrou o usuario')
+    info_ativo_watchlist = info_ativo_watchlist.concat(carteira[0].watchlist)
+
+    info_ativo_watchlist.push({
+      "watchlist_id": req.body.watchlist_id,
+      "ticker": req.body.ticker,
+      "cotacao": req.body.cotacao,
+      "dropdown": req.body.dropdown
+    })
   }).then(() => {
+    console.log(info_ativo_watchlist)
+    let newValues = {$set:{watchlist: info_ativo_watchlist}}
+    const Options = {upsert: true}
+
+    Carteiras.updateOne(myQuery,newValues, Options).then(() => {
+      console.log('Information successfully updated')
+    })
+  })
+})
+
+// ATUALIZAR ATIVO DA WATCHLIST
+router.patch('/:user_id/watchlist/:watchlist_id', function(req, res, next) {
+  
+  user_id = req.params.user_id
+  watchlist_id = req.params.watchlist_id
+  cotacao = req.body.cotacao
+  dropdown = req.body.dropdown
+
+  var myQuery = {usuario_id: user_id, "watchlist.watchlist_id": watchlist_id }
+  var newValues = {$set: {"watchlist.$.cotacao": cotacao, "watchlist.$.dropdown": dropdown}}
+  const Options = { upsert: true }
+  
+  Carteiras.updateOne(myQuery, newValues).then(() => {
     console.log('Information successfully updated')
   })
+
   res.statusCode = 200
+
 }, (err) => {
   console.log(err)
 })
 
-// Atualizar ativo da watchlist
-router.patch('/:user', function(res, req) {
+// DELETAR ATIVO DA WATCHLIST
+router.delete('/:user_id/watchlist/:watchlist_id', function(req, res, next) {
 
-})
+  user_id = req.params.user_id
+  watchlist_id = req.params.watchlist_id
 
-// Deletar ativo da watchlist
-router.delete('/:user', function(res, req) {
+  var myQuery = {usuario_id: user_id }
+  var deleteValues = { $pull: {watchlist: { "watchlist_id": watchlist_id}}}
 
+  Carteiras.updateOne(myQuery, deleteValues).then(() => {
+    console.log('Information successfully deleted')
+  })
 })
 
 

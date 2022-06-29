@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './Watchlist.module.scss';
-import {fetchAtivosCarteira, createAtivoCarteira, alterarId} from  '../../store/slices/CarteiraSlice';
+import {fetchAtivosCarteira, createWatchlist, alterarId } from  '../../store/slices/CarteiraSlice';
 
 function Watchlist(props) {
     const elementos = useSelector(state => state.elementos);
     const dispatch = useDispatch();
-
+    
     const user_id = props.user_id;
-    const watchlistId = props.proxId
+    const watchlistId = props.carteira.watchlist.length
     const precoCotacao = React.createRef();
     const dropdownValue = React.createRef();
     const tickerValue = React.createRef();
@@ -17,16 +17,17 @@ function Watchlist(props) {
     async function adicionarWatchlist(e) {
         e.preventDefault();
         Promise.resolve(dispatch(alterarId({user_id})));
-        Promise.resolve(dispatch(createAtivoCarteira({ 
+        Promise.resolve(dispatch(createWatchlist({ 
             'user_id': user_id, 
             'dadosInput': {
-                watchlist_id: parseInt(watchlistId), 
+                watchlist_id: watchlistId, 
                 ticker: tickerValue.current.value, 
                 dropdown: parseInt(dropdownValue.current.value), 
                 cotacao: parseFloat(precoCotacao.current.value)
             }})));
         Promise.resolve(dispatch(fetchAtivosCarteira({user_id})));
-        alert(`Watchlist adicionado ao perfil.`);
+        window.location.reload(false);
+        alert(`Watchlist adicionado ao perfil.${watchlistId}`);
     }
 
     return (
@@ -66,8 +67,8 @@ function Watchlist(props) {
                         <div>
                             <select name="dropdown" id="acima_abaixo" className={`form-select drop_select ${styles.dropSelect}`} aria-label="Default select example" ref={dropdownValue} >
                                 <option selected>Quando Alertar (Selecionar)</option>
-                                <option value="0">Acima da Cotação</option>
-                                <option value="1">Abaixo da Cotação</option>
+                                <option value="0">Acima da Cotação  (0)</option>
+                                <option value="1">Abaixo da Cotação (1)</option>
                             </select>
                         </div>
                     </div>

@@ -4,25 +4,31 @@ import Watchlist from '../../componentes/Watchlist/Watchlist';
 import Footer from '../../componentes/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import vale from '../../media/vale.png';
-import { alterarId, deleteAtivoCarteira, updateAtivoCarteira, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
-import { alterarWatchlistId, fetchWatchlist, createWatchlist, updateWatchlist, deleteWatchlist } from '../../store/slices/WatchlistSlice';
+import { alterarId, deleteAtivoCarteira, deleteWatchlist, updateAtivoCarteira, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
+import { alterarWatchlistId, fetchWatchlist } from '../../store/slices/WatchlistSlice';
 import PopupCarteira from '../../componentes/Popup/PopupCarteira';
 import { useParams, useHistory } from 'react-router-dom';
 import ImagemPerfil from '../../media/businessman.jpg';
 import ImagemThumb from '../../media/chicago.jpg';
+import PopupWatchlist from '../../componentes/Popup/PopupWatchlist';
 
 
 function Carteira() {
-
     
     let { user_id } = useParams();
     
     const [buttonPopup, setButtonPopup] = useState(false);
+    const [buttonPopupWatchlist, setButtonPopupWatchlist] = useState(false)
     const [selectedData, setSelectedData] = useState();
 
     function handleUpdateClick(selectedRec) {
         setSelectedData(selectedRec);
         setButtonPopup(true);
+    };
+
+    function handleUpdateClickWatchlist(selectedRec) {
+        setSelectedData(selectedRec);
+        setButtonPopupWatchlist(true);
     };
 
     const carteira = useSelector(state => state.carteira);
@@ -59,9 +65,9 @@ function Carteira() {
     }
 
     async function removerWatchlist(watchlist_id) {
-        dispatch(deleteWatchlist({ user_id, watchlist_id }));
-        alert('Watchlist deletada com sucesso.');
-        await Promise.resolve(dispatch(fetchWatchlist({ user_id })));
+        dispatch(deleteWatchlist({ user_id, watchlist_id }))
+        alert(`Watchlist deletada com sucesso.${watchlist_id}`)
+        await Promise.resolve(dispatch(fetchAtivosCarteira({ user_id })))
     }
     
     if(typeof carteira.carteira[0] !== 'undefined' && carteira.carteira.length !== 0) {
@@ -113,37 +119,7 @@ function Carteira() {
                 </section>
 
                 <section className={styles.lightSection}>
-                        <div id='watchlist-component'>
-                    
-                            <Watchlist user_id={parseInt(user_id)} proxId={1 + carteira.watchlist.map(watchlist => watchlist.watchlist_id).reduce((x,y) => Math.max(x,y))}/>
-                            <div className={styles.watchlistContainer}>
-                                {carteira.watchlist.map(watchlist => {
-                                    return(
-                                        <div className={styles.userWatchlist}>
-                                            <h3>Watching</h3>
-                                            <div>
-                                                Ticker: {watchlist.ticker}
-                                            </div>
-                                            <div>
-                                                Cotação: {watchlist.cotacao}
-                                            </div>
-                                            <div>
-                                                Dropdown: {watchlist.dropdown}
-                                            </div>
-                                            <div className='row'>
-                                                <div className='col' style={{'align-self': 'center'}}>
-                                                    <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={() => handleUpdateClick(watchlist)} ><a className={styles.hRef}>Atualizar</a></button>
-                                                </div>
-                                                <div className='col' style={{'align-self': 'center'}}>
-                                                    <button type="button" className={`btn btn-danger ${styles.buttonCancel}`} onClick={() => removerWatchlist(watchlist.watchlist_id)} >Remover</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                        </div>
-
+                        
                         <div id="carteira-container">
                             <div className={styles.carteiraTitle}>
                                 <h3><strong>{`Carteira`}</strong></h3>
@@ -195,6 +171,39 @@ function Carteira() {
                                     );
                                 })}
                                 <PopupCarteira trigger={buttonPopup} setTrigger={setButtonPopup} dados={selectedData} user_id={parseInt(user_id)} />
+                                <PopupWatchlist trigger={buttonPopupWatchlist} setTrigger={setButtonPopupWatchlist} dados={selectedData} user_id={parseInt(user_id)} />
+                            </div>
+                        </div>
+
+                        <div id='watchlist-component'>
+                    
+                            <Watchlist user_id={parseInt(user_id)} carteira={carteira}/>
+                            <div className={styles.ativosWatchlist}>
+                            <div className={styles.watchlistContainer}>
+                                {carteira.watchlist.map(watchlist => {
+                                    return(
+                                        <div className={styles.userWatchlist}>
+                                            <div>
+                                                Ticker: {watchlist.ticker}
+                                            </div>
+                                            <div>
+                                                Cotação: {watchlist.cotacao}
+                                            </div>
+                                            <div className={styles.dropdownInfo}>
+                                                Alerta: {watchlist.dropdown}
+                                            </div>
+                                            <div className='row'>
+                                                <div className='col' style={{'align-self': 'center'}}>
+                                                    <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={() => handleUpdateClickWatchlist(watchlist)} ><a className={styles.hRef}>Atualizar</a></button>
+                                                </div>
+                                                <div className='col' style={{'align-self': 'center'}}>
+                                                    <button type="button" className={`btn btn-danger ${styles.buttonCancel}`} onClick={() => removerWatchlist(watchlist.watchlist_id)} >Remover</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
                             </div>
                         </div>
                         <Footer />

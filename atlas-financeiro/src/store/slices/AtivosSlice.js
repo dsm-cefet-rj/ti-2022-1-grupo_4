@@ -22,7 +22,6 @@ export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos',
 
 
 function fulfillAtivosReducer(state, ativosFetched) {
-    debugger;
     return {...state,
         status: 'loaded',
         ativos: ativosFetched

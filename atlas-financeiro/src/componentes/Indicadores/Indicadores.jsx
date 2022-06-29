@@ -35,6 +35,7 @@ const TabelaIndicadores = () => {
 
                 <div id="detalhamento">
                     <div className={styles.tableTitle}>
+                    
                         <h3>Detalhamento do Ativo</h3>
                     </div>
 
