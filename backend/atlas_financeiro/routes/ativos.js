@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');
       res.json(ativos);
+      console.log(ativos);
     }, (error) => next(error)).catch((error) => next(error));
 });
 
