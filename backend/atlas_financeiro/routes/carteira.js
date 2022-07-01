@@ -4,13 +4,14 @@ const bodyParser = require('body-parser');
 var fs = require('fs');
 const Carteiras = require('../models/carteiras');
 const { isObjectIdOrHexString } = require('mongoose');
+const authenticate = require('../authenticate')
 
 router.use(bodyParser.json());
 
 
 
 /* GET carteiras */
-router.get('/:user_id', function(req, res, next) {
+router.get('/:user_id', authenticate.verifyUser, function(req, res, next) {
   Carteiras.find({usuario_id: req.params.user_id}).then((carteira) => {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');
@@ -19,7 +20,7 @@ router.get('/:user_id', function(req, res, next) {
 });
 
 // Insere ativo na carteira
-router.post('/:user_id', function(req, res, next) {
+router.post('/:user_id', authenticate.verifyUser, function(req, res, next) {
   user_id = parseInt(req.params.user_id);
 
   let myQuery = { usuario_id: user_id };
@@ -59,7 +60,7 @@ router.post('/:user_id', function(req, res, next) {
 });
 
 // Altera quantidade e preço médio de um ativo na carteira
-router.patch('/:user_id/:ativo_id', function(req, res, next) {
+router.patch('/:user_id/:ativo_id', authenticate.verifyUser, function(req, res, next) {
   user_id = req.params.user_id;
   ativo_id = req.params.ativo_id;
   quantidade = req.body.quantidade;
@@ -81,7 +82,7 @@ router.patch('/:user_id/:ativo_id', function(req, res, next) {
 })
 
 // Deleta o ativo da carteira
-router.delete('/:user_id/:ativo_id', function(req, res) {
+router.delete('/:user_id/:ativo_id', authenticate.verifyUser, function(req, res) {
   console.log('req.params:');
   console.log(req.params);
   user_id = req.params.user_id;
@@ -100,7 +101,7 @@ router.delete('/:user_id/:ativo_id', function(req, res) {
 /*--------------------- WATCHLIST ---------------------*/
 
 // ADICIONAR ATIVO NA WATCHLIST
-router.post('/:user_id/watchlist', function(req, res) {
+router.post('/:user_id/watchlist', authenticate.verifyUser, function(req, res) {
   console.log(parseInt(req.body.watchlist_id))
 
   user_id = parseInt(req.params.user_id)
@@ -130,7 +131,7 @@ router.post('/:user_id/watchlist', function(req, res) {
 })
 
 // ATUALIZAR ATIVO DA WATCHLIST
-router.patch('/:user_id/watchlist/:watchlist_id', function(req, res, next) {
+router.patch('/:user_id/watchlist/:watchlist_id', authenticate.verifyUser, function(req, res, next) {
   
   user_id = req.params.user_id
   watchlist_id = req.params.watchlist_id
@@ -152,7 +153,7 @@ router.patch('/:user_id/watchlist/:watchlist_id', function(req, res, next) {
 })
 
 // DELETAR ATIVO DA WATCHLIST
-router.delete('/:user_id/watchlist/:watchlist_id', function(req, res, next) {
+router.delete('/:user_id/watchlist/:watchlist_id', authenticate.verifyUser, function(req, res, next) {
 
   user_id = req.params.user_id
   watchlist_id = req.params.watchlist_id

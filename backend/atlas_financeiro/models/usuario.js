@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// const normalize = require('normalize-mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 const usuarioSchema = new Schema ({
     id: {
@@ -32,10 +32,10 @@ const usuarioSchema = new Schema ({
         
     },
     
-        status:{
-            type: String,
+    status:{
+        type: String,
     
-        },
+    },
 
     sobre:{
         type: String,
@@ -52,8 +52,7 @@ const usuarioSchema = new Schema ({
 
 })
 
-// usuarioSchema.plugin(normalize);
+usuarioSchema.plugin(passportLocalMongoose)
+var Usuarios = mongoose.model('Usuario', usuarioSchema)
 
-var Usuarios = mongoose.model('Usuario', usuarioSchema);
-
-module.exports = Usuarios;
+module.exports = Usuarios
