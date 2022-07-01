@@ -144,7 +144,7 @@ function Carteira() {
                                                             Quantidade: {ativo.quantidade}
                                                         </div>
                                                         <div>
-                                                            Preço Médio: {ativo.preco_medio}
+                                                            Preço Médio: R$ {ativo.preco_medio}
                                                         </div>
                                                         <div>
                                                             Rendimento: {ativo.rendimento * 100.00} %
@@ -187,10 +187,10 @@ function Carteira() {
                                                 Ticker: {watchlist.ticker}
                                             </div>
                                             <div>
-                                                Cotação: {watchlist.cotacao}
+                                                Cotação: R$ {watchlist.cotacao}
                                             </div>
                                             <div className={styles.dropdownInfo}>
-                                                Alerta: {watchlist.dropdown}
+                                                Alerta: {converteDropdownWatchlist (watchlist.dropdown)}
                                             </div>
                                             <div className='row'>
                                                 <div className='col' style={{'align-self': 'center'}}>
@@ -211,6 +211,15 @@ function Carteira() {
             </>
         );
     }
+}
+
+function converteDropdownWatchlist (watchlist) {
+    if (watchlist == "1")
+        return "Abaixo da Cotação"
+    else if ((watchlist == "0"))
+        return "Acima da Cotação"
+    else
+    return "Null"
 }
 
 export default Carteira;

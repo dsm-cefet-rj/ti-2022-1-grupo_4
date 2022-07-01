@@ -15,7 +15,7 @@ const LinhaTabela = (props) => {
     return(
           <tr>
             <td> {props.cotacao.data} </td>
-            <td> {props.cotacao.valor} </td>
+            <td> {'R$ ' + props.cotacao.valor} </td>
           </tr>
     );
   }
@@ -81,7 +81,7 @@ const LinhaTabela = (props) => {
                             <td className={styles.cotacoesTd}><strong>Cotação:</strong></td>
                         </tr>
                         {cotacoes.cotacoes[0].cotacoes.map((cotacao) => 
-                            <LinhaTabela key={cotacao.data} cotacao={cotacao} />
+                            <LinhaTabela key={ cotacao.data} cotacao= {cotacao} />
                             )}
                         </tbody>
                     </table>
