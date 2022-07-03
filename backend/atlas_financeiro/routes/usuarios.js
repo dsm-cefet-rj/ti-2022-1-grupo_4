@@ -4,15 +4,32 @@ const cors = require('cors')
 const passport = require('passport')
 const bodyParser = require('body-parser')
 const authenticate = require('../authenticate')
-const Usuario = require('../models/usuario')
+const Usuario = require('../models/carteiras')
 
 
 router.use(bodyParser.json());
 
-// router.post('/signup', cors.corsWithOptions, (req, res, next) => {
+// pegar os objetos de cada usuario no carteiras.json
+router.get('/', (req, res, next) => {
+  console.log(req.user)
+  Usuario.find().then((usuarios) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
+    res.json(usuarios);
+  }, (error) => next(error)).catch((error) => next(error));
+})
+
+// cadastrar um novo usuário e colocar ele em carteiras.json
 router.post('/sign-up', (req, res, next) => {
-  Usuario.register(new User({username: req.body.username}), req.body.password, 
-  (err, user) => {
+  Usuario.register(new Usuario({
+    nome: req.body.nome,
+    status: req.body.status,
+    email: req.body.email,
+    senha: req.body.senha,
+    estado: req.body.estado,
+    pais: req.body.pais,
+    descricao: req.body.descricao
+  }), req.body.senha, (err, user) => {
     if(err) {
       res.statusCode = 500
       res.setHeader('Content-Type', 'application/json')
@@ -27,7 +44,8 @@ router.post('/sign-up', (req, res, next) => {
   })
 })
 
-router.post('/login', passport.authenticate('local'), (req, res) => {
+// fazer o login do usuario, baseado em um objeto q ja está no carteiras.json e afazer a comparação
+router.post('/:user_id/login', passport.authenticate('local'), (req, res) => {
   const token = authenticate.getToken({_id: req.user._id})
   res.statusCode = 200
   res.setHeader('Content-Type', 'application/json')

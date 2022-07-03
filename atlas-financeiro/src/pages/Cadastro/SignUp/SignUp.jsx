@@ -3,12 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Footer from '../../../componentes/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addSignUpServer, selectAllUsuarios } from '../../../store/slices/SignUpSlice';
-import { fetchSignUp } from '../../../store/slices/SignUpSlice';
+import { fetchUsuarios, signUpNewUsuario, selectAllUsuarios } from '../../../store/slices/AuthenticationSlice';
 import {store} from '../../../store/store';
 import styles from './SignUp.module.scss';
 
-store.dispatch(fetchSignUp())
+store.dispatch(fetchUsuarios())
 
 function SignUp() {
     const dispatch = useDispatch()
@@ -42,7 +41,7 @@ function SignUp() {
     
     useEffect(() => {
         if(Object.keys(formErrors).length === 0 && isSubmit) {    
-            dispatch(addSignUpServer(newUsuario))
+            dispatch(signUpNewUsuario(newUsuario))
             alert("O usuario foi cadastrado com sucesso!")
             navigate("/carteira/1")
         }

@@ -6,6 +6,8 @@ const CarteirasSchema = new Schema({
         usuario: {
             nome: String,
             status: String,
+            email: String,
+            senha: String,
             localidade: {
                 estado: String,
                 país: String

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Footer from '../../../componentes/Footer/Footer';
 import { useDispatch } from 'react-redux';
-import { fetchLogin } from '../../../store/slices/LoginSlice';
+import { fetchUsuarios } from '../../../store/slices/AuthenticationSlice';
 import {store} from '../../../store/store';
 import styles from './Login.module.scss';
 
@@ -10,7 +10,7 @@ import styles from './Login.module.scss';
 function Login() {
 
     const dispatch = useDispatch()
-
+    dispatch(fetchUsuarios())
     const [loginState, setLoginState] = useState({
         email: '',
         senha: ''
@@ -27,7 +27,7 @@ function Login() {
         e.preventDefault()
         setFormErrors(validate(loginState))
         setIsSubmit(true)
-        dispatch(fetchLogin());
+        dispatch(fetchUsuarios())
     }
     
     useEffect(() => {
