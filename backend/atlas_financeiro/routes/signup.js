@@ -9,28 +9,27 @@ router.use(bodyParser.json())
 
 router.post('/', async (req, res) => {
   console.log(req.body)
-  let usuario = await Usuario.findOne({email: req.body.email})
+  let usuario = await Usuario.findOne({"usuario": {"email": req.body.email}})
   if (usuario) return res.status(400).send("Usuario já existe..")
 
   usuario = new Usuario({
-    'usuario_id': req.params.user_id,
-      'usuario': {
-        nome: req.body.nome,
-        status: req.body.status,
-        email: req.body.email,
-        senha: req.body.senha,
-        'localidade': {
-          estado: req.body.estado,
-          pais: req.body.pais
+      "usuario": {
+        "nome": req.body.nome,
+        "status": req.body.status,
+        "email": req.body.email,
+        "senha": req.body.senha,
+        "localidade": {
+          "estado": req.body.estado,
+          "pais": req.body.pais
         },
-        descricao: req.body.descricao
+        "descricao": req.body.descricao
       },
-      'ativos':[],
-      'watchlist':[]
+      "ativos":[],
+      "watchlist":[]
   })
   
   const salt = await bcrypt.genSalt(10)
-  usuario.senha = await bcrypt.hash(usuario.senha, salt)
+  usuario.usuario.senha = await bcrypt.hash(usuario.usuario.senha, salt)
 
   usuario = await usuario.save()
 

@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CarteirasSchema = new Schema({
-        usuario_id: Number,
         usuario: {
             nome: String,
             status: String,
@@ -10,7 +9,7 @@ const CarteirasSchema = new Schema({
             senha: String,
             localidade: {
                 estado: String,
-                país: String
+                pais: String
             },
             descricao: String
         },
