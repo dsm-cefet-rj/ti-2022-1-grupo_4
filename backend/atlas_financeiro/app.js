@@ -25,8 +25,6 @@ const ativosRouter = require('./routes/ativos')
 const carteirasRouter = require('./routes/carteira')
 
 const mongoose = require('mongoose')
-// const url = 'mongodb://localhost:27017/atlas_financeiro';
-// const url = 'mongodb+srv://AtlasFinanceiro:1234AtlasFinanceiro1234@atlasfinanceiro.bhopkvx.mongodb.net/?retryWrites=true&w=majority';
 const connect = mongoose.connect(url, connectionParams)
 
 connect.then( () => {
@@ -54,8 +52,8 @@ app.use('/', indexRouter)
 app.use('/ativos', ativosRouter)
 app.use('/usuarios/sign-up', signup)
 app.use('/usuarios/login', login)
+app.use('/carteira', carteirasRouter)
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/carteira', carteirasRouter)
 
 module.exports = app
