@@ -1,7 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { useParams, useHistory } from "react-router-dom";
-import {httpGet, httpDelete, httpPut, httpPost} from '../../utils';
-
 
 var cotacoesInitialState = {
     status: 'not_loaded',

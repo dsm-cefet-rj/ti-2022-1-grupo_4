@@ -1,7 +1,4 @@
 import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
-import { useParams, useHistory } from "react-router-dom";
-import { httpGet, httpPut, httpDelete, httpPost } from "../../utils";
-
 
 var ativosInitialState = {
     status: 'not_loaded',

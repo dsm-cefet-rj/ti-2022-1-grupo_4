@@ -19,7 +19,8 @@ const connectionParams = {
 }
 
 const indexRouter = require('./routes/index')
-const usuariosRouter = require('./routes/usuarios')
+const signup = require('./routes/signup')
+const login = require('./routes/login')
 const ativosRouter = require('./routes/ativos')
 const carteirasRouter = require('./routes/carteira')
 
@@ -48,10 +49,11 @@ app.use((req, res, next) => {
 
 app.use(passport.initialize())
 
+// Middleware
 app.use('/', indexRouter)
-app.use('/usuarios', usuariosRouter)
 app.use('/ativos', ativosRouter)
-
+app.use('/usuarios/sign-up', signup)
+app.use('/usuarios/login', login)
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/carteira', carteirasRouter)

@@ -1,37 +1,16 @@
-const passport = require('passport')
-const LocalStrategy = require('passport-local').Strategy
-const Usuario = require('./models/carteiras')
-const JwtStrategy = require('passport-jwt').Strategy
-const ExtractJwt = require('passport-jwt').ExtractJwt
 const jwt = require('jsonwebtoken')
-
 const config = require('./config')
 
-passport.use(new LocalStrategy(Usuario.authenticate()))
-passport.serializeUser(Usuario.serializeUser())
-passport.deserializeUser(Usuario.deserializeUser())
+const genAuthToken = (usuario) => {
+    const secretKey = config.secretKey
 
-exports.getToken = function(user) {
-    return jwt.sign(user, config.secretKey,
-        {expiresIn: 3600})
+    const token = jwt.sign({
+        _id: usuario.usuario_id,
+        nome: usuario.nome,
+        email: usuario.emal
+    }, secretKey)
+
+    return token
 }
 
-const opts = {}
-opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken()
-opts.secretOrKey = config.secretKey
-
-exports.jwtPassport = passport.use(new JwtStrategy(opts,
-    (jwt_payload, done) => {
-        console.log('JWT payload: ', jwt_payload)
-        Usuario.findOne({_id: jwt_payload._id}, (err, user) => {
-            if (err) {
-                return done(err, false)
-            } else if (user) {
-                return done(null, user)
-            } else {
-                return done(null, false)
-            }
-        })
-    }))
-
-exports.verifyUser = passport.authenticate('jwt', {session: false})
+module.exports = genAuthToken

@@ -13,7 +13,7 @@ import cotacoesReducer from './slices/CotacoesSlice';
 export const store = configureStore({
     reducer: {
         busca: buscasSlice,
-        usuarios: AuthenticationSlice,
+        auth: AuthenticationSlice,
         ativos: ativosReducer,
         ativos: ativosSlice,
         cotacoes: cotacoesReducer,
