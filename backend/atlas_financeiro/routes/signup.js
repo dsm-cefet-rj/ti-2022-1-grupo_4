@@ -12,7 +12,8 @@ router.post('/', async (req, res) => {
   if (usuario) return res.status(400).send("Usuario já existe..")
 
   usuario = new Usuario({
-      "usuario": {
+    "usuario_id": req.body.usuario_id,
+    "usuario": {
         "nome": req.body.nome,
         "status": req.body.status,
         "email": req.body.email,

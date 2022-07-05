@@ -5,11 +5,8 @@ var fs = require('fs');
 const Carteiras = require('../models/carteiras');
 const { isObjectIdOrHexString } = require('mongoose');
 
-var app = express();
 
 router.use(bodyParser.json());
-
-
 
 /* GET carteiras */
 router.get('/:user_id', function(req, res, next) {
@@ -20,19 +17,19 @@ router.get('/:user_id', function(req, res, next) {
     }, (error) => next(error)).catch((error) => next(error));
 });
 
-app.get('/lastId', function(res, next) {
-  console.log('entrou na rota');
+router.get('/get/lastId', function(req, res, next) {
   last_carteira = 0;
-  user_ids = []
+  user_ids = [];
   id = 0;
   Carteiras.find({}).then((carteiras) => {
     carteiras.map((carteira) => {
-      user_ids.push(carteira.usuario_id)
-    })
+      user_ids.push(carteira.usuario_id);
+    });
+    user_ids = user_ids.filter(Number);
     id = Math.max(...user_ids) + 1;
     res.json(id);
-  }, (error) => next(error)).catch((error) => next(error))
-})
+  }, (error) => next(error)).catch((error) => next(error));
+});
 
 // Insere ativo na carteira
 router.post('/:user_id', function(req, res, next) {
@@ -45,8 +42,6 @@ router.post('/:user_id', function(req, res, next) {
 
   Carteiras.find(myQuery).then((carteira) => {
     qtde_encontrada = carteira.length;
-    // console.log('carteira');
-    // console.log(carteira[0].ativos);
     ativos_carteira = ativos_carteira.concat(carteira[0].ativos);
     
     ativos_carteira.push({ 
@@ -59,13 +54,10 @@ router.post('/:user_id', function(req, res, next) {
     })
   }).then(() => {
     
-    console.log(ativos_carteira);
     let newValues = { $set: { ativos: ativos_carteira } };
     const Options = { upsert: true };
   
     Carteiras.updateOne(myQuery, newValues, Options, function(err, res) {
-      console.log(err, res);
-      console.log('tudo ok.')
     });
   
 
@@ -98,8 +90,6 @@ router.patch('/:user_id/:ativo_id', function(req, res, next) {
 
 // Deleta o ativo da carteira
 router.delete('/:user_id/:ativo_id', function(req, res) {
-  console.log('req.params:');
-  console.log(req.params);
   user_id = req.params.user_id;
   ativo_id = req.params.ativo_id;
 
@@ -117,7 +107,6 @@ router.delete('/:user_id/:ativo_id', function(req, res) {
 
 // ADICIONAR ATIVO NA WATCHLIST
 router.post('/:user_id/watchlist', function(req, res) {
-  console.log(parseInt(req.body.watchlist_id))
 
   user_id = parseInt(req.params.user_id)
   let myQuery = { usuario_id: user_id}
@@ -125,7 +114,6 @@ router.post('/:user_id/watchlist', function(req, res) {
   info_ativo_watchlist = []
 
   Carteiras.find(myQuery).then((carteira) => {
-    console.log('encontrou o usuario')
     info_ativo_watchlist = info_ativo_watchlist.concat(carteira[0].watchlist)
 
     info_ativo_watchlist.push({
@@ -135,7 +123,6 @@ router.post('/:user_id/watchlist', function(req, res) {
       "dropdown": req.body.dropdown
     })
   }).then(() => {
-    console.log(info_ativo_watchlist)
     let newValues = {$set:{watchlist: info_ativo_watchlist}}
     const Options = {upsert: true}
 

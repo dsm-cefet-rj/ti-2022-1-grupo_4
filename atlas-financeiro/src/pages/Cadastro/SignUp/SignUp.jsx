@@ -13,8 +13,6 @@ function SignUp() {
     const usuarios = useSelector(selectAllUsuarios)
     const auth = useSelector((state) => state.auth)
    
-    console.log(auth)
-
     const [newUsuario, setNewUsuario] = useState({
         nome: '',
         status: '',
@@ -37,6 +35,7 @@ function SignUp() {
         if(Object.keys(formErrors).length === 0 && isSubmit) {  
             Promise.resolve(dispatch(signUpNewUsuario({
                 'dadosInput': {
+                    usuario_id: 0,
                     nome: newUsuario.nome,
                     status: newUsuario.status,
                     email: newUsuario.email,
