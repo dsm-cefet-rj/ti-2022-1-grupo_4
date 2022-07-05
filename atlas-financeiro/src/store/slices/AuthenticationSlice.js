@@ -8,6 +8,17 @@ const AuthenticationAdapter = createEntityAdapter({
 export const signUpNewUsuario = createAsyncThunk('auth/signUpNewUsuario',
 async({ dadosInput, rejectWithValue }) => {
     try {
+        // const user_id = await fetch(`http://localhost:3004/carteira/last_id`, {
+        //     method: 'GET',
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        // }).then((res) => res.json())
+
+        
+        const user_id = await (await fetch('http://localhost:3004/carteira/last_id')).json()
+        console.log(user_id);
+
         const token = await fetch(`http://localhost:3004/usuarios/sign-up`, {
             method: 'POST',
             body: JSON.stringify(dadosInput),

@@ -8,7 +8,6 @@ const router = express.Router()
 router.use(bodyParser.json())
 
 router.post('/', async (req, res) => {
-  console.log(req.body)
   let usuario = await Usuario.findOne({"usuario": {"email": req.body.email}})
   if (usuario) return res.status(400).send("Usuario já existe..")
 

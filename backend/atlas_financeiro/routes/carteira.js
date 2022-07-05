@@ -12,13 +12,25 @@ router.use(bodyParser.json());
 
 /* GET carteiras */
 router.get('/:user_id', function(req, res, next) {
-  console.log(req.user)
   Carteiras.find({usuario_id: req.params.user_id}).then((carteira) => {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');
       res.json(carteira);
     }, (error) => next(error)).catch((error) => next(error));
 });
+
+router.get('/last_id', function(res, next) {
+  console.log('entrou na rota');
+  last_carteira = 0;
+  user_ids = []
+  Carteiras.find({}).then((carteiras) => {
+    carteiras.map((carteira) => {
+      user_ids.push(carteira.usuario_id)
+    })
+    id = Math.max(...user_ids) + 1;
+    res.json(id);
+  }, (error) => next(error)).catch((error) => next(error))
+})
 
 // Insere ativo na carteira
 router.post('/:user_id', function(req, res, next) {
