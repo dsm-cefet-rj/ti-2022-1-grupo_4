@@ -5,6 +5,7 @@ var fs = require('fs');
 const Carteiras = require('../models/carteiras');
 const { isObjectIdOrHexString } = require('mongoose');
 
+var app = express();
 
 router.use(bodyParser.json());
 
@@ -19,10 +20,11 @@ router.get('/:user_id', function(req, res, next) {
     }, (error) => next(error)).catch((error) => next(error));
 });
 
-router.get('/last_id', function(res, next) {
+app.get('/lastId', function(res, next) {
   console.log('entrou na rota');
   last_carteira = 0;
   user_ids = []
+  id = 0;
   Carteiras.find({}).then((carteiras) => {
     carteiras.map((carteira) => {
       user_ids.push(carteira.usuario_id)

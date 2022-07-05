@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CarteirasSchema = new Schema({
+    _id: Object,
+    usuario_id: Number,
         usuario: {
             nome: String,
             status: String,

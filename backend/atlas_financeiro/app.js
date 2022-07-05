@@ -52,8 +52,8 @@ app.use('/', indexRouter)
 app.use('/ativos', ativosRouter)
 app.use('/usuarios/sign-up', signup)
 app.use('/usuarios/login', login)
+app.use('/carteira', carteirasRouter)
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/carteira', carteirasRouter)
 
 module.exports = app

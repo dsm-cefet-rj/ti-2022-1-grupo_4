@@ -16,7 +16,7 @@ async({ dadosInput, rejectWithValue }) => {
         // }).then((res) => res.json())
 
         
-        const user_id = await (await fetch('http://localhost:3004/carteira/last_id')).json()
+        const user_id = await (await fetch('http://localhost:3004/carteira/lastId')).json()
         console.log(user_id);
 
         const token = await fetch(`http://localhost:3004/usuarios/sign-up`, {
