@@ -1,40 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Footer from '../../../componentes/Footer/Footer';
-import { useDispatch } from 'react-redux';
-import { fetchLogin } from '../../../store/slices/LoginSlice';
-import {store} from '../../../store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUsuario } from '../../../store/slices/AuthenticationSlice';
 import styles from './Login.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 
 function Login() {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const auth = useSelector((state) => state.auth)
+
+    console.log(auth)
 
     const [loginState, setLoginState] = useState({
         email: '',
         senha: ''
     })
+
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit, setIsSubmit] = useState(false)
 
-    const handelChange = (e) => {
-        const {name, value} = e.target
-        setLoginState({...loginState, [name]: value})
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setFormErrors(validate(loginState))
         setIsSubmit(true)
-        dispatch(fetchLogin());
     }
     
     useEffect(() => {
         if(Object.keys(formErrors).length === 0 && isSubmit) {
-            // console.log(loginState)
+            Promise.resolve(dispatch(loginUsuario({
+                'dadosInput': {
+                    email: loginState.email,
+                    senha: loginState.senha
+                }
+            })))
+            alert(`O usuario foi logado com sucesso!`)
         }
-    }, [formErrors])
+    }, [formErrors, loginState])
+
+    useEffect(() => {
+        if (auth._id) {
+            navigate(`/carteira/${auth._id}`)
+        }
+    }, [auth._id, navigate])
 
     const validate = (values) => {
         const errors = {}
@@ -78,8 +90,9 @@ function Login() {
                                     type='text'
                                     className={styles.emailInput} 
                                     name='email'
-                                    value={loginState.email}
-                                    onChange={handelChange}
+                                    onChange={(e) => setLoginState({
+                                    ...loginState, email: e.target.value
+                                })}
                                 />
                                 <p className={styles.error}>{formErrors.email}</p>
                             </div>
@@ -92,8 +105,9 @@ function Login() {
                                     type='password' 
                                     name='senha'
                                     className={styles.passwordInput}
-                                    value={loginState.senha}
-                                    onChange={handelChange}
+                                    onChange={(e) => setLoginState({
+                                    ...loginState, senha: e.target.value
+                                })}
                                 />
                                 <p className={styles.error}>{formErrors.senha}</p>
                             </div>

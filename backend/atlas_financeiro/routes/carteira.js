@@ -5,12 +5,14 @@ var fs = require('fs');
 const Carteiras = require('../models/carteiras');
 const { isObjectIdOrHexString } = require('mongoose');
 
+
 router.use(bodyParser.json());
 
 
 
 /* GET carteiras */
 router.get('/:user_id', function(req, res, next) {
+  console.log(req.user)
   Carteiras.find({usuario_id: req.params.user_id}).then((carteira) => {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');

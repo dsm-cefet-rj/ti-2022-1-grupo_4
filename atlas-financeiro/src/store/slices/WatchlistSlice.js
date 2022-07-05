@@ -45,9 +45,9 @@ export const createWatchlist = createAsyncThunk('carteira/createWatchlist', asyn
 })
 
 function alterarElementoReducer(estado, elementos) {
-    if (elementos["dropdown"] == 0) {
+    if (elementos["dropdown"] === 0) {
         elementos["dropdown"] = 'Acima da Cotação'
-    } else if (elementos["dropdown"] == 1) {
+    } else if (elementos["dropdown"] === 1) {
         elementos["dropdown"] = 'Abaixo da Cotação'
     }
 

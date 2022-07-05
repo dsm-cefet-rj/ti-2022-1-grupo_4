@@ -1,61 +1,61 @@
-var express = require('express');
-const cors = require('cors');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
-var session = require('express-session');
-var FileStore = require('session-file-store')(session);
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const express = require('express')
+const cors = require('cors')
+const path = require('path')
+const cookieParser = require('cookie-parser')
+const logger = require('morgan')
+const bodyParser = require('body-parser')
+const session = require('express-session')
+const FileStore = require('session-file-store')(session)
+const passport = require('passport')
+const authenticate = require('./authenticate')
+const { MongoClient, ServerApiVersion } = require('mongodb')
+const config = require('./config')
 
-const url = "mongodb+srv://AtlasFinanceiro:1234AtlasFinanceiro1234@atlasfinanceiro.bhopkvx.mongodb.net/atlas_financeiro?retryWrites=true&w=majority";
+const url = config.mongoUrl
 
 const connectionParams = {
     useNewUrlParser: true,
     useUnifiedTopology: true 
 }
 
+const indexRouter = require('./routes/index')
+const signup = require('./routes/signup')
+const login = require('./routes/login')
+const ativosRouter = require('./routes/ativos')
+const carteirasRouter = require('./routes/carteira')
 
-var indexRouter = require('./routes/index');
-var usuariosRouter = require('./routes/usuarios');
-var ativosRouter = require('./routes/ativos');
-var carteirasRouter = require('./routes/carteira');
-
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 // const url = 'mongodb://localhost:27017/atlas_financeiro';
 // const url = 'mongodb+srv://AtlasFinanceiro:1234AtlasFinanceiro1234@atlasfinanceiro.bhopkvx.mongodb.net/?retryWrites=true&w=majority';
-const connect = mongoose.connect(url, connectionParams);
+const connect = mongoose.connect(url, connectionParams)
 
 connect.then( () => {
-    console.log('Conectado ao servidor do Mongo DB');
+    console.log('Conectado ao servidor do Mongo DB')
 }, (err) => { console.log(err)})
 
-var app = express();
+const app = express()
 
-app.use(cors());
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(cors())
+app.use(logger('dev'))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 //app.use(cookieParser());
 
-app.use(session({
-name: 'session-id',
-secret:'3456-6453-3456-9706',
-saveUninitialized:false,
-resave:false,
-store: new FileStore()
-}));
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 
 app.use((req, res, next) => {
-    next();
-});
+    next()
+})
 
-app.use('/', indexRouter);
-app.use('/usuarios', usuariosRouter);
-app.use('/ativos', ativosRouter);
-app.use('/carteira', carteirasRouter);
+app.use(passport.initialize())
 
-module.exports = app;
+// Middleware
+app.use('/', indexRouter)
+app.use('/ativos', ativosRouter)
+app.use('/usuarios/sign-up', signup)
+app.use('/usuarios/login', login)
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.use('/carteira', carteirasRouter)
+
+module.exports = app

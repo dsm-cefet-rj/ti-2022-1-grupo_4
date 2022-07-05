@@ -4,10 +4,10 @@ import Watchlist from '../../componentes/Watchlist/Watchlist';
 import Footer from '../../componentes/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import vale from '../../media/vale.png';
-import { alterarId, deleteAtivoCarteira, deleteWatchlist, updateAtivoCarteira, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
+import { alterarId, deleteAtivoCarteira, deleteWatchlist, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
 import { alterarWatchlistId, fetchWatchlist } from '../../store/slices/WatchlistSlice';
 import PopupCarteira from '../../componentes/Popup/PopupCarteira';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ImagemPerfil from '../../media/businessman.jpg';
 import ImagemThumb from '../../media/chicago.jpg';
 import PopupWatchlist from '../../componentes/Popup/PopupWatchlist';
@@ -161,7 +161,7 @@ function Carteira() {
                                                             <button type="button" className={`btn btn-danger ${styles.buttonCancel}`} onClick={() => removerAtivoCarteira(ativo.ativo_id)} >Remover da Carteira</button>
                                                         </div>
                                                         <div className='col' style={{'align-self': 'center'}}>
-                                                            <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={() => handleUpdateClick(ativo)} ><a className={styles.hRef}>Atualizar Ativo</a></button>
+                                                            <button type="button" className={`btn btn-success ${styles.buttonOutro}`} onClick={() => handleUpdateClick(ativo)} ><a href='#' className={styles.hRef}>Atualizar Ativo</a></button>
                                                         </div>
                                                     </div>
                                                 </div>

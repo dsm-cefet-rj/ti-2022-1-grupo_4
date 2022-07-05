@@ -1,10 +1,14 @@
 import React from 'react';
 import video from '../../media/earth.mp4';
 import SearchAssets from '../SearchAssets/SearchAssets';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './Header.module.scss';
+import { logoutUser } from '../../store/slices/AuthenticationSlice';
 
 function Header(props) {
-    
+    const dispatch = useDispatch()
+    const auth = useSelector((state) => state.auth)
+
     return (
         <section className={styles.darkSection}>
 
@@ -26,9 +30,17 @@ function Header(props) {
                             <li className={`nav-item ${styles.navItem}`}>
                                 <a className={`nav-link ${styles.navLink}`} href="#footer">Contatos</a>
                             </li>
-                            <li className={`nav-item ${styles.navItem}`}>
-                                <a className={`nav-link ${styles.navLink}`} href="/login">Log in</a>
-                            </li>
+                            {
+                                auth._id ? <li className={`nav-item ${styles.navItem}`}>
+                                                <a className={`nav-link ${styles.navLink}`} onClick={() => {
+                                                    dispatch((logoutUser(null)))
+                                                }}>Log out</a>
+                                            </li> 
+                                         :  <li className={`nav-item ${styles.navItem}`}>
+                                                <a className={`nav-link ${styles.navLink}`} href="/login">Log in</a>
+                                            </li> 
+                            }
+                            
                         </ul>
                     </div>
                 </nav>

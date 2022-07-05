@@ -3,36 +3,29 @@ import Button from 'react-bootstrap/Button';
 import Footer from '../../../componentes/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addSignUpServer, selectAllUsuarios } from '../../../store/slices/SignUpSlice';
-import { fetchSignUp } from '../../../store/slices/SignUpSlice';
-import {store} from '../../../store/store';
+import { signUpNewUsuario, selectAllUsuarios } from '../../../store/slices/AuthenticationSlice';
 import styles from './SignUp.module.scss';
 
-store.dispatch(fetchSignUp())
-
 function SignUp() {
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const usuarios = useSelector(selectAllUsuarios)
-    const status = useSelector(state => state.usuarios.status)  
+    const auth = useSelector((state) => state.auth)
    
-    
+    console.log(auth)
+
     const [newUsuario, setNewUsuario] = useState({
         nome: '',
-        estado: '',
-        pais: '',
         status: '',
-        sobre: '',
         email: '',
         senha: '',
+        estado: '',
+        pais: '',
+        descricao: '',
     })
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit, setIsSubmit] = useState(false)
-
-    // Validação do Formulário
-    function handleInputChange(e){
-        setNewUsuario({...newUsuario, [e.target.name]: e.target.value})
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -41,13 +34,28 @@ function SignUp() {
     }
     
     useEffect(() => {
-        if(Object.keys(formErrors).length === 0 && isSubmit) {    
-            dispatch(addSignUpServer(newUsuario))
-            alert("O usuario foi cadastrado com sucesso!")
-            navigate("/carteira/1")
+        if(Object.keys(formErrors).length === 0 && isSubmit) {  
+            Promise.resolve(dispatch(signUpNewUsuario({
+                'dadosInput': {
+                    nome: newUsuario.nome,
+                    status: newUsuario.status,
+                    email: newUsuario.email,
+                    senha: newUsuario.senha,
+                    estado: newUsuario.estado,
+                    pais: newUsuario.pais,
+                    descricao: newUsuario.descricao
+                }
+            })))
+            alert(`O usuario foi cadastrado com sucesso!`)
         }
-    }, [formErrors])
-
+    }, [formErrors, newUsuario])
+    
+    useEffect(() => {
+        if (auth._id) {
+            navigate(`/carteira/${auth._id}`)
+        }
+    }, [auth._id, navigate])
+    
     const validate = (values) => {
         const errors = {}
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
@@ -74,8 +82,8 @@ function SignUp() {
             errors.email = "Este não é um formato valido para email!"
         }
 
-        if (!values.sobre) {
-            errors.sobre = "Descrição é requerida!"
+        if (!values.descricao) {
+            errors.descricao = "Descrição é requerida!"
         }
 
         if (!values.senha) {
@@ -108,8 +116,9 @@ function SignUp() {
                                 name='nome'
                                 className={styles.input} 
                                 type='text' 
-                                value={newUsuario.nome}
-                                onChange={handleInputChange}     
+                                onChange={(e) => setNewUsuario({ 
+                                    ...newUsuario, nome: e.target.value 
+                                })} 
                                 />
                                 <p>{formErrors.nome}</p>
                             </div>
@@ -127,8 +136,9 @@ function SignUp() {
                                 name='status'
                                 className={styles.input}
                                 type='text' 
-                                value={newUsuario.status}
-                                onChange={handleInputChange}      
+                                onChange={(e) => setNewUsuario({ 
+                                    ...newUsuario, status: e.target.value 
+                                })}     
                                 />
                                 <p>{formErrors.status}</p>
                             </div>
@@ -146,8 +156,9 @@ function SignUp() {
                                 name='estado'
                                 className={styles.input}
                                 type='text' 
-                                value={newUsuario.estado}
-                                onChange={handleInputChange}     
+                                onChange={(e) => setNewUsuario({ 
+                                    ...newUsuario, estado: e.target.value 
+                                })}   
                                 />
                                 <p>{formErrors.estado}</p>
                             </div>
@@ -165,8 +176,9 @@ function SignUp() {
                                 name='pais'
                                 className={styles.input}
                                 type='text' 
-                                value={newUsuario.pais}
-                                onChange={handleInputChange}     
+                                onChange={(e) => setNewUsuario({ 
+                                    ...newUsuario, pais: e.target.value 
+                                })}      
                                 />
                                 <p>{formErrors.pais}</p>
                             </div>
@@ -181,12 +193,13 @@ function SignUp() {
                             <div className='cadastro_sobre_input_container'>
                                 <textarea 
                                 id='sobre_cadastro_usuario'
-                                name='sobre'
+                                name='descricao'
                                 className={styles.input} 
                                 type='text' 
                                 placeholder='Breve descrição sobre você'
-                                value={newUsuario.sobre}
-                                onChange={handleInputChange}     
+                                onChange={(e) => setNewUsuario({ 
+                                    ...newUsuario, descricao: e.target.value 
+                                })}     
                                 />
                                 <p>{formErrors.sobre}</p>
                             </div>
@@ -204,8 +217,9 @@ function SignUp() {
                                 className={styles.input} 
                                 name='email'
                                 type='email' 
-                                value={newUsuario.email}
-                                onChange={handleInputChange}    
+                                onChange={(e) => setNewUsuario({ 
+                                    ...newUsuario, email: e.target.value 
+                                })}   
                                 />
                                 <p>{formErrors.email}</p>
                             </div>
@@ -222,7 +236,9 @@ function SignUp() {
                                 name='senha'
                                 type='password'     
                                 className={styles.input}
-                                onChange={handleInputChange}  
+                                onChange={(e) => setNewUsuario({ 
+                                    ...newUsuario, senha: e.target.value 
+                                })}   
                                 />
                                 <p>{formErrors.senha}</p>
                             </div>
@@ -236,7 +252,6 @@ function SignUp() {
                                 variant="outline-dark" 
                                 className={styles.signupButton}
                                 type='submit'
-                               
                             >Cadastrar</Button>
                         </div>
                     </div>
