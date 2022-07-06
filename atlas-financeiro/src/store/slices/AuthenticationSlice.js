@@ -28,8 +28,8 @@ async({ dadosInput, rejectWithValue }) => {
             },
         }).then((res) => res.json())
 
-        localStorage.setItem("token", token.data)
-        return token.data
+        localStorage.setItem("token", token)
+        return token
     } catch (error) {
         console.log(error.response.data);
         return rejectWithValue(error.response.data);
@@ -50,8 +50,9 @@ async({ dadosInput, rejectWithValue }) => {
             },
         }).then((res) => res.json())
 
-        localStorage.setItem("token", token.data)
-        return token.data
+        localStorage.setItem("token", token)
+       
+        return token
     } catch (error) {
         console.log(error.response.data)
         return rejectWithValue(error.response.data)
@@ -81,9 +82,9 @@ export const AuthenticationSlice = createSlice ({
                 return {
                     ...state,
                     token,
-                    nome: usuario.usuario.nome,
-                    email: usuario.usuario.email,
-                    _id: usuario.usuario_id,
+                    nome: usuario.nome,
+                    email: usuario.email,
+                    _id: usuario._id,
                     usuarioLoaded: true
                 } 
             } else return { ...state, userLoaded: true }
@@ -115,9 +116,9 @@ export const AuthenticationSlice = createSlice ({
                 return {
                     ...state,
                     token: action.payload,
-                    nome: usuario.usuario.nome,
-                    email: usuario.usuario.email,
-                    _id: usuario.usuario_id,
+                    nome: usuario.nome,
+                    email: usuario.email,
+                    _id: usuario._id,
                     signUpStatus: "success"
                 }
             } else return state
@@ -139,9 +140,9 @@ export const AuthenticationSlice = createSlice ({
                 return {
                     ...state,
                     token: action.payload,
-                    nome: usuario.usuario.nome,
-                    email: usuario.usuario.email,
-                    _id: usuario.usuario_id,
+                    nome: usuario.nome,
+                    email: usuario.email,
+                    _id: usuario._id,
                     loginStatus: "success"
                 }
             } else return state

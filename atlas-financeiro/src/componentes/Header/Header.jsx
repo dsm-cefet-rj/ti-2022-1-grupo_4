@@ -4,6 +4,7 @@ import SearchAssets from '../SearchAssets/SearchAssets';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './Header.module.scss';
 import { logoutUser } from '../../store/slices/AuthenticationSlice';
+import { toast } from 'react-toastify'
 
 function Header(props) {
     const dispatch = useDispatch()
@@ -31,14 +32,20 @@ function Header(props) {
                                 <a className={`nav-link ${styles.navLink}`} href="#footer">Contatos</a>
                             </li>
                             {
-                                auth._id ? <li className={`nav-item ${styles.navItem}`}>
+                                auth._id ? (<li className={`nav-item ${styles.navItem}`}>
                                                 <a className={`nav-link ${styles.navLink}`} onClick={() => {
                                                     dispatch((logoutUser(null)))
+                                                    toast.warning("Logged out!", { position: "bottom-left"})
                                                 }}>Log out</a>
-                                            </li> 
-                                         :  <li className={`nav-item ${styles.navItem}`}>
-                                                <a className={`nav-link ${styles.navLink}`} href="/login">Log in</a>
-                                            </li> 
+                                            </li>) 
+                                         :  (<>
+                                                <li className={`nav-item ${styles.navItem}`}>
+                                                    <a className={`nav-link ${styles.navLink}`} href="/login">Log in</a>
+                                                </li>
+                                                <li className={`nav-item ${styles.navItem}`}>
+                                                    <a className={`nav-link ${styles.navLink}`} href="/sign-up">Sign Up</a>
+                                                </li>
+                                            </>) 
                             }
                             
                         </ul>

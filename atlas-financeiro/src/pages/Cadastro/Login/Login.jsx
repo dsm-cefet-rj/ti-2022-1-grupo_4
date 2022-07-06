@@ -15,6 +15,12 @@ function Login() {
 
     console.log(auth)
 
+    useEffect(() => {
+        if (auth._id) {
+            navigate(`/`)
+        }
+    }, [auth._id, navigate])
+
     const [loginState, setLoginState] = useState({
         email: '',
         senha: ''
@@ -42,11 +48,6 @@ function Login() {
         }
     }, [formErrors, loginState])
 
-    useEffect(() => {
-        if (auth._id) {
-            navigate(`/carteira/${auth._id}`)
-        }
-    }, [auth._id, navigate])
 
     const validate = (values) => {
         const errors = {}
@@ -115,7 +116,12 @@ function Login() {
                         
                         <div className={styles.buttonContainer}> 
                             <div className='login_button'>
-                                <Button variant="outline-dark" className={styles.loginButton} id='submit' type='submit'>Log in</Button>
+                                <Button 
+                                    variant="outline-dark" 
+                                    className={styles.loginButton} 
+                                    id='submit' 
+                                    type='submit'>{auth.loginStatus === 'pending' ? "Logged" : "Log in"}</Button>
+                                {auth.loginStatus === 'rejected' ? (<p>{auth.loginError}</p>) : null}
                             </div>
                             <div className='login_button_forgot_password_container'>
                                 <a className={styles.esquecaSpan} href='#'>Esqueceu sua senha?</a>

@@ -7,6 +7,7 @@ import Popup from '../Popup/Popup';
 import Footer from '../Footer/Footer';
 import { alterarBusca, buscar, fetchAtivos } from '../../store/slices/AtivosSlice';
 import { createAtivoCarteira } from '../../store/slices/CarteiraSlice';
+import { logoutUser } from '../../store/slices/AuthenticationSlice';
 import { Link } from 'react-router-dom';
 
 
@@ -15,6 +16,7 @@ function ListarAtivos() {
     const [selectedData, setSelectedData] = useState();
 
     const ativoSlice = useSelector(state => state.ativos)
+    const auth = useSelector(state => state.auth)
     const dispatch = useDispatch()
     
     async function alteraString() {
@@ -56,9 +58,21 @@ function ListarAtivos() {
                                 <li className={`nav-item ${styles.navItem}`}>
                                     <a className={`nav-link ${styles.navLink}`} href="#footer">Contatos</a>
                                 </li>
-                                <li className={`nav-item ${styles.navItem}`}>
-                                    <a className={`nav-link ${styles.navLink}`} href="/login">Log in</a>
-                                </li>
+                                {
+                                    auth._id ? (<li className={`nav-item ${styles.navItem}`}>
+                                                <a className={`nav-link ${styles.navLink}`} onClick={() => {
+                                                    dispatch((logoutUser(null)))
+                                                }}>Log out</a>
+                                            </li>) 
+                                         :  (<>
+                                                <li className={`nav-item ${styles.navItem}`}>
+                                                    <a className={`nav-link ${styles.navLink}`} href="/login">Log in</a>
+                                                </li>
+                                                <li className={`nav-item ${styles.navItem}`}>
+                                                    <a className={`nav-link ${styles.navLink}`} href="/sign-up">Sign Up</a>
+                                                </li>
+                                            </>) 
+                                }
                             </ul>
                         </div>
                     </nav>
