@@ -21,7 +21,13 @@ function Header(props) {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul className="navbar-nav ms-auto">
-                        
+
+                            {
+                                auth._id ? (<li className={`nav-item ${styles.navItem}`}>
+                                                <a className={`nav-link ${styles.navLink}`} href="/carteira/1">Perfil</a>
+                                            </li>) 
+                                         :  null
+                            }
                             <li className={`nav-item ${styles.navItem}`}>
                                 <a className={`nav-link ${styles.navLink}`} href="#recomendacoes">Populares</a>
                             </li>

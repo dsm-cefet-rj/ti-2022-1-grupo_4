@@ -52,6 +52,13 @@ function ListarAtivos() {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul className="navbar-nav ms-auto">
+
+                                {
+                                    auth._id ? (<li className={`nav-item ${styles.navItem}`}>
+                                                    <a className={`nav-link ${styles.navLink}`} href="/carteira/1">Perfil</a>
+                                                </li>) 
+                                             :  null
+                                }
                                 <li className={`nav-item ${styles.navItem}`}>
                                     <a className={`nav-link ${styles.navLink}`} href="/ativos">Lista de Ativos</a>
                                 </li>
@@ -137,16 +144,19 @@ function ListarAtivos() {
                                                 <div className='col'>
                                                 <Link to={`/detalhamento_indicadores/${ativo.id}`} ><button type="button" className={`btn btn-success ${styles.buttonOutro}`} >Indicadores</button></Link>
                                                 </div>
-                                                <div className='col'>
-                                                <span><button 
-                                                        type="button" 
-                                                        className={`btn btn-success ${styles.buttonOutro}`} 
-                                                        onClick={() => handleUpdateClick(ativo)}
-                                                        >Adicionar à Carteira</button></span>
-                                                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup} dados={selectedData} />
-                                                            
-                                                        
-                                                </div>
+                                                {auth._id ? (
+                                                    <>
+                                                    <div className='col'>
+                                                        <span><button 
+                                                                type="button" 
+                                                                className={`btn btn-success ${styles.buttonOutro}`} 
+                                                                onClick={() => handleUpdateClick(ativo)}
+                                                                >Adicionar à Carteira</button></span>
+                                                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup} dados={selectedData} /> 
+                                                        </div>
+                                                    </>
+                                                ) : null}
+                                                
                                             </div>
                                         </div>
                                     </div>

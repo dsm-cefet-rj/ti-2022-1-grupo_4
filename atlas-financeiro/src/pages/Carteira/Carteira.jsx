@@ -7,7 +7,7 @@ import vale from '../../media/vale.png';
 import { alterarId, deleteAtivoCarteira, deleteWatchlist, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
 import { alterarWatchlistId, fetchWatchlist } from '../../store/slices/WatchlistSlice';
 import PopupCarteira from '../../componentes/Popup/PopupCarteira';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ImagemPerfil from '../../media/businessman.jpg';
 import ImagemThumb from '../../media/chicago.jpg';
 import PopupWatchlist from '../../componentes/Popup/PopupWatchlist';
@@ -20,6 +20,14 @@ function Carteira() {
     const [buttonPopup, setButtonPopup] = useState(false);
     const [buttonPopupWatchlist, setButtonPopupWatchlist] = useState(false)
     const [selectedData, setSelectedData] = useState();
+
+    const navigate = useNavigate()
+    const auth = useSelector(state => state.auth)
+    useEffect(() => {
+        if (!auth._id) {
+            navigate(`/`)
+        }
+    }, [auth._id, navigate])
 
     function handleUpdateClick(selectedRec) {
         setSelectedData(selectedRec);
