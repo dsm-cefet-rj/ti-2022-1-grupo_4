@@ -80,13 +80,13 @@ export const AuthenticationSlice = createSlice ({
                 const usuario = jwtDecode(token)
                 return {
                     ...state,
-                    token: action.payload,
-                    nome: usuario.nome,
-                    email: usuario.email,
+                    token,
+                    nome: usuario.usuario.nome,
+                    email: usuario.usuario.email,
                     _id: usuario.usuario_id,
                     usuarioLoaded: true
-                }
-            }
+                } 
+            } else return { ...state, userLoaded: true }
         },
         logoutUser(state, action) {
             localStorage.removeItem("token")
@@ -115,8 +115,8 @@ export const AuthenticationSlice = createSlice ({
                 return {
                     ...state,
                     token: action.payload,
-                    nome: usuario.nome,
-                    email: usuario.email,
+                    nome: usuario.usuario.nome,
+                    email: usuario.usuario.email,
                     _id: usuario.usuario_id,
                     signUpStatus: "success"
                 }
@@ -139,8 +139,8 @@ export const AuthenticationSlice = createSlice ({
                 return {
                     ...state,
                     token: action.payload,
-                    nome: usuario.nome,
-                    email: usuario.email,
+                    nome: usuario.usuario.nome,
+                    email: usuario.usuario.email,
                     _id: usuario.usuario_id,
                     loginStatus: "success"
                 }

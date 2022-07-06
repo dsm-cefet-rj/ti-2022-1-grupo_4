@@ -34,8 +34,8 @@ router.post('/', async (req, res) => {
   usuario = await usuario.save()
 
   const token = genAuthToken(usuario)
-
-  res.send(token)
+  console.log(token)
+  res.json(token)
 })
 
 module.exports = router
