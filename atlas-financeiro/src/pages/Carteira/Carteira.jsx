@@ -135,7 +135,7 @@ function Carteira() {
                             </div>
                     
                             <div className={styles.carteiraContainer}>
-                                {carteira.carteira.map(ativo => {
+                                {carteira.carteira.slice(1, 7).map(ativo => {
                                     return(
                                     <div className={styles.ativosCarteira}>
                                         <div className={styles.ativoCarteira}>
@@ -189,7 +189,7 @@ function Carteira() {
                             <Watchlist user_id={parseInt(user_id)} carteira={carteira}/>
                             <div className={styles.ativosWatchlist}>
                             <div className={styles.watchlistContainer}>
-                                {carteira.watchlist.map(watchlist => {
+                                {carteira.watchlist.slice(1, 7).map(watchlist => {
                                     return(
                                         <div className={styles.userWatchlist}>
                                             <div>
