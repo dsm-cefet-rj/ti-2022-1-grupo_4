@@ -1,6 +1,9 @@
 import React from 'react';
 import ImagemPerfil from '../../media/businessman.jpg';
 import ImagemThumb from '../../media/chicago.jpg';
+import { useSelector, useDispatch } from 'react-redux'
+import { logoutUser } from '../../store/slices/AuthenticationSlice'
+import { toast } from 'react-toastify'
 import styles from './HeaderPerfil.module.scss';
 
 const perfil = {
@@ -14,6 +17,9 @@ const perfil = {
 }
 
 function HeaderPerfil() {
+    const dispatch = useDispatch()
+    const auth = useSelector(state => state.auth)
+
     return (
         <section className={styles.darkSection}>
 
@@ -42,9 +48,22 @@ function HeaderPerfil() {
                             <li className={`nav-item ${styles.navItem}`}>
                                 <a className={`nav-link ${styles.navLink}`} href="#footer">Contatos</a>
                             </li>
-                            <li className={`nav-item ${styles.navItem}`}>
-                                <a className={`nav-link ${styles.navLink}`} href="/login">Log out</a>
-                            </li>
+                            {
+                                auth._id ? (<li className={`nav-item ${styles.navItem}`}>
+                                                <a className={`nav-link ${styles.navLink}`} onClick={() => {
+                                                    dispatch((logoutUser(null)))
+                                                    toast.warning("Logged out!", { position: "bottom-left"})
+                                                }}>Log out</a>
+                                            </li>) 
+                                         :  (<>
+                                                <li className={`nav-item ${styles.navItem}`}>
+                                                    <a className={`nav-link ${styles.navLink}`} href="/login">Log in</a>
+                                                </li>
+                                                <li className={`nav-item ${styles.navItem}`}>
+                                                    <a className={`nav-link ${styles.navLink}`} href="/sign-up">Sign Up</a>
+                                                </li>
+                                            </>) 
+                            }
                         </ul>
 
                     </div>

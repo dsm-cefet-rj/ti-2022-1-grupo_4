@@ -24,8 +24,8 @@ router.post('/', async (req, res) => {
         },
         "descricao": req.body.descricao
       },
-      "ativos":[],
-      "watchlist":[]
+      "ativos":[{}],
+      "watchlist":[{}]
   })
   
   const salt = await bcrypt.genSalt(10)

@@ -15,7 +15,6 @@ import PopupWatchlist from '../../componentes/Popup/PopupWatchlist';
 
 function Carteira() {
     
-    let { user_id } = useParams();
     
     const [buttonPopup, setButtonPopup] = useState(false);
     const [buttonPopupWatchlist, setButtonPopupWatchlist] = useState(false)
@@ -28,6 +27,8 @@ function Carteira() {
             navigate(`/`)
         }
     }, [auth._id, navigate])
+
+    let {user_id} = useParams()
 
     function handleUpdateClick(selectedRec) {
         setSelectedData(selectedRec);
@@ -178,8 +179,8 @@ function Carteira() {
                                     </div>
                                     );
                                 })}
-                                <PopupCarteira trigger={buttonPopup} setTrigger={setButtonPopup} dados={selectedData} user_id={parseInt(user_id)} />
-                                <PopupWatchlist trigger={buttonPopupWatchlist} setTrigger={setButtonPopupWatchlist} dados={selectedData} user_id={parseInt(user_id)} />
+                                <PopupCarteira trigger={buttonPopup} setTrigger={setButtonPopup} dados={selectedData} user_id={user_id} />
+                                <PopupWatchlist trigger={buttonPopupWatchlist} setTrigger={setButtonPopupWatchlist} dados={selectedData} user_id={user_id} />
                             </div>
                         </div>
 
