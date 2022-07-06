@@ -8,12 +8,14 @@ import { fetchAtivos } from '../../store/slices/AtivosSlice';
 
 function Popup(props) {
 
-    const user_id_mockado = 1;
+    
 
     const quantidadeAtivo = React.createRef();
     const precoMedioAtivo = React.createRef();
 
     const carteira = useSelector(state => state.carteira);
+    const auth = useSelector(state => state.auth)
+    const user_id_mockado = auth._id;
     const dispatch = useDispatch();
     
     async function inserirNaCarteira() {

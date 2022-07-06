@@ -24,7 +24,7 @@ function Header(props) {
 
                             {
                                 auth._id ? (<li className={`nav-item ${styles.navItem}`}>
-                                                <a className={`nav-link ${styles.navLink}`} href="/carteira/1">Perfil</a>
+                                                <a className={`nav-link ${styles.navLink}`} href={`/carteira/${auth._id}`}>Perfil</a>
                                             </li>) 
                                          :  null
                             }
