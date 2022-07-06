@@ -11,8 +11,16 @@ function SignUp() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const usuarios = useSelector(selectAllUsuarios)
-    const auth = useSelector((state) => state.auth)
-   
+    const auth = useSelector(state => state.auth)
+    
+    console.log(auth)
+
+    useEffect(() => {
+        if (auth._id) {
+            navigate(`/`)
+        }
+    }, [auth._id, navigate])
+
     const [newUsuario, setNewUsuario] = useState({
         nome: '',
         status: '',
@@ -49,11 +57,6 @@ function SignUp() {
         }
     }, [formErrors, newUsuario])
     
-    useEffect(() => {
-        if (auth._id) {
-            navigate(`/carteira/${auth._id}`)
-        }
-    }, [auth._id, navigate])
     
     const validate = (values) => {
         const errors = {}
@@ -251,7 +254,9 @@ function SignUp() {
                                 variant="outline-dark" 
                                 className={styles.signupButton}
                                 type='submit'
-                            >Cadastrar</Button>
+                            >{auth.signUpStatus === 'pending' ? "Cadastrando" : "Cadastrar"}</Button>
+                            
+                            {auth.signUpStatus === 'rejected' ? (<p>{auth.signUpError}</p>) : null}
                         </div>
                     </div>
                         
