@@ -1,13 +1,18 @@
-import React, {useState} from 'react';
-// import ativos from './Ativos';
-import Accordion from 'react-bootstrap/Accordion';
-import Dropdown from '../Dropdown/Dropdown';
-import styles from './AccordionSchema.module.scss';
-import Popup from '../Popup/Popup';
-import { useSelector } from 'react-redux';
+import React, {useState} from 'react'
+import Accordion from 'react-bootstrap/Accordion'
+import Dropdown from '../Dropdown/Dropdown'
+import styles from './AccordionSchema.module.scss'
+import Popup from '../Popup/Popup'
+import { useSelector } from 'react-redux'
+
+/**
+ * @module componentes/AccordionSchema
+ */
+
 function AccordionSchema (props) {
     const [buttonPopup, setButtonPopup] = useState(false)
     const popup = useSelector(state => state.popup.ativado)
+
     return (
         <>
             <Accordion.Item eventKey={props.ticker}>
@@ -57,10 +62,10 @@ function AccordionSchema (props) {
             </Accordion.Item>
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup} empresa={props.empresa} ticker={props.ticker} />
         </>
-    );
+    )
 }
 
-export default AccordionSchema;
+export default AccordionSchema
 
 
 

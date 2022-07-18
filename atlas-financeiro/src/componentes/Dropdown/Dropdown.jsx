@@ -1,5 +1,9 @@
-import React from 'react';
-import styles from './Dropdown.module.scss';
+import React from 'react'
+import styles from './Dropdown.module.scss'
+
+/**
+ * @module componentes/Dropdown
+ */
 
 function Dropdown(props) {
 
@@ -13,7 +17,7 @@ function Dropdown(props) {
             </ul>
 
         </div>
-    );
+    )
 }
 
-export default Dropdown;
+export default Dropdown

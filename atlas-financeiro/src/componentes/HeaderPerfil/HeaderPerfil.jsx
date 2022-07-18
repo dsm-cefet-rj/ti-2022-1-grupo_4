@@ -1,10 +1,14 @@
-import React from 'react';
-import ImagemPerfil from '../../media/businessman.jpg';
-import ImagemThumb from '../../media/chicago.jpg';
+import React from 'react'
+import ImagemPerfil from '../../media/businessman.jpg'
+import ImagemThumb from '../../media/chicago.jpg'
 import { useSelector, useDispatch } from 'react-redux'
 import { logoutUser } from '../../store/slices/AuthenticationSlice'
 import { toast } from 'react-toastify'
-import styles from './HeaderPerfil.module.scss';
+import styles from './HeaderPerfil.module.scss'
+
+/**
+ * @module componentes/HeaderPerfil
+ */
 
 const perfil = {
     nome: 'John Galt',

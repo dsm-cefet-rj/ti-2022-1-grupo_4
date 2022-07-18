@@ -1,5 +1,9 @@
-import { createAsyncThunk, createEntityAdapter, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createEntityAdapter, createSlice } from "@reduxjs/toolkit"
 import jwtDecode from 'jwt-decode'
+
+/**
+ * @module store/slice/AuthenticationSlice
+ */
 
 const AuthenticationAdapter = createEntityAdapter({
     selectId: (usuarios) => usuarios.usuario_id
@@ -13,9 +17,9 @@ async({ dadosInput, rejectWithValue }) => {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
-        }).then((res) => res.json());
+        }).then((res) => res.json())
 
-        dadosInput.usuario_id = usuario_id;
+        dadosInput.usuario_id = usuario_id
 
         const token = await fetch(`http://localhost:3004/usuarios/sign-up`, {
             method: 'POST',
@@ -31,8 +35,8 @@ async({ dadosInput, rejectWithValue }) => {
         localStorage.setItem("token", token)
         return token
     } catch (error) {
-        console.log(error.response.data);
-        return rejectWithValue(error.response.data);
+        console.log(error.response.data)
+        return rejectWithValue(error.response.data)
     }
 })
 

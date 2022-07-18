@@ -1,15 +1,18 @@
-import { React, useEffect } from 'react';
-import ativos from '../reutilizaveis/Ativos';
-import styles from './Cotacoes.module.scss';
-import { useParams } from 'react-router-dom';
-import { alterarId, fetchCotacoes } from '../../store/slices/CotacoesSlice';
-import { useSelector, useDispatch } from 'react-redux';
-import { Line } from 'react-chartjs-2';
-import {CategoryScale, registerables} from 'chart.js';
-import Chart from 'chart.js/auto';
+import { React, useEffect } from 'react'
+import ativos from '../reutilizaveis/Ativos'
+import styles from './Cotacoes.module.scss'
+import { useParams } from 'react-router-dom'
+import { alterarId, fetchCotacoes } from '../../store/slices/CotacoesSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { Line } from 'react-chartjs-2'
+import {CategoryScale, registerables} from 'chart.js'
+import Chart from 'chart.js/auto'
 
+/**
+ * @module componentes/Cotações
+ */
 
-const cotacoes = ativos[0].cotacoes;
+const cotacoes = ativos[0].cotacoes
 
 const LinhaTabela = (props) => {
     return(
@@ -17,27 +20,26 @@ const LinhaTabela = (props) => {
             <td> {props.cotacao.data} </td>
             <td> {'R$ ' + props.cotacao.valor} </td>
           </tr>
-    );
+    )
   }
   
   function TabelaCotacoes() {
-    let { id } = useParams();
+    let { id } = useParams()
 
-    const cotacoes = useSelector(state => state.cotacoes);
-    const dispatch = useDispatch();
+    const cotacoes = useSelector(state => state.cotacoes)
+    const dispatch = useDispatch()
 
     async function pegaCotacoes() {
-        await Promise.resolve(dispatch(alterarId(id)));
-        await Promise.resolve(dispatch(fetchCotacoes()));
+        await Promise.resolve(dispatch(alterarId(id)))
+        await Promise.resolve(dispatch(fetchCotacoes()))
     }
 
     useEffect(() => {
         if(cotacoes.status === "not_loaded") {
-            pegaCotacoes();
+            pegaCotacoes()
         }
     }, [cotacoes.status, dispatch])
 
-    // debugger;
 
     const data = {
         labels: [],
@@ -88,9 +90,9 @@ const LinhaTabela = (props) => {
                 </div>
 
             </div>
-        );
+        )
                     }
   }
   
-  export default TabelaCotacoes;
-  export  {cotacoes};
+  export default TabelaCotacoes
+  export  {cotacoes}

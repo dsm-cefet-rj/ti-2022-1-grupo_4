@@ -1,10 +1,14 @@
-import React from 'react';
-import video from '../../media/earth.mp4';
-import SearchAssets from '../SearchAssets/SearchAssets';
-import { useSelector, useDispatch } from 'react-redux';
-import styles from './Header.module.scss';
-import { logoutUser } from '../../store/slices/AuthenticationSlice';
+import React from 'react'
+import video from '../../media/earth.mp4'
+import SearchAssets from '../SearchAssets/SearchAssets'
+import { useSelector, useDispatch } from 'react-redux'
+import styles from './Header.module.scss'
+import { logoutUser } from '../../store/slices/AuthenticationSlice'
 import { toast } from 'react-toastify'
+
+/**
+ * @module componentes/Header
+ */
 
 function Header(props) {
     const dispatch = useDispatch()
@@ -76,7 +80,7 @@ function Header(props) {
 
             </div>       
         </section>
-    );
+    )
 }
 
-export default Header;
+export default Header

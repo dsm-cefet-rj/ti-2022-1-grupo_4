@@ -1,31 +1,32 @@
-import { React, useEffect } from 'react';
-import ativos from '../reutilizaveis/Ativos';
-import Dropdown from '../Dropdown/Dropdown';
-import styles from './Indicadores.module.scss';
-import { useParams } from 'react-router-dom';
-import { alterarId, fetchCotacoes } from '../../store/slices/CotacoesSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import { React, useEffect } from 'react'
+import ativos from '../reutilizaveis/Ativos'
+import Dropdown from '../Dropdown/Dropdown'
+import styles from './Indicadores.module.scss'
+import { useParams } from 'react-router-dom'
+import { alterarId, fetchCotacoes } from '../../store/slices/CotacoesSlice'
+import { useSelector, useDispatch } from 'react-redux'
 
+/**
+ * @module componentes/Indicadores
+ */
 
 const TabelaIndicadores = () => {
-    let { id } = useParams();
-    console.log(id);
+    let { id } = useParams()
+    console.log(id)
 
-    const ativos = useSelector(state => state.cotacoes);
-    const dispatch = useDispatch();
+    const ativos = useSelector(state => state.cotacoes)
+    const dispatch = useDispatch()
 
     async function pegaCotacoes() {
-        await Promise.resolve(dispatch(alterarId(id)));
-        await Promise.resolve(dispatch(fetchCotacoes()));
+        await Promise.resolve(dispatch(alterarId(id)))
+        await Promise.resolve(dispatch(fetchCotacoes()))
     }
 
     useEffect(() => {
         if(ativos.status === "not_loaded") {
-            pegaCotacoes();
+            pegaCotacoes()
         }
     }, [ativos.status, dispatch])
-
-    debugger;
 
     if(ativos.cotacoes.length !== 0){
         return(
@@ -287,8 +288,8 @@ const TabelaIndicadores = () => {
         </div>
         </section>
             </>
-        );
+        )
     }
 }
 
-export default TabelaIndicadores;
+export default TabelaIndicadores

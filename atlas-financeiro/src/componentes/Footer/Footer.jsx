@@ -1,8 +1,12 @@
-import React from 'react';
-import styles from './Footer.module.scss';
+import React from 'react'
+import styles from './Footer.module.scss'
+
+/**
+ * @module componentes/Footer
+ */
 
 function Footer() {
-    const ano = new Date().getFullYear();
+    const ano = new Date().getFullYear()
 
     return (
         <footer className={styles.footer} id="footer">
@@ -39,7 +43,7 @@ function Footer() {
             <p className={styles.copyright}>Copyright © {ano} Atlas Financeiro</p>
             <p className={styles.footerTerms}>Termos&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Privacidade&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Preferências</p>
         </footer>
-    );
+    )
 }
 
-export default Footer;
+export default Footer

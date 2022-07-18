@@ -1,5 +1,9 @@
-import React from 'react';
-import AccordionSchema from './AccordionSchema';
+import React from 'react'
+import AccordionSchema from './AccordionSchema'
+
+/**
+ * @module componentes/CreateAtivoAccordion
+ */
 
 function CreateAtivoAccordion(props) {
     return (
@@ -15,7 +19,7 @@ function CreateAtivoAccordion(props) {
       vol_medio_2m={props.ativo.informacoes_gerais.vol_medio_2m}
       cotacoes={props.ativo.cotacoes}
     />
-    );
+    )
 }
 
-export default CreateAtivoAccordion;
+export default CreateAtivoAccordion

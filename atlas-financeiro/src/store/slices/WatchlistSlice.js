@@ -1,4 +1,8 @@
-import { createAsyncThunk, createSlice, createEntityAdapter } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, createEntityAdapter } from "@reduxjs/toolkit"
+
+/**
+ * @module store/slice/WatchlistSlice
+ */
 
 const watchlistAdapter = createEntityAdapter({
     selectId: (carteira) => carteira.usuario_id
@@ -51,11 +55,11 @@ function alterarElementoReducer(estado, elementos) {
         elementos["dropdown"] = 'Abaixo da Cotação'
     }
 
-    return elementos;
+    return elementos
 }
 
 function adicionarWatchlistReducer(watchlist, elemento) {
-    return elemento;
+    return elemento
 }
 
 export const buscaWatchlistSlice = createSlice({
@@ -90,6 +94,6 @@ export const buscaWatchlistSlice = createSlice({
     },
 })
 
-export const { alterarWatchlistId, alterarElemento, adicionarWatchlist } = buscaWatchlistSlice.actions;
+export const { alterarWatchlistId, alterarElemento, adicionarWatchlist } = buscaWatchlistSlice.actions
 
-export default buscaWatchlistSlice.reducer;
+export default buscaWatchlistSlice.reducer

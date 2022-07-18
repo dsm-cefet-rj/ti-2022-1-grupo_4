@@ -5,11 +5,11 @@ import styles from './Popup.module.scss';
 import { alterarId, createAtivoCarteira, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
 import { fetchAtivos } from '../../store/slices/AtivosSlice';
 
+/**
+ * @module componentes/Popup
+ */
 
 function Popup(props) {
-
-    
-
     const quantidadeAtivo = React.createRef();
     const precoMedioAtivo = React.createRef();
 

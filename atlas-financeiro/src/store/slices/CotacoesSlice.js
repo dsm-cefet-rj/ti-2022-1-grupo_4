@@ -1,4 +1,8 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+
+/**
+ * @module store/slice/CotacoesSlice
+ */
 
 var cotacoesInitialState = {
     status: 'not_loaded',
@@ -8,19 +12,19 @@ var cotacoesInitialState = {
 }
 
 export const fetchCotacoes = createAsyncThunk('cotacoes/fetchCotacoes',
-    async () => {
-        try{
-            const res = await (await fetch('http://localhost:3004/ativos')).json();
-            return res;
-        } catch(error) {
-            return {};
-        }
-    });
+async () => {
+    try{
+        const res = await (await fetch('http://localhost:3004/ativos')).json()
+        return res
+    } catch(error) {
+        return {}
+    }
+})
 
 
 function fulfillCotacoesReducer(state, cotacoesFetched) {
     const filteredCotacoesFetched = cotacoesFetched.filter(function(el) {
-        return (parseInt(el.id) === state.ativo_id);
+        return (parseInt(el.id) === state.ativo_id)
     })
     
     return {...state,
@@ -43,7 +47,7 @@ export const cotacoesSlice = createSlice({
 })
 
 
-export const { alterarId } = cotacoesSlice.actions;
+export const { alterarId } = cotacoesSlice.actions
 
-export default cotacoesSlice.reducer;
+export default cotacoesSlice.reducer
     

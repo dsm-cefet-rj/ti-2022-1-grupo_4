@@ -1,23 +1,25 @@
-import React from 'react';
-import Button from 'react-bootstrap/Button';
-import styles from './Popup.module.scss';
-import { useSelector, useDispatch } from 'react-redux';
-import { updateAtivoCarteira, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
-import { useParams } from 'react-router-dom';
+import React from 'react'
+import Button from 'react-bootstrap/Button'
+import styles from './Popup.module.scss'
+import { useSelector, useDispatch } from 'react-redux'
+import { updateAtivoCarteira, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice'
+import { useParams } from 'react-router-dom'
 
+/**
+ * @module componentes/PopupCarteira
+ */
 
 function PopupCarteira(props) {
-
-    const quantidadeAtivo = React.createRef();
-    const precoMedioAtivo = React.createRef();
+    const quantidadeAtivo = React.createRef()
+    const precoMedioAtivo = React.createRef()
     
-    const carteira = useSelector(state => state.carteira);
-    const dispatch = useDispatch();
+    const carteira = useSelector(state => state.carteira)
+    const dispatch = useDispatch()
 
     const user_id = props.user_id
 
     async function atualizarCarteira() {
-        props.setTrigger(false);
+        props.setTrigger(false)
         Promise.resolve(dispatch(updateAtivoCarteira({ 
             'user_id': user_id, 
             'ativo_id': props.dados.ativo_id, 
@@ -25,8 +27,8 @@ function PopupCarteira(props) {
                 quantidade: parseInt(quantidadeAtivo.current.value), 
                 precoMedio: parseFloat(precoMedioAtivo.current.value)
             }})));
-        window.location.reload(false);
-        alert('Dados atualizados com sucesso.');
+        window.location.reload(false)
+        alert('Dados atualizados com sucesso.')
     }
 
     
@@ -59,7 +61,7 @@ function PopupCarteira(props) {
                 <Button className={styles.cancelarButton} onClick={() => props.setTrigger(false)}>Cancelar</Button>  
             </div>
         </div>
-    ) : "";
+    ) : ""
 }
 
 export default PopupCarteira

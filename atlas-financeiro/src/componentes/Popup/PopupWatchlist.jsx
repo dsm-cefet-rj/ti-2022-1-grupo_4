@@ -4,8 +4,11 @@ import styles from './Popup.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateWatchlist, fetchAtivosCarteira } from '../../store/slices/CarteiraSlice';
 
-function PopupWatchlist(props) {
+/**
+ * @module componentes/PopupWatchlist
+ */
 
+function PopupWatchlist(props) {
     const cotacao = React.createRef();
     const dropdown = React.createRef();
     

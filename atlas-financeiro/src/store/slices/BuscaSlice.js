@@ -1,9 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialSearch = "";
+/**
+ * @module store/slice/BuscaSlice
+ */
+
+const initialSearch = ""
 
 function alteraBuscaReducer(buscaAtivo, ativo) {
-    return ativo;
+    return ativo
 }
 
 export const buscasSlice = createSlice({
@@ -14,6 +18,6 @@ export const buscasSlice = createSlice({
     }
 })
 
-export const { alterarBusca, buscar } = buscasSlice.actions;
+export const { alterarBusca, buscar } = buscasSlice.actions
 
-export default buscasSlice.reducer;
+export default buscasSlice.reducer

@@ -3,6 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import styles from './Watchlist.module.scss';
 import {fetchAtivosCarteira, createWatchlist, alterarId } from  '../../store/slices/CarteiraSlice';
 
+/**
+ * @module componentes/Watchlist
+ */
+
 function Watchlist(props) {
     const elementos = useSelector(state => state.elementos);
     const dispatch = useDispatch();

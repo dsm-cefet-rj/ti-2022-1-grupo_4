@@ -1,29 +1,32 @@
 import { createAsyncThunk, createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 
+/**
+ * @module store/slice/CarteiraSlice
+ */
 
 const carteiraAdapter = createEntityAdapter({
     selectId: (ativo) => ativo.ativo_id
-});
+})
 
 export const fetchAtivosCarteira = createAsyncThunk('carteira/fetchAtivosCarteira',
 async ({ user_id }) => {
     try{
-        const res = await (await fetch(`http://localhost:3004/carteira/${user_id}`)).json();
-        return res;
+        const res = await (await fetch(`http://localhost:3004/carteira/${user_id}`)).json()
+        return res
     } catch(error) {
-        return {};
+        return {}
     }
-});
+})
 
 export const deleteAtivoCarteira = createAsyncThunk('carteira/deleteAtivoCarteira', 
 async ({ user_id, ativo_id }) => {
-    user_id = parseInt(user_id);
-    ativo_id = parseInt(ativo_id);
+    user_id = parseInt(user_id)
+    ativo_id = parseInt(ativo_id)
     await fetch(`http://localhost:3004/carteira/${user_id}/${ativo_id}`, {
         method: 'DELETE',
     })
     return { user_id, ativo_id }
-});
+})
 
 export const updateAtivoCarteira = createAsyncThunk('carteira/updateAtivoCarteira',
 async({ user_id, ativo_id, dadosAtualizados }) => {    
@@ -34,8 +37,8 @@ async({ user_id, ativo_id, dadosAtualizados }) => {
             'Content-type': 'application/json; charset=UTF-8',
         },
     }).then((res) => res.json())
-    return data;
-});
+    return data
+})
 
 export const createAtivoCarteira = createAsyncThunk('carteira/createAtivoCarteira',
 async({ user_id, dadosInput }) => {
@@ -46,8 +49,8 @@ async({ user_id, dadosInput }) => {
             'Content-type': 'application/json; charset=UTF-8',
         },
     }).then((res) => res.json())
-    return data;
-});
+    return data
+})
 
 
 
@@ -60,8 +63,8 @@ async({ user_id, dadosInput }) => {
             'Content-type': 'application/json; charset=UTF-8',
         },
     }).then((res) => res.json())
-    return data;
-});
+    return data
+})
 
 export const updateWatchlist = createAsyncThunk('carteira/updateWatchlist',
 async({ user_id, watchlist_id, dadosAtualizadosAtivo }) => {
@@ -72,8 +75,8 @@ async({ user_id, watchlist_id, dadosAtualizadosAtivo }) => {
             'Content-type': 'application/json; charset=UTF-8',
         },
     }).then((res) => res.json())
-    return data;
-});
+    return data
+})
 
 export const deleteWatchlist = createAsyncThunk('carteira/deleteWatchlist', 
 async ({ user_id, watchlist_id }) => {
@@ -83,7 +86,7 @@ async ({ user_id, watchlist_id }) => {
         method: 'DELETE',
     })
     return { user_id, watchlist_id }
-});
+})
 
 export const carteirasSlice = createSlice({
     name: 'carteira',
@@ -128,6 +131,6 @@ export const carteirasSlice = createSlice({
     },
 })
 
-export const { alterarId } = carteirasSlice.actions;
+export const { alterarId } = carteirasSlice.actions
 
-export default carteirasSlice.reducer;
+export default carteirasSlice.reducer

@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import vale from '../../media/vale.png'
-import video from '../../media/earth.mp4';
-import styles from './ListarAtivos.module.scss';
-import { useSelector, useDispatch } from 'react-redux';
-import Popup from '../Popup/Popup';
-import Footer from '../Footer/Footer';
-import { alterarBusca, buscar, fetchAtivos } from '../../store/slices/AtivosSlice';
-import { createAtivoCarteira } from '../../store/slices/CarteiraSlice';
-import { logoutUser } from '../../store/slices/AuthenticationSlice';
-import { Link } from 'react-router-dom';
+import video from '../../media/earth.mp4'
+import styles from './ListarAtivos.module.scss'
+import { useSelector, useDispatch } from 'react-redux'
+import Popup from '../Popup/Popup'
+import Footer from '../Footer/Footer'
+import { alterarBusca, buscar, fetchAtivos } from '../../store/slices/AtivosSlice'
+import { createAtivoCarteira } from '../../store/slices/CarteiraSlice'
+import { logoutUser } from '../../store/slices/AuthenticationSlice'
+import { Link } from 'react-router-dom'
 
+/**
+ * @module componentes/ListarAtivos
+ */
 
 function ListarAtivos() {
     const [buttonPopup, setButtonPopup] = useState(false)
-    const [selectedData, setSelectedData] = useState();
+    const [selectedData, setSelectedData] = useState()
 
     const ativoSlice = useSelector(state => state.ativos)
     const auth = useSelector(state => state.auth)
@@ -21,23 +24,23 @@ function ListarAtivos() {
     
     async function alteraString() {
         await Promise.resolve(dispatch(fetchAtivos()));
-        dispatch(alterarBusca(document.getElementById('busca_ativo').value));
-        dispatch(buscar());
+        dispatch(alterarBusca(document.getElementById('busca_ativo').value))
+        dispatch(buscar())
     }
 
     function handleUpdateClick(selectedRec) {
-        setSelectedData(selectedRec);
-        setButtonPopup(true);
-    };
+        setSelectedData(selectedRec)
+        setButtonPopup(true)
+    }
 
     function resetar() {
         dispatch(fetchAtivos());
-        document.getElementById('busca_ativo').value = '';
+        document.getElementById('busca_ativo').value = ''
     }
 
     useEffect(() => {
         if(ativoSlice.status === "not_loaded") {
-            dispatch(fetchAtivos());
+            dispatch(fetchAtivos())
         }
     }, [ativoSlice.status, dispatch])
 

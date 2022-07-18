@@ -1,21 +1,25 @@
-import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit"
+
+/**
+ * @module store/slice/AtivosSlice
+ */
 
 var ativosInitialState = {
     status: 'not_loaded',
     ativos: [],
     busca: '',
     error: null
-};
+}
 
 export const fetchAtivos = createAsyncThunk('ativos/fetchAtivos',
-    async () => {
-        try{
-            const res = await (await fetch('http://localhost:3004/ativos')).json();
-            return res;
-        } catch(error) {
-            return [];
-        }
-    });
+async () => {
+    try{
+        const res = await (await fetch('http://localhost:3004/ativos')).json()
+        return res
+    } catch(error) {
+        return []
+    }
+})
 
 
 function fulfillAtivosReducer(state, ativosFetched) {
@@ -42,6 +46,6 @@ export const ativosSlice = createSlice({
 })
 
 
-export const { alterarBusca, buscar } = ativosSlice.actions;
+export const { alterarBusca, buscar } = ativosSlice.actions
 
-export default ativosSlice.reducer;
+export default ativosSlice.reducer
