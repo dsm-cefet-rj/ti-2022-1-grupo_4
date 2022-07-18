@@ -1,12 +1,24 @@
 import React , {useState} from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 import styles from './SearchAssets.module.scss'
-import { alterarBusca, buscar } from '../../store/slices/BuscaSlice'
+
+/**
+ * @module componentes/SearchAssets
+ */
+
+/** 
+ * @typedef Search
+ * @type {array}
+ * @property {string} busca - nome do ativo buscado
+ */
+
+/**
+ * Faz a pesquisa de um determinado ativo inserido pelo usuário.
+ * @param {Search} search.busca - informação inseriada pelo usuário. 
+ */
 
 function SearchAssets(props) {
     const [search, setSearch] = useState({});
    
-
     function handleChange(e) {
         setSearch( {...search, [e.target.name]: e.target.value} )
     }
