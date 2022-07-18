@@ -1,10 +1,9 @@
-import React from 'react';
-import styles from './Home.module.scss';
-import Header from '../../componentes/Header/Header';
-import Cotacoes from '../../componentes/Cotacoes/Cotacoes';
-import Indicadores from '../../componentes/Indicadores/Indicadores';
-import Recomendacoes from '../../componentes/Recomendacoes/Recomendacoes';
-import Footer from '../../componentes/Footer/Footer';
+import React from 'react'
+import styles from './Home.module.scss'
+import Header from '../../componentes/Header/Header'
+import IndicadoresVisitante from '../../componentes/IndicadoresVisitante/IndicadoresVisitante'
+import Recomendacoes from '../../componentes/Recomendacoes/Recomendacoes'
+import Footer from '../../componentes/Footer/Footer'
 
 function Home(props) {
 
@@ -13,7 +12,7 @@ function Home(props) {
             <Header state={props.state} setState={props.setState}/>
             <section className={styles.lightSection}>    
                 <div>
-                    {props.state.visible ? <><Cotacoes /><Indicadores /></> : null}
+                    {props.state.visible ? <><IndicadoresVisitante state={props.state} setState={props.setState} /></> : null }
                 </div>
                 <Recomendacoes />
                 <Footer />
