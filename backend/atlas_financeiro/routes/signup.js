@@ -2,12 +2,24 @@ const genAuthToken = require('../authenticate')
 const Usuario = require('../models/carteiras')
 const bodyParser = require('body-parser')
 const express = require('express')
+const multer = require('multer')
 const bcrypt = require('bcrypt')
 const router = express.Router()
 
 router.use(bodyParser.json())
 
-router.post('/', async (req, res) => {
+const storage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, "../../../atlas-financeiro/public/uploads")
+  }, 
+  filename: (req, file, callback) => {
+    callback(null, file.originalname)
+  }
+})
+
+const upload = multer({storage: storage})
+
+router.post('/', upload.single("perfilImage"), async (req, res) => {
   let usuario = await Usuario.findOne({"usuario": {"email": req.body.email}})
   if (usuario) return res.status(400).send("Usuario já existe..")
 
@@ -22,7 +34,8 @@ router.post('/', async (req, res) => {
           "estado": req.body.estado,
           "pais": req.body.pais
         },
-        "descricao": req.body.descricao
+        "descricao": req.body.descricao,
+        "perfilImage": req.body.perfilImage
       },
       "ativos":[{}],
       "watchlist":[{}]

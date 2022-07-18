@@ -14,7 +14,8 @@ const CarteirasSchema = new Schema({
             estado: String,
             pais: String
         },
-        descricao: String
+        descricao: String,
+        perfilImage: {},
     },
     ativos: [
         {

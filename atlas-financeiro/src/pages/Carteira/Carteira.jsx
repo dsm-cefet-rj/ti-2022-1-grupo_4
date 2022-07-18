@@ -110,7 +110,7 @@ function Carteira() {
                     <div className={styles.perfil}>
                         <div className={styles.thumbContainer} style={{backgroundImage:`url(${ImagemThumb})` }}>
                             <div className={styles.perfilImageContainer}>
-                                <img className={styles.perfilImage} src={ImagemPerfil} alt="profile" />
+                                <img className={styles.perfilImage} src={`../../../public/uploads/${carteira.usuario.perfilImage}`} alt="profile" />
                             </div>
                         </div>
                         <div className={styles.perfilName}>

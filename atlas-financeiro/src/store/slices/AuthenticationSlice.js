@@ -7,6 +7,7 @@ const AuthenticationAdapter = createEntityAdapter({
 
 export const signUpNewUsuario = createAsyncThunk('auth/signUpNewUsuario',
 async({ dadosInput, rejectWithValue }) => {
+    debugger
     try {
         const usuario_id = await fetch('http://localhost:3004/carteira/get/lastId', {
             method: 'GET',

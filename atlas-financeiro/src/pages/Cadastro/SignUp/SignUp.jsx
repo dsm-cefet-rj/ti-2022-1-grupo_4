@@ -20,7 +20,8 @@ function SignUp() {
             navigate(`/`)
         }
     }, [auth._id, navigate])
-
+    const formData = new FormData()
+    
     const [newUsuario, setNewUsuario] = useState({
         nome: '',
         status: '',
@@ -29,9 +30,11 @@ function SignUp() {
         estado: '',
         pais: '',
         descricao: '',
+        perfilImage: ''
     })
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit, setIsSubmit] = useState(false)
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -50,7 +53,8 @@ function SignUp() {
                     senha: newUsuario.senha,
                     estado: newUsuario.estado,
                     pais: newUsuario.pais,
-                    descricao: newUsuario.descricao
+                    descricao: newUsuario.descricao,
+                    perfilImage: newUsuario.perfilImage
                 }
             })))
             alert(`O usuario foi cadastrado com sucesso!`)
@@ -106,7 +110,7 @@ function SignUp() {
         <div className={styles.signUpComponentes}>
             <div className={styles.signUpConteiner}>
                 <h2 className={styles.title} ><strong>Cadastre-se</strong></h2>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} encType="multipart/form-data">
                     <div className="cadastroEmailConteiner">
                         <div className='cadastro_nome_container'>
                             <div className='cadastro_nome_info_container'>
@@ -245,6 +249,17 @@ function SignUp() {
                                 <p>{formErrors.senha}</p>
                             </div>
                         </div>
+                    </div>
+
+                    <div>
+                        <label htmlFor='file'>Escolha uma imagem para o perfil</label>
+                        <input 
+                            type="file"
+                            filename="perfilImage"
+                            onChange={(e) => setNewUsuario({ 
+                                    ...newUsuario, perfilImage: e.target.files[0]
+                                })} 
+                        />
                     </div>
 
                     <div className={styles.buttonContainer}> 

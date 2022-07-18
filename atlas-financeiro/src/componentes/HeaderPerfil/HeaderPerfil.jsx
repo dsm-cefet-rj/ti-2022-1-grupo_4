@@ -1,10 +1,10 @@
-import React from 'react';
-import ImagemPerfil from '../../media/businessman.jpg';
-import ImagemThumb from '../../media/chicago.jpg';
+import React from 'react'
+import ImagemPerfil from '../../media/businessman.jpg'
+import ImagemThumb from '../../media/chicago.jpg'
 import { useSelector, useDispatch } from 'react-redux'
 import { logoutUser } from '../../store/slices/AuthenticationSlice'
 import { toast } from 'react-toastify'
-import styles from './HeaderPerfil.module.scss';
+import styles from './HeaderPerfil.module.scss'
 
 const perfil = {
     nome: 'John Galt',
@@ -73,7 +73,7 @@ function HeaderPerfil() {
             <div className={styles.perfil}>
                 <div className={styles.thumbContainer} style={{backgroundImage:`url(${ImagemThumb})` }}>
                     <div className={styles.perfilImageContainer}>
-                        <img className={styles.perfilImage} src={ImagemPerfil} alt="profile" />
+                        <img className={styles.perfilImage} src={`../../../public/uploads/${perfil.perfilImage}`} alt="profile" />
                     </div>
                 </div>
     
@@ -96,4 +96,4 @@ function HeaderPerfil() {
     );
 }
 
-export default HeaderPerfil;
+export default HeaderPerfil
