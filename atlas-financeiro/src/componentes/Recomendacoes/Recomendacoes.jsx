@@ -6,9 +6,6 @@ import styles from './Recomendacoes.module.scss'
 import { useSelector } from 'react-redux'
 import Popup from '../Popup/Popup'
 
-/**
- * @module componentes/Recomendações
- */
 
 function Recomendacoes() {
     return (

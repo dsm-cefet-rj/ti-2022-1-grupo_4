@@ -7,6 +7,20 @@ import {fetchAtivosCarteira, createWatchlist, alterarId } from  '../../store/sli
  * @module componentes/Watchlist
  */
 
+/** 
+ * @typedef Watchlist
+ * @type {React.ReactElement}
+ * @property {object} user_id - representa o id do usuário que deseja adicionar um novo ativo.
+ * @property {number} watchlistId - representa o novo id gerando pela adição de um novo ativo.
+ * @property {number} precoCotacao - representa o preço inserido pelo usuário do novo ativo na watchlist.
+ * @property {boolean} dropdownValue - representa o preço de subida ou descida do novo ativo na watchlist.
+ * @property {string} tickerValue - representa o nome do ticker do novo ativo na watchlist.
+ */
+
+/**
+ * @returns {React.ReactElement} A renderização da área de watchlist na página de perfil do usuário.
+ */
+
 function Watchlist(props) {
     const elementos = useSelector(state => state.elementos);
     const dispatch = useDispatch();
@@ -17,7 +31,11 @@ function Watchlist(props) {
     const dropdownValue = React.createRef();
     const tickerValue = React.createRef();
 
-
+    /**
+     * Função que adiciona um novo ativo a watchlist do usuário
+     * @async
+     * @function adicionarWatchlist
+     */
     async function adicionarWatchlist(e) {
         e.preventDefault();
         Promise.resolve(dispatch(alterarId({user_id})));

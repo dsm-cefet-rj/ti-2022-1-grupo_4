@@ -8,6 +8,18 @@ import { updateWatchlist, fetchAtivosCarteira } from '../../store/slices/Carteir
  * @module componentes/PopupWatchlist
  */
 
+/** 
+ * @typedef PopupWatchlist
+ * @type {React.ReactElement}
+ * @property {number} cotacao - representa a quantidade de ativos atualizados na watchlist do usuário.
+ * @property {number} dropdown - representa o preço de subida ou descida do ativo atualizados na watchlist do usuário.
+ * @property {object} user_id - representa o token do usuário logado no site, que será utilizado para a adiciona dos ativos na watchlist do mesmo.
+ */
+
+/**
+ * @returns {React.ReactElement} A renderização da tela de popup para a atualização do ativo na watchlist do usuário.
+ */
+
 function PopupWatchlist(props) {
     const cotacao = React.createRef();
     const dropdown = React.createRef();
@@ -17,6 +29,11 @@ function PopupWatchlist(props) {
 
     const user_id = props.user_id
 
+    /**
+     * Função que atualiza ativo na watchlist do usuário.
+     * @async
+     * @function atualizarAtivoWatchlist
+     */
     async function atualizarAtivoWatchlist() {
         props.setTrigger(false);
         Promise.resolve(dispatch(updateWatchlist({ 

@@ -9,6 +9,18 @@ import { fetchAtivos } from '../../store/slices/AtivosSlice';
  * @module componentes/Popup
  */
 
+/** 
+ * @typedef Popup
+ * @type {React.ReactElement}
+ * @property {number} quantidadeAtivo - representa a quantidade de ativos inseridos na carteira do usuário.
+ * @property {number} precoMedioAtivo - representa o preço médio de ativos inseridos na carteira do usuário.
+ * @property {object} auth - representa o token do usuário logado no site, que será utilizado para a adiciona dos ativos na carteira do mesmo.
+ */
+
+/**
+ * @returns {React.ReactElement} A renderização da tela de popup para a adição do novo ativo a carteira do usuário.
+ */
+
 function Popup(props) {
     const quantidadeAtivo = React.createRef();
     const precoMedioAtivo = React.createRef();
@@ -18,6 +30,11 @@ function Popup(props) {
     const user_id_mockado = auth._id;
     const dispatch = useDispatch();
     
+    /**
+     * Função que adiciona um novo ativo na carteira do usuário.
+     * @async
+     * @function inserirNaCarteira
+     */
     async function inserirNaCarteira() {
         props.setTrigger(false);
         Promise.resolve(dispatch(alterarId(user_id_mockado)));

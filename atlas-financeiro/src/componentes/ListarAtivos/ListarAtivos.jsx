@@ -14,6 +14,18 @@ import { Link } from 'react-router-dom'
  * @module componentes/ListarAtivos
  */
 
+/** 
+ * @typedef ListarAtivos
+ * @type {React.ReactElement}
+ * @property {boolean} buttonPopup - define se o popup deve estar ativo ou não (definido pelo acionamento do botão pelo usuário)
+ * @property {object} ativoSlice - representa o objeto do ativo, contendo seus atributos e valores.
+ * @property {object} auth - representa o token do usuário logado no site, que será utilizado para a adiciona dos ativos na carteira do mesmo.
+ */
+
+/**
+ * @returns {React.ReactElement} A renderização da lista de ativos na página da lista de ativos.
+ */
+
 function ListarAtivos() {
     const [buttonPopup, setButtonPopup] = useState(false)
     const [selectedData, setSelectedData] = useState()
@@ -22,17 +34,31 @@ function ListarAtivos() {
     const auth = useSelector(state => state.auth)
     const dispatch = useDispatch()
     
+    /**
+     * Função que recebe a informação do ticker inserido pelo usuário.
+     * @async
+     * @function alterarString
+     */
     async function alteraString() {
         await Promise.resolve(dispatch(fetchAtivos()));
         dispatch(alterarBusca(document.getElementById('busca_ativo').value))
         dispatch(buscar())
     }
 
+    /**
+     * Função que recebe a informação do ticker inserido pelo usuário.
+     * @function handleUpdateClick
+     * @param {object} selectedRec - passa o ativo da carteira como parâmetro para atualização, no MongoDB.
+     */
     function handleUpdateClick(selectedRec) {
         setSelectedData(selectedRec)
         setButtonPopup(true)
     }
 
+    /**
+     * Função que reset o campo de pesquisa feita pelo usuário.
+     * @function resetar
+     */
     function resetar() {
         dispatch(fetchAtivos());
         document.getElementById('busca_ativo').value = ''

@@ -5,9 +5,6 @@ import styles from './AccordionSchema.module.scss'
 import Popup from '../Popup/Popup'
 import { useSelector } from 'react-redux'
 
-/**
- * @module componentes/AccordionSchema
- */
 
 function AccordionSchema (props) {
     const [buttonPopup, setButtonPopup] = useState(false)

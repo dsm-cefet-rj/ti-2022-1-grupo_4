@@ -1,9 +1,6 @@
 import React from 'react'
 import AccordionSchema from './AccordionSchema'
 
-/**
- * @module componentes/CreateAtivoAccordion
- */
 
 function CreateAtivoAccordion(props) {
     return (

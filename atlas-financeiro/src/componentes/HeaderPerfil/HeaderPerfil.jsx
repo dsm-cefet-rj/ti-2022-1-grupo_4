@@ -6,9 +6,6 @@ import { logoutUser } from '../../store/slices/AuthenticationSlice'
 import { toast } from 'react-toastify'
 import styles from './HeaderPerfil.module.scss'
 
-/**
- * @module componentes/HeaderPerfil
- */
 
 const perfil = {
     nome: 'John Galt',

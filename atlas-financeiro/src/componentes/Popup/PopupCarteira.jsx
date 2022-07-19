@@ -9,6 +9,18 @@ import { useParams } from 'react-router-dom'
  * @module componentes/PopupCarteira
  */
 
+/** 
+ * @typedef PopupCarteira
+ * @type {React.ReactElement}
+ * @property {number} quantidadeAtivo - representa a quantidade de ativos atualizados na carteira do usuário.
+ * @property {number} precoMedioAtivo - representa o preço médio de ativos atualizados na carteira do usuário.
+ * @property {object} auth - representa o token do usuário logado no site, que será utilizado para a adiciona dos ativos na carteira do mesmo.
+ */
+
+/**
+ * @returns {React.ReactElement} A renderização da tela de popup para a atualização do ativo na carteira do usuário.
+ */
+
 function PopupCarteira(props) {
     const quantidadeAtivo = React.createRef()
     const precoMedioAtivo = React.createRef()
@@ -18,6 +30,11 @@ function PopupCarteira(props) {
 
     const user_id = props.user_id
 
+    /**
+     * Função que atualiza o ativo na carteira do usuário.
+     * @async
+     * @function atualizarCarteira
+     */
     async function atualizarCarteira() {
         props.setTrigger(false)
         Promise.resolve(dispatch(updateAtivoCarteira({ 

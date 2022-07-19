@@ -10,6 +10,17 @@ import { useSelector, useDispatch } from 'react-redux'
  * @module componentes/Indicadores
  */
 
+/** 
+ * @typedef Indicadores
+ * @type {React.ReactElement}
+ * @property {object} ativos- representa o objeto do ativo, contendo seus atributos e valores.
+ */
+
+/**
+ * @returns {React.ReactElement} A renderização os indicadores fundamentalistas do ativo desejado pelo usuário na página de detalhamento dos indicadores.
+ */
+
+
 const TabelaIndicadores = () => {
     let { id } = useParams()
     console.log(id)
@@ -17,6 +28,11 @@ const TabelaIndicadores = () => {
     const ativos = useSelector(state => state.cotacoes)
     const dispatch = useDispatch()
 
+    /**
+     * Função que recebe a informação das cotações selecionadas pelo usuário.
+     * @async
+     * @function pegaCotacoes
+     */
     async function pegaCotacoes() {
         await Promise.resolve(dispatch(alterarId(id)))
         await Promise.resolve(dispatch(fetchCotacoes()))

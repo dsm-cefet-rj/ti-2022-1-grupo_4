@@ -6,23 +6,33 @@ import styles from './SearchAssets.module.scss'
  */
 
 /** 
- * @typedef Search
- * @type {array}
- * @property {string} busca - nome do ativo buscado
+ * @typedef SearchAssets
+ * @type {React.ReactElement}
+ * @property {string} search - define a informação inserida pelo usuário na barra de pesquisa.
  */
 
 /**
- * Faz a pesquisa de um determinado ativo inserido pelo usuário.
- * @param {Search} search.busca - informação inserida pelo usuário. 
+ * @returns {React.ReactElement} A renderização da área de busca na página inicial.
  */
 
 function SearchAssets(props) {
-    const [search, setSearch] = useState({});
+    const [search, setSearch] = useState({})
    
+    /**
+     * Função que pega a informação (ativo) inserido pelo usuário.
+     * @function handleChange
+     */
     function handleChange(e) {
         setSearch( {...search, [e.target.name]: e.target.value} )
     }
 
+    /**
+     * Função que é ativada assim que o usuario clicar no botão buscar,
+     * amostrando o detalhamento do ativo especificado pelo cliente na
+     * barra de pesquisa.
+     * @function mostrarDetalhamento
+     * @param visible - assim que a função for ativada, visible(false) atualiza para 'true', amostrando o detalhamento do ativo.
+     */
     function mostrarDetalhamento(event) {
         event.preventDefault();
         alert('Valor enviado: ' + search.busca);
