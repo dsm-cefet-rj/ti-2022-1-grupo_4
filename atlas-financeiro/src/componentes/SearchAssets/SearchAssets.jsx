@@ -13,7 +13,7 @@ import styles from './SearchAssets.module.scss'
 
 /**
  * Faz a pesquisa de um determinado ativo inserido pelo usuário.
- * @param {Search} search.busca - informação inseriada pelo usuário. 
+ * @param {Search} search.busca - informação inserida pelo usuário. 
  */
 
 function SearchAssets(props) {

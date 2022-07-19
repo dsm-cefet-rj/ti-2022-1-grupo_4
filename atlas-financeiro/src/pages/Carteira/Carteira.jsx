@@ -12,9 +12,26 @@ import ImagemPerfil from '../../media/businessman.jpg';
 import ImagemThumb from '../../media/chicago.jpg';
 import PopupWatchlist from '../../componentes/Popup/PopupWatchlist';
 
+/**
+ * @version 1.0.0
+ * @module pages/Carteira
+ */
+
+/** 
+ * @typedef Carteira
+ * @type {React.ReactElement}
+ * @property {boolean} buttonPopup - define se o popup deve estar ativo ou não (definido pelo acionamento do botão pelo usuário)
+ * @property {boolean} buttonPopupWatchlist - define se o popup da watchlist deve estar ativo ou não (definido pelo acionamento do botão pelo usuário)
+ * @property {number} user_id - id do usuário é passado, para pegar os ativos da carteira e da watchlist do usuário
+ * @property {object} carteira - representa a carteira do usuário, contendo ativos (retorna a partir do banco de dados)
+ * @property {object} watchlist - representa a watchlist do usuário, contendo ativos (retorna a partir do banco de dados)
+ */
+
+/**
+ * @returns {React.ReactElement} A renderização da carteira de ativos, para um determinado usuário.
+ */
 
 function Carteira() {
-    
     
     const [buttonPopup, setButtonPopup] = useState(false);
     const [buttonPopupWatchlist, setButtonPopupWatchlist] = useState(false)
@@ -30,11 +47,21 @@ function Carteira() {
 
     let {user_id} = useParams()
 
+    /**
+     * Função que ativa o popup do ativo e passa os dados do ativo, para realização do update.
+     * @function handleUpdateClick
+     * @param {object} selectedRec - passa o ativo da carteira como parâmetro para atualização, no MongoDB
+     */
     function handleUpdateClick(selectedRec) {
         setSelectedData(selectedRec);
         setButtonPopup(true);
     };
-
+    
+    /**
+     * Função que ativa o popup do ativo e passa os dados do ativo, para realização do update.
+     * @function handleUpdateClickWatchlist
+     * @param {object} selectedRec - passa o ativo da watchlist como parâmetro para atualização, no MongoDB
+     */
     function handleUpdateClickWatchlist(selectedRec) {
         setSelectedData(selectedRec);
         setButtonPopupWatchlist(true);
@@ -44,12 +71,21 @@ function Carteira() {
     const watchlist = useSelector(state => state.carteira);
     const dispatch = useDispatch();
 
-    
+    /**
+     * Função que pega os ativos da carteira do usuário, baseado no user_id
+     * @async
+     * @function pegaCarteira
+     */
     async function pegaCarteira() {
         await Promise.resolve(dispatch(alterarId(user_id)));
         await Promise.resolve(dispatch(fetchAtivosCarteira({ user_id })));
     }
-
+    
+    /**
+     * Função que pega os ativos da watchlist do usuário, baseado no user_id
+     * @async
+     * @function pegaWatchlist
+     */
     async function pegaWatchlist() {
         await Promise.resolve(dispatch(alterarWatchlistId(user_id)));
         await Promise.resolve(dispatch(fetchWatchlist({ user_id })));
