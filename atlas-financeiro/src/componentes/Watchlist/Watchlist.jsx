@@ -18,11 +18,11 @@ import {fetchAtivosCarteira, createWatchlist, alterarId } from  '../../store/sli
  */
 
 /**
- * @returns {React.ReactElement} A renderização da área de watchlist na página de perfil do usuário.
+ * @param {object} props - objeto que contém o id do usuário e o objeto Carteira, a partir do qual é possível acessar a watchlist do usuário
+ * @returns {React.ReactElement} A renderização da lista de ativos na watchlist do usuário.
  */
 
 function Watchlist(props) {
-    const elementos = useSelector(state => state.elementos);
     const dispatch = useDispatch();
     
     const user_id = props.user_id;
@@ -32,9 +32,10 @@ function Watchlist(props) {
     const tickerValue = React.createRef();
 
     /**
-     * Função que adiciona um novo ativo a watchlist do usuário
+     * Função que realiza a busca, quando o usuário digita a string de busca
      * @async
      * @function adicionarWatchlist
+     * @param {object} e - evento, utilizado para chamar a função preventDefault
      */
     async function adicionarWatchlist(e) {
         e.preventDefault();
