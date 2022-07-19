@@ -1,6 +1,17 @@
 import React from 'react';
 import styles from './Dropdown.module.scss';
 
+/**
+ * @module componentes/Dropdown
+ */
+
+/**
+ * Função chamada para criar pequeno menu para o usuario ter acesso as cotações diarias e indicadores de um ativo.
+ * @param {object} props.ativo 
+ * @returns {html}
+ */
+
+
 function Dropdown(props) {
 
     return (

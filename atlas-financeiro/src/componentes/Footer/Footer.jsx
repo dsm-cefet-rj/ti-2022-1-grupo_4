@@ -1,6 +1,15 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 
+/**
+ * @module componentes/Footer
+ */
+
+/**
+ * Função chamada para renderizar o rodapé footer do site.
+ *  * @returns {html}
+ */
+
 function Footer() {
     const ano = new Date().getFullYear();
 

@@ -6,6 +6,15 @@ import styles from './Header.module.scss';
 import { logoutUser } from '../../store/slices/AuthenticationSlice';
 import { toast } from 'react-toastify'
 
+/**
+ * @module componentes/Header
+ */
+
+/**
+ * Função chamada para renderizar o cabeçalho do site
+ * 
+ */
+
 function Header(props) {
     const dispatch = useDispatch()
     const auth = useSelector((state) => state.auth)
