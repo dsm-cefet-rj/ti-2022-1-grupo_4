@@ -6,6 +6,24 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signUpNewUsuario, selectAllUsuarios } from '../../../store/slices/AuthenticationSlice';
 import styles from './SignUp.module.scss';
 
+/**
+ * @version 1.0.0
+ * @module pages/SignUp
+ */
+
+/** 
+ * @typedef SignUp
+ * @type {React.ReactElement}
+ * @property {object} auth - representa o token do usuário logado no site, que será utilizado para a adiciona dos ativos na carteira do mesmo.
+ * @property {object} formErrors - representa um objeto para a validação das informações inseridas pelo usuário no campo de login.
+ * @property {boolean} isSubmit - representa um boolean para saber se o usuário clicou em login, caso seja feito, as informações seram validadas no backend para a validação do usuário no site.
+ * @property {object} newUsuario - representa um objeto o qual será atrubuidos as informações para a criação de um novo usuário no site.
+ */
+
+/**
+ * @returns {React.ReactElement} A renderização da página de cadastro do site.
+ */
+
 function SignUp() {
 
     const dispatch = useDispatch()
@@ -33,6 +51,10 @@ function SignUp() {
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit, setIsSubmit] = useState(false)
 
+     /**
+     * Função que recebe as informações inseridas pelo usuário.
+     * @const handleSubmit
+     */
     const handleSubmit = (e) => {
         e.preventDefault()
         setFormErrors(validate(newUsuario))
@@ -57,7 +79,10 @@ function SignUp() {
         }
     }, [formErrors, newUsuario])
     
-    
+    /**
+     * Função que apresentam os parametros para a validação do cadastro.
+     * @const validate
+     */
     const validate = (values) => {
         const errors = {}
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i

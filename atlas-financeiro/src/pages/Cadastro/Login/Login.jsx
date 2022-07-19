@@ -6,6 +6,23 @@ import { loginUsuario } from '../../../store/slices/AuthenticationSlice';
 import styles from './Login.module.scss';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * @version 1.0.0
+ * @module pages/Login
+ */
+
+/** 
+ * @typedef Login
+ * @type {React.ReactElement}
+ * @property {object} auth - representa o token do usuário logado no site, que será utilizado para a adiciona dos ativos na carteira do mesmo.
+ * @property {object} formErrors - representa um objeto para a validação das informações inseridas pelo usuário no campo de login.
+ * @property {boolean} isSubmit - representa um boolean para saber se o usuário clicou em login, caso seja feito, as informações seram validadas no backend para a validação do usuário no site.
+ * @property {object} loginState - representa um objeto o qual será atrubuidos as informações do usuário para a validação do login.
+ */
+
+/**
+ * @returns {React.ReactElement} A renderização da página de login do site.
+ */
 
 function Login() {
 
@@ -29,7 +46,10 @@ function Login() {
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit, setIsSubmit] = useState(false)
 
-
+    /**
+     * Função que recebe as informações inseridas pelo usuário.
+     * @const handleUpdateClick
+     */
     const handleSubmit = (e) => {
         e.preventDefault()
         setFormErrors(validate(loginState))
@@ -48,7 +68,10 @@ function Login() {
         }
     }, [formErrors, loginState])
 
-
+    /**
+     * Função que apresentam os parametros para a validação do login.
+     * @const validate
+     */
     const validate = (values) => {
         const errors = {}
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
