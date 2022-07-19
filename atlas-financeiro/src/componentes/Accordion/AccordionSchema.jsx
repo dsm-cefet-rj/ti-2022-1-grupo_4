@@ -5,6 +5,17 @@ import Dropdown from '../Dropdown/Dropdown';
 import styles from './AccordionSchema.module.scss';
 import Popup from '../Popup/Popup';
 import { useSelector } from 'react-redux';
+
+/**
+ * @module componentes/AccordionSchema
+ */
+
+/**
+ * Define a estrutura do componente accordion que exibe os dados de um ativo.
+ * @param {object} props.ativo - ativo e seus campos a serem exibidos no accordion 
+ * @returns {Accordion.Item} - Schema do Accordion
+ */
+
 function AccordionSchema (props) {
     const [buttonPopup, setButtonPopup] = useState(false)
     const popup = useSelector(state => state.popup.ativado)

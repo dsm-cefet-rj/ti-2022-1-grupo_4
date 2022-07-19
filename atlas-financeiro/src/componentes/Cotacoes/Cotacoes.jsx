@@ -8,6 +8,15 @@ import { Line } from 'react-chartjs-2';
 import {CategoryScale, registerables} from 'chart.js';
 import Chart from 'chart.js/auto';
 
+/**
+ * @module componentes/Cotacoes
+ */
+
+/**
+ * Define a estrutura do componente Cotacões que exibe uma tabela com todas as cotações de um ativo.
+ * @param {object} props.ativo - ativo com suas cotações a serem exibidas
+ * @returns {html} - Tabela das Cotações 
+ */
 
 const cotacoes = ativos[0].cotacoes;
 

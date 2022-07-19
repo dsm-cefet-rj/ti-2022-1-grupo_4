@@ -1,6 +1,12 @@
 import React from 'react';
 import AccordionSchema from './AccordionSchema';
 
+/**
+ * Função chamada para criar accordion de um ativo, entregando para o AccordionSchema os parâmetros do Ativo.
+ * @param {object} props.ativo 
+ * @returns {AccordionSchema}
+ */
+
 function CreateAtivoAccordion(props) {
     return (
     <AccordionSchema 
