@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './IndicadoresVisitante.module.scss'
 
-function TabelaIndicadores(){
+function IndicadoresVisitante(props){
     return(
         <>
         <section className="light-section">
@@ -10,7 +10,7 @@ function TabelaIndicadores(){
             <div className=''>
                 <div className={styles.tableTitle}>
                     <h3>Detalhamento do Ativo</h3>
-                    <h2><strong>VALE3</strong></h2>
+                    <h2><strong>{props.ticker}</strong></h2>
                 </div>
     
                 <div className={styles.tableInfo}>
@@ -228,4 +228,4 @@ function TabelaIndicadores(){
     )
 }
 
-export default TabelaIndicadores
+export default IndicadoresVisitante

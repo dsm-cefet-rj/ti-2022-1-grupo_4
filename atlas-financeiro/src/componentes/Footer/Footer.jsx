@@ -1,9 +1,6 @@
 import React from 'react'
 import styles from './Footer.module.scss'
 
-/**
- * @module componentes/Footer
- */
 
 function Footer() {
     const ano = new Date().getFullYear()

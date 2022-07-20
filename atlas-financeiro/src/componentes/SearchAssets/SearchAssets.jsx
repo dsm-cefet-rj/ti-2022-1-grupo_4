@@ -36,6 +36,7 @@ function SearchAssets(props) {
     function mostrarDetalhamento(event) {
         event.preventDefault();
         alert('Valor enviado: ' + search.busca);
+        props.setTicker(`${search.busca}`)
         props.setState({ visible: true });
     }
 

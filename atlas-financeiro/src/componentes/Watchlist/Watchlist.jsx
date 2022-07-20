@@ -49,7 +49,7 @@ function Watchlist(props) {
             }})));
         Promise.resolve(dispatch(fetchAtivosCarteira({user_id})));
         window.location.reload(false);
-        alert(`Watchlist adicionado ao perfil.${watchlistId}`);
+        alert(`Ativo adicionado a sua Watchlist!`);
     }
 
     return (

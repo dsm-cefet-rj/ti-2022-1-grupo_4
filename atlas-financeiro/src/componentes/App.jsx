@@ -14,12 +14,13 @@ import DetalhamentoCotacoes from '../pages/Detalhamento/Detalhamento Cotacoes';
 
 function App() {
   const [state, setState] = useState({visible: false});
+  const [ticker, setTicker] = useState("")
 
   return (<>
             <Provider store={store}>
               <Router>
                 <Routes>
-                  <Route path="/" element={<Home state={state} setState={setState} />} />
+                  <Route path="/" element={<Home state={state} setState={setState} ticker={ticker} setTicker={setTicker}/>} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/sign-up" element={<SignUp />} />
                   <Route path='/carteira/:user_id' element={<Carteira />} />

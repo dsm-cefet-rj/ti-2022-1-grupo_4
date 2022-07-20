@@ -44,7 +44,7 @@ function PopupWatchlist(props) {
                 dropdown: parseInt(dropdown.current.value)
             }})));
         window.location.reload(false);
-        alert(`Dados atualizados com sucesso. ${parseFloat(cotacao.current.value)} ${parseInt(dropdown.current.value)}`);
+        alert(`Dados atualizados com sucesso!`);
     }
 
     return (props.trigger) ? (

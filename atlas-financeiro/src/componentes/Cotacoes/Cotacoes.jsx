@@ -9,7 +9,17 @@ import {CategoryScale, registerables} from 'chart.js'
 import Chart from 'chart.js/auto'
 
 /**
- * @module componentes/Cotações
+ * @module componentes/Cotacoes
+ */
+
+/** 
+ * @typedef Cotacoes
+ * @type {React.ReactElement}
+ * @property {object} cotacoes - representa o atributo cotações de um objeto ativo.
+ */
+
+/**
+ * @returns {React.ReactElement} A renderização as cotações do ativo desejado pelo usuário na página de detalhamento de cotações.
  */
 
 const cotacoes = ativos[0].cotacoes
@@ -29,6 +39,11 @@ const LinhaTabela = (props) => {
     const cotacoes = useSelector(state => state.cotacoes)
     const dispatch = useDispatch()
 
+    /**
+     * Função que recebe a informação das cotações selecionadas pelo usuário.
+     * @async
+     * @function pegaCotacoes
+     */
     async function pegaCotacoes() {
         await Promise.resolve(dispatch(alterarId(id)))
         await Promise.resolve(dispatch(fetchCotacoes()))

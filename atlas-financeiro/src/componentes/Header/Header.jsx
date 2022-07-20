@@ -6,9 +6,6 @@ import styles from './Header.module.scss'
 import { logoutUser } from '../../store/slices/AuthenticationSlice'
 import { toast } from 'react-toastify'
 
-/**
- * @module componentes/Header
- */
 
 function Header(props) {
     const dispatch = useDispatch()
@@ -76,7 +73,7 @@ function Header(props) {
                     <h2><strong>Invista consciente</strong></h2>
                 </div>
 
-                <SearchAssets state={props.state} setState={props.setState} />
+                <SearchAssets state={props.state} setState={props.setState} ticker={props.ticker} setTicker={props.setTicker}/>
 
             </div>       
         </section>

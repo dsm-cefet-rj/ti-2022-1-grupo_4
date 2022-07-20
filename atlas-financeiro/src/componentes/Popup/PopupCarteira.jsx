@@ -45,7 +45,7 @@ function PopupCarteira(props) {
                 precoMedio: parseFloat(precoMedioAtivo.current.value)
             }})));
         window.location.reload(false)
-        alert('Dados atualizados com sucesso.')
+        alert('Dados atualizados com sucesso!')
     }
 
     

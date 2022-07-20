@@ -49,7 +49,7 @@ function Popup(props) {
                 rendimento: 0
             }})));
         window.location.reload(false);
-        alert('Ativo adicionado à carteira.');
+        alert('Ativo adicionado à carteira!');
     }
 
     return (props.trigger) ? (
