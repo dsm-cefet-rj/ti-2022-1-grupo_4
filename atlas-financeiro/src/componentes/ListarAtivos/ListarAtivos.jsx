@@ -18,12 +18,13 @@ import { Link } from 'react-router-dom'
  * @typedef ListarAtivos
  * @type {React.ReactElement}
  * @property {boolean} buttonPopup - define se o popup deve estar ativo ou não (definido pelo acionamento do botão pelo usuário)
- * @property {object} ativoSlice - representa o objeto do ativo, contendo seus atributos e valores.
  * @property {object} auth - representa o token do usuário logado no site, que será utilizado para a adiciona dos ativos na carteira do mesmo.
+ * @property {object} selectedData - representa um ativo, podendo ser da carteira ou da watchlist do usuário
+ * @property {object} ativoSlice - objeto que representa a lista de ativos disponibilizada pelo Atlas Financeiro
  */
 
 /**
- * @returns {React.ReactElement} A renderização da lista de ativos na página da lista de ativos.
+ * @returns {React.ReactElement} A renderização da lista de ativos.
  */
 
 function ListarAtivos() {
@@ -56,7 +57,7 @@ function ListarAtivos() {
     }
 
     /**
-     * Função que reset o campo de pesquisa feita pelo usuário.
+     * Função que reseta a string de busca por ativos.
      * @function resetar
      */
     function resetar() {

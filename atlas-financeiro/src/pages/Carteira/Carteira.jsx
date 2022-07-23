@@ -13,7 +13,6 @@ import ImagemThumb from '../../media/chicago.jpg';
 import PopupWatchlist from '../../componentes/Popup/PopupWatchlist';
 
 /**
- * @version 1.0.0
  * @module pages/Carteira
  */
 
@@ -22,6 +21,7 @@ import PopupWatchlist from '../../componentes/Popup/PopupWatchlist';
  * @type {React.ReactElement}
  * @property {boolean} buttonPopup - define se o popup deve estar ativo ou não (definido pelo acionamento do botão pelo usuário)
  * @property {boolean} buttonPopupWatchlist - define se o popup da watchlist deve estar ativo ou não (definido pelo acionamento do botão pelo usuário)
+ * @property {object} selectedData - representa um ativo, podendo ser da carteira ou da watchlist do usuário
  * @property {number} user_id - id do usuário é passado, para pegar os ativos da carteira e da watchlist do usuário
  * @property {object} carteira - representa a carteira do usuário, contendo ativos (retorna a partir do banco de dados)
  * @property {object} watchlist - representa a watchlist do usuário, contendo ativos (retorna a partir do banco de dados)
